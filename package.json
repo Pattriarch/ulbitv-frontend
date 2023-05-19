@@ -4,7 +4,9 @@
   "description": "Учебный проект по курсу от UlbiTV",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack serve --env port=3000",
+    "build:prod": "webpack --env mode=production",
+    "build:dev": "webpack --env mode=development"
   },
   "keywords": [],
   "author": "",
