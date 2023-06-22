@@ -1,7 +1,4 @@
-export enum AppRoutes {
-    MAIN = 'main',
-    ABOUT = 'about',
-}
+import {AppRoutes} from "shared";
 
 export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.MAIN]: '/',
