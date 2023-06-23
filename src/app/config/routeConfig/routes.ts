@@ -1,6 +1,6 @@
-import {AppRoutes} from "shared";
+import { AppRoutes } from 'shared'
 
 export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.MAIN]: '/',
-    [AppRoutes.ABOUT]: '/about',
+    [AppRoutes.ABOUT]: '/about'
 }
