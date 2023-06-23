@@ -22,7 +22,6 @@ export const Sidebar = ({ className }: SidebarProps): JSX.Element => {
         <div
             className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}
         >
-            {t('Пример 345')}
             <button type={'button'} onClick={onToggle}>toggle</button>
             <div className={cls.switchers}>
                 <ThemeSwitcher/>
