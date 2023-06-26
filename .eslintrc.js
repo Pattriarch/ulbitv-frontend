@@ -42,7 +42,7 @@ module.exports = {
         'i18next/no-literal-string': ['error', {
             markupOnly: true, ignoreAttribute: ['to']
         }],
-        'max-len': ['error', { ignoreComments: true }]
+        'max-len': ['error', { code: 100, ignoreComments: true }]
     },
     globals: {
         __IS_DEV__: true
