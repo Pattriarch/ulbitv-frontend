@@ -1,15 +1,16 @@
-import { classNames } from 'shared/lib/classNames/classNames'
-import cls from './Button.module.scss'
-import React, { type ButtonHTMLAttributes, type FC } from 'react'
-import { AppLinkTheme } from 'shared/ui/AppLink/AppLink'
+import { classNames } from 'shared/lib/classNames/classNames';
+import cls from './Button.module.scss';
+import React, { type ButtonHTMLAttributes, type FC } from 'react';
+import { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 
 export enum ThemeButton {
-    CLEAR = 'clear', // без рамок, заднего фона
+	CLEAR = 'clear', // без рамок, заднего фона
+	OUTLINE = 'outline'
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    className?: string
-    theme?: ThemeButton
+	className?: string
+	theme?: ThemeButton
 }
 
 export const Button: FC<ButtonProps> = (props) => {
@@ -18,7 +19,7 @@ export const Button: FC<ButtonProps> = (props) => {
         children,
         theme = AppLinkTheme.PRIMARY,
         ...otherProps
-    } = props
+    } = props;
 
     return (
         <button
@@ -28,5 +29,5 @@ export const Button: FC<ButtonProps> = (props) => {
         >
             {children}
         </button>
-    )
-}
+    );
+};

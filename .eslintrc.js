@@ -18,7 +18,7 @@ module.exports = {
             }
         },
         {
-            files: ['**/src/**/*.test.{ts, tsx}'],
+            files: ['**/src/**/*.test.{ts,tsx}'],
             rules: {
                 'i18next/no-literal-string': 'off'
             }
@@ -39,7 +39,7 @@ module.exports = {
             extensions: ['.js', '.jsx', '.tsx']
         }],
         'import/no-unresolved': 'off',
-        'no-unused-vars': 'warn',
+        'no-unused-vars': 'off',
         '@typescript-eslint/indent': 'off',
         '@typescript-eslint/array-type': 'off',
         '@typescript-eslint/space-before-function-paren': 'off',
@@ -53,7 +53,11 @@ module.exports = {
         'i18next/no-literal-string': ['error', {
             markupOnly: true, ignoreAttribute: ['to']
         }],
-        'max-len': ['error', { code: 100, ignoreComments: true }]
+        'max-len': ['error', { code: 100, ignoreComments: true }],
+        'react/display-name': 'off',
+        '@typescript-eslint/prefer-includes': 'off',
+        '@typescript-eslint/no-unused-vars': 'warn',
+        'n/handle-callback-err': 'off'
     },
     globals: {
         __IS_DEV__: true

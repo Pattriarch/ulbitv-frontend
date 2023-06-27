@@ -1,9 +1,9 @@
-import { MainPage } from 'pages/MainPage'
-import { AboutPage } from 'pages/AboutPage'
-import { type RouteProps } from 'react-router-dom'
-import { RoutePath } from './routes'
-import { AppRoutes } from 'shared'
-import { NotFoundPage } from 'pages/NotFoundPage'
+import { MainPage } from 'pages/MainPage';
+import { AboutPage } from 'pages/AboutPage';
+import { type RouteProps } from 'react-router-dom';
+import { RoutePath } from './routes';
+import { AppRoutes } from 'shared';
+import { NotFoundPage } from 'pages/NotFoundPage';
 
 export const routeConfig: Record<AppRoutes, RouteProps> = {
     [AppRoutes.MAIN]: {
@@ -18,4 +18,4 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
         path: RoutePath.not_found,
         element: <NotFoundPage/>
     }
-}
+};

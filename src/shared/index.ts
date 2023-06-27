@@ -1,1 +1,1 @@
-export * from './config/routeConfig/routes.enum'
+export * from './config/routeConfig/routes.enum';

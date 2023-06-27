@@ -1,18 +1,18 @@
-import React from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { useTranslation } from 'react-i18next'
-import { Button, ThemeButton } from 'shared/ui/Button/Button'
+import React from 'react';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { useTranslation } from 'react-i18next';
+import { Button, ThemeButton } from 'shared/ui/Button/Button';
 
 interface NavbarProps {
     className?: string
 }
 
 export const LangSwitcher = ({ className }: NavbarProps): JSX.Element => {
-    const { t, i18n } = useTranslation()
+    const { t, i18n } = useTranslation();
 
     const toggle = (): void => {
-        void i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
-    }
+        void i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
+    };
 
     return (
         <Button
@@ -22,5 +22,5 @@ export const LangSwitcher = ({ className }: NavbarProps): JSX.Element => {
         >
             {t('Язык')}
         </Button>
-    )
-}
+    );
+};

@@ -1,7 +1,7 @@
-import React, { Suspense } from 'react'
-import { Route, Routes } from 'react-router-dom'
-import { routeConfig } from 'app/config/routeConfig/routeConfig'
-import { PageLoader } from 'widgets/PageLoader'
+import React, { Suspense } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { routeConfig } from 'app/config/routeConfig/routeConfig';
+import { PageLoader } from 'widgets/PageLoader';
 
 export const AppRouter = (): JSX.Element => {
     return (
@@ -21,5 +21,5 @@ export const AppRouter = (): JSX.Element => {
                     ))}
             </Routes>
         </Suspense>
-    )
-}
+    );
+};
