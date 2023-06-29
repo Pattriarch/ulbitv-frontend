@@ -1,0 +1,33 @@
+name: Linting, testing, building pipeline
+run-name: ${{ github.actor }} is running out GitHub Actions 🚀
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 17.x ]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Starting Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install modules
+        run: npm install --force
+      - name: Build production project
+        run: npm run build:prod
+      - name: Linting typescript
+        run: npm run lint:ts
+      - name: Linting css
+        run: npm run lint:scss
+      - name: Unit testing
+        run: npm run test:unit
+      - name: Build storybook
+        run: npm run storybook:build
+      - name: Screenshot testing
+        run: npm run test:ui:ci
