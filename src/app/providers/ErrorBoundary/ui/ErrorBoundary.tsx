@@ -29,7 +29,7 @@ class ErrorBoundary
 
     render(): React.ReactNode {
         const { hasError } = this.state;
-        const { children } = this.props;
+        // const { children } = this.props;
         if (hasError) {
             // You can render any custom fallback UI
             return (
