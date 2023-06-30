@@ -5,7 +5,7 @@ import { I18nextProvider } from 'react-i18next';
 import i18nForTest from 'shared/config/i18n/i18nForTest';
 
 export interface ComponentRenderOptions {
-    route?: string
+    route?: string;
 }
 
 export function componentRender(component: ReactNode, options: ComponentRenderOptions = {}): ReactNode {

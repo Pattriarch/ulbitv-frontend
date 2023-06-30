@@ -18,16 +18,17 @@ module.exports = {
             }
         },
         {
-            files: ['**/src/**/*.test.{ts,tsx}'],
+            files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
             rules: {
-                'i18next/no-literal-string': 'off'
+                'i18next/no-literal-string': 'off',
+                'max-len': 'off'
             }
         }
     ],
     parserOptions: {
         project: './tsconfig.json', ecmaVersion: 'latest', sourceType: 'module'
     },
-    plugins: ['react', 'i18next'],
+    plugins: ['react', 'i18next', 'react-hooks'],
     rules: {
         semi: [2, 'always'],
         '@typescript-eslint/semi': 'off',
@@ -57,7 +58,28 @@ module.exports = {
         'react/display-name': 'off',
         '@typescript-eslint/prefer-includes': 'off',
         '@typescript-eslint/no-unused-vars': 'warn',
-        'n/handle-callback-err': 'off'
+        'n/handle-callback-err': 'off',
+        '@typescript-eslint/no-confusing-void-expression': 'off',
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'error',
+        '@typescript-eslint/member-delimiter-style': ['warn', {
+            multiline: {
+                delimiter: 'comma',
+                requireLast: true
+            },
+            singleline: {
+                delimiter: 'comma',
+                requireLast: true
+            },
+            overrides: {
+                interface: {
+                    multiline: {
+                        delimiter: 'semi',
+                        requireLast: true
+                    }
+                }
+            }
+        }]
     },
     globals: {
         __IS_DEV__: true

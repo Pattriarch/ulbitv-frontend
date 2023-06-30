@@ -4,8 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 
 interface NavbarProps {
-    className?: string
-    short?: boolean
+    className?: string;
+    short?: boolean;
 }
 
 export const LangSwitcher = ({ className, short }: NavbarProps): JSX.Element => {
