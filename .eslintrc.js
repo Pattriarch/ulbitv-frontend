@@ -52,7 +52,7 @@ module.exports = {
         '@typescript-eslint/naming-convention': 'off',
         '@typescript-eslint/ban-ts-comment': 'warn',
         'i18next/no-literal-string': ['error', {
-            markupOnly: true, ignoreAttribute: ['to', 'data-testid']
+            markupOnly: true, ignoreAttribute: ['to', 'data-testid', 'placeholder']
         }],
         'max-len': ['error', { code: 120, ignoreComments: true }],
         'react/display-name': 'off',

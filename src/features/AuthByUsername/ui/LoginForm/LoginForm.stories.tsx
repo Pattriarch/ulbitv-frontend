@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { Loader } from './Loader';
+import { LoginForm } from './LoginForm';
 
-const meta: Meta<typeof Loader> = {
-    title: 'shared/Loader',
-    component: Loader,
+const meta: Meta<typeof LoginForm> = {
+    title: 'features/LoginForm',
+    component: LoginForm,
     tags: ['autodocs']
 };
 
 export default meta;
-type Story = StoryObj<typeof Loader>;
+type Story = StoryObj<typeof LoginForm>;
 
 export const Normal: Story = {
     args: {}

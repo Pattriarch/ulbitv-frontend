@@ -1,22 +1,28 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { Loader } from './Loader';
+import { Input } from './Input';
 
-const meta: Meta<typeof Loader> = {
-    title: 'shared/Loader',
-    component: Loader,
+const meta: Meta<typeof Input> = {
+    title: 'shared/Input',
+    component: Input,
     tags: ['autodocs']
 };
 
 export default meta;
-type Story = StoryObj<typeof Loader>;
+type Story = StoryObj<typeof Input>;
 
 export const Normal: Story = {
-    args: {}
+    args: {
+        placeholder: 'Введите текст',
+        value: 'Text'
+    }
 };
 
 export const Dark: Story = {
     decorators: [ThemeDecorator(Theme.DARK)],
-    args: {}
+    args: {
+        placeholder: 'Введите текст',
+        value: 'Text'
+    }
 };

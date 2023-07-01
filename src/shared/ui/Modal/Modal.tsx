@@ -2,22 +2,37 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Modal.module.scss';
 import React, { type ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 import { Portal } from 'shared/ui/Portal/Portal';
-import { useTheme } from 'app/providers/ThemeProvider';
 
 interface ModalProps {
 	className?: string;
 	children?: ReactNode;
 	isOpen: boolean;
 	onClose?: () => void;
+	lazy?: boolean;
 }
 
 const ANIMATION_DELAY = 300;
 
-export const Modal = (props: ModalProps): JSX.Element => {
-    const { className, children, isOpen, onClose } = props;
+export const Modal = (props: ModalProps): JSX.Element | null => {
+    const {
+        className,
+        children,
+        isOpen,
+        onClose,
+        lazy
+    } = props;
 
     const [isClosing, setIsClosing] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
+
+    useEffect(() => {
+        if (isOpen) {
+            setIsMounted(true);
+        }
+        // чтобы фокус не терялся при открытии модалки снова
+        return () => setIsMounted(false);
+    }, [isOpen]);
 
     const mods: Record<string, boolean> = {
         [cls.opened]: isOpen,
@@ -54,6 +69,10 @@ export const Modal = (props: ModalProps): JSX.Element => {
     const onContentClick = (e: React.MouseEvent): void => {
         e.stopPropagation();
     };
+
+    if (lazy && !isMounted) {
+        return null;
+    }
 
     return (
         <Portal>
