@@ -62,6 +62,7 @@ module.exports = {
         '@typescript-eslint/no-confusing-void-expression': 'off',
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
+        '@typescript-eslint/prefer-nullish-coalescing': 'off', // временно
         '@typescript-eslint/member-delimiter-style': ['warn', {
             multiline: {
                 delimiter: 'comma',
