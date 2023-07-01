@@ -5,7 +5,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import MainPage from './MainPage';
 
 const meta: Meta<typeof MainPage> = {
-    title: 'pages/AppLink',
+    title: 'pages/MainPage',
     component: MainPage,
     tags: ['autodocs'],
     args: {

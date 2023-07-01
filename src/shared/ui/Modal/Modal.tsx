@@ -18,12 +18,10 @@ export const Modal = (props: ModalProps): JSX.Element => {
 
     const [isClosing, setIsClosing] = useState(false);
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
-    const { theme } = useTheme();
 
     const mods: Record<string, boolean> = {
         [cls.opened]: isOpen,
-        [cls.isClosing]: isClosing,
-        [cls[theme]]: true
+        [cls.isClosing]: isClosing
     };
 
     const closeHandler = useCallback((): void => {
