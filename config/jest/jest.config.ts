@@ -6,6 +6,9 @@
 import path from 'path';
 
 export default {
+    globals: {
+        __IS_DEV__: true
+    },
     // Automatically clear mock calls, instances and results before every test
     clearMocks: true,
 
