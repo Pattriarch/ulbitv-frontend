@@ -52,7 +52,7 @@ module.exports = {
         '@typescript-eslint/naming-convention': 'off',
         '@typescript-eslint/ban-ts-comment': 'warn',
         'i18next/no-literal-string': ['error', {
-            markupOnly: true, ignoreAttribute: ['to', 'data-testid', 'placeholder']
+            markupOnly: true, ignoreAttribute: ['to', 'data-testid', 'placeholder', 'name']
         }],
         'max-len': ['error', { code: 120, ignoreComments: true }],
         'react/display-name': 'off',
@@ -63,6 +63,7 @@ module.exports = {
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
         '@typescript-eslint/prefer-nullish-coalescing': 'off', // временно
+        '@typescript-eslint/no-dynamic-delete': 'off',
         '@typescript-eslint/member-delimiter-style': ['warn', {
             multiline: {
                 delimiter: 'comma',
