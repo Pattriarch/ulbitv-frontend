@@ -34,11 +34,6 @@ export const Modal = (props: ModalProps): JSX.Element | null => {
         return () => setIsMounted(false);
     }, [isOpen]);
 
-    const mods: Record<string, boolean> = {
-        [cls.opened]: isOpen,
-        [cls.isClosing]: isClosing
-    };
-
     const closeHandler = useCallback((): void => {
         if (onClose) {
             setIsClosing(true);
@@ -73,6 +68,11 @@ export const Modal = (props: ModalProps): JSX.Element | null => {
     if (lazy && !isMounted) {
         return null;
     }
+
+    const mods: Record<string, boolean> = {
+        [cls.opened]: isOpen,
+        [cls.isClosing]: isClosing
+    };
 
     return (
         <Portal>

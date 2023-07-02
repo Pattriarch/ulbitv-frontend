@@ -15,7 +15,7 @@ export const Counter = ({ className }: CounterProps): JSX.Element => {
     const increment = (): void => {
         dispatch(counterActions.increment());
     };
-    const decremenet = (): void => {
+    const decrement = (): void => {
         dispatch(counterActions.decrement());
     };
 
@@ -33,7 +33,7 @@ export const Counter = ({ className }: CounterProps): JSX.Element => {
             </Button>
             <Button
                 data-testid={'decrement-btn'}
-                onClick={decremenet}
+                onClick={decrement}
                 type={'button'}
             >
                 {t('decrement')}

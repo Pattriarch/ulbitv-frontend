@@ -65,6 +65,7 @@ module.exports = {
         '@typescript-eslint/prefer-nullish-coalescing': 'off', // временно
         '@typescript-eslint/no-dynamic-delete': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
+        'no-void': 'off',
         '@typescript-eslint/member-delimiter-style': ['warn', {
             multiline: {
                 delimiter: 'comma',

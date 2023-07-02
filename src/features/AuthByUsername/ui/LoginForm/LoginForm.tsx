@@ -3,7 +3,7 @@ import cls from './LoginForm.module.scss';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
@@ -13,18 +13,20 @@ import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLogi
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
 import { DynamicModuleLoader, type ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 
 export interface LoginFormProps {
 	className?: string;
+    onSuccess: () => void;
 }
 
 const initialReducers: ReducersList = {
     loginForm: loginReducer
 };
 
-const LoginForm = memo(({ className }: LoginFormProps): JSX.Element => {
+const LoginForm = memo(({ className, onSuccess }: LoginFormProps): JSX.Element => {
+    const dispatch = useAppDispatch();
     const { t } = useTranslation();
-    const dispatch = useDispatch();
 
     const username = useSelector(getLoginUsername);
     const password = useSelector(getLoginPassword);
@@ -39,12 +41,12 @@ const LoginForm = memo(({ className }: LoginFormProps): JSX.Element => {
         dispatch(loginActions.setPassword(value));
     }, [dispatch]);
 
-    const onLoginClick = useCallback(() => {
-        if (username && password) {
-            // @ts-expect-error
-            dispatch(loginByUsername({ username, password }));
+    const onLoginClick = useCallback(async () => {
+        const result = await dispatch(loginByUsername({ username, password }));
+        if (result.meta.requestStatus === 'fulfilled') {
+            onSuccess?.();
         }
-    }, [dispatch, username, password]);
+    }, [onSuccess, username, password, dispatch]);
 
     return (
         <DynamicModuleLoader
@@ -74,7 +76,7 @@ const LoginForm = memo(({ className }: LoginFormProps): JSX.Element => {
                 <Button
                     theme={ButtonTheme.OUTLINE}
                     className={cls.loginBtn}
-                    onClick={onLoginClick}
+                    onClick={() => void onLoginClick()}
                     disabled={isLoading}
                 >
                     {t('Войти')}

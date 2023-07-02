@@ -4,11 +4,16 @@ import { type RouteProps } from 'react-router-dom';
 import { RoutePath } from './routes';
 import { AppRoutes } from 'shared';
 import { NotFoundPage } from 'pages/NotFoundPage';
+import { ProfilePage } from 'pages/ProfilePage';
 
 export const routeConfig: Record<AppRoutes, RouteProps> = {
     [AppRoutes.MAIN]: {
         path: RoutePath.main,
         element: <MainPage/>
+    },
+    [AppRoutes.PROFILE]: {
+        path: RoutePath.profile,
+        element: <ProfilePage/>
     },
     [AppRoutes.ABOUT]: {
         path: RoutePath.about,
