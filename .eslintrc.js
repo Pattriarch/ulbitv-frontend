@@ -64,6 +64,7 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error',
         '@typescript-eslint/prefer-nullish-coalescing': 'off', // временно
         '@typescript-eslint/no-dynamic-delete': 'off',
+        '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/member-delimiter-style': ['warn', {
             multiline: {
                 delimiter: 'comma',
