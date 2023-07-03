@@ -16,7 +16,7 @@
     // дефолтные импорты в обычных node js пакетах не используются
     // и пишется import * as ..., это позволит убрать * as
     "forceConsistentCasingInFileNames": true,
-    "strict": false, // временно false
+    "strict": true,
     "noImplicitAny": true,
     "skipLibCheck": true
   },
