@@ -1,4 +1,8 @@
 module.exports = {
+    globals: {
+        __IS_DEV__: true,
+        __API__: true
+    },
     env: {
         browser: true, es2021: true
     },
@@ -84,8 +88,5 @@ module.exports = {
                 }
             }
         }]
-    },
-    globals: {
-        __IS_DEV__: true
     }
 };
