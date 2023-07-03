@@ -22,10 +22,10 @@ export default ({ config }: { config: webpack.Configuration, }): webpack.Configu
 
             return rule;
         });
-    }
 
-    config?.module?.rules?.push({ test: /\.svg$/, use: ['@svgr/webpack'] });
-    config?.module?.rules?.push(buildCssLoader(true));
+        config.module.rules.push({ test: /\.svg$/, use: ['@svgr/webpack'] });
+        config.module.rules.push(buildCssLoader(true));
+    }
 
     config?.plugins?.push(
         new DefinePlugin({
