@@ -31,7 +31,7 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, Thun
             // обновляем стейт
             dispatch(userActions.setAuthData(response.data));
 
-            extra?.navigate?.('/about');
+            extra?.navigate?.('/profile');
 
             return response.data;
         } catch (e) {

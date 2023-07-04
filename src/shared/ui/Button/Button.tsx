@@ -7,6 +7,7 @@ export enum ButtonTheme {
     CLEAR = 'clear', // без рамок, заднего фона
     CLEAR_INVERTED = 'clearInverted',
     OUTLINE = 'outline',
+    OUTLINE_RED = 'outlineRed',
     BACKGROUND = 'background', // текст кнопки, как на фоне
     BACKGROUND_INVERTED = 'backgroundInverted'
 }
