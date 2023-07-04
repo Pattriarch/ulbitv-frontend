@@ -61,7 +61,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 <Text
                     theme={TextTheme.ERROR}
                     title={t('Произошла ошибка при загрузке профиля')}
-                    text={t('Попробуйте обновтиь страницу')}
+                    text={t('Попробуйте обновить страницу')}
                 />
             </div>
         );
