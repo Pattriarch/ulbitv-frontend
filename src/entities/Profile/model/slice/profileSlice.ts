@@ -44,6 +44,7 @@ export const profileSlice = createSlice({
                     state.data = action.payload;
                     state.form = action.payload;
                     state.readonly = true;
+                    state.validateErrors = undefined;
                 })
             .addCase(fetchProfileData.rejected, (state, action) => {
                 state.isLoading = false;
@@ -52,6 +53,7 @@ export const profileSlice = createSlice({
             .addCase(updateProfileData.pending, (state, action) => {
                 state.error = undefined;
                 state.isLoading = true;
+                state.validateErrors = undefined;
             })
             .addCase(
                 updateProfileData.fulfilled, (
