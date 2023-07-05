@@ -34,7 +34,7 @@
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
-    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.5",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
     "@storybook/addon-essentials": "^7.0.12",
     "@storybook/addon-interactions": "^7.0.12",
     "@storybook/addon-links": "^7.0.12",
@@ -92,6 +92,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.4.0",
+    "concurrently": "^8.2.0",
     "css-loader": "^6.7.1",
     "i18next": "^21.6.11",
     "i18next-browser-languagedetector": "^6.1.3",

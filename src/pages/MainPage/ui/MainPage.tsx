@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Input } from 'shared/ui/Input/Input';
 
 const MainPage = (): JSX.Element => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('main');
     const [value, setValue] = useState('');
 
     const onChange = (val: string): void => {

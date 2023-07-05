@@ -2,27 +2,12 @@ import type webpack from 'webpack';
 import { type BuildOptions } from './types/config';
 import { buildCssLoader } from './loaders/buildCssLoader';
 import { buildSvgLoader } from './loaders/buildSvgLoader';
+import { buildBabelLoader } from './loaders/buildBabelLoader';
 
-export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
-    const babelLoader = {
-        test: /\.(js|ts|tsx)$/,
-        exclude: /node_modules/,
-        use: {
-            loader: 'babel-loader',
-            options: {
-                presets: ['@babel/preset-env'],
-                plugins: [
-                    [
-                        'i18next-extract',
-                        {
-                            locales: ['ru', 'en'],
-                            keyAsDefaultValue: true
-                        }
-                    ]
-                ]
-            }
-        }
-    };
+export function buildLoaders (options: BuildOptions): webpack.RuleSetRule[] {
+    const { isDev } = options;
+
+    const babelLoader = buildBabelLoader(options);
 
     const fileLoader = {
         test: /\.(png|jpe?g|gif|woff2|woff)$/i,
