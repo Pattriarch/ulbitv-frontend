@@ -18,6 +18,8 @@ export const StoreProvider = (props: StoreProviderProps): JSX.Element => {
         asyncReducers
     } = props;
 
+    // todo: лучше убрать и использовать напрямую в компонентах
+    // ибо триггерит пересоздание стора
     const navigate = useNavigate();
 
     const store = createReduxStore(

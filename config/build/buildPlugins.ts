@@ -19,7 +19,7 @@ export function buildPlugins({ isDev, paths, apiUrl, project }: BuildOptions): w
             __IS_DEV__: JSON.stringify(isDev),
             __API__: JSON.stringify(apiUrl),
             __PROJECT: JSON.stringify(project)
-        }),
+        })
     ];
 
     const devPlugins = [
