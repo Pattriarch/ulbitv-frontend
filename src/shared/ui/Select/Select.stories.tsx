@@ -10,7 +10,7 @@ const meta: Meta<typeof Select> = {
 export default meta;
 type Story = StoryObj<typeof Select>;
 
-export const Primary: Story = {
+export const Normal: Story = {
     args: {
         label: 'Укажите значение',
         options: [

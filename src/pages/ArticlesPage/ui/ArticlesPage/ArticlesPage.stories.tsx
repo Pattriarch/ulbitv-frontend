@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import ArticlePage from './ArticlesPage';
 
 const meta: Meta<typeof ArticlePage> = {
-    title: 'shared/ArticlesPage',
+    title: 'pages/ArticlesPage',
     component: ArticlePage,
     tags: ['autodocs']
 };
@@ -10,6 +10,6 @@ const meta: Meta<typeof ArticlePage> = {
 export default meta;
 type Story = StoryObj<typeof ArticlePage>;
 
-export const Primary: Story = {
+export const Normal: Story = {
     args: {}
 };

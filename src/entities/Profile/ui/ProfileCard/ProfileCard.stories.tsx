@@ -13,7 +13,7 @@ const meta: Meta<typeof ProfileCard> = {
 export default meta;
 type Story = StoryObj<typeof ProfileCard>;
 
-export const Primary: Story = {
+export const Normal: Story = {
     args: {
         data: {
             username: 'admin',

@@ -10,7 +10,7 @@ const meta: Meta<typeof Modal> = {
 export default meta;
 type Story = StoryObj<typeof Modal>;
 
-export const Primary: Story = {
+export const Normal: Story = {
     args: {
         isOpen: true,
         children: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dolorem doloribus esse harum\n' +

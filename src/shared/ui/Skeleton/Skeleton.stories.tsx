@@ -12,7 +12,7 @@ const meta: Meta<typeof Skeleton> = {
 export default meta;
 type Story = StoryObj<typeof Skeleton>;
 
-export const Primary: Story = {
+export const Normal: Story = {
     args: {
         width: '100%',
         height: 200

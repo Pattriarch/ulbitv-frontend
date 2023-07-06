@@ -2,7 +2,7 @@ import { type BuildOptions } from '../types/config';
 
 export function buildBabelLoader({ isDev }: BuildOptions): object {
     return {
-        test: /\.(js|ts|tsx)$/,
+        test: /\.(js|ts|jsx|tsx)$/,
         exclude: /node_modules/,
         use: {
             loader: 'babel-loader',
@@ -17,7 +17,7 @@ export function buildBabelLoader({ isDev }: BuildOptions): object {
                         }
                     ],
                     isDev && require.resolve('react-refresh/babel')
-                ]
+                ].filter(Boolean)
             }
         }
     };

@@ -10,6 +10,6 @@ const meta: Meta<typeof CountrySelect> = {
 export default meta;
 type Story = StoryObj<typeof CountrySelect>;
 
-export const Primary: Story = {
+export const Normal: Story = {
     args: {}
 };

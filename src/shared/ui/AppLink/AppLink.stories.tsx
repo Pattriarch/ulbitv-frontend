@@ -16,7 +16,7 @@ const meta: Meta<typeof AppLink> = {
 export default meta;
 type Story = StoryObj<typeof AppLink>;
 
-export const Primary: Story = {
+export const Normal: Story = {
     args: {
         to: '/',
         children: 'Text',

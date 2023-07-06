@@ -1,7 +1,6 @@
 import { classNames, type Mods } from 'shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
 import React, { type ButtonHTMLAttributes, memo, type ReactNode } from 'react';
-import { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 
 export enum ButtonTheme {
     CLEAR = 'clear', // без рамок, заднего фона
@@ -31,7 +30,7 @@ export const Button = memo((props: ButtonProps) => {
     const {
         className,
         children,
-        theme = AppLinkTheme.PRIMARY,
+        theme = ButtonTheme.OUTLINE,
         square = false,
         size = ButtonSize.M,
         disabled,
