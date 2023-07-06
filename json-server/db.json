@@ -11,18 +11,92 @@
       "userId": "2"
     }
   ],
+  "articles": [
+    {
+      "id": "1",
+      "title": "JavaScript News",
+      "subtitle": "Что добавили нового в ECMAScript 2023",
+      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "type": ["IT", "Computer Science"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "ECMAScript2023 (ES14)",
+          "paragraphs": [
+            "Традиционно обновления ECMAScript публикуются в июне. Но уже сейчас можно посмотреть 14-ю редакцию ECMAScript от 2023, которая сейчас находится в статусе freezed, т.е. никакие изменения в нее вноситься уже не будут.",
+            "В данной версии спецификации не такой большой список изменений, что абсолютно нормально когда мы переходим на годовой цикл релиза.",
+            "Итак, спецификация 2023 года представила нам методы toSorted, toReversed, with, findLast и findLastIndex для Array.prototypeи TypedArray.prototype,\nа также метод toSpliced для Array.prototype.",
+            "Кроме того добавлена поддержка #! комментарии в начале файлов для облегчения запуска исполняемых файлов ECMAScript.",
+            "и разрешено использовать Symbols в качестве ключей в WeakMap.\n",
+            "Подробнее обо всем можно почитать в официальном репозитории организации Ecma International TC39.\n"
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": ".findlast() и .findLastIndex() для Array и TypedArray",
+          "paragraphs": [
+            "Предназначены для поиска элементов в массиве.\n",
+            "Работают так же, как .find() и .findIndex(), но итерируются в обратном порядке."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "CODE",
+          "code": "const array = [{ value: 1 }, { value: 2 }, { value: 3 }, { value: 4 }];\n\narray.find(n => n.value % 2 === 1); // { value: 1 }\narray.findIndex(n => n.value % 2 === 1); // 0\n\n// ======== Before the proposal =========== \n// find\n[...array].reverse().find(n => n.value % 2 === 1); // { value: 3 }\n\n// findIndex\narray.length - 1 - [...array].reverse().findIndex(n => n.value % 2 === 1); // 2\narray.length - 1 - [...array].reverse().findIndex(n => n.value === 42); // should be -1, but 4\n\n// ======== In the proposal =========== \n// find\narray.findLast(n => n.value % 2 === 1); // { value: 3 }\n// findIndex\narray.findLastIndex(n => n.value % 2 === 1); // 2\narray.findLastIndex(n => n.value === 42); // -1"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "ECMAScript 2024",
+          "paragraphs": [
+            "На официальном сайте уже опубликован драфт на 2024 год, но какие изменения в него войдут пока достоверно неизвестно.\n"
+          ]
+        },
+        {
+          "id": "5",
+          "type": "IMAGE",
+          "src": "https://habrastorage.org/r/w1560/getpro/habr/upload_files/b26/f56/47a/b26f5647a7b761dac02a2832828fc1a9.png",
+          "title": "ES, ECMAScript 2024"
+        }
+      ]
+    }
+  ],
   "comments": [
     {
       "id": "1",
-      "body": "some comment",
-      "postId": "1"
+      "text": "Вот так статья!",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "1",
+      "text": "Интересно что добавят в ECMAScript 2024",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "1",
+      "text": "Ни о чём, обновляться не буду",
+      "articleId": "1",
+      "userId": "1"
     }
   ],
   "users": [
     {
       "id": "1",
       "username": "admin",
-      "password": "123"
+      "password": "123",
+      "role": "ADMIN"
+    },
+    {
+      "id": "1",
+      "username": "user",
+      "password": "123",
+      "role": "USER"
     }
   ],
   "profile": {
