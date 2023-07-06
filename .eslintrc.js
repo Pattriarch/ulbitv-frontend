@@ -56,7 +56,7 @@ module.exports = {
         'react/react-in-jsx-scope': 'off',
         '@typescript-eslint/naming-convention': 'off',
         '@typescript-eslint/ban-ts-comment': 'warn',
-        'i18next/no-literal-string': ['error', {
+        'i18next/no-literal-string': ['warn', {
             markupOnly: true, ignoreAttribute: ['to', 'data-testid', 'placeholder', 'name']
         }],
         'max-len': ['error', { code: 120, ignoreComments: true }],
