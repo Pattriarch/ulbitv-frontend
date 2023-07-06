@@ -94,16 +94,16 @@
       "userId": "1"
     },
     {
-      "id": "1",
-      "text": "Интересно что добавят в ECMAScript 2024",
+      "id": "2",
+      "text": "Интересно, что добавят в ECMAScript 2024?",
       "articleId": "1",
       "userId": "1"
     },
     {
-      "id": "1",
+      "id": "3",
       "text": "Ни о чём, обновляться не буду",
       "articleId": "1",
-      "userId": "1"
+      "userId": "2"
     }
   ],
   "users": [
@@ -111,13 +111,15 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/1:1/w_1350,h_1350,c_limit/security_hacker_names.jpg"
     },
     {
-      "id": "1",
+      "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png"
     }
   ],
   "profile": {

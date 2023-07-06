@@ -12,7 +12,7 @@ import {
     ValidateProfileError
 } from 'entities/Profile';
 import { useCallback, useEffect } from 'react';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { ProfilePageHeader } from '../ui/ProfilePageHeader/ProfilePageHeader';
 import { type Currency } from 'entities/Currency';

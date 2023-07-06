@@ -1,7 +1,7 @@
 {
   "name": "ulbitv-frontend",
   "version": "1.0.0",
-  "description": "Учебный проект по курсу от UlbiTV",
+  "description": "Учебный проект по курсу от Ulbi TV",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --env port=3000",

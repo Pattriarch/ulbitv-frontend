@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ProfileCard } from './ProfileCard';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import avatar from 'shared/assets/tests/storybook.jpg';
 
 const meta: Meta<typeof ProfileCard> = {
     title: 'entities/ProfileCard',
@@ -21,8 +20,7 @@ export const Normal: Story = {
             country: Country.Russia,
             lastName: 'Pereverzev',
             firstName: 'Daniil',
-            currency: Currency.USD,
-            avatar
+            currency: Currency.USD
         }
     }
 };

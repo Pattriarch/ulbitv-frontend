@@ -6,7 +6,6 @@ import ProfilePage from './ProfilePage';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import avatar from 'shared/assets/tests/storybook.jpg';
 
 const meta: Meta<typeof ProfilePage> = {
     title: 'pages/ProfilePage',
@@ -26,8 +25,7 @@ export const Normal: Story = {
                 country: Country.Russia,
                 lastName: 'Pereverzev',
                 firstName: 'Daniil',
-                currency: Currency.USD,
-                avatar
+                currency: Currency.USD
             }
         }
     })],
@@ -43,8 +41,7 @@ export const Dark: Story = {
                 country: Country.Russia,
                 lastName: 'Pereverzev',
                 firstName: 'Daniil',
-                currency: Currency.USD,
-                avatar
+                currency: Currency.USD
             }
         }
     })],
