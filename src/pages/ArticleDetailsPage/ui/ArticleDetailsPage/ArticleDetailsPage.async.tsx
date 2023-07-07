@@ -4,5 +4,5 @@ import { type ArticleDetailsPageProps } from 'pages/ArticleDetailsPage/ui/Articl
 export const ArticleDetailsPageAsync = lazy<FC<ArticleDetailsPageProps>>(async () => await new Promise(resolve => {
     setTimeout(() => {
         resolve(import('./ArticleDetailsPage'));
-    }, 1500);
+    }, 400);
 }));

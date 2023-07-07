@@ -10,39 +10,41 @@ import { type NavigateOptions } from 'react-router/dist/lib/context';
 import { type ArticleDetailsSchema } from 'entities/Article';
 import { type ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { type AddCommentFormSchema } from 'features/AddCommentForm';
+import { type ArticlesPageSchema } from 'pages/ArticlesPage';
 
 export interface StateSchema {
-    counter: CounterSchema;
-    user: UserSchema;
+	counter: CounterSchema;
+	user: UserSchema;
 
-    // async reducers
-    loginForm?: LoginSchema;
-    profile?: ProfileSchema;
-    articleDetails?: ArticleDetailsSchema;
-    articleDetailsComments?: ArticleDetailsCommentsSchema;
-    addCommentForm?: AddCommentFormSchema;
+	// async reducers
+	loginForm?: LoginSchema;
+	profile?: ProfileSchema;
+	articleDetails?: ArticleDetailsSchema;
+	articleDetailsComments?: ArticleDetailsCommentsSchema;
+	addCommentForm?: AddCommentFormSchema;
+	articlesPage?: ArticlesPageSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
 
 export interface ReducerManager {
-    getReducerMap: () => ReducersMapObject<StateSchema>;
-    reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>;
-    add: (key: StateSchemaKey, reducer: Reducer) => void;
-    remove: (key: StateSchemaKey) => void;
+	getReducerMap: () => ReducersMapObject<StateSchema>;
+	reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>;
+	add: (key: StateSchemaKey, reducer: Reducer) => void;
+	remove: (key: StateSchemaKey) => void;
 }
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
-    reducerManager: ReducerManager;
+	reducerManager: ReducerManager;
 }
 
 export interface ThunkExtraArg {
-    api: AxiosInstance;
-    navigate?: (to: To, options?: NavigateOptions) => void;
+	api: AxiosInstance;
+	navigate?: (to: To, options?: NavigateOptions) => void;
 }
 
 export interface ThunkConfig<T> {
-    rejectValue: T;
-    extra: ThunkExtraArg;
-    state: StateSchema;
+	rejectValue: T;
+	extra: ThunkExtraArg;
+	state: StateSchema;
 }

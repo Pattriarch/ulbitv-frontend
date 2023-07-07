@@ -4,5 +4,5 @@ import { type ProfilePageProps } from 'pages/ProfilePage/ui/ProfilePage';
 export const ProfilePageAsync = lazy<FC<ProfilePageProps>>(async () => await new Promise(resolve => {
     setTimeout(() => {
         resolve(import('./ProfilePage'));
-    }, 1500);
+    }, 400);
 }));
