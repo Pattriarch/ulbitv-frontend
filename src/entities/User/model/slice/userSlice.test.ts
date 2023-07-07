@@ -1,8 +1,5 @@
 import { userActions, userReducer } from './userSlice';
 import { type User, type UserSchema } from '../types/user';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
-import { updateProfileData } from 'entities/Profile';
 
 const data: User = {
     id: '1',
