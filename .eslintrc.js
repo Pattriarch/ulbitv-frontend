@@ -73,6 +73,7 @@ module.exports = {
         'no-void': 'off',
         '@typescript-eslint/no-invalid-void-type': 'off',
         'no-mixed-spaces-and-tabs': 'off', // временно
+        '@typescript-eslint/consistent-type-assertions': 'off', // временно
         '@typescript-eslint/member-delimiter-style': ['warn', {
             multiline: {
                 delimiter: 'comma',

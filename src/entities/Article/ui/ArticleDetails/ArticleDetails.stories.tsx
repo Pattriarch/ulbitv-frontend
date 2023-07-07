@@ -5,7 +5,7 @@ import { type Article } from 'entities/Article';
 import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
 
 const meta: Meta<typeof ArticleDetails> = {
-    title: 'entities/ArticleDetails',
+    title: 'entities/Article/ArticleDetails',
     component: ArticleDetails,
     tags: ['autodocs']
 };
@@ -21,6 +21,10 @@ const article: Article = {
     views: 1022,
     createdAt: '26.02.2022',
     type: [ArticleType.IT, ArticleType.COMPUTER_SCIENCE],
+    user: {
+        id: '1',
+        username: 'Pattriarch'
+    },
     blocks: [
         {
             id: '1',

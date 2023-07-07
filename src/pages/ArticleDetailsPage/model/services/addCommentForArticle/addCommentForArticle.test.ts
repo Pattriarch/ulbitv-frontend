@@ -23,6 +23,10 @@ describe('addCommentForArticle', () => {
                     subtitle: 'subtitle',
                     img: 'img',
                     views: 1000,
+                    user: {
+                        id: '1',
+                        username: 'Pattriarch'
+                    },
                     createdAt: '2020-02-2',
                     type: [],
                     blocks: []
@@ -53,6 +57,10 @@ describe('addCommentForArticle', () => {
                     subtitle: 'subtitle',
                     img: 'img',
                     views: 1000,
+                    user: {
+                        id: '1',
+                        username: 'Pattriarch'
+                    },
                     createdAt: '2020-02-2',
                     type: [],
                     blocks: []

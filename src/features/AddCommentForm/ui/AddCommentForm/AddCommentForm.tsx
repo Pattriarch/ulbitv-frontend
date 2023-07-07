@@ -29,7 +29,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
     } = props;
     const { t } = useTranslation();
     const text = useSelector(getAddCommentFormText);
-    const error = useSelector(getAddCommentFormError);
+    const _ = useSelector(getAddCommentFormError);
     const dispatch = useAppDispatch();
 
     const onCommentTextChange = useCallback((value: string) => {

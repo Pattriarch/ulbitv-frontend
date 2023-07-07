@@ -10,6 +10,10 @@ const data: Article = {
     img: '',
     views: 10000,
     createdAt: '2020-02-02',
+    user: {
+        id: '1',
+        username: 'Pattriarch'
+    },
     type: [ArticleType.IT],
     blocks: []
 };

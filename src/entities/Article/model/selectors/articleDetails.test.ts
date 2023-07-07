@@ -15,6 +15,10 @@ describe('articleDetails', () => {
             img: 'path',
             views: 1000,
             createdAt: '2020-02-02',
+            user: {
+                id: '1',
+                username: 'Pattriarch'
+            },
             type: [],
             blocks: []
         };
