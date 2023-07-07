@@ -14,7 +14,7 @@ export default meta;
 type Story = StoryObj<typeof ArticleDetails>;
 
 const article: Article = {
-    id: 1,
+    id: '1',
     title: 'JavaScript News',
     subtitle: 'Что добавили нового в ECMAScript 2023',
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',

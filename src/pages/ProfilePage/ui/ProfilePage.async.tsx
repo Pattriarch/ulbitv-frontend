@@ -1,8 +1,8 @@
-import { lazy } from 'react';
+import { type FC, lazy } from 'react';
+import { type ProfilePageProps } from 'pages/ProfilePage/ui/ProfilePage';
 
-export const ProfilePageAsync = lazy(async () => await new Promise(resolve => {
+export const ProfilePageAsync = lazy<FC<ProfilePageProps>>(async () => await new Promise(resolve => {
     setTimeout(() => {
-        // @ts-expect-error
         resolve(import('./ProfilePage'));
     }, 1500);
 }));

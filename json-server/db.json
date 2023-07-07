@@ -19,7 +19,10 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT", "Computer Science"],
+      "type": [
+        "IT",
+        "Computer Science"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -104,6 +107,18 @@
       "text": "Ни о чём, обновляться не буду",
       "articleId": "1",
       "userId": "2"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "тест",
+      "id": "Z1rMSy2"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "снова тест!",
+      "id": "aH-_NkF"
     }
   ],
   "users": [
@@ -122,14 +137,28 @@
       "avatar": "https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png"
     }
   ],
-  "profile": {
-    "firstName": "Даниил",
-    "lastName": "Переверзев",
-    "age": 21,
-    "currency": "EUR",
-    "country": "Kazakhstan",
-    "city": "Moscow",
-    "username": "admin",
-    "avatar": "https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "firstName": "Даниил",
+      "lastName": "Переверзев",
+      "age": 21,
+      "currency": "USD",
+      "country": "Kazakhstan",
+      "city": "Almaty",
+      "username": "admin",
+      "avatar": "https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png"
+    },
+    {
+      "id": "2",
+      "firstName": "Иван",
+      "lastName": "Иванов",
+      "age": 44,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "ivan",
+      "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/1:1/w_1350,h_1350,c_limit/security_hacker_names.jpg"
+    }
+  ]
 }

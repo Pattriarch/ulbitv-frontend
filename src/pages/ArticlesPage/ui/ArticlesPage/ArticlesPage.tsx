@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
 
-interface ArticlesPageProps {
+export interface ArticlesPageProps {
     className?: string;
 }
 

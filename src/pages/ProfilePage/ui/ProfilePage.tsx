@@ -11,7 +11,7 @@ import {
     profileReducer,
     ValidateProfileError
 } from 'entities/Profile';
-import { useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { ProfilePageHeader } from '../ui/ProfilePageHeader/ProfilePageHeader';
@@ -23,13 +23,15 @@ import {
 } from 'entities/Profile/model/selectors/getProfileValidateErrors/getProfileValidateErrors';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useParams } from 'react-router-dom';
 
 const reducers: ReducersList = {
     profile: profileReducer
 };
 
-interface ProfilePageProps {
-	className?: string;
+export interface ProfilePageProps {
+    className?: string;
 }
 
 const ProfilePage = ({ className }: ProfilePageProps): JSX.Element => {
@@ -41,6 +43,8 @@ const ProfilePage = ({ className }: ProfilePageProps): JSX.Element => {
     const validateErrors = useSelector(getProfileValidateErrors);
     const dispatch = useAppDispatch();
 
+    const { id } = useParams<{ id: string, }>();
+
     const validateErrorTranslates = {
         [ValidateProfileError.SERVER_ERROR]: t('Серверная ошибка при сохранении'),
         [ValidateProfileError.INCORRECT_AGE]: t('Некорректный возраст'),
@@ -49,11 +53,11 @@ const ProfilePage = ({ className }: ProfilePageProps): JSX.Element => {
         [ValidateProfileError.NO_DATA]: t('Данные не указаны')
     };
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            void dispatch(fetchProfileData());
+    useInitialEffect(() => {
+        if (id) {
+            void dispatch(fetchProfileData(id));
         }
-    }, [dispatch]);
+    });
 
     const onChangeFirstName = useCallback((value: string) => {
         void dispatch(profileActions.updateProfile({ firstName: value || '' }));
@@ -90,7 +94,7 @@ const ProfilePage = ({ className }: ProfilePageProps): JSX.Element => {
     }, [dispatch]);
 
     return (
-        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+        <DynamicModuleLoader reducers={reducers}>
             <div className={classNames('', {}, [className])}>
                 <ProfilePageHeader/>
                 {validateErrors?.length && validateErrors.map((err, index) => (

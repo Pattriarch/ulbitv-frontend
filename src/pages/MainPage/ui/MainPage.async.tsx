@@ -1,8 +1,7 @@
-import { lazy } from 'react';
+import { type FC, lazy } from 'react';
 
-export const MainPageAsync = lazy(async () => await new Promise((resolve, reject) => {
+export const MainPageAsync = lazy<FC>(async () => await new Promise((resolve, reject) => {
     setTimeout(() => {
-        // @ts-expect-error
         resolve(import('./MainPage'));
     }, 250);
 }));

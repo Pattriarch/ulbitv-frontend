@@ -9,7 +9,7 @@ import {
 describe('articleDetails', () => {
     test('should return article data', () => {
         const data = {
-            id: 1,
+            id: '1',
             title: 'title',
 	        subtitle: 'subtitle',
             img: 'path',

@@ -21,7 +21,7 @@ class ErrorBoundary
         return { hasError: true };
     }
 
-    // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+    // eslint-disable-next-line
     componentDidCatch(error: Error, errorInfo: ErrorInfo) {
         // You can also log the error to an error reporting service
         console.log(error, errorInfo);

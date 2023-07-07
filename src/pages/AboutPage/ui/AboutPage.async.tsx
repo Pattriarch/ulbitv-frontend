@@ -1,8 +1,7 @@
-import { lazy } from 'react';
+import { type FC, lazy } from 'react';
 
-export const AboutPageAsync = lazy(async () => await new Promise(resolve => {
+export const AboutPageAsync = lazy<FC>(async () => await new Promise(resolve => {
     setTimeout(() => {
-        // @ts-expect-error
         resolve(import('./AboutPage'));
     }, 1500);
 }));
