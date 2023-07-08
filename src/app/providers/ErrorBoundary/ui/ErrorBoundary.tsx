@@ -17,7 +17,7 @@ class ErrorBoundary
     }
 
     static getDerivedStateFromError(error: Error): ErrorBoundaryState {
-        // Update state so the next render will show the fallback UI.
+        // Update state so the next render will show the fallback ScrollRestoration.
         return { hasError: true };
     }
 
@@ -31,7 +31,7 @@ class ErrorBoundary
         const { hasError } = this.state;
         // const { children } = this.props;
         if (hasError) {
-            // You can render any custom fallback UI
+            // You can render any custom fallback ScrollRestoration
             return (
                 <Suspense fallback={''}>
                     <PageError/>
