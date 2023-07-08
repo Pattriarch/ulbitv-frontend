@@ -5,16 +5,16 @@ import { DynamicModuleLoader, type ReducersList } from 'shared/lib/components/Dy
 import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { useSelector } from 'react-redux';
 import {
-    getArticlesPageError, getArticlesPageHasMore,
-    getArticlesPageIsLoading, getArticlesPagePageNumber,
+    getArticlesPageError,
+    getArticlesPageIsLoading,
     getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors';
 import { Page } from 'shared/ui/Page/Page';
-import { fetchNextArticlesPage } from 'pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { useTranslation } from 'react-i18next';
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 
 export interface ArticlesPageProps {
 	className?: string;
@@ -41,16 +41,15 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
     }, [dispatch]);
 
     useInitialEffect(() => {
-        void dispatch(articlesPageActions.initState());
-        void dispatch(fetchArticlesList({ page: 1 }));
+        void dispatch(initArticlesPage());
     });
 
     if (error) {
-        <p>{t('Произошла ошибка при загрузке данных')}</p>;
+        return <p>{t('Произошла ошибка при загрузке данных')}</p>;
     }
 
     return (
-        <DynamicModuleLoader reducers={reducers}>
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             <Page
                 onScrollEnd={onLoadNextPart}
                 className={classNames('', {}, [className])}

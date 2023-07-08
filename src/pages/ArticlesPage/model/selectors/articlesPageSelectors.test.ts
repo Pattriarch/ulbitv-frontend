@@ -2,7 +2,7 @@ import { type DeepPartial } from '@reduxjs/toolkit';
 import { type StateSchema } from 'app/providers/StoreProvider';
 import { ArticleView } from 'entities/Article';
 import {
-    getArticlesPageError,
+    getArticlesPageError, getArticlesPageInited,
     getArticlesPageIsLoading,
     getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors';
@@ -16,7 +16,8 @@ describe('articlesPageSelectors', () => {
                 entities: {},
                 hasMore: false,
                 limit: 4,
-                page: 1
+                page: 1,
+                _inited: true
             }
         };
         expect(getArticlesPageIsLoading(state as StateSchema)).toEqual(true);
@@ -29,7 +30,8 @@ describe('articlesPageSelectors', () => {
                 entities: {},
                 hasMore: false,
                 limit: 4,
-                page: 1
+                page: 1,
+                _inited: true
             }
         };
         expect(getArticlesPageIsLoading(state as StateSchema)).toEqual(false);
@@ -43,7 +45,8 @@ describe('articlesPageSelectors', () => {
                 error: 'error',
                 hasMore: false,
                 limit: 4,
-                page: 1
+                page: 1,
+                _inited: true
             }
         };
         expect(getArticlesPageError(state as StateSchema)).toEqual('error');
@@ -57,7 +60,8 @@ describe('articlesPageSelectors', () => {
                 view: ArticleView.BIG,
                 hasMore: false,
                 limit: 4,
-                page: 1
+                page: 1,
+                _inited: true
             }
         };
         expect(getArticlesPageError(state as StateSchema)).toEqual(undefined);
@@ -71,7 +75,8 @@ describe('articlesPageSelectors', () => {
                 view: ArticleView.BIG,
                 hasMore: false,
                 limit: 4,
-                page: 1
+                page: 1,
+                _inited: true
             }
         };
         expect(getArticlesPageView(state as StateSchema)).toEqual(ArticleView.BIG);
@@ -84,9 +89,24 @@ describe('articlesPageSelectors', () => {
                 entities: {},
                 hasMore: false,
                 limit: 4,
-                page: 1
+                page: 1,
+                _inited: true
             }
         };
         expect(getArticlesPageView(state as StateSchema)).toEqual(ArticleView.SMALL);
+    });
+
+    test('should return _inited state', () => {
+        const state: DeepPartial<StateSchema> = {
+            articlesPage: {
+                ids: [],
+                entities: {},
+                hasMore: false,
+                limit: 4,
+                page: 1,
+                _inited: true
+            }
+        };
+        expect(getArticlesPageInited(state as StateSchema)).toEqual(true);
     });
 });
