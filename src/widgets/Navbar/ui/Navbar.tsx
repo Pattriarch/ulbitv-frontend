@@ -33,7 +33,7 @@ export const Navbar = memo(({ className }: NavbarProps): JSX.Element => {
 
     if (authData) {
         return (
-            <div className={classNames(cls.Navbar, {}, [className])}>
+            <header className={classNames(cls.Navbar, {}, [className])}>
                 <Button
                     theme={ButtonTheme.CLEAR_INVERTED}
                     type={'button'}
@@ -42,12 +42,12 @@ export const Navbar = memo(({ className }: NavbarProps): JSX.Element => {
                 >
                     {t('Выйти')}
                 </Button>
-            </div>
+            </header>
         );
     }
 
     return (
-        <div className={classNames(cls.Navbar, {}, [className])}>
+        <header className={classNames(cls.Navbar, {}, [className])}>
             <Button
                 theme={ButtonTheme.CLEAR_INVERTED}
                 type={'button'}
@@ -60,6 +60,6 @@ export const Navbar = memo(({ className }: NavbarProps): JSX.Element => {
                 isOpen={isAuthModal}
                 onClose={onCloseModal}
             />}
-        </div>
+        </header>
     );
 });

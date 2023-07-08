@@ -21,5 +21,6 @@
   "Произошла ошибка при загрузке статьи": "An error occurred while loading the article",
   "Комментарии отсутствуют": "No comments",
   "Введите текст комментария": "Enter comment text",
-  "Отправить": "Send"
+  "Отправить": "Send",
+  "Произошла ошибка при загрузке данных": "An error occurred while loading data"
 }

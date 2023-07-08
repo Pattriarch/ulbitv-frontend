@@ -7,9 +7,9 @@ import { RequireAuth } from 'app/providers/router/ui/RequireAuth';
 const AppRouter = (): JSX.Element => {
     const renderWithWrapper = useCallback((route: AppRoutesProps) => {
         const element = (
-            <div className={'page-wrapper'}>
+            <>
                 {route.element}
-            </div>
+            </>
         );
 
         return (

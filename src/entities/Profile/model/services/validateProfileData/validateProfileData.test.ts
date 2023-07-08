@@ -52,8 +52,6 @@ describe('validateProfileData', () => {
     test('incorrect all', async () => {
         const result = validateProfileData({});
 
-        console.log(result);
-
         expect(result).toEqual([
             ValidateProfileError.INCORRECT_USER_DATA,
             ValidateProfileError.INCORRECT_AGE,
