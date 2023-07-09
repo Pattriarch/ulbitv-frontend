@@ -57,9 +57,9 @@ module.exports = {
         '@typescript-eslint/naming-convention': 'off',
         '@typescript-eslint/ban-ts-comment': 'warn',
         'i18next/no-literal-string': ['warn', {
-            markupOnly: true, ignoreAttribute: ['to', 'data-testid', 'placeholder', 'name']
+            markupOnly: true, ignoreAttribute: ['to', 'data-testid', 'placeholder', 'name', 'target']
         }],
-        'max-len': ['error', { code: 120, ignoreComments: true }],
+        'max-len': ['error', { code: 130, ignoreComments: true }],
         'react/display-name': 'off',
         '@typescript-eslint/prefer-includes': 'off',
         '@typescript-eslint/no-unused-vars': 'warn',

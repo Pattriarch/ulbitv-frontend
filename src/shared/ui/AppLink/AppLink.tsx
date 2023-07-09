@@ -12,7 +12,7 @@ export enum AppLinkTheme {
 interface AppLinkProps extends LinkProps {
 	className?: string;
 	theme?: AppLinkTheme;
-    children?: ReactNode;
+	children?: ReactNode;
 }
 
 export const AppLink = memo((props: AppLinkProps) => {

@@ -8,10 +8,16 @@ import {
 describe('getArticleDetailsCommentsState', () => {
     test('should return isLoading', () => {
         const state: DeepPartial<StateSchema> = {
-            articleDetailsComments: {
-                isLoading: true,
-                ids: [],
-                entities: {}
+            articleDetailsPage: {
+                comments: {
+                    isLoading: true,
+                    ids: [],
+                    entities: {}
+                },
+                recommendations: {
+                    ids: [],
+                    entities: {}
+                }
             }
         };
         expect(getArticleDetailsCommentsIsLoading(state as StateSchema)).toEqual(true);
@@ -19,21 +25,33 @@ describe('getArticleDetailsCommentsState', () => {
 
     test('should return false', () => {
         const state: DeepPartial<StateSchema> = {
-            articleDetailsComments: {
-                ids: [],
-                entities: {}
-            }
+	        articleDetailsPage: {
+		        comments: {
+			        ids: [],
+			        entities: {}
+		        },
+		        recommendations: {
+			        ids: [],
+			        entities: {}
+		        }
+	        }
         };
         expect(getArticleDetailsCommentsIsLoading(state as StateSchema)).toEqual(false);
     });
 
     test('should return error', () => {
         const state: DeepPartial<StateSchema> = {
-            articleDetailsComments: {
-                error: 'error',
-                ids: [],
-                entities: {}
-            }
+	        articleDetailsPage: {
+		        comments: {
+			        ids: [],
+			        entities: {},
+			        error: 'error'
+		        },
+		        recommendations: {
+			        ids: [],
+			        entities: {}
+		        }
+	        }
         };
         expect(getArticleDetailsCommentsError(state as StateSchema)).toEqual('error');
     });
