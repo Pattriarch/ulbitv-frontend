@@ -35,7 +35,7 @@ export const initArticlesPage = createAsyncThunk<
 	        }
 
 	        if (typeFromUrl) {
-		        dispatch(articlesPageActions.setSearch(typeFromUrl));
+		        dispatch(articlesPageActions.setType(typeFromUrl));
 	        }
 
             void dispatch(articlesPageActions.initState());
