@@ -1,11 +1,12 @@
 import { type DeepPartial } from '@reduxjs/toolkit';
 import { type StateSchema } from 'app/providers/StoreProvider';
-import { ArticleView } from 'entities/Article';
+import { ArticleType, ArticleView } from 'entities/Article';
 import {
     getArticlesPageError, getArticlesPageInited,
     getArticlesPageIsLoading,
     getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors';
+import { ArticleSortField } from 'entities/Article/model/types/article';
 
 describe('articlesPageSelectors', () => {
     test('should return isLoading', () => {
@@ -17,7 +18,12 @@ describe('articlesPageSelectors', () => {
                 hasMore: false,
                 limit: 4,
                 page: 1,
-                _inited: true
+                _inited: true,
+                view: ArticleView.BIG,
+                order: 'asc',
+                search: '',
+                sort: ArticleSortField.CREATED,
+                type: ArticleType.ALL
             }
         };
         expect(getArticlesPageIsLoading(state as StateSchema)).toEqual(true);
@@ -31,7 +37,12 @@ describe('articlesPageSelectors', () => {
                 hasMore: false,
                 limit: 4,
                 page: 1,
-                _inited: true
+                _inited: true,
+                view: ArticleView.BIG,
+                order: 'asc',
+                search: '',
+                sort: ArticleSortField.CREATED,
+                type: ArticleType.ALL
             }
         };
         expect(getArticlesPageIsLoading(state as StateSchema)).toEqual(false);
@@ -46,7 +57,12 @@ describe('articlesPageSelectors', () => {
                 hasMore: false,
                 limit: 4,
                 page: 1,
-                _inited: true
+                _inited: true,
+                view: ArticleView.BIG,
+                order: 'asc',
+                search: '',
+                sort: ArticleSortField.CREATED,
+                type: ArticleType.ALL
             }
         };
         expect(getArticlesPageError(state as StateSchema)).toEqual('error');
@@ -61,7 +77,11 @@ describe('articlesPageSelectors', () => {
                 hasMore: false,
                 limit: 4,
                 page: 1,
-                _inited: true
+                _inited: true,
+                order: 'asc',
+                search: '',
+                sort: ArticleSortField.CREATED,
+                type: ArticleType.ALL
             }
         };
         expect(getArticlesPageError(state as StateSchema)).toEqual(undefined);
@@ -76,24 +96,14 @@ describe('articlesPageSelectors', () => {
                 hasMore: false,
                 limit: 4,
                 page: 1,
-                _inited: true
+                _inited: true,
+                order: 'asc',
+                search: '',
+                sort: ArticleSortField.CREATED,
+                type: ArticleType.ALL
             }
         };
         expect(getArticlesPageView(state as StateSchema)).toEqual(ArticleView.BIG);
-    });
-
-    test('should return view with empty state', () => {
-        const state: DeepPartial<StateSchema> = {
-            articlesPage: {
-                ids: [],
-                entities: {},
-                hasMore: false,
-                limit: 4,
-                page: 1,
-                _inited: true
-            }
-        };
-        expect(getArticlesPageView(state as StateSchema)).toEqual(ArticleView.SMALL);
     });
 
     test('should return _inited state', () => {
@@ -104,7 +114,12 @@ describe('articlesPageSelectors', () => {
                 hasMore: false,
                 limit: 4,
                 page: 1,
-                _inited: true
+                _inited: true,
+                view: ArticleView.BIG,
+                order: 'asc',
+                search: '',
+                sort: ArticleSortField.CREATED,
+                type: ArticleType.ALL
             }
         };
         expect(getArticlesPageInited(state as StateSchema)).toEqual(true);

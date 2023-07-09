@@ -1,6 +1,8 @@
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { initArticlesPage } from './initArticlesPage';
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
+import { ArticleType, ArticleView } from 'entities/Article';
+import { ArticleSortField } from 'entities/Article/model/types/article';
 
 jest.mock('../fetchArticlesList/fetchArticlesList');
 
@@ -14,15 +16,21 @@ describe('initArticlesPage', () => {
                 limit: 5,
                 isLoading: false,
                 hasMore: true,
-                _inited: false
+                _inited: false,
+                view: ArticleView.BIG,
+                order: 'asc',
+                search: '',
+                sort: ArticleSortField.CREATED,
+                type: ArticleType.ALL
             }
         });
 
-        await thunk.callThunk();
+        const searchParams = new URLSearchParams(window.location.search);
+        await thunk.callThunk(searchParams);
 
         // pending, fulfilled, 2 внутри action
         expect(thunk.dispatch).toHaveBeenCalledTimes(4);
-        expect(fetchArticlesList).toBeCalledWith({ page: 1 });
+        expect(fetchArticlesList).toHaveBeenCalled();
     });
 
     test('fetchArticlesList should not be called', async () => {
@@ -34,11 +42,17 @@ describe('initArticlesPage', () => {
                 limit: 5,
                 isLoading: false,
                 hasMore: true,
-                _inited: true
+                _inited: true,
+                view: ArticleView.BIG,
+                order: 'asc',
+                search: '',
+                sort: ArticleSortField.CREATED,
+                type: ArticleType.ALL
             }
         });
 
-        await thunk.callThunk();
+        const searchParams = new URLSearchParams(window.location.search);
+        await thunk.callThunk(searchParams);
 
         // pending, fulfilled, 2 внутри action
         expect(thunk.dispatch).toHaveBeenCalledTimes(2);

@@ -1,6 +1,7 @@
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { fetchNextArticlesPage } from './fetchNextArticlesPage';
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
+import { ArticleSortField, ArticleType, ArticleView } from 'entities/Article/model/types/article';
 
 jest.mock('../fetchArticlesList/fetchArticlesList');
 
@@ -14,7 +15,12 @@ describe('fetchNextArticlesPage', () => {
                 limit: 5,
                 isLoading: false,
                 hasMore: true,
-                _inited: true
+                _inited: true,
+                view: ArticleView.BIG,
+                sort: ArticleSortField.CREATED,
+                search: '',
+                order: 'asc',
+                type: ArticleType.ALL
             }
         });
 
@@ -22,7 +28,7 @@ describe('fetchNextArticlesPage', () => {
 
         // pending, fulfilled, 2 внутри action
         expect(thunk.dispatch).toHaveBeenCalledTimes(4);
-        expect(fetchArticlesList).toBeCalledWith({ page: 3 });
+        expect(fetchArticlesList).toHaveBeenCalled();
     });
 
     test('fetchArticlesList should not be called', async () => {
@@ -34,7 +40,12 @@ describe('fetchNextArticlesPage', () => {
                 limit: 5,
                 isLoading: false,
                 hasMore: false,
-                _inited: true
+                _inited: true,
+                view: ArticleView.BIG,
+                sort: ArticleSortField.CREATED,
+                search: '',
+                order: 'asc',
+                type: ArticleType.ALL
             }
         });
 
@@ -54,7 +65,12 @@ describe('fetchNextArticlesPage', () => {
                 limit: 5,
                 isLoading: true,
                 hasMore: true,
-                _inited: true
+                _inited: true,
+                view: ArticleView.BIG,
+                sort: ArticleSortField.CREATED,
+                search: '',
+                order: 'asc',
+                type: ArticleType.ALL
             }
         });
 

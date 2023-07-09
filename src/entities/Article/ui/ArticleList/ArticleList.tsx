@@ -4,6 +4,8 @@ import { memo } from 'react';
 import { type Article, ArticleView } from '../../model/types/article';
 import { ArticleListItem } from '../../ui/ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton';
+import { useTranslation } from 'react-i18next';
+import { TextSize, Text } from 'shared/ui/Text/Text';
 
 interface ArticleListProps {
 	className?: string;
@@ -23,6 +25,7 @@ const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL
     ));
 
 export const ArticleList = memo((props: ArticleListProps) => {
+    const { t } = useTranslation();
     const {
         className,
         articles,
@@ -40,6 +43,14 @@ export const ArticleList = memo((props: ArticleListProps) => {
             />
         );
     };
+
+    if (!isLoading && !articles.length) {
+        return (
+            <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+                <Text size={TextSize.L} title={t('Статьи не найдены')}/>
+            </div>
+        );
+    }
 
     return (
         <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
