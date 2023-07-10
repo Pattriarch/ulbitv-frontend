@@ -3,67 +3,55 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import {
-	getEditArticleError,
-	getEditArticleForm,
-	getEditArticleIsLoading
-} from '../../model/selectors/editArticleFormSelectors';
-import { updateArticleData } from '../../model/services/updateArticleData/updateArticleData';
-import {
-	editArticleFormActions,
-	editArticleFormReducer
-} from '../../model/slices/editArticleFormSlice';
+import { getAddArticleData, getAddArticleError, getAddArticleIsLoading } from '../../model/selectors/addArticleSelectors';
+import { addArticle } from '../../model/services/addArticle/addArticle';
+import { addArticleActions, addArticleReducer } from '../../model/slices/addArticleSlice';
 
-import { fetchArticleById, ArticleBlockType, ArticleBlock, ArticleCard } from '@/entities/Article';
+import { type ArticleBlock, ArticleBlockType } from '@/entities/Article';
+import { ArticleCard } from '@/entities/Article';
 import { getRouteArticles } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button/Button';
 
-import cls from './EditArticleForm.module.scss';
+import cls from './AddArticleForm.module.scss';
 
-interface EditArticleFormProps {
+interface AddArticleProps {
 	className?: string;
-	id: string;
 }
 
 const reducers: ReducersList = {
-	editArticleForm: editArticleFormReducer
+	addArticleForm: addArticleReducer
 };
 
-export const EditArticleForm = memo((props: EditArticleFormProps) => {
-	const { className, id } = props;
+export const AddArticleForm = memo((props: AddArticleProps) => {
+	const { className } = props;
 
 	const { t } = useTranslation();
 	const dispatch = useAppDispatch();
 	const navigate = useNavigate();
 
-	const data = useSelector(getEditArticleForm);
-	const isLoading = useSelector(getEditArticleIsLoading);
-	const error = useSelector(getEditArticleError);
-
-	useInitialEffect(() => {
-		void dispatch(fetchArticleById(id));
-	});
+	const data = useSelector(getAddArticleData);
+	const isLoading = useSelector(getAddArticleIsLoading);
+	const error = useSelector(getAddArticleError);
 
 	const [currentBlock, setCurrentBlock] = useState<ArticleBlock | undefined>(undefined);
 
 	const onChangeImage = useCallback((value: string) => {
-		void dispatch(editArticleFormActions.updateArticle({ img: value || '' }));
+		void dispatch(addArticleActions.updateArticleForm({ img: value || '' }));
 	}, [dispatch]);
 
 	const onChangeTitle = useCallback((value: string) => {
-		void dispatch(editArticleFormActions.updateArticle({ title: value || '' }));
+		void dispatch(addArticleActions.updateArticleForm({ title: value || '' }));
 	}, [dispatch]);
 
 	const onChangeSubtitle = useCallback((value: string) => {
-		void dispatch(editArticleFormActions.updateArticle({ subtitle: value || '' }));
+		void dispatch(addArticleActions.updateArticleForm({ subtitle: value || '' }));
 	}, [dispatch]);
 
 	const onChangeBlocks = useCallback((blocks: ArticleBlock[]) => {
-		void dispatch(editArticleFormActions.updateArticle({ blocks }));
+		void dispatch(addArticleActions.updateArticleForm({ blocks }));
 	}, [dispatch]);
 
 	const calculateLastId = useCallback((blocks: ArticleBlock[]) => {
@@ -94,7 +82,7 @@ export const EditArticleForm = memo((props: EditArticleFormProps) => {
 
 	const onAddCodeBlock = useCallback(() => {
 		const block = getEmptyBlock(data?.blocks);
-		void dispatch(editArticleFormActions.updateArticle({
+		void dispatch(addArticleActions.updateArticleForm({
 			blocks: [...(data?.blocks ?? []), {
 				...block,
 				type: ArticleBlockType.CODE,
@@ -105,7 +93,7 @@ export const EditArticleForm = memo((props: EditArticleFormProps) => {
 
 	const onAddTextBlock = useCallback(() => {
 		const block = getEmptyBlock(data?.blocks);
-		void dispatch(editArticleFormActions.updateArticle({
+		void dispatch(addArticleActions.updateArticleForm({
 			blocks: [...(data?.blocks ?? []), {
 				...block,
 				type: ArticleBlockType.TEXT,
@@ -117,7 +105,7 @@ export const EditArticleForm = memo((props: EditArticleFormProps) => {
 
 	const onAddImageBlock = useCallback(() => {
 		const block = getEmptyBlock(data?.blocks);
-		void dispatch(editArticleFormActions.updateArticle({
+		void dispatch(addArticleActions.updateArticleForm({
 			blocks: [...(data?.blocks ?? []), {
 				...block,
 				type: ArticleBlockType.IMAGE,
@@ -146,14 +134,10 @@ export const EditArticleForm = memo((props: EditArticleFormProps) => {
 		onChangeBlocks(data.blocks.filter(block => block.id !== id));
 	};
 
-	const onCancel = useCallback(() => {
-		void dispatch(editArticleFormActions.cancelEdit());
-		navigate(getRouteArticles());
-	}, [dispatch]);
-
 	const onSave = useCallback(() => {
-		void dispatch(updateArticleData());
-	}, [dispatch]);
+		void dispatch(addArticle());
+		navigate(getRouteArticles());
+	}, [dispatch, navigate]);
 
 	const dragStartHandler = (e: DragEvent<HTMLDivElement>, editBlock: ArticleBlock) => {
 		setCurrentBlock(editBlock);
@@ -202,7 +186,7 @@ export const EditArticleForm = memo((props: EditArticleFormProps) => {
 
 	return (
 		<DynamicModuleLoader reducers={reducers}>
-			<div className={classNames(cls.EditArticleForm, {}, [className])}>
+			<div className={classNames(cls.AddArticleForm, {}, [className])}>
 				<ArticleCard
 					data={data}
 					isLoading={isLoading}
@@ -217,17 +201,11 @@ export const EditArticleForm = memo((props: EditArticleFormProps) => {
 					dragEndHandler={dragEndHandler}
 					dragOverHandler={dragOverHandler}
 					dropHandler={dropHandler}
+					onRemoveBlock={onRemoveBlock}
 					sortBlocks={sortBlocks}
 					onChangeBlockState={onChangeBlockState}
-					onRemoveBlock={onRemoveBlock}
 				/>
 				<div className={cls.actionBtns}>
-					<Button
-						type={'button'}
-						size={ButtonSize.L}
-						theme={ButtonTheme.BACKGROUND_INVERTED}
-						onClick={onCancel}
-					>{t('Отменить')}</Button>
 					<Button
 						type={'button'}
 						size={ButtonSize.L}

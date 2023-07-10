@@ -1,0 +1,62 @@
+.EditArticleTextBlock {
+    position: relative;
+    border: 1px solid black;
+    padding: 8px 8px 0;
+    min-height: 56px;
+}
+
+.draggable {
+    cursor: grab;
+}
+
+.title {
+    margin-right: 64px;
+}
+
+.paragraph {
+    margin: 12px 64px 12px 0;
+    position: relative;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.editIcon,
+.cancelIcon {
+    top: 16px;
+    right: 48px;
+    position: absolute;
+}
+
+.moveIcon,
+.markIcon {
+    top: 16px;
+    right: 16px;
+    position: absolute;
+}
+
+.plusBtnWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+}
+
+.plusBtn {
+    border: 1px solid black;
+    position: relative;
+}
+
+.minusIcon {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: -40px;
+
+    &:hover {
+        opacity: 0.6;
+    }
+}

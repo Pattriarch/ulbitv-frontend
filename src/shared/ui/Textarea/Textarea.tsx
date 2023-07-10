@@ -1,14 +1,14 @@
-import React, { type InputHTMLAttributes, memo, useEffect, useRef, useState } from 'react';
+import React, { memo, type TextareaHTMLAttributes, useEffect, useRef, useState } from 'react';
 
 import { classNames, type Mods } from '@/shared/lib/classNames/classNames';
 
-import cls from './Input.module.scss';
+import cls from './Textarea.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
+type HTMLTextareaProps = Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'value' | 'onChange' | 'readOnly'>
 
 type InputTheme = 'normal' | 'outlined';
 
-interface InputProps extends HTMLInputProps {
+interface TextareaProps extends HTMLTextareaProps {
 	className?: string;
 	theme?: InputTheme;
 	value?: string | number;
@@ -17,20 +17,19 @@ interface InputProps extends HTMLInputProps {
 	readonly?: boolean;
 }
 
-export const Input = memo((props: InputProps): JSX.Element => {
+export const Textarea = memo((props: TextareaProps) => {
 	const {
 		className,
 		theme = 'normal',
 		value,
 		onChange,
-		type = 'text',
 		placeholder,
 		autofocus,
 		readonly,
 		...otherProps
 	} = props;
 
-	const ref = useRef<HTMLInputElement>(null);
+	const ref = useRef<HTMLTextAreaElement>(null);
 	const [isFocused, setIsFocused] = useState(false);
 	const [caretPosition, setCaretPosition] = useState(0);
 
@@ -43,7 +42,7 @@ export const Input = memo((props: InputProps): JSX.Element => {
 		}
 	}, [autofocus]);
 
-	const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>): void => {
+	const onChangeHandler = (e: React.ChangeEvent<HTMLTextAreaElement>): void => {
 		onChange?.(e.target.value);
 		setCaretPosition(e.target.value.length);
 	};
@@ -65,25 +64,19 @@ export const Input = memo((props: InputProps): JSX.Element => {
 	};
 
 	return (
-		<div className={classNames(cls.InputWrapper, mods, [className, cls[theme]])}>
-			{placeholder && (
-				<div className={cls.placeholder}>
-					{`${placeholder}>`}
-				</div>
-			)}
+		<div className={classNames(cls.TextareaWrapper, mods, [className, cls[theme]])}>
 			<div className={cls.caretWrapper}>
-				<input
-					ref={ref}
-					type={type}
-					value={value}
-					onChange={onChangeHandler}
-					className={cls.input}
-					onFocus={onFocus}
-					onBlur={onBlur}
-					onSelect={onSelect}
-					readOnly={readonly}
-					{...otherProps}
-				/>
+                <textarea
+	                ref={ref}
+	                value={value}
+	                onChange={onChangeHandler}
+	                className={cls.textarea}
+	                onFocus={onFocus}
+	                onBlur={onBlur}
+	                onSelect={onSelect}
+	                readOnly={readonly}
+	                {...otherProps}
+                />
 				{isCaretVisible && (
 					<span
 						className={cls.caret}

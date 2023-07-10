@@ -1,14 +1,8 @@
-.InputWrapper {
+.TextareaWrapper {
     display: flex;
 }
 
-.placeholder {
-    margin-right: 5px;
-    color: var(--primary-color);
-    font: var(--font-m);
-}
-
-.input {
+.textarea {
     background: transparent;
     border: none;
     outline: none;
@@ -16,6 +10,8 @@
     color: transparent;
     text-shadow: 0 0 0 var(--primary-color);
     font: var(--font-m);
+    padding: 8px;
+    height: 88px;
 
     &:focus {
         outline: none;
@@ -56,6 +52,5 @@
 }
 
 .outlined {
-    border: 1px solid black;
-    padding: 8px;
+    border: 1px solid var(--primary-color);
 }

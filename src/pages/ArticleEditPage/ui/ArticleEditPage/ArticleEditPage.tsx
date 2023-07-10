@@ -1,36 +1,40 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './ArticleEditPage.module.scss';
 import { memo } from 'react';
-import { Page } from '@/widgets/Page';
-import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
+
+import { AddArticleForm } from '@/features/AddArticleForm';
 import { EditArticleForm } from '@/features/EditArticleForm';
-import { DynamicModuleLoader, type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Text, TextSize } from '@/shared/ui/Text/Text';
+import { Page } from '@/widgets/Page';
+
+import cls from './ArticleEditPage.module.scss';
 
 export interface ArticleEditPageProps {
 	className?: string;
 }
 
-const reducers: ReducersList = {
-    // editArticleForm: editArticleFormReducer
-};
-
 const ArticleEditPage = memo(({ className }: ArticleEditPageProps) => {
-    const { t } = useTranslation();
-    const { id } = useParams<{ id: string, }>();
-    const isEdit = Boolean(id);
+	const { t } = useTranslation();
+	const { id } = useParams<{ id: string, }>();
+	const isEdit = Boolean(id);
 
-    return (
-        <DynamicModuleLoader reducers={reducers}>
-            <Page className={classNames(cls.ArticleEditPage, {}, [className])}>
-                {isEdit && id
-                    ? `${t('Редактирование статьи с ID = ') + id}`
-                    : t('Создание новой статьи')
-                }
-                {isEdit && id && <EditArticleForm id={id}/>}
-            </Page>
-        </DynamicModuleLoader>
-    );
+	return (
+		<Page className={classNames(cls.ArticleEditPage, {}, [className])}>
+			{isEdit && id
+				? <Text
+					size={TextSize.L}
+					title={`${t('Редактирование статьи с ID = ') + id}`}
+				/>
+				: <Text
+					size={TextSize.L}
+					title={t('Создание новой статьи')}
+				/>
+			}
+			{isEdit && id && <EditArticleForm id={id}/>}
+			{!isEdit && <AddArticleForm/>}
+		</Page>
+	);
 });
 
 export default ArticleEditPage;

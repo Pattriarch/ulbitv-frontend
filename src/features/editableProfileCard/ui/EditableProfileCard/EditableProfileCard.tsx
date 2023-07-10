@@ -1,24 +1,29 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
 import { memo, useCallback, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { type Currency } from '@/entities/Currency';
-import { type Country } from '@/entities/Country';
-import { Text, TextTheme } from '@/shared/ui/Text';
+
+import { ValidateProfileError } from '../../model/consts/consts';
+import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
-import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
-import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
-import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
 
-import { profileActions, profileReducer } from '../../model/slice/profileSlice';
-import { ProfileCard } from '@/entities/Profile';
-import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
+import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
+import { type Country } from '@/entities/Country';
+import { type Currency } from '@/entities/Currency';
+import { classNames } from '@/shared/lib/classNames/classNames';
+
 import { DynamicModuleLoader, type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { EditableProfileCardHeader } from '../../ui/EditableProfileCardHeader/EditableProfileCardHeader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { VStack } from '@/shared/ui/Stack';
-import { ValidateProfileError } from '../../model/consts/consts';
+import { Text, TextTheme } from '@/shared/ui/Text';
+
+import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
+import { profileActions, profileReducer } from '../../model/slice/profileSlice';
+
+import { ProfileCard } from '@/entities/Profile';
+
+import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
+import { EditableProfileCardHeader } from '../../ui/EditableProfileCardHeader/EditableProfileCardHeader';
 
 interface EditableProfileCardProps {
     className?: string;

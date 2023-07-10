@@ -1,16 +1,19 @@
+import { type AnyAction, type CombinedState, type Reducer, type ReducersMapObject } from '@reduxjs/toolkit';
+import { type EnhancedStore } from '@reduxjs/toolkit/src/configureStore';
+import { type AxiosInstance } from 'axios';
+
+import { type ArticleDetailsSchema } from '@/entities/Article';
 import { type CounterSchema } from '@/entities/Counter';
 import { type UserSchema } from '@/entities/User';
-import { type LoginSchema } from '@/features/AuthByUsername';
-import { type EnhancedStore } from '@reduxjs/toolkit/src/configureStore';
-import { type AnyAction, type CombinedState, type Reducer, type ReducersMapObject } from '@reduxjs/toolkit';
-import { type AxiosInstance } from 'axios';
-import { type ArticleDetailsSchema } from '@/entities/Article';
-import { type ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
+import { AddArticleSchema } from '@/features/AddArticleForm';
 import { type AddCommentFormSchema } from '@/features/AddCommentForm';
-import { type ArticlesPageSchema } from '@/pages/ArticlesPage';
+import { type LoginSchema } from '@/features/AuthByUsername';
+import { EditArticleFormSchema } from '@/features/EditArticleForm';
 import { type ScrollRestorationSchema } from '@/features/ScrollRestoration';
-import { type rtkApi } from '@/shared/api/rtkApi';
-import { type ProfileSchema } from '@/features/editableProfileCard';
+import { ProfileSchema } from '@/features/editableProfileCard';
+import { type ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
+import { type ArticlesPageSchema } from '@/pages/ArticlesPage';
+import { rtkApi } from '@/shared/api/rtkApi';
 
 export interface StateSchema {
 	counter: CounterSchema;
@@ -25,6 +28,8 @@ export interface StateSchema {
 	articleDetailsPage?: ArticleDetailsPageSchema;
 	addCommentForm?: AddCommentFormSchema;
 	articlesPage?: ArticlesPageSchema;
+	editArticleForm?: EditArticleFormSchema;
+	addArticleForm?: AddArticleSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
