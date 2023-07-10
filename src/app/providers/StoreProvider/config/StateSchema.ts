@@ -10,6 +10,7 @@ import { type ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
 import { type AddCommentFormSchema } from 'features/AddCommentForm';
 import { type ArticlesPageSchema } from 'pages/ArticlesPage';
 import { type ScrollRestorationSchema } from 'features/ScrollRestoration/model/types/ScrollRestorationSchema';
+import { type EditArticleForm } from 'features/EditArticleForm/model/types/editArticleForm';
 
 export interface StateSchema {
 	counter: CounterSchema;
@@ -23,9 +24,11 @@ export interface StateSchema {
 	articleDetailsPage?: ArticleDetailsPageSchema;
 	addCommentForm?: AddCommentFormSchema;
 	articlesPage?: ArticlesPageSchema;
+	editArticleForm?: EditArticleForm;
 }
 
 export type StateSchemaKey = keyof StateSchema;
+
 // export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>;
 
 export interface ReducerManager {

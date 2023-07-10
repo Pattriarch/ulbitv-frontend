@@ -8,7 +8,7 @@ import { ArticleSortField } from 'entities/Article/model/types/article';
 import { type SortOrder } from 'shared/types';
 
 const articlesAdapter = createEntityAdapter<Article>({
-    selectId: (article) => article.id
+    selectId: (article) => article.id || -1
 });
 
 export const getArticles = articlesAdapter.getSelectors<StateSchema>(

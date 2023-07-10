@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Input } from 'shared/ui/Input/Input';
 import { Page } from 'widgets/Page/Page';
 
-const MainPage = (): JSX.Element => {
+const MainPage = memo((): JSX.Element => {
     const { t } = useTranslation('main');
     const [value, setValue] = useState('');
 
@@ -21,6 +21,6 @@ const MainPage = (): JSX.Element => {
             />
         </Page>
     );
-};
+});
 
 export default MainPage;

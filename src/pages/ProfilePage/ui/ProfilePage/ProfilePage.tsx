@@ -11,10 +11,10 @@ import {
     profileReducer,
     ValidateProfileError
 } from 'entities/Profile';
-import { useCallback } from 'react';
+import { memo, useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
-import { ProfilePageHeader } from '../ui/ProfilePageHeader/ProfilePageHeader';
+import { ProfilePageHeader } from '../ProfilePageHeader/ProfilePageHeader';
 import { type Currency } from 'entities/Currency';
 
 import { type Country } from 'entities/Country/model/types/country';
@@ -35,7 +35,7 @@ export interface ProfilePageProps {
     className?: string;
 }
 
-const ProfilePage = ({ className }: ProfilePageProps): JSX.Element => {
+const ProfilePage = memo(({ className }: ProfilePageProps): JSX.Element => {
     const { t } = useTranslation('profile');
     const formData = useSelector(getProfileForm);
     const isLoading = useSelector(getProfileIsLoading);
@@ -122,6 +122,6 @@ const ProfilePage = ({ className }: ProfilePageProps): JSX.Element => {
             </Page>
         </DynamicModuleLoader>
     );
-};
+});
 
 export default ProfilePage;

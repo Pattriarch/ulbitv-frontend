@@ -7,7 +7,7 @@ import {
 } from 'pages/ArticleDetailsPage/model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 
 const recommendationsAdapter = createEntityAdapter<Article>({
-    selectId: (article) => article.id
+    selectId: (article) => article.id || -1
 });
 export const getArticleRecommendations = recommendationsAdapter.getSelectors<StateSchema>(
     (state) => state.articleDetailsPage?.recommendations || recommendationsAdapter.getInitialState()

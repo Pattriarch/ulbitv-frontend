@@ -10,7 +10,7 @@ export const updateProfileData = createAsyncThunk<
     ThunkConfig<ValidateProfileError[]>
 >(
     'profile/updateProfileData',
-    async (profileId, thunkAPI) => {
+    async (_, thunkAPI) => {
         const {
             extra,
             rejectWithValue,

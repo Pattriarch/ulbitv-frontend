@@ -27,7 +27,7 @@ const reducers: ReducersList = {
     articlesPage: articlesPageReducer
 };
 
-const ArticlesPage = ({ className }: ArticlesPageProps) => {
+const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
     const articles = useSelector(getArticles.selectAll);
@@ -66,6 +66,6 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
             </Page>
         </DynamicModuleLoader>
     );
-};
+});
 
 export default memo(ArticlesPage);

@@ -33,7 +33,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
     const [_, bindHover] = useHover();
 
-    const types = <Text text={article.type.join(', ')} className={cls.types}/>;
+    const types = <Text text={article?.type?.join(', ')} className={cls.types}/>;
     const views = (
         <>
             <Text text={String(article.views)} className={cls.views}/>
@@ -42,7 +42,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     );
 
     if (view === ArticleView.BIG) {
-        const textBlock = article.blocks.find(
+        const textBlock = article?.blocks?.find(
             block => block.type === ArticleBlockType.TEXT
         ) as ArticleTextBlock;
 
@@ -50,8 +50,8 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
                 <Card className={cls.card}>
                     <div className={cls.header}>
-                        <Avatar size={30} src={article.user.avatar}/>
-                        <Text text={article.user.username} className={cls.username}/>
+                        <Avatar size={30} src={article?.user?.avatar}/>
+                        <Text text={article?.user?.username} className={cls.username}/>
                         <Text text={article.createdAt} className={cls.date}/>
                     </div>
                     <Text title={article.title} className={cls.title}/>
@@ -63,7 +63,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                     <div className={cls.footer}>
                         <AppLink
                             target={target}
-                            to={RoutePath.article_details + article.id}
+                            to={RoutePath.article_details + (article?.id || '-1')}
                         >
                             <Button
                                 type={'button'}
@@ -82,7 +82,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     return (
         <AppLink
             target={target}
-            to={RoutePath.article_details + article.id}
+            to={RoutePath.article_details + (article?.id || '-1')}
             className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
             {...bindHover}
         >

@@ -5,7 +5,7 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile';
-import { useCallback } from 'react';
+import { memo, useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getCanCurrentUserEditProfile } from 'pages/ProfilePage/model/selectors/getCanCurrentUserEditProfile';
 
@@ -13,7 +13,7 @@ interface ProfilePageHeaderProps {
     className?: string;
 }
 
-export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
+export const ProfilePageHeader = memo(({ className }: ProfilePageHeaderProps) => {
     const { t } = useTranslation();
     const canEdit = useSelector(getCanCurrentUserEditProfile);
     const readonly = useSelector(getProfileReadonly);
@@ -71,4 +71,4 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
             )}
         </div>
     );
-};
+});
