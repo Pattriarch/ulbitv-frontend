@@ -21,7 +21,7 @@ export const LangSwitcher = memo(({ className, short }: NavbarProps): JSX.Elemen
             theme={ButtonTheme.CLEAR}
             onClick={toggle}
         >
-            {t(short ? 'Короткий язык' : 'Язык')}
+            {short ? t('Короткий язык') : t('Язык')}
         </Button>
     );
 });
