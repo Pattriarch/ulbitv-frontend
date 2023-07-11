@@ -12,4 +12,5 @@ export const getArticlesPageOrder = (state: StateSchema) => state.articlesPage?.
 export const getArticlesPageSort = (state: StateSchema) => state.articlesPage?.sort || ArticleSortField.CREATED;
 export const getArticlesPageSearch = (state: StateSchema) => state.articlesPage?.search || '';
 export const getArticlesPageType = (state: StateSchema) => state.articlesPage?.type || ArticleType.ALL;
+export const getArticlesLastScrolledIndex = (state: StateSchema) => state.articlesPage?.lastScrolledIndex;
 export const getArticlesPageInited = (state: StateSchema) => state.articlesPage?._inited;

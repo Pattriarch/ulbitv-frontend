@@ -1,13 +1,13 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ArticleList.module.scss';
-import { type HTMLAttributeAnchorTarget, memo } from 'react';
+import { type FC, type HTMLAttributeAnchorTarget, memo, useEffect, useRef } from 'react';
 import { type Article, ArticleView } from '../../model/types/article';
 import { ArticleListItem } from '../../ui/ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton';
 import { useTranslation } from 'react-i18next';
 import { Text, TextSize } from 'shared/ui/Text/Text';
-import { List, type ListRowProps, WindowScroller } from 'react-virtualized';
-import { PAGE_ID } from 'widgets/Page/Page';
+import { Virtuoso, VirtuosoGrid, type VirtuosoGridHandle } from 'react-virtuoso';
+import { ArticlesPageFilters } from 'pages/ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters';
 
 interface ArticleListProps {
     className?: string;
@@ -15,40 +15,89 @@ interface ArticleListProps {
     isLoading?: boolean;
     view?: ArticleView;
     target?: HTMLAttributeAnchorTarget;
+    onLoadNextPart?: () => void;
+    lastScrolledIndex?: number;
 }
 
-const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 9 : 3)
+const Header = () => <ArticlesPageFilters/>;
+
+const getBigSkeletons = () => new Array(3)
     .fill(0)
-    .map((item, index) => (
+    .map((_, index) => (
         <ArticleListItemSkeleton
+            view={ArticleView.BIG}
             className={cls.card}
             key={index}
-            view={view}
         />
     ));
 
 export const ArticleList = memo((props: ArticleListProps) => {
-    const { t } = useTranslation();
-
     const {
         className,
         articles,
         view = ArticleView.SMALL,
         isLoading,
-        target
+        target,
+        onLoadNextPart,
+        lastScrolledIndex
     } = props;
 
-    const renderArticle = (article: Article) => {
-        return (
-            <ArticleListItem
-                article={article}
-                view={view}
-                className={cls.card}
-                target={target}
-                key={article.id}
-            />
-        );
-    };
+    const { t } = useTranslation();
+    const virtuosoGridRef = useRef<VirtuosoGridHandle>(null);
+
+    useEffect(() => {
+        let timeout: NodeJS.Timeout;
+        if (view === ArticleView.SMALL) {
+            timeout = setTimeout(() => {
+                if (virtuosoGridRef.current && lastScrolledIndex) {
+                    virtuosoGridRef.current.scrollToIndex(lastScrolledIndex);
+                }
+            }, 300);
+        }
+
+        return () => clearTimeout(timeout);
+    }, [lastScrolledIndex, view]);
+
+    useEffect(() => {
+        window.addEventListener('error', e => {
+            if (e.message === 'ResizeObserver loop limit exceeded') {
+                const resizeObserverErrDiv = document.getElementById(
+                    'webpack-dev-server-client-overlay-div'
+                );
+                const resizeObserverErr = document.getElementById(
+                    'webpack-dev-server-client-overlay'
+                );
+                if (resizeObserverErr) {
+                    resizeObserverErr.setAttribute('style', 'display: none');
+                }
+                if (resizeObserverErrDiv) {
+                    resizeObserverErrDiv.setAttribute('style', 'display: none');
+                }
+            }
+        });
+    }, []);
+
+    const renderArticle = (index: number, article: Article) => (
+        <ArticleListItem
+            article={article}
+            view={view}
+            className={cls.card}
+            target={target}
+            key={article.id}
+            index={index}
+        />
+    );
+
+    const Footer = memo(() => {
+        if (isLoading) {
+            return (
+                <div className={cls.skeleton}>
+                    {getBigSkeletons()}
+                </div>
+            );
+        }
+        return null;
+    });
 
     if (!isLoading && !articles.length) {
         return (
@@ -58,74 +107,49 @@ export const ArticleList = memo((props: ArticleListProps) => {
         );
     }
 
-    const isBig = view === ArticleView.BIG;
-
-    const itemsPerRow = isBig ? 1 : 3;
-
-    const rowCount = isBig ? articles.length : Math.ceil(articles.length / itemsPerRow);
-
-    const rowRenderer = ({
-        index,
-        isScrolling,
-        key,
-        style
-    }: ListRowProps) => {
-        const items = [];
-        const fromIndex = index * itemsPerRow;
-        const toIndex = Math.min(fromIndex + itemsPerRow, articles.length);
-
-        for (let i = fromIndex; i < toIndex; i++) {
-            items.push(
-                <ArticleListItem
-                    article={articles[index]}
-                    view={view}
-                    target={target}
-                    key={`str${i}`}
-                    className={cls.card}
-                />
-            );
-        }
-        return (
-            <div
-                key={key}
-                style={style}
-                className={cls.row}
-            >
-                {items}
-            </div>
-        );
-    };
+    // можно вынести за пределы компонента
+    const ItemContainerComp: FC<{ height: number, width: number, index: number, }> = ({ height, width, index }) => (
+        <div className={cls.ItemContainer}>
+            <ArticleListItemSkeleton key={index} view={view} className={cls.card}/>
+        </div>
+    );
 
     return (
-        <WindowScroller
-            onScroll={() => console.log('scroll')}
-            scrollElement={document.getElementById(PAGE_ID) as Element}
-        >
-            {({
-                height,
-                width,
-                registerChild,
-                onChildScroll,
-                isScrolling,
-                scrollTop
-            }) => (
-                <div
-                    ref={registerChild}
-                    className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-                    <List
-                        height={height ?? 700}
-                        rowCount={rowCount}
-                        rowHeight={isBig ? 700 : 330}
-                        rowRenderer={rowRenderer}
-                        width={width ? width - 80 : 700}
-                        autoHeight
-                        onScroll={onChildScroll}
-                        isScrolling={isScrolling}
-                        scrollTop={scrollTop}
+        <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+            {view === ArticleView.BIG
+                ? (
+                    <Virtuoso
+                        style={{ height: '100%' }}
+                        data={articles}
+                        itemContent={renderArticle}
+                        endReached={onLoadNextPart}
+                        initialTopMostItemIndex={lastScrolledIndex}
+                        components={{
+                            Header,
+                            Footer
+                        }}
                     />
-                    {isLoading && getSkeletons(view)}
-                </div>
-            )}
-        </WindowScroller>
+                )
+                : (
+                    <>
+                        <VirtuosoGrid
+                            ref={virtuosoGridRef}
+                            totalCount={articles.length}
+                            components={{
+                                Header,
+                                ScrollSeekPlaceholder: ItemContainerComp
+                            }}
+                            data={articles}
+                            endReached={onLoadNextPart}
+                            itemContent={renderArticle}
+                            listClassName={cls.itemsWrapper}
+                            scrollSeekConfiguration={{
+                                enter: (velocity) => Math.abs(velocity) > 200,
+                                exit: (velocity) => Math.abs(velocity) < 30
+                            }}
+                        />
+                    </>
+                )}
+        </div>
     );
 });

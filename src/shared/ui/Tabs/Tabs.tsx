@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Tabs.module.scss';
-import { type ReactNode, useCallback, useEffect } from 'react';
+import { type ReactNode, useCallback } from 'react';
 import { Card, CardTheme } from 'shared/ui/Card/Card';
 
 export interface TabItem<T extends string> {
@@ -17,10 +17,6 @@ interface TabsProps<T extends string> {
 
 export const Tabs = <T extends string>(props: TabsProps<T>) => {
     const { className, tabs, value, onTabClick } = props;
-
-    useEffect(() => {
-        console.log(tabs);
-    }, [tabs]);
 
     const handleClick = useCallback((tab: TabItem<T>) => {
         return () => {
