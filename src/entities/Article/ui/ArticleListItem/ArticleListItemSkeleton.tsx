@@ -7,11 +7,11 @@ import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 
 interface ArticleListItemSkeletonProps {
 	className?: string;
-	view: ArticleView;
+	view?: ArticleView;
 }
 
 export const ArticleListItemSkeleton = memo((props: ArticleListItemSkeletonProps) => {
-    const { className, view } = props;
+    const { className, view = ArticleView.BIG } = props;
 
     if (view === ArticleView.BIG) {
         return (

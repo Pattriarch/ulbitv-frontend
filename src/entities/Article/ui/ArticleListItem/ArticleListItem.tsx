@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ArticleListItem.module.scss';
-import { type HTMLAttributeAnchorTarget, memo } from 'react';
+import { type HTMLAttributeAnchorTarget, memo, useCallback } from 'react';
 import { type Article, ArticleBlockType, type ArticleTextBlock, ArticleView } from '../../model/types/article';
 import { Text } from 'shared/ui/Text/Text';
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
@@ -13,12 +13,15 @@ import { useTranslation } from 'react-i18next';
 import { ArticleTextBlockComponent } from '../../ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { RoutePath } from 'app/config/routeConfig/routes';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { articlesPageActions } from 'pages/ArticlesPage/model/slices/articlesPageSlice';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 interface ArticleListItemProps {
-	className?: string;
-	article: Article;
-	view: ArticleView;
-	target?: HTMLAttributeAnchorTarget;
+    className?: string;
+    article: Article;
+    view: ArticleView;
+    target?: HTMLAttributeAnchorTarget;
+    index?: number;
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
@@ -26,12 +29,19 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         className,
         article,
         target,
-        view
+        view,
+        index
     } = props;
 
     const { t } = useTranslation();
-
+    const dispatch = useAppDispatch();
     const [_, bindHover] = useHover();
+
+    const handleButtonClick = useCallback(() => {
+        if (index != null) {
+            void dispatch(articlesPageActions.setLastScrolledIndex(index));
+        }
+    }, [dispatch, index]);
 
     const types = <Text text={article.type.join(', ')} className={cls.types}/>;
     const views = (
@@ -68,6 +78,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                             <Button
                                 type={'button'}
                                 theme={ButtonTheme.OUTLINE}
+                                onClick={handleButtonClick}
                             >
                                 {t('Читать далее...')}
                             </Button>
@@ -82,6 +93,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     return (
         <AppLink
             target={target}
+            onClick={handleButtonClick}
             to={RoutePath.article_details + article.id}
             className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
             {...bindHover}

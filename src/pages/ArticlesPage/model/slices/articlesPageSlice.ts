@@ -30,12 +30,16 @@ const articlePageSlice = createSlice({
         sort: ArticleSortField.CREATED,
         search: '',
         order: 'asc',
-        type: ArticleType.ALL
+        type: ArticleType.ALL,
+        lastScrolledIndex: 0
     }),
     reducers: {
         setView: (state, action: PayloadAction<ArticleView>) => {
             state.view = action.payload;
             localStorage.setItem(ARTICLES_VIEW_LOCALSTORAGE_KEY, action.payload);
+        },
+        setLastScrolledIndex: (state, action: PayloadAction<number>) => {
+            state.lastScrolledIndex = action.payload;
         },
         setPage: (state, action: PayloadAction<number>) => {
             state.page = action.payload;
