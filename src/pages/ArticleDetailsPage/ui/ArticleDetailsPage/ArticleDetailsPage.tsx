@@ -18,76 +18,79 @@ import { addCommentForArticle } from '../../model/services/addCommentForArticle/
 import { Page } from 'widgets/Page/Page';
 import { getArticleRecommendations } from '../../model/slices/articleDetailsPageRecommendationsSlice';
 import {
-    getArticleRecommendationsError,
-    getArticleRecommendationsIsLoading
+	getArticleRecommendationsError,
+	getArticleRecommendationsIsLoading
 } from '../../model/selectors/recommendations';
 import {
-    fetchArticleRecommendations
+	fetchArticleRecommendations
 } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { articleDetailsPageReducer } from '../../model/slices';
-import { ArticleDetailsPageHeader } from 'pages/ArticleDetailsPage/ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+import { VStack } from 'shared/ui/Stack';
 
 export interface ArticleDetailsPageProps {
 	className?: string;
 }
 
 const reducers: ReducersList = {
-    articleDetailsPage: articleDetailsPageReducer
+	articleDetailsPage: articleDetailsPageReducer
 };
 
 const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
-    const { t } = useTranslation('article');
-    const { id } = useParams<{ id: string, }>();
-    const dispatch = useAppDispatch();
-    const comments = useSelector(getArticleComments.selectAll);
-    const recommendations = useSelector(getArticleRecommendations.selectAll);
-    const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading);
-    const recommendationsError = useSelector(getArticleRecommendationsError);
-    const commentsIsLoading = useSelector(getArticleDetailsCommentsIsLoading);
+	const { t } = useTranslation('article');
+	const { id } = useParams<{ id: string, }>();
+	const dispatch = useAppDispatch();
+	const comments = useSelector(getArticleComments.selectAll);
+	const recommendations = useSelector(getArticleRecommendations.selectAll);
+	const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading);
+	const recommendationsError = useSelector(getArticleRecommendationsError);
+	const commentsIsLoading = useSelector(getArticleDetailsCommentsIsLoading);
 
-    const onSendComment = useCallback((text: string) => {
-        void dispatch(addCommentForArticle(text));
-    }, [dispatch]);
+	const onSendComment = useCallback((text: string) => {
+		void dispatch(addCommentForArticle(text));
+	}, [dispatch]);
 
-    useInitialEffect(() => {
-        void dispatch(fetchCommentsByArticleId(id));
-        void dispatch(fetchArticleRecommendations());
-    });
+	useInitialEffect(() => {
+		void dispatch(fetchCommentsByArticleId(id));
+		void dispatch(fetchArticleRecommendations());
+	});
 
-    if (!id) {
-        return (
-            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-                {t('Статья не найдена')}
-            </Page>
-        );
-    }
+	if (!id) {
+		return (
+			<Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+				{t('Статья не найдена')}
+			</Page>
+		);
+	}
 
-    return (
-        <DynamicModuleLoader reducers={reducers}>
-            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-                <ArticleDetailsPageHeader/>
-                <ArticleDetails id={id}/>
-                <Text
-                    size={TextSize.L}
-                    className={cls.commentTitle}
-                    title={t('Рекомендуем')}
-                />
-                <ArticleList
-                    articles={recommendations}
-                    isLoading={recommendationsIsLoading}
-                    className={cls.recommendations}
-                    target={'_blank'}
-                />
-                <Text
-                    size={TextSize.L}
-                    className={cls.commentTitle}
-                    title={t('Комментарии')}
-                />
-                <AddCommentForm onSendComment={onSendComment}/>
-                <CommentList isLoading={commentsIsLoading} comments={comments}/>
-            </Page>
-        </DynamicModuleLoader>
-    );
+	return (
+		<DynamicModuleLoader reducers={reducers}>
+			<Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+				<VStack gap={'16'} max>
+					<ArticleDetailsPageHeader/>
+					<ArticleDetails id={id}/>
+					<Text
+						size={TextSize.L}
+						className={cls.commentTitle}
+						title={t('Рекомендуем')}
+					/>
+					<ArticleList
+						articles={recommendations}
+						isLoading={recommendationsIsLoading}
+						className={cls.recommendations}
+						target={'_blank'}
+					/>
+					<Text
+						size={TextSize.L}
+						className={cls.commentTitle}
+						title={t('Комментарии')}
+					/>
+					<AddCommentForm onSendComment={onSendComment}/>
+					<CommentList isLoading={commentsIsLoading} comments={comments}/>
+				</VStack>
+			</Page>
+		</DynamicModuleLoader>
+	);
 });
 
 export default memo(ArticleDetailsPage);

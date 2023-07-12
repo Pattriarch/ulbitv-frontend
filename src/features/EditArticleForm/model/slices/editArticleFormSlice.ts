@@ -1,8 +1,8 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import { type EditArticleForm } from 'features/EditArticleForm/model/types/editArticleForm';
+import { type EditArticleForm } from '../../model/types/editArticleForm';
 import { type Article } from 'entities/Article';
 import { type Profile } from 'entities/Profile';
-import { updateArticleData } from 'features/EditArticleForm/model/services/updateArticleData/updateArticleData';
+import { updateArticleData } from '../../model/services/updateArticleData/updateArticleData';
 import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById/fetchArticleById';
 
 const initialState: EditArticleForm = {

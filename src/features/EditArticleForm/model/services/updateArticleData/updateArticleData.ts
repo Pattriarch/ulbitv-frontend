@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { type ThunkConfig } from 'app/providers/StoreProvider';
-import { getEditArticleForm } from 'features/EditArticleForm/model/selectors/editArticleFormSelectors';
+import { getEditArticleForm } from '../../../model/selectors/editArticleFormSelectors';
 import { type Article } from 'entities/Article';
 
 export const updateArticleData = createAsyncThunk<

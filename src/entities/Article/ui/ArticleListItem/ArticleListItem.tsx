@@ -94,7 +94,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         <AppLink
             target={target}
             onClick={handleButtonClick}
-            to={RoutePath.article_details + article.id}
+            to={RoutePath.article_details + (article?.id || '-1')}
             className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
             {...bindHover}
         >

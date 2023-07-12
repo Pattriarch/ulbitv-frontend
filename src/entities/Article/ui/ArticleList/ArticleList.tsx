@@ -3,7 +3,7 @@ import cls from './ArticleList.module.scss';
 import { type FC, type HTMLAttributeAnchorTarget, memo, useEffect, useRef } from 'react';
 import { type Article, ArticleView } from '../../model/types/article';
 import { ArticleListItem } from '../../ui/ArticleListItem/ArticleListItem';
-import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton';
+import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { useTranslation } from 'react-i18next';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { Virtuoso, VirtuosoGrid, type VirtuosoGridHandle } from 'react-virtuoso';

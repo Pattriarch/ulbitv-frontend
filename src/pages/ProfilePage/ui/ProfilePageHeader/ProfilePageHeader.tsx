@@ -1,5 +1,4 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './ProfilePageHeader.module.scss';
 import { Text } from 'shared/ui/Text/Text';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
@@ -7,7 +6,8 @@ import { useSelector } from 'react-redux';
 import { getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile';
 import { memo, useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { getCanCurrentUserEditProfile } from 'pages/ProfilePage/model/selectors/getCanCurrentUserEditProfile';
+import { getCanCurrentUserEditProfile } from '../../model/selectors/getCanCurrentUserEditProfile';
+import { HStack } from 'shared/ui/Stack/HStack/HStack';
 
 interface ProfilePageHeaderProps {
     className?: string;
@@ -32,15 +32,14 @@ export const ProfilePageHeader = memo(({ className }: ProfilePageHeaderProps) =>
     }, [dispatch]);
 
     return (
-        <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+        <HStack max justify={'between'} className={classNames('', {}, [className])}>
             <Text title={t('Профиль')}/>
             {canEdit && (
-                <div className={cls.btnsWrapper}>
+                <>
                     {readonly
                         ? (
                             <Button
                                 type={'button'}
-                                className={cls.editBtn}
                                 theme={ButtonTheme.OUTLINE}
                                 onClick={onEdit}
                             >
@@ -48,10 +47,9 @@ export const ProfilePageHeader = memo(({ className }: ProfilePageHeaderProps) =>
                             </Button>
                         )
                         : (
-                            <>
+                            <HStack gap={'8'}>
                                 <Button
                                     type={'button'}
-                                    className={cls.editBtn}
                                     theme={ButtonTheme.OUTLINE_RED}
                                     onClick={onCancelEdit}
                                 >
@@ -59,16 +57,15 @@ export const ProfilePageHeader = memo(({ className }: ProfilePageHeaderProps) =>
                                 </Button>
                                 <Button
                                     type={'button'}
-                                    className={cls.saveBtn}
                                     theme={ButtonTheme.OUTLINE}
                                     onClick={onSave}
                                 >
                                     {t('Сохранить')}
                                 </Button>
-                            </>
+                            </HStack>
                         )}
-                </div>
+                </>
             )}
-        </div>
+        </HStack>
     );
 });

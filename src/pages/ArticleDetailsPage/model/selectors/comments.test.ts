@@ -3,7 +3,7 @@ import { type StateSchema } from 'app/providers/StoreProvider';
 import {
     getArticleDetailsCommentsError,
     getArticleDetailsCommentsIsLoading
-} from 'pages/ArticleDetailsPage/model/selectors/comments';
+} from './comments';
 
 describe('getArticleDetailsCommentsState', () => {
     test('should return isLoading', () => {

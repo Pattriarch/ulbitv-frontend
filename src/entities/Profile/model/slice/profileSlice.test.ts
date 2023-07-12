@@ -2,7 +2,7 @@ import { profileActions, profileReducer } from './profileSlice';
 import { type ProfileSchema, ValidateProfileError } from '../types/profile';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import { updateProfileData } from 'entities/Profile';
+import { updateProfileData } from '../services/updateProfileData/updateProfileData';
 
 const data = {
     username: 'admin',

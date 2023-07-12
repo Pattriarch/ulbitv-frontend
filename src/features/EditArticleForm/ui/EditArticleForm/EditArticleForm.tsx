@@ -6,8 +6,8 @@ import { useSelector } from 'react-redux';
 import {
     getEditArticleData,
     getEditArticleForm
-} from 'features/EditArticleForm/model/selectors/editArticleFormSelectors';
-import { editArticleFormActions } from 'features/EditArticleForm/model/slices/editArticleFormSlice';
+} from '../../model/selectors/editArticleFormSelectors';
+import { editArticleFormActions } from '../../model/slices/editArticleFormSlice';
 import { Input } from 'shared/ui/Input/Input';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById/fetchArticleById';

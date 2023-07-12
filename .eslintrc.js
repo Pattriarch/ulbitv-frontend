@@ -43,10 +43,10 @@ module.exports = {
         'ulbitv-fsd/path-validator': 1, // todo: пофиксить пути и установить значение в 2
         semi: [2, 'always'],
         '@typescript-eslint/semi': 'off',
-        'react/jsx-indent': [2, 4],
+        'react/jsx-indent': 'off',
         'no-tabs': ['error', { allowIndentationTabs: true }],
-        'react/jsx-indent-props': [2, 4],
-        indent: [2, 4],
+        'react/jsx-indent-props': 'off',
+        indent: 'off',
         'react/jsx-filename-extension': [2, {
             extensions: ['.js', '.jsx', '.tsx']
         }],
@@ -63,7 +63,8 @@ module.exports = {
         '@typescript-eslint/naming-convention': 'off',
         '@typescript-eslint/ban-ts-comment': 'warn',
         'i18next/no-literal-string': ['warn', {
-            markupOnly: true, ignoreAttribute: ['to', 'data-testid', 'placeholder', 'name', 'target']
+            markupOnly: true,
+            ignoreAttribute: ['to', 'data-testid', 'placeholder', 'name', 'target', 'direction', 'justify', 'align', 'gap']
         }],
         'max-len': ['error', { code: 130, ignoreComments: true }],
         'react/display-name': 'off',

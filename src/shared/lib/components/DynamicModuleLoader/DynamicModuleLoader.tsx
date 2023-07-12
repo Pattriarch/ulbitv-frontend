@@ -6,7 +6,7 @@ import {
     type StateSchemaKey
 } from 'app/providers/StoreProvider/config/StateSchema';
 import { type Reducer } from '@reduxjs/toolkit';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from '../../hooks/useAppDispatch/useAppDispatch';
 
 export type ReducersList = {
 	[name in StateSchemaKey]?: Reducer<NonNullable<StateSchema[name]>>;

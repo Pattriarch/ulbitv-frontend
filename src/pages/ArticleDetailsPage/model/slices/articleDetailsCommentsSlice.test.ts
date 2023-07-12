@@ -1,8 +1,8 @@
 import { articleDetailsCommentsReducer } from './articleDetailsCommentsSlice';
-import { type ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
+import { type ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema';
 import {
     fetchCommentsByArticleId
-} from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+} from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { type DeepPartial } from '@reduxjs/toolkit';
 
 describe('articleDetailsCommentsSlice', () => {

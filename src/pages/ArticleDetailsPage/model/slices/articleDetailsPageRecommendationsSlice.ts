@@ -4,7 +4,7 @@ import { type ArticleDetailsRecommendationsSchema } from '../types/ArticleDetail
 import { type Article } from 'entities/Article';
 import {
     fetchArticleRecommendations
-} from 'pages/ArticleDetailsPage/model/services/fetchArticleRecommendations/fetchArticleRecommendations';
+} from '../services/fetchArticleRecommendations/fetchArticleRecommendations';
 
 const recommendationsAdapter = createEntityAdapter<Article>({
     selectId: (article) => article.id || -1
