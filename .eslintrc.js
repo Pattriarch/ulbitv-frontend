@@ -33,8 +33,14 @@ module.exports = {
     parserOptions: {
         project: './tsconfig.json', ecmaVersion: 'latest', sourceType: 'module'
     },
-    plugins: ['react', 'i18next', 'react-hooks'],
+    plugins: [
+        'react',
+        'i18next',
+        'react-hooks',
+        'ulbitv-fsd'
+    ],
     rules: {
+        'ulbitv-fsd/path-validator': 1, // todo: пофиксить пути и установить значение в 2
         semi: [2, 'always'],
         '@typescript-eslint/semi': 'off',
         'react/jsx-indent': [2, 4],

@@ -1,6 +1,6 @@
 import { type StateSchema } from 'app/providers/StoreProvider';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
-import { type SidebarItemType } from 'widgets/Sidebar/model/types/sidebar';
+import { type SidebarItemType } from '../../model/types/sidebar';
 import { RoutePath } from 'app/config/routeConfig/routes';
 import MainIcon from 'shared/assets/icons/main-20-20.svg';
 import AboutIcon from 'shared/assets/icons/about-20-20.svg';
