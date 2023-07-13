@@ -21,3 +21,11 @@ type DeepPartial<T> = T extends object ? {
 type OptionalRecord<K extends keyof any, T> = {
 	[P in K]?: T;
 };
+
+declare global {
+	namespace JSX {
+		interface IntrinsicElements {
+			tag: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+		}
+	}
+}

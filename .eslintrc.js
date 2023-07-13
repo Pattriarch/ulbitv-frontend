@@ -64,7 +64,7 @@ module.exports = {
         '@typescript-eslint/ban-ts-comment': 'warn',
         'i18next/no-literal-string': ['warn', {
             markupOnly: true,
-            ignoreAttribute: ['to', 'data-testid', 'placeholder', 'name', 'target', 'direction', 'justify', 'align', 'gap']
+            ignoreAttribute: ['nav', 'role', 'to', 'data-testid', 'placeholder', 'name', 'target', 'direction', 'justify', 'align', 'gap']
         }],
         'max-len': ['error', { code: 130, ignoreComments: true }],
         'react/display-name': 'off',
