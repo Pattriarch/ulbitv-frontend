@@ -3,12 +3,13 @@ import { useTranslation } from 'react-i18next';
 import { Select } from 'shared/ui/Select/Select';
 import { Currency } from '../../model/types/currency';
 import { useCallback } from 'react';
+import { ListBox } from 'shared/ui/ListBox/ListBox';
 
 interface CurrencySelectProps {
-	className?: string;
-	value?: Currency;
-	onChange?: (value: Currency) => void;
-	readonly?: boolean;
+    className?: string;
+    value?: Currency;
+    onChange?: (value: Currency) => void;
+    readonly?: boolean;
 }
 
 const options = [
@@ -32,13 +33,27 @@ export const CurrencySelect = (props: CurrencySelectProps): JSX.Element => {
     }, [onChange]);
 
     return (
-        <Select
-            className={classNames('', {}, [className])}
+        // todo: добавить label
+        <ListBox
+            className={className}
+            defaultValue={t('Укажите валюту')}
             label={t('Укажите валюту')}
-            options={options}
             value={value}
-            onChange={onChangeHandler}
+            items={options}
             readonly={readonly}
+            onChange={onChangeHandler}
+            direction={'top'}
         />
     );
+
+    // return (
+    //     <Select
+    //         className={classNames('', {}, [className])}
+    //         label={t('Укажите валюту')}
+    //         options={options}
+    //         value={value}
+    //         onChange={onChangeHandler}
+    //         readonly={readonly}
+    //     />
+    // );
 };
