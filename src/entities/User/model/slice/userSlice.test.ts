@@ -1,7 +1,7 @@
 import { userActions, userReducer } from './userSlice';
-import { type User, type UserSchema } from '../types/user';
+import { type AuthData, type UserSchema } from '../types/authData';
 
-const data: User = {
+const data: AuthData = {
     id: '1',
     username: 'admin'
 };

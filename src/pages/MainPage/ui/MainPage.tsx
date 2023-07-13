@@ -16,21 +16,6 @@ const MainPage = memo((): JSX.Element => {
     return (
         <Page>
             {t('Главная страница')}
-            <div>asdasd</div>
-            <HStack>
-                <div>jaskda</div>
-                <ListBox
-                    defaultValue={'Выберите значение'}
-                    onChange={(value: string) => {}}
-                    value={undefined}
-                    items={[
-                        { value: '1', content: '123' },
-                        { value: '32', content: '46', disabled: true },
-                        { value: '44', content: '1723' }
-                    ]}
-                />
-            </HStack>
-            <div>jdksda</div>
         </Page>
     );
 });

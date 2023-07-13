@@ -42,7 +42,7 @@ export const CurrencySelect = (props: CurrencySelectProps): JSX.Element => {
             items={options}
             readonly={readonly}
             onChange={onChangeHandler}
-            direction={'top'}
+            direction={'topRight'}
         />
     );
 

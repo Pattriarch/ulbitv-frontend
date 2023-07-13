@@ -1,4 +1,4 @@
-import { type User } from 'entities/User';
+import { type AuthData } from 'entities/User';
 
 export enum ArticleSortField {
     VIEWS = 'views',
@@ -51,7 +51,7 @@ export enum ArticleView {
 export interface Article {
     id?: string;
     title?: string;
-    user?: User;
+    user?: AuthData;
     subtitle?: string;
     img?: string;
     views?: number;

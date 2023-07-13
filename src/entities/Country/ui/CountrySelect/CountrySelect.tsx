@@ -44,7 +44,7 @@ export const CountrySelect = (props: CountrySelectProps): JSX.Element => {
             items={options}
             readonly={readonly}
             onChange={onChangeHandler}
-            direction={'top'}
+            direction={'topRight'}
         />
     );
 

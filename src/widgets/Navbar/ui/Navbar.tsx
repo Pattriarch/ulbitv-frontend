@@ -10,9 +10,11 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'app/config/routeConfig/routes';
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 
 interface NavbarProps {
-	className?: string;
+    className?: string;
 }
 
 export const Navbar = memo(({ className }: NavbarProps): JSX.Element => {
@@ -49,14 +51,23 @@ export const Navbar = memo(({ className }: NavbarProps): JSX.Element => {
                 >
                     {t('Создать статью')}
                 </AppLink>
-                <Button
-                    theme={ButtonTheme.CLEAR_INVERTED}
-                    type={'button'}
-                    className={cls.links}
-                    onClick={onLogout}
-                >
-                    {t('Выйти')}
-                </Button>
+                <Dropdown
+                    direction={'bottomLeft'}
+                    className={cls.dropdown}
+                    items={[
+                        {
+                            content: t('Профиль'),
+                            href: RoutePath.profile + authData.id
+                        },
+                        {
+                            content: t('Выйти'),
+                            onClick: onLogout
+                        }
+                    ]}
+                    trigger={
+                        <Avatar size={30} src={authData.avatar}/>
+                    }
+                />
             </header>
         );
     }
