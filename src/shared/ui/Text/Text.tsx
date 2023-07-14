@@ -30,6 +30,7 @@ interface TextProps {
     align?: TextAlign;
     size?: TextSize;
     tag?: TextTag;
+    'data-testid'?: string;
 }
 
 export const Text = memo((props: TextProps): JSX.Element => {
@@ -40,7 +41,8 @@ export const Text = memo((props: TextProps): JSX.Element => {
         theme = TextTheme.PRIMARY,
         align = TextAlign.LEFT,
         size = TextSize.M,
-        tag = 'p'
+        tag = 'p',
+        'data-testid': dataTestId = 'Text'
     } = props;
 
     const classes = [
@@ -53,20 +55,35 @@ export const Text = memo((props: TextProps): JSX.Element => {
     const getTitle = useCallback(() => {
         switch (tag) {
             case 'p':
-                return <p className={cls.title}>{title}</p>;
+                return <p
+                    className={cls.title}
+                    data-testid={`${dataTestId}.Header`}
+                >{title}</p>;
             case 'h1':
-                return <h1 className={cls.title}>{title}</h1>;
+                return <h1
+                    className={cls.title}
+                    data-testid={`${dataTestId}.Header`}
+                    >{title}</h1>;
             case 'h2':
-                return <h2 className={cls.title}>{title}</h2>;
+                return <h2
+                    className={cls.title}
+                    data-testid={`${dataTestId}.Header`}
+                >{title}</h2>;
             case 'h3':
-                return <h3 className={cls.title}>{title}</h3>;
+                return <h3
+                    className={cls.title}
+                    data-testid={`${dataTestId}.Header`}
+                >{title}</h3>;
         }
-    }, [tag, title]);
+    }, [dataTestId, tag, title]);
 
     return (
         <div className={classNames(cls.Text, {}, classes)}>
             {title && getTitle()}
-            {text && <p className={cls.text}>{text}</p>}
+            {text && <p
+                className={cls.text}
+                data-testid={`${dataTestId}.Paragraph`}
+            >{text}</p>}
         </div>
     );
 });

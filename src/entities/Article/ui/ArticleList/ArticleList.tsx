@@ -18,17 +18,18 @@ interface ArticleListProps {
     onLoadNextPart?: () => void;
     lastScrolledIndex?: number;
     filters?: boolean;
+    virtualized?: boolean;
 }
 
 export const Header = () => <ArticlesPageFilters/>;
 
-const getBigSkeletons = () => new Array(3)
+const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 9 : 3)
     .fill(0)
-    .map((_, index) => (
+    .map((item, index) => (
         <ArticleListItemSkeleton
-            view={ArticleView.BIG}
             className={cls.card}
             key={index}
+            view={view}
         />
     ));
 
@@ -41,7 +42,8 @@ export const ArticleList = memo((props: ArticleListProps) => {
         target,
         onLoadNextPart,
         lastScrolledIndex,
-        filters = true
+        filters = true,
+        virtualized = true
     } = props;
 
     const { t } = useTranslation();
@@ -94,7 +96,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         if (isLoading) {
             return (
                 <div className={cls.skeleton}>
-                    {getBigSkeletons()}
+                    {getSkeletons(view)}
                 </div>
             );
         }
@@ -123,6 +125,15 @@ export const ArticleList = memo((props: ArticleListProps) => {
             ScrollSeekPlaceholder: ItemContainerComp
         }
         : { ScrollSeekPlaceholder: ItemContainerComp };
+
+    if (!virtualized) {
+        return (
+            <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+                {articles.length > 0 ? articles.map((article, index) => renderArticle(index, article)) : null}
+                {isLoading && getSkeletons(view)}
+            </div>
+        );
+    }
 
     return (
         <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>

@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
+import cls from './ArticleRecommendationsList.module.scss';
 import { Text, TextSize, TextTheme } from 'shared/ui/Text/Text';
 import { ArticleList, ArticleView } from 'entities/Article';
 import { Loader } from 'shared/ui/Loader/Loader';
@@ -20,7 +21,7 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
         return <Loader/>;
     }
 
-    if (error) {
+    if (error || !articles) {
         return <Text
             theme={TextTheme.ERROR}
             title={t('Произошла ошибка при загрузке данных')}
@@ -35,7 +36,9 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
             />
             <ArticleList
                 filters={filters}
+                virtualized={false}
                 isLoading={isLoading}
+                className={cls.recommendations}
                 view={ArticleView.SMALL}
                 articles={articles}
                 target={'_blank'}
