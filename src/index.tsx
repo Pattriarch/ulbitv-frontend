@@ -18,5 +18,4 @@ render(
         </StoreProvider>
     </BrowserRouter>,
     document.getElementById('root')
-)
-;
+);

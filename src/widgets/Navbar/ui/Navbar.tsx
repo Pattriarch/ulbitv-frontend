@@ -67,7 +67,8 @@ export const Navbar = memo(({ className }: NavbarProps): JSX.Element => {
 							: []),
 						{
 							content: t('Профиль'),
-							href: `${RoutePath.profile}${authData.id as string}`
+							// eslint-disable-next-line @typescript-eslint/restrict-plus-operands
+							href: RoutePath.profile + authData.id
 						},
 						{
 							content: t('Выйти'),
