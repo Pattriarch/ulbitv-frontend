@@ -8,6 +8,8 @@ export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.ARTICLE_DETAILS]: '/articles/', // + :id
     [AppRoutes.ARTICLE_CREATE]: '/articles/new',
     [AppRoutes.ARTICLE_EDIT]: '/articles/:id/edit', // + :id
+    [AppRoutes.ADMIN_PANEL]: '/admin',
+    [AppRoutes.FORBIDDEN]: '/forbidden',
     // последний
     [AppRoutes.NOT_FOUND]: '*'
 };
