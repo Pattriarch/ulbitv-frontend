@@ -17,9 +17,10 @@ interface ArticleListProps {
     target?: HTMLAttributeAnchorTarget;
     onLoadNextPart?: () => void;
     lastScrolledIndex?: number;
+    filters?: boolean;
 }
 
-const Header = () => <ArticlesPageFilters/>;
+export const Header = () => <ArticlesPageFilters/>;
 
 const getBigSkeletons = () => new Array(3)
     .fill(0)
@@ -39,7 +40,8 @@ export const ArticleList = memo((props: ArticleListProps) => {
         isLoading,
         target,
         onLoadNextPart,
-        lastScrolledIndex
+        lastScrolledIndex,
+        filters = true
     } = props;
 
     const { t } = useTranslation();
@@ -114,6 +116,14 @@ export const ArticleList = memo((props: ArticleListProps) => {
         </div>
     );
 
+    const virtuosoComponents = filters ? { Header, Footer } : { Footer };
+    const virtuosoGridComponents = filters
+        ? {
+            Header,
+            ScrollSeekPlaceholder: ItemContainerComp
+        }
+        : { ScrollSeekPlaceholder: ItemContainerComp };
+
     return (
         <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
             {view === ArticleView.BIG
@@ -124,31 +134,23 @@ export const ArticleList = memo((props: ArticleListProps) => {
                         itemContent={renderArticle}
                         endReached={onLoadNextPart}
                         initialTopMostItemIndex={lastScrolledIndex}
-                        components={{
-                            Header,
-                            Footer
-                        }}
+                        components={virtuosoComponents}
                     />
                 )
                 : (
-                    <>
-                        <VirtuosoGrid
-                            ref={virtuosoGridRef}
-                            totalCount={articles.length}
-                            components={{
-                                Header,
-                                ScrollSeekPlaceholder: ItemContainerComp
-                            }}
-                            data={articles}
-                            endReached={onLoadNextPart}
-                            itemContent={renderArticle}
-                            listClassName={cls.itemsWrapper}
-                            scrollSeekConfiguration={{
-                                enter: (velocity) => Math.abs(velocity) > 200,
-                                exit: (velocity) => Math.abs(velocity) < 30
-                            }}
-                        />
-                    </>
+                    <VirtuosoGrid
+                        ref={virtuosoGridRef}
+                        totalCount={articles.length}
+                        components={virtuosoGridComponents}
+                        data={articles}
+                        endReached={onLoadNextPart}
+                        itemContent={renderArticle}
+                        listClassName={cls.itemsWrapper}
+                        scrollSeekConfiguration={{
+                            enter: (velocity) => Math.abs(velocity) > 200,
+                            exit: (velocity) => Math.abs(velocity) < 30
+                        }}
+                    />
                 )}
         </div>
     );

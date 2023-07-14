@@ -1,9 +1,10 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import { type EditArticleForm } from '../../model/types/editArticleForm';
 import { type Article } from 'entities/Article';
-import { type Profile } from 'entities/Profile';
 import { updateArticleData } from '../../model/services/updateArticleData/updateArticleData';
 import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById/fetchArticleById';
+
+import { type Profile } from 'entities/Profile';
 
 const initialState: EditArticleForm = {
     isLoading: false,

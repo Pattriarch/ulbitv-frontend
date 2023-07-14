@@ -1,20 +1,23 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Text } from 'shared/ui/Text/Text';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import cls from './EditableProfileCardHeader.module.scss';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile';
-import { memo, useCallback } from 'react';
+import { getCanCurrentUserEditProfile } from 'pages/ProfilePage/model/selectors/getCanCurrentUserEditProfile';
+import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { getCanCurrentUserEditProfile } from '../../model/selectors/getCanCurrentUserEditProfile';
-import { HStack } from 'shared/ui/Stack/HStack/HStack';
+import { profileActions } from '../../model/slice/profileSlice';
+import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
+import { HStack } from 'shared/ui/Stack';
+import { Text } from 'shared/ui/Text/Text';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 
-interface ProfilePageHeaderProps {
+interface EditableProfileCardHeaderProps {
     className?: string;
 }
 
-export const ProfilePageHeader = memo(({ className }: ProfilePageHeaderProps) => {
-    const { t } = useTranslation();
+export const EditableProfileCardHeader = memo(({ className }: EditableProfileCardHeaderProps) => {
+    const { t } = useTranslation('profile');
     const canEdit = useSelector(getCanCurrentUserEditProfile);
     const readonly = useSelector(getProfileReadonly);
     const dispatch = useAppDispatch();
