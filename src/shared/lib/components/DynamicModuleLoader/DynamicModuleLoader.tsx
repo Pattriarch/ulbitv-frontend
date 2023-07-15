@@ -18,7 +18,7 @@ interface DynamicModuleLoaderProps {
 	removeAfterUnmount?: boolean;
 }
 
-export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props: DynamicModuleLoaderProps): JSX.Element => {
+export const DynamicModuleLoader = (props: DynamicModuleLoaderProps): JSX.Element => {
     const {
         children,
         reducers,

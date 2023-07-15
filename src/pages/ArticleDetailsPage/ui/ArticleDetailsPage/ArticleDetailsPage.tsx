@@ -5,7 +5,7 @@ import React, { memo } from 'react';
 import { ArticleDetails } from 'entities/Article';
 import { useParams } from 'react-router-dom';
 import { DynamicModuleLoader, type ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { Page } from 'widgets/Page/Page';
+import { Page } from 'widgets/Page/ui/Page';
 import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { HStack, VStack } from 'shared/ui/Stack';
@@ -14,6 +14,7 @@ import { ArticleDetailsComments } from 'pages/ArticleDetailsPage/ui/ArticleDetai
 
 export interface ArticleDetailsPageProps {
     className?: string;
+    id?: string;
 }
 
 const reducers: ReducersList = {
@@ -24,13 +25,13 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
     const { t } = useTranslation('article');
     const { id } = useParams<{ id: string, }>();
 
-    if (!id) {
-        return (
-            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-                {t('Статья не найдена')}
-            </Page>
-        );
-    }
+    // if (!id) {
+    //     return (
+    //         <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+    //             {t('Статья не найдена')}
+    //         </Page>
+    //     );
+    // }
 
     return (
         <DynamicModuleLoader reducers={reducers}>

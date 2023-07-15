@@ -3,10 +3,7 @@ import cls from './EditArticleForm.module.scss';
 import { memo, useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
-import {
-    getEditArticleData,
-    getEditArticleForm
-} from '../../model/selectors/editArticleFormSelectors';
+import { getEditArticleForm } from '../../model/selectors/editArticleFormSelectors';
 import { editArticleFormActions } from '../../model/slices/editArticleFormSlice';
 import { Input } from 'shared/ui/Input/Input';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';

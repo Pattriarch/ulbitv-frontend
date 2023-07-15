@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ArticleListItem.module.scss';
 import { type HTMLAttributeAnchorTarget, memo, useCallback } from 'react';
-import { type Article, ArticleBlockType, type ArticleTextBlock, ArticleView } from '../../model/types/article';
+import { type Article, type ArticleTextBlock } from '../../model/types/article';
 import { Text } from 'shared/ui/Text/Text';
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 import { Icon } from 'shared/ui/Icon/Icon';
@@ -15,6 +15,8 @@ import { RoutePath } from 'app/config/routeConfig/routes';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { articlesPageActions } from 'pages/ArticlesPage/model/slices/articlesPageSlice';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { ArticleView } from 'entities/Article';
+import { ArticleBlockType } from 'entities/Article/consts/articleConsts';
 
 interface ArticleListItemProps {
     className?: string;

@@ -17,9 +17,9 @@ export function componentRender(component: ReactNode, options: ComponentRenderOp
         route = '/',
         initialState,
         asyncReducers
-    } =
-        options;
+    } = options;
 
+    // @ts-expect-error todo: fix it
     return render(
         <MemoryRouter initialEntries={[route]}>
             <StoreProvider asyncReducers={asyncReducers} initialState={initialState}>

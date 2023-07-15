@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ArticleEditPage.module.scss';
 import { memo } from 'react';
-import { Page } from 'widgets/Page/Page';
+import { Page } from 'widgets/Page/ui/Page';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { EditArticleForm } from 'features/EditArticleForm/ui/EditArticleForm/EditArticleForm';

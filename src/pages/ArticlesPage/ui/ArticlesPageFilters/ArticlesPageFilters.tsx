@@ -20,7 +20,8 @@ import { type SortOrder } from 'shared/types';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
 import { type TabItem } from 'shared/ui/Tabs/Tabs';
-import { type ArticleType } from 'entities/Article/model/types/article';
+
+import { type ArticleType } from 'entities/Article/consts/articleConsts';
 
 interface ArticlesPageFiltersProps {
 	className?: string;

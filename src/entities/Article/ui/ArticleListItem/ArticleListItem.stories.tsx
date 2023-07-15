@@ -3,11 +3,13 @@ import { ArticleListItem } from './ArticleListItem';
 import { type Article, ArticleView } from 'entities/Article';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 
 const meta: Meta<typeof ArticleListItem> = {
     title: 'entities/Article/ArticleListItem',
     component: ArticleListItem,
-    tags: ['autodocs']
+    tags: ['autodocs'],
+    decorators: [StoreDecorator({})]
 };
 
 export default meta;
