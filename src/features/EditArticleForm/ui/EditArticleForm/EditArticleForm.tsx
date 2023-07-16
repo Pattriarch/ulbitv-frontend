@@ -37,8 +37,6 @@ export const EditArticleForm = memo(({ className, id }: EditArticleFormProps) =>
         void dispatch(editArticleFormActions.updateArticle({ subtitle: value || '' }));
     }, [dispatch]);
 
-    // const onChange
-
     return (
         <div className={classNames(cls.EditArticleForm, {}, [className])}>
             <Input className={cls.title} value={formData?.title} onChange={onChangeTitle}/>

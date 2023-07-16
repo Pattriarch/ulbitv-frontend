@@ -1,4 +1,4 @@
-import { type UserRole } from 'entities/User/consts/userConsts';
+import { type UserRole } from '../../consts/userConsts';
 
 export interface AuthData {
     id: string;

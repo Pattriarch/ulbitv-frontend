@@ -1,5 +1,5 @@
 import { type AuthData } from 'entities/User';
-import { type ArticleBlockType, type ArticleType } from 'entities/Article/consts/articleConsts';
+import { type ArticleBlockType, type ArticleType } from '../../consts/articleConsts';
 
 export interface ArticleBlockBase {
     id: string;

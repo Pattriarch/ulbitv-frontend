@@ -1,4 +1,4 @@
-import { type FC, type ReactNode, useEffect } from 'react';
+import { type ReactNode, useEffect } from 'react';
 import { useStore } from 'react-redux';
 import {
     type ReduxStoreWithManager,

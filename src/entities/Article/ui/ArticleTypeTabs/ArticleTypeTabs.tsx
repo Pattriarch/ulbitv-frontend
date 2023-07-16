@@ -3,7 +3,7 @@ import { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { type TabItem, Tabs } from 'shared/ui/Tabs/Tabs';
 
-import { ArticleType } from 'entities/Article/consts/articleConsts';
+import { ArticleType } from '../../consts/articleConsts';
 
 interface ArticleTypeTabsProps {
 	className?: string;

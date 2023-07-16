@@ -1,7 +1,14 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ArticlesPageFilters.module.scss';
 import { memo, useCallback } from 'react';
-import { type ArticleSortField, ArticleTypeTabs, type ArticleView, ArticleViewSelector } from 'entities/Article';
+import {
+    type ArticleSortField,
+    type ArticleView,
+    type ArticleType,
+    ArticleTypeTabs,
+    ArticleViewSelector,
+    ArticleSortSelector
+} from 'entities/Article';
 import { useSelector } from 'react-redux';
 import {
     getArticlesPageOrder,
@@ -15,18 +22,16 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useTranslation } from 'react-i18next';
 import { Card } from 'shared/ui/Card/Card';
 import { Input } from 'shared/ui/Input/Input';
-import { ArticleSortSelector } from 'entities/Article/ui/ArticleSortSelector/ArticleSortSelector';
 import { type SortOrder } from 'shared/types';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
 import { type TabItem } from 'shared/ui/Tabs/Tabs';
 
-import { type ArticleType } from 'entities/Article/consts/articleConsts';
-
 interface ArticlesPageFiltersProps {
 	className?: string;
 }
 
+// todo: переписать на фичу
 export const ArticlesPageFilters = memo(({ className }: ArticlesPageFiltersProps) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();

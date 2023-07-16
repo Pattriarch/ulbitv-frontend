@@ -40,7 +40,7 @@ module.exports = {
         'ulbitv-fsd'
     ],
     rules: {
-        'ulbitv-fsd/path-validator': 1, // todo: пофиксить пути и установить значение в 2
+        'ulbitv-fsd/path-validator': 2, // todo: пофиксить пути и установить значение в 2
         semi: [2, 'always'],
         '@typescript-eslint/semi': 'off',
         'react/jsx-indent': 'off',
@@ -64,7 +64,12 @@ module.exports = {
         '@typescript-eslint/ban-ts-comment': 'warn',
         'i18next/no-literal-string': ['warn', {
             markupOnly: true,
-            ignoreAttribute: ['as', 'nav', 'role', 'to', 'data-testid', 'placeholder', 'name', 'target', 'direction', 'justify', 'align', 'gap']
+            ignoreAttribute: [
+                'tag', 'as', 'nav', 'role',
+                'to', 'data-testid', 'placeholder',
+                'name', 'target', 'direction',
+                'justify', 'align', 'gap'
+            ]
         }],
         'max-len': ['error', { code: 130, ignoreComments: true }],
         'react/display-name': 'off',

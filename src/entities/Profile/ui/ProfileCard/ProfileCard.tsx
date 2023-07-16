@@ -13,7 +13,7 @@ import { type Country } from 'entities/Country/model/types/country';
 import { CountrySelect } from 'entities/Country';
 import { HStack, VStack } from 'shared/ui/Stack';
 
-import { type Profile } from 'entities/Profile';
+import { type Profile } from '../../model/types/profile';
 
 interface ProfileCardProps {
 	className?: string;

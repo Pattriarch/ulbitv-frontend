@@ -3,7 +3,7 @@ import cls from './ArticleListItem.module.scss';
 import { memo } from 'react';
 import { Card } from 'shared/ui/Card/Card';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
-import { ArticleView } from 'entities/Article';
+import { ArticleView } from '../../consts/articleConsts';
 
 interface ArticleListItemSkeletonProps {
 	className?: string;

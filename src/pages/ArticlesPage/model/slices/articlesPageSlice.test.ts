@@ -1,7 +1,7 @@
 import { articlesPageActions, articlesPageReducer } from './articlesPageSlice';
 import { type DeepPartial } from '@reduxjs/toolkit';
 import { type ArticlesPageSchema } from '../types/articlesPageSchema';
-import { Article, ArticleView } from 'entities/Article';
+import { ArticleView } from 'entities/Article';
 import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
 
 describe('articlesPageSlice', () => {

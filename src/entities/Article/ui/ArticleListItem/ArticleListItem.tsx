@@ -13,9 +13,7 @@ import { useTranslation } from 'react-i18next';
 import { ArticleTextBlockComponent } from '../../ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { RoutePath } from 'app/config/routeConfig/routes';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
-import { articlesPageActions } from 'pages/ArticlesPage/model/slices/articlesPageSlice';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { ArticleView, ArticleBlockType } from '../../consts/articleConsts';
+import { ArticleBlockType, ArticleView } from '../../consts/articleConsts';
 
 interface ArticleListItemProps {
     className?: string;
@@ -23,6 +21,7 @@ interface ArticleListItemProps {
     view: ArticleView;
     target?: HTMLAttributeAnchorTarget;
     index?: number;
+    setLastScrolledIndex?: (index: number) => void;
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
@@ -31,18 +30,18 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         article,
         target,
         view,
-        index
+        index,
+        setLastScrolledIndex
     } = props;
 
     const { t } = useTranslation();
-    const dispatch = useAppDispatch();
     const [_, bindHover] = useHover();
 
     const handleButtonClick = useCallback(() => {
-        if (index != null) {
-            void dispatch(articlesPageActions.setLastScrolledIndex(index));
-        }
-    }, [dispatch, index]);
+            if (setLastScrolledIndex && index) {
+                setLastScrolledIndex(index);
+            }
+    }, [index, setLastScrolledIndex]);
 
     const types = <Text text={article?.type?.join(', ')} className={cls.types}/>;
     const views = (
