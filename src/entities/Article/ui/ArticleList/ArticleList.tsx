@@ -121,10 +121,10 @@ export const ArticleList = memo((props: ArticleListProps) => {
 		</div>
 	);
 
-	const virtuosoComponents = Header === undefined
+	const virtuosoComponents = Header !== undefined
 		? { Header, Footer }
 		: { Footer };
-	const virtuosoGridComponents = Header === undefined
+	const virtuosoGridComponents = Header !== undefined
 		? {
 			Header,
 			ScrollSeekPlaceholder: ItemContainerComp
@@ -150,6 +150,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
 						itemContent={renderArticle}
 						endReached={onLoadNextPart}
 						initialTopMostItemIndex={lastScrolledIndex}
+						// @ts-expect-error
 						components={virtuosoComponents}
 					/>
 				)
@@ -157,6 +158,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
 					<VirtuosoGrid
 						ref={virtuosoGridRef}
 						totalCount={articles.length}
+						// @ts-expect-error
 						components={virtuosoGridComponents}
 						data={articles}
 						endReached={onLoadNextPart}

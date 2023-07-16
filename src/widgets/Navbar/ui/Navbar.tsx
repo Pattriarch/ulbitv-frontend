@@ -5,13 +5,13 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { LoginModal } from 'features/AuthByUsername';
 import { useSelector } from 'react-redux';
-import { getUserAuthData, isUserAdmin, isUserManager, userActions } from 'entities/User';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { getUserAuthData } from 'entities/User';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'app/config/routeConfig/routes';
-import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { HStack } from 'shared/ui/Stack';
+import { NotificationButton } from 'features/notificationButton';
+import { AvatarDropdown } from 'features/avatarDropdown';
 
 interface NavbarProps {
 	className?: string;
@@ -21,9 +21,6 @@ export const Navbar = memo(({ className }: NavbarProps): JSX.Element => {
 	const { t } = useTranslation();
 	const [isAuthModal, setIsAuthModal] = useState(false);
 	const authData = useSelector(getUserAuthData);
-	const dispatch = useAppDispatch();
-	const isAdmin = useSelector(isUserAdmin);
-	const isManager = useSelector(isUserManager);
 
 	const onCloseModal = useCallback(() => {
 		setIsAuthModal(false);
@@ -33,21 +30,16 @@ export const Navbar = memo(({ className }: NavbarProps): JSX.Element => {
 		setIsAuthModal(true);
 	}, []);
 
-	const onLogout = useCallback(() => {
-		dispatch(userActions.logout());
-		setIsAuthModal(false);
-	}, [dispatch]);
-
-	const isAdminPanelAvailable = isAdmin || isManager;
-
 	if (authData) {
 		return (
 			<header className={classNames(cls.Navbar, {}, [className])}>
-				<Text
-					className={cls.appName}
-					title={t('Pattriarch App')}
-					theme={TextTheme.INVERTED}
-				/>
+				<AppLink to={RoutePath.main}>
+					<Text
+						className={cls.appName}
+						title={t('Pattriarch App')}
+						theme={TextTheme.INVERTED}
+					/>
+				</AppLink>
 				<AppLink
 					to={RoutePath.article_create}
 					theme={AppLinkTheme.SECONDARY}
@@ -55,30 +47,10 @@ export const Navbar = memo(({ className }: NavbarProps): JSX.Element => {
 				>
 					{t('Создать статью')}
 				</AppLink>
-				<Dropdown
-					direction={'bottomLeft'}
-					className={cls.dropdown}
-					items={[
-						...(isAdminPanelAvailable
-							? [{
-								content: t('Админка'),
-								href: RoutePath.admin_panel
-							}]
-							: []),
-						{
-							content: t('Профиль'),
-							// eslint-disable-next-line @typescript-eslint/restrict-plus-operands
-							href: RoutePath.profile + authData.id
-						},
-						{
-							content: t('Выйти'),
-							onClick: onLogout
-						}
-					]}
-					trigger={
-						<Avatar size={30} src={authData.avatar}/>
-					}
-				/>
+				<HStack gap={'16'} className={cls.actions}>
+					<NotificationButton/>
+					<AvatarDropdown/>
+				</HStack>
 			</header>
 		);
 	}

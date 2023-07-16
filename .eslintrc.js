@@ -68,7 +68,7 @@ module.exports = {
                 'tag', 'as', 'nav', 'role',
                 'to', 'data-testid', 'placeholder',
                 'name', 'target', 'direction',
-                'justify', 'align', 'gap'
+                'justify', 'align', 'gap', 'border'
             ]
         }],
         'max-len': ['error', { code: 130, ignoreComments: true }],

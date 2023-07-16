@@ -26,7 +26,7 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-             <VStack gap={'8'} max>
+             <VStack gap={'8'} max align={'stretch'}>
                 <ArticleInfiniteList/>
              </VStack>
         </DynamicModuleLoader>
