@@ -1,18 +1,16 @@
-import { useCallback, useRef } from 'react';
+import { useEffect, useState } from 'react';
 
-export function useThrottle(callback: (...args: any[]) => void, delay: number) {
-	// можно вызывать коллбэк или нельзя
-	const throttleRef = useRef(false);
+export function useDevice() {
+	const [isMobile, setIsMobile] = useState(false);
 
-	return useCallback((...args: any[]) => {
-		if (!throttleRef.current) {
-			// eslint-disable-next-line n/no-callback-literal
-			callback(...args);
-			throttleRef.current = true;
+	useEffect(() => {
+		const handleResize = () => setIsMobile(window.matchMedia('(pointer:coarse)').matches);
 
-			setTimeout(() => {
-				throttleRef.current = false;
-			}, delay);
-		}
-	}, [callback, delay]);
+		handleResize();
+		window.addEventListener('resize', handleResize);
+
+		return () => window.removeEventListener('resize', handleResize); // удаляем обработчик
+	}, []);
+
+	return isMobile;
 }

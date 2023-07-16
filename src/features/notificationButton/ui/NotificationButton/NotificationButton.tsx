@@ -7,7 +7,7 @@ import NotificationIcon from 'shared/assets/icons/notification-20-20.svg';
 import { NotificationList } from 'entities/Notification';
 import { Popover } from 'shared/ui/Popups';
 import { Drawer } from 'shared/ui/Drawer/Drawer';
-import { BrowserView, MobileView } from 'react-device-detect';
+import { useDevice } from 'shared/lib/hooks/useDevice/useDevice';
 
 interface NotificationButtonProps {
 	className?: string;
@@ -15,6 +15,7 @@ interface NotificationButtonProps {
 
 export const NotificationButton = memo((props: NotificationButtonProps) => {
 	const { className } = props;
+	const isMobile = useDevice();
 
 	const [isOpen, setIsOpen] = useState(false);
 
@@ -34,21 +35,24 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
 
 	return (
 		<div>
-			<BrowserView>
-				<Popover
-					direction={'bottomLeft'}
-					trigger={trigger}
-					className={classNames(cls.NotificationButton, {}, [className])}
-				>
-					<NotificationList className={cls.notifications}/>
-				</Popover>
-			</BrowserView>
-			<MobileView>
-				{trigger}
-				<Drawer isOpen={isOpen} onClose={onCloseDrawer}>
-					<NotificationList/>
-				</Drawer>
-			</MobileView>
+			{isMobile
+				? (
+					<>
+						{trigger}
+						<Drawer isOpen={isOpen} onClose={onCloseDrawer}>
+							<NotificationList/>
+						</Drawer>
+					</>
+				)
+				: (
+					<Popover
+						direction={'bottomLeft'}
+						trigger={trigger}
+						className={classNames(cls.NotificationButton, {}, [className])}
+					>
+						<NotificationList className={cls.notifications}/>
+					</Popover>
+				)}
 		</div>
 	);
 });
