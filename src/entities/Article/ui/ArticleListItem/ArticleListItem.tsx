@@ -15,8 +15,7 @@ import { RoutePath } from 'app/config/routeConfig/routes';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { articlesPageActions } from 'pages/ArticlesPage/model/slices/articlesPageSlice';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { ArticleView } from 'entities/Article';
-import { ArticleBlockType } from 'entities/Article/consts/articleConsts';
+import { ArticleView, ArticleBlockType } from '../../consts/articleConsts';
 
 interface ArticleListItemProps {
     className?: string;
