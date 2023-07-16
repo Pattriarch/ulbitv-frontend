@@ -3,6 +3,7 @@ import cls from './Modal.module.scss';
 import React, { type ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 import { Portal } from '../Portal/Portal';
 import { Overlay } from '../Overlay/Overlay';
+import { useModal } from 'shared/lib/hooks/useModal/useModal';
 
 interface ModalProps {
 	className?: string;
@@ -12,75 +13,44 @@ interface ModalProps {
 	lazy?: boolean;
 }
 
-const ANIMATION_DELAY = 300;
-
 export const Modal = (props: ModalProps): JSX.Element | null => {
-    const {
-        className,
-        children,
-        isOpen,
-        onClose,
-        lazy
-    } = props;
+	const {
+		className,
+		children,
+		isOpen,
+		onClose,
+		lazy
+	} = props;
 
-    const [isClosing, setIsClosing] = useState(false);
-    const [isMounted, setIsMounted] = useState(false);
-    const timerRef = useRef<ReturnType<typeof setTimeout>>();
+	const {
+		isMounted,
+		isClosing,
+		close
+	} = useModal({
+		animationDelay: 300,
+		onClose,
+		isOpen
+	});
 
-    useEffect(() => {
-        if (isOpen) {
-            setIsMounted(true);
-        }
-        // чтобы фокус не терялся при открытии модалки снова
-        return () => setIsMounted(false);
-    }, [isOpen]);
+	if (lazy && !isMounted) {
+		return null;
+	}
 
-    const closeHandler = useCallback((): void => {
-        if (onClose) {
-            setIsClosing(true);
-            timerRef.current = setTimeout(() => {
-                onClose();
-                setIsClosing(false);
-            }, ANIMATION_DELAY);
-        }
-    }, [onClose]);
+	const mods: Mods = {
+		[cls.opened]: isOpen,
+		[cls.isClosing]: isClosing
+	};
 
-    const onKeyDown = useCallback((e: KeyboardEvent): void => {
-        if (e.key === 'Escape') {
-            closeHandler();
-        }
-    }, [closeHandler]);
-
-    useEffect(() => {
-        if (isOpen) {
-            window.addEventListener('keydown', onKeyDown);
-        }
-
-        return () => {
-            clearTimeout(timerRef.current);
-            window.removeEventListener('keydown', onKeyDown);
-        };
-    }, [isOpen, onKeyDown]);
-
-    if (lazy && !isMounted) {
-        return null;
-    }
-
-    const mods: Mods = {
-        [cls.opened]: isOpen,
-        [cls.isClosing]: isClosing
-    };
-
-    return (
-        <Portal>
-            <div className={classNames(cls.Modal, mods, [className])}>
-                <Overlay onClick={closeHandler} />
-                <div className={cls.overlay} onClick={closeHandler}>
-                    <div className={cls.content}>
-                        {children}
-                    </div>
-                </div>
-            </div>
-        </Portal>
-    );
+	return (
+		<Portal>
+			<div className={classNames(cls.Modal, mods, [className])}>
+				<Overlay onClick={close}/>
+				<div className={cls.overlay} onClick={close}>
+					<div className={cls.content}>
+						{children}
+					</div>
+				</div>
+			</div>
+		</Portal>
+	);
 };
