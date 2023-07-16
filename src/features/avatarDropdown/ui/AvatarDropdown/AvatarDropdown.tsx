@@ -1,5 +1,4 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './AvatarDropdown.module.scss';
 import React, { memo, useCallback } from 'react';
 import { RoutePath } from 'app/config/routeConfig/routes';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
@@ -54,7 +53,7 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
 			trigger={
 				<Avatar size={30} src={authData.avatar}/>
 			}
-			className={classNames(cls.AvatarDropdown, {}, [className])}
+			className={classNames('', {}, [className])}
 		/>
 	);
 });
