@@ -42,6 +42,8 @@ module.exports = {
     rules: {
         'ulbitv-fsd/path-validator': 2, // todo: пофиксить пути и установить значение в 2
         semi: [2, 'always'],
+        '@typescript-eslint/consistent-type-imports': 'off',
+        'react/jsx-no-constructed-context-values': 2,
         '@typescript-eslint/semi': 'off',
         'react/jsx-indent': 'off',
         'no-tabs': ['error', { allowIndentationTabs: true }],

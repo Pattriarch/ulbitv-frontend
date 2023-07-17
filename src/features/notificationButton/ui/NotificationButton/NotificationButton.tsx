@@ -8,51 +8,54 @@ import { NotificationList } from 'entities/Notification';
 import { Popover } from 'shared/ui/Popups';
 import { Drawer } from 'shared/ui/Drawer/Drawer';
 import { useDevice } from 'shared/lib/hooks/useDevice/useDevice';
+import { AnimationProvider } from 'shared/lib/components/AnimationProvider';
 
 interface NotificationButtonProps {
-	className?: string;
+    className?: string;
 }
 
 export const NotificationButton = memo((props: NotificationButtonProps) => {
-	const { className } = props;
-	const isMobile = useDevice();
+    const { className } = props;
+    const isMobile = useDevice();
 
-	const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
-	const onCloseDrawer = useCallback(() => {
-		setIsOpen(false);
-	}, []);
+    const onCloseDrawer = useCallback(() => {
+        setIsOpen(false);
+    }, []);
 
-	const onOpenDrawer = useCallback(() => {
-		setIsOpen(true);
-	}, []);
+    const onOpenDrawer = useCallback(() => {
+        setIsOpen(true);
+    }, []);
 
-	const trigger = (
-		<Button onClick={onOpenDrawer} theme={ButtonTheme.CLEAR}>
-			<Icon Svg={NotificationIcon} inverted/>
-		</Button>
-	);
+    const trigger = (
+        <Button onClick={onOpenDrawer} theme={ButtonTheme.CLEAR}>
+            <Icon Svg={NotificationIcon} inverted/>
+        </Button>
+    );
 
-	return (
-		<div>
-			{isMobile
-				? (
-					<>
-						{trigger}
-						<Drawer isOpen={isOpen} onClose={onCloseDrawer}>
-							<NotificationList/>
-						</Drawer>
-					</>
-				)
-				: (
-					<Popover
-						direction={'bottomLeft'}
-						trigger={trigger}
-						className={classNames(cls.NotificationButton, {}, [className])}
-					>
-						<NotificationList className={cls.notifications}/>
-					</Popover>
-				)}
-		</div>
-	);
+    return (
+        <div>
+            {isMobile
+                ? (
+                    <>
+                        {trigger}
+                        <AnimationProvider>
+                            <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
+                                <NotificationList/>
+                            </Drawer>
+                        </AnimationProvider>
+                    </>
+                )
+                : (
+                    <Popover
+                        direction={'bottomLeft'}
+                        trigger={trigger}
+                        className={classNames(cls.NotificationButton, {}, [className])}
+                    >
+                        <NotificationList className={cls.notifications}/>
+                    </Popover>
+                )}
+        </div>
+    );
 });
