@@ -1,6 +1,6 @@
-import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { fetchCommentsByArticleId } from './fetchCommentsByArticleId';
-import { type Comment } from 'entities/Comment';
+import { type Comment } from '@/entities/Comment';
 
 const data: Comment[] = [
     {

@@ -4,7 +4,7 @@ import {
     type ReduxStoreWithManager,
     type StateSchema,
     type StateSchemaKey
-} from 'app/providers/StoreProvider/config/StateSchema';
+} from '@/app/providers/StoreProvider/config/StateSchema';
 import { type Reducer } from '@reduxjs/toolkit';
 import { useAppDispatch } from '../../hooks/useAppDispatch/useAppDispatch';
 

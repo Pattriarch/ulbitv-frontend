@@ -3,7 +3,7 @@
 //
 // export const getUserAuthData = (state: StateSchema): User | undefined => state.user.authData;
 
-import { type StateSchema } from 'app/providers/StoreProvider';
+import { type StateSchema } from '@/app/providers/StoreProvider';
 import { getUserAuthData } from './getUserAuthData';
 import { type DeepPartial } from '@reduxjs/toolkit';
 

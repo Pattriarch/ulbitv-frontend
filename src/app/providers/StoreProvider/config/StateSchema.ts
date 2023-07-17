@@ -1,17 +1,17 @@
-import { type CounterSchema } from 'entities/Counter';
-import { type UserSchema } from 'entities/User';
-import { type LoginSchema } from 'features/AuthByUsername';
+import { type CounterSchema } from '@/entities/Counter';
+import { type UserSchema } from '@/entities/User';
+import { type LoginSchema } from '@/features/AuthByUsername';
 import { type EnhancedStore } from '@reduxjs/toolkit/src/configureStore';
 import { type AnyAction, type CombinedState, type Reducer, type ReducersMapObject } from '@reduxjs/toolkit';
 import { type AxiosInstance } from 'axios';
-import { type ArticleDetailsSchema } from 'entities/Article';
-import { type ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
-import { type AddCommentFormSchema } from 'features/AddCommentForm';
-import { type ArticlesPageSchema } from 'pages/ArticlesPage';
-import { type ScrollRestorationSchema } from 'features/ScrollRestoration/model/types/ScrollRestorationSchema';
-import { type EditArticleForm } from 'features/EditArticleForm/model/types/editArticleForm';
-import { type rtkApi } from 'shared/api/rtkApi';
-import { type ProfileSchema } from 'features/editableProfileCard';
+import { type ArticleDetailsSchema } from '@/entities/Article';
+import { type ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
+import { type AddCommentFormSchema } from '@/features/AddCommentForm';
+import { type ArticlesPageSchema } from '@/pages/ArticlesPage';
+import { type ScrollRestorationSchema } from '@/features/ScrollRestoration/model/types/ScrollRestorationSchema';
+import { type EditArticleForm } from '@/features/EditArticleForm/model/types/editArticleForm';
+import { type rtkApi } from '@/shared/api/rtkApi';
+import { type ProfileSchema } from '@/features/editableProfileCard';
 
 export interface StateSchema {
 	counter: CounterSchema;

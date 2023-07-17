@@ -1,4 +1,4 @@
-import { type StateSchema } from 'app/providers/StoreProvider';
+import { type StateSchema } from '@/app/providers/StoreProvider';
 
 export const getEditArticleForm = (state: StateSchema) => state.editArticleForm?.form;
 export const getEditArticleData = (state: StateSchema) => state.editArticleForm?.data;

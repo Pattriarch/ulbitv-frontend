@@ -2,9 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleListItem } from './ArticleListItem';
 import { ArticleView } from '../../consts/articleConsts';
 import { type Article } from '../../model/types/article';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 const meta: Meta<typeof ArticleListItem> = {
     title: 'entities/Article/ArticleListItem',

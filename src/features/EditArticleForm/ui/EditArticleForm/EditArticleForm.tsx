@@ -1,13 +1,13 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './EditArticleForm.module.scss';
 import { memo, useCallback } from 'react';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { getEditArticleForm } from '../../model/selectors/editArticleFormSelectors';
 import { editArticleFormActions } from '../../model/slices/editArticleFormSlice';
-import { Input } from 'shared/ui/Input/Input';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById/fetchArticleById';
+import { Input } from '@/shared/ui/Input/Input';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { fetchArticleById } from '@/entities/Article/model/services/fetchArticleById/fetchArticleById';
 
 interface EditArticleFormProps {
 	className?: string;

@@ -1,5 +1,5 @@
 import { memo, useCallback } from 'react';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { articlesPageActions, getArticles } from '../../model/slices/articlesPageSlice';
 import {
@@ -9,9 +9,9 @@ import {
 	getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
-import { ArticleList } from 'entities/Article';
+import { ArticleList } from '@/entities/Article';
 import { useTranslation } from 'react-i18next';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { Text, TextTheme } from '@/shared/ui/Text/Text';
 
 interface ArticleInfiniteListProps {
 	className?: string;

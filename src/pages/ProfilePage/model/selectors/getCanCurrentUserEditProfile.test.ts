@@ -10,7 +10,7 @@
 //     (authData, profileData) => authData?.id === profileData?.id
 // );
 
-import { type StateSchema } from 'app/providers/StoreProvider';
+import { type StateSchema } from '@/app/providers/StoreProvider';
 import { getCanCurrentUserEditProfile } from './getCanCurrentUserEditProfile';
 
 describe('getCanCurrentUserEditProfile', () => {

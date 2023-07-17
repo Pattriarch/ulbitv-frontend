@@ -1,6 +1,6 @@
 import { type DeepPartial } from '@reduxjs/toolkit';
-import { type StateSchema } from 'app/providers/StoreProvider';
-import { ArticleSortField, ArticleType, ArticleView } from 'entities/Article';
+import { type StateSchema } from '@/app/providers/StoreProvider';
+import { ArticleSortField, ArticleType, ArticleView } from '@/entities/Article';
 import {
     getArticlesPageError, getArticlesPageInited,
     getArticlesPageIsLoading,

@@ -1,15 +1,15 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticleDetailsPage.module.scss';
 import React, { memo } from 'react';
-import { ArticleDetails } from 'entities/Article';
+import { ArticleDetails } from '@/entities/Article';
 import { useParams } from 'react-router-dom';
-import { DynamicModuleLoader, type ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { Page } from 'widgets/Page/ui/Page';
+import { DynamicModuleLoader, type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { Page } from '@/widgets/Page/ui/Page';
 import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
-import { ArticleRecommendationsList } from 'features/articleRecommendationsList';
+import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { ArticleDetailsComments } from '../../ui/ArticleDetailsComments/ArticleDetailsComments';
-import { ArticlesPageFilters } from 'pages/ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters';
+import { ArticlesPageFilters } from '@/pages/ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters';
 
 export interface ArticleDetailsPageProps {
     className?: string;

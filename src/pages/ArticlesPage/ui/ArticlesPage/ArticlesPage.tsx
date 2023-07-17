@@ -1,12 +1,12 @@
 import { memo } from 'react';
-import { DynamicModuleLoader, type ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { DynamicModuleLoader, type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { articlesPageReducer } from '../../model/slices/articlesPageSlice';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { useSearchParams } from 'react-router-dom';
 import { ArticleInfiniteList } from '../../ui/ArticleInfiniteList/ArticleInfiniteList';
-import { VStack } from 'shared/ui/Stack';
+import { VStack } from '@/shared/ui/Stack';
 
 export interface ArticlesPageProps {
     className?: string;

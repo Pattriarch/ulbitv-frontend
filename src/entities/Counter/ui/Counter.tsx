@@ -1,9 +1,9 @@
-import { Button } from 'shared/ui/Button/Button';
+import { Button } from '@/shared/ui/Button/Button';
 import { useSelector } from 'react-redux';
 import { counterActions } from '../model/slice/counterSlice';
 import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
 import { useTranslation } from 'react-i18next';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 interface CounterProps {
 	className?: string;

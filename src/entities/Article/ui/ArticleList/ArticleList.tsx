@@ -1,10 +1,10 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticleList.module.scss';
 import { type FC, type HTMLAttributeAnchorTarget, memo, type ReactNode, useEffect, useRef } from 'react';
 import { ArticleListItem } from '../../ui/ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { useTranslation } from 'react-i18next';
-import { Text, TextSize } from 'shared/ui/Text/Text';
+import { Text, TextSize } from '@/shared/ui/Text/Text';
 import { Virtuoso, VirtuosoGrid, type VirtuosoGridHandle } from 'react-virtuoso';
 import { type Article } from '../../model/types/article';
 import { ArticleView } from '../../consts/articleConsts';
@@ -21,8 +21,6 @@ interface ArticleListProps {
 	setLastScrolledIndex?: (index: number) => void;
 	virtualized?: boolean;
 }
-
-// export const Header = () => <ArticlesPageFilters/>;
 
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 9 : 3)
 	.fill(0)

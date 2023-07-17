@@ -122,6 +122,7 @@
     "sass": "^1.55.0",
     "sass-loader": "^13.1.0",
     "style-loader": "^3.3.1",
+    "ts-morph": "^19.0.0",
     "ts-node-dev": "^2.0.0"
   },
   "loki": {
