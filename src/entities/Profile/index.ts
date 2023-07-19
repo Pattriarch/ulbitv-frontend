@@ -1,4 +1,4 @@
-export type { Profile } from 'entities/Profile/model/types/profile';
+export type { Profile } from '@/entities/Profile/model/types/profile';
 
 export {
     ProfileCard
