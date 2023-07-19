@@ -10,6 +10,7 @@ import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDet
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { ArticleDetailsComments } from '../../ui/ArticleDetailsComments/ArticleDetailsComments';
 import { ArticlesPageFilters } from '@/pages/ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters';
+import { ArticleRating } from '@/features/articleRating';
 
 export interface ArticleDetailsPageProps {
     className?: string;
@@ -23,12 +24,17 @@ const reducers: ReducersList = {
 const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
     const { id } = useParams<{ id: string, }>();
 
+    if (!id) {
+        return null;
+    }
+
     return (
         <DynamicModuleLoader reducers={reducers}>
             <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 <ArticleDetailsPageHeader/>
-                 <ArticleDetails id={id}/>
-                <ArticleRecommendationsList Header={() => <ArticlesPageFilters/>} />
+                <ArticleDetails id={id}/>
+                <ArticleRating articleId={id} />
+                <ArticleRecommendationsList Header={() => <ArticlesPageFilters/>}/>
                 <ArticleDetailsComments id={id}/>
             </Page>
         </DynamicModuleLoader>
