@@ -1,21 +1,21 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import cls from './NotificationButton.module.scss';
-import React, { memo, useCallback, useState } from 'react';
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
-import { Icon } from '@/shared/ui/Icon/Icon';
+import React, {memo, useCallback, useState} from 'react';
+import {Button, ButtonTheme} from '@/shared/ui/Button/Button';
+import {Icon} from '@/shared/ui/Icon/Icon';
 import NotificationIcon from '@/shared/assets/icons/notification-20-20.svg';
-import { NotificationList } from '@/entities/Notification';
-import { Popover } from '@/shared/ui/Popups';
-import { Drawer } from '@/shared/ui/Drawer/Drawer';
-import { useDevice } from '@/shared/lib/hooks/useDevice/useDevice';
-import { AnimationProvider } from '@/shared/lib/components/AnimationProvider';
+import {NotificationList} from '@/entities/Notification';
+import {Popover} from '@/shared/ui/Popups';
+import {Drawer} from '@/shared/ui/Drawer/Drawer';
+import {useDevice} from '@/shared/lib/hooks/useDevice/useDevice';
+import {AnimationProvider} from '@/shared/lib/components/AnimationProvider';
 
 interface NotificationButtonProps {
     className?: string;
 }
 
 export const NotificationButton = memo((props: NotificationButtonProps) => {
-    const { className } = props;
+    const {className} = props;
     const isMobile = useDevice();
 
     const [isOpen, setIsOpen] = useState(false);
@@ -40,11 +40,9 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
                 ? (
                     <>
                         {trigger}
-                        <AnimationProvider>
-                            <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
-                                <NotificationList/>
-                            </Drawer>
-                        </AnimationProvider>
+                        <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
+                            <NotificationList/>
+                        </Drawer>
                     </>
                 )
                 : (
