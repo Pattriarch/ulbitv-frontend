@@ -13,9 +13,14 @@ import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
 
 interface EditableProfileCardHeaderProps {
     className?: string;
+    isLoading?: boolean;
 }
 
-export const EditableProfileCardHeader = memo(({ className }: EditableProfileCardHeaderProps) => {
+export const EditableProfileCardHeader = memo((props: EditableProfileCardHeaderProps) => {
+    const {
+        className,
+        isLoading
+    } = props;
     const { t } = useTranslation('profile');
     const canEdit = useSelector(getCanCurrentUserEditProfile);
     const readonly = useSelector(getProfileReadonly);
@@ -32,6 +37,10 @@ export const EditableProfileCardHeader = memo(({ className }: EditableProfileCar
     const onSave = useCallback(() => {
         void dispatch(updateProfileData());
     }, [dispatch]);
+
+    if (isLoading) {
+        return null;
+    }
 
     return (
         <HStack max justify={'between'} className={classNames('', {}, [className])}>

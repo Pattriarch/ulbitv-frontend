@@ -63,12 +63,24 @@ export const RatingCard = memo((props: RatingCardProps) => {
         </>
     );
 
+    const ratingComponent = (
+        <VStack max align={'center'} gap={'8'}>
+            <Text title={starsCount ? t('Спасибо за оценку') : title}/>
+            <StarRating selectedStars={starsCount} size={40} onSelect={onSelectStars}/>
+        </VStack>
+    );
+
+    if (!hasFeedback) {
+        return (
+            <Card max className={className}>
+                {ratingComponent}
+            </Card>
+        );
+    }
+
     return (
         <Card max className={className}>
-            <VStack max align={'center'} gap={'8'}>
-                <Text title={starsCount ? t('Спасибо за оценку') : title}/>
-                <StarRating selectedStars={starsCount} size={40} onSelect={onSelectStars}/>
-            </VStack>
+            {ratingComponent}
             {isMobile
                 ? (
                     <Drawer isOpen={isModalOpen}>

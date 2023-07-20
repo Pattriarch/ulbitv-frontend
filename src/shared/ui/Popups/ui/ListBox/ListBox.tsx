@@ -49,14 +49,11 @@ export const ListBox = memo((props: ListBoxProps) => {
 				className={classNames(cls.ListBox, {}, [className, popupCls.popup])}
 				value={value}
 				onChange={onChange}>
-				{/* <HStack gap={'8'}> */}
-				<HListBox.Button aria-readonly={readonly} className={popupCls.trigger}>
-					{/* // todo: исправить кнопку здесь */}
+				<HListBox.Button aria-readonly={readonly} className={popupCls.trigger} as={'div'}>
 					 <Button disabled={readonly}>
 					    {value ?? defaultValue}
 					 </Button>
 				</HListBox.Button>
-				{/* </HStack> */}
 				<HListBox.Options className={classNames(cls.options, {}, optionsClasses)}>
 					{items?.map((item) => (
 						<HListBox.Option

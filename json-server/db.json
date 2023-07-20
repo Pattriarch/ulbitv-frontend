@@ -1006,16 +1006,14 @@
     {
       "id": "1",
       "rate": 4,
-      "feedback": "Хорошая статья",
       "userId": "1",
       "profileId": "1"
     },
     {
-      "id": "2",
-      "rate": 4,
-      "feedback": "Хорошая статья",
+      "profileId": "2",
       "userId": "1",
-      "profileId": "2"
+      "rate": 4,
+      "id": "6Y8wxtc"
     }
   ]
 }
