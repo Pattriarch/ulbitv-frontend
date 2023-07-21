@@ -1,12 +1,11 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticleEditPage.module.scss';
 import { memo } from 'react';
-import { Page } from '@/widgets/Page/ui/Page';
+import { Page } from '@/widgets/Page';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { EditArticleForm } from '@/features/EditArticleForm/ui/EditArticleForm/EditArticleForm';
+import { EditArticleForm, editArticleFormReducer } from '@/features/EditArticleForm';
 import { DynamicModuleLoader, type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { editArticleFormReducer } from '@/features/EditArticleForm/model/slices/editArticleFormSlice';
 
 export interface ArticleEditPageProps {
 	className?: string;

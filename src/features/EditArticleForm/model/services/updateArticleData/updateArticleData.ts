@@ -30,6 +30,7 @@ export const updateArticleData = createAsyncThunk<
 
         try {
             const response = await extra.api.put<Article>(
+                // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
                 `/articles/${formData?.id}`,
                 formData
             );

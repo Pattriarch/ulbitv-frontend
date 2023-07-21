@@ -8,8 +8,8 @@ import { type ArticleDetailsSchema } from '@/entities/Article';
 import { type ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
 import { type AddCommentFormSchema } from '@/features/AddCommentForm';
 import { type ArticlesPageSchema } from '@/pages/ArticlesPage';
-import { type ScrollRestorationSchema } from '@/features/ScrollRestoration/model/types/ScrollRestorationSchema';
-import { type EditArticleForm } from '@/features/EditArticleForm/model/types/editArticleForm';
+import { type ScrollRestorationSchema } from '@/features/ScrollRestoration';
+import { type EditArticleForm } from '@/features/EditArticleForm';
 import { type rtkApi } from '@/shared/api/rtkApi';
 import { type ProfileSchema } from '@/features/editableProfileCard';
 

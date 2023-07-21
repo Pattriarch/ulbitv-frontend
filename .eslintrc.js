@@ -40,7 +40,8 @@ module.exports = {
         'ulbitv-fsd'
     ],
     rules: {
-        'ulbitv-fsd/path-validator': [2, {alias: '@'}], // todo: пофиксить пути и установить значение в 2
+        'ulbitv-fsd/path-validator': [2, {alias: '@'}],
+        'ulbitv-fsd/public-api-validator': [2, {alias: '@'}],
         semi: [2, 'always'],
         '@typescript-eslint/consistent-type-imports': 'off',
         'react/jsx-no-constructed-context-values': 2,

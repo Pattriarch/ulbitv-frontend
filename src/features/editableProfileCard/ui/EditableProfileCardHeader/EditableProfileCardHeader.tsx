@@ -2,7 +2,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { getCanCurrentUserEditProfile } from '@/pages/ProfilePage/model/selectors/getCanCurrentUserEditProfile';
+import { getCanCurrentUserEditProfile } from '@/pages/ProfilePage';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { profileActions } from '../../model/slice/profileSlice';

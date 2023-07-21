@@ -9,3 +9,5 @@ export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelecto
 export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector';
 export { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs';
 export { ArticleView, ArticleSortField, ArticleType, ArticleBlockType } from './consts/articleConsts';
+export { articleDetailsReducer } from './model/slice/articleDetailsSlice';
+export { fetchArticleById } from './model/services/fetchArticleById/fetchArticleById';

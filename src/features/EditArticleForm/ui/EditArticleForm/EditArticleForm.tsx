@@ -7,7 +7,7 @@ import { getEditArticleForm } from '../../model/selectors/editArticleFormSelecto
 import { editArticleFormActions } from '../../model/slices/editArticleFormSlice';
 import { Input } from '@/shared/ui/Input/Input';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { fetchArticleById } from '@/entities/Article/model/services/fetchArticleById/fetchArticleById';
+import { fetchArticleById } from '@/entities/Article';
 
 interface EditArticleFormProps {
 	className?: string;
