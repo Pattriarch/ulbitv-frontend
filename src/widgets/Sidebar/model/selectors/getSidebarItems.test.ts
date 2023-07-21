@@ -1,11 +1,11 @@
 import { type StateSchema } from '@/app/providers/StoreProvider';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { type SidebarItemType } from '../../model/types/sidebar';
-import { RoutePath } from '@/app/config/routeConfig/routes';
 import MainIcon from '@/shared/assets/icons/main-20-20.svg';
 import AboutIcon from '@/shared/assets/icons/about-20-20.svg';
 import ProfileIcon from '@/shared/assets/icons/profile-20-20.svg';
 import ArticlesIcon from '@/shared/assets/icons/articles-20-20.svg';
+import { RoutePath } from '@/shared/const/router';
 
 describe('getSidebarItems', () => {
     test('should return sidebar items', () => {

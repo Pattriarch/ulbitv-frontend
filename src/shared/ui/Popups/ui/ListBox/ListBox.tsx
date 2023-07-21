@@ -4,7 +4,7 @@ import { Fragment, memo, type ReactNode } from 'react';
 import { Listbox as HListBox } from '@headlessui/react';
 import { Button } from '../../../Button/Button';
 import { HStack } from '../../../Stack';
-import { type DropdownDirection } from '@/shared/types/ui';
+import { type DropdownDirection } from '@/shared/types';
 import popupCls from '../../styles/popup.module.scss';
 
 export interface ListBoxItem {

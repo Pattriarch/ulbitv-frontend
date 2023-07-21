@@ -1,1 +1,1 @@
-export * from './config/routeConfig/routes.enum';
+export { AppRoutes } from '@/shared/const/router';
