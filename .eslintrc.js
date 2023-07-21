@@ -5,43 +5,38 @@ module.exports = {
         __PROJECT__: true
     },
     env: {
-        browser: true, es2021: true
+        browser: true,
+        es2021: true
     },
-    extends: [
-        'standard-with-typescript',
-        'plugin:react/recommended',
-        'plugin:i18next/recommended'
-    ],
-    overrides: [
-        {
-            env: {
-                node: true
-            },
-            files: ['.eslintrc.{js,cjs}'],
-            parserOptions: {
-                sourceType: 'script'
-            }
+    extends: ['standard-with-typescript', 'plugin:react/recommended', 'plugin:i18next/recommended'],
+    overrides: [{
+        env: {
+            node: true
         },
-        {
-            files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
-            rules: {
-                'i18next/no-literal-string': 'off',
-                'max-len': 'off'
-            }
+        files: ['.eslintrc.{js,cjs}'],
+        parserOptions: {
+            sourceType: 'script'
         }
-    ],
+    }, {
+        files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
+        rules: {
+            'i18next/no-literal-string': 'off',
+            'max-len': 'off'
+        }
+    }],
     parserOptions: {
-        project: './tsconfig.json', ecmaVersion: 'latest', sourceType: 'module'
+        project: './tsconfig.json',
+        ecmaVersion: 'latest',
+        sourceType: 'module'
     },
-    plugins: [
-        'react',
-        'i18next',
-        'react-hooks',
-        'ulbitv-fsd'
-    ],
+    ignorePatterns: ['.eslintrc.js'],
+    plugins: ['react', 'i18next', 'react-hooks', 'ulbitv-fsd'],
     rules: {
         'ulbitv-fsd/path-validator': [2, {alias: '@'}],
-        'ulbitv-fsd/public-api-validator': [2, {alias: '@'}],
+        'ulbitv-fsd/public-api-validator': [2, {
+            alias: '@',
+            testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+        }],
         semi: [2, 'always'],
         '@typescript-eslint/consistent-type-imports': 'off',
         'react/jsx-no-constructed-context-values': 2,
@@ -67,14 +62,12 @@ module.exports = {
         '@typescript-eslint/ban-ts-comment': 'warn',
         'i18next/no-literal-string': ['warn', {
             markupOnly: true,
-            ignoreAttribute: [
-                'tag', 'as', 'nav', 'role',
-                'to', 'data-testid', 'placeholder',
-                'name', 'target', 'direction',
-                'justify', 'align', 'gap', 'border'
-            ]
+            ignoreAttribute: ['tag', 'as', 'nav', 'role', 'to', 'data-testid', 'placeholder', 'name', 'target', 'direction', 'justify', 'align', 'gap', 'border']
         }],
-        'max-len': ['error', {code: 130, ignoreComments: true}],
+        'max-len': ['error', {
+            code: 130,
+            ignoreComments: true
+        }],
         'react/display-name': 'off',
         '@typescript-eslint/prefer-includes': 'off',
         '@typescript-eslint/no-unused-vars': 'warn',
