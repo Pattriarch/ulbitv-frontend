@@ -9,8 +9,8 @@ import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { ArticleDetailsComments } from '../../ui/ArticleDetailsComments/ArticleDetailsComments';
-import { ArticlesPageFilters } from '@/pages/ArticlesPage';
 import { ArticleRating } from '@/features/articleRating';
+import { ArticlesDetailsPageFilters } from '../ArticlesDetailsPageFilters/ArticlesDetailsPageFilters';
 
 export interface ArticleDetailsPageProps {
     className?: string;
@@ -33,8 +33,8 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
             <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 <ArticleDetailsPageHeader/>
                 <ArticleDetails id={id}/>
-                <ArticleRating articleId={id} />
-                <ArticleRecommendationsList Header={() => <ArticlesPageFilters/>}/>
+                <ArticleRating articleId={id}/>
+                <ArticleRecommendationsList Header={() => <ArticlesDetailsPageFilters/>}/>
                 <ArticleDetailsComments id={id}/>
             </Page>
         </DynamicModuleLoader>

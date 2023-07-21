@@ -1,5 +1,5 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './ArticlesPageFilters.module.scss';
+import cls from './ArticlesDetailsPageFilters.module.scss';
 import { memo, useCallback } from 'react';
 import {
     type ArticleSortField,
@@ -16,14 +16,14 @@ import {
     getArticlesPageSort,
     getArticlesPageType,
     getArticlesPageView
-} from '../../model/selectors/articlesPageSelectors';
-import { articlesPageActions } from '../../model/slices/articlesPageSlice';
+} from '../../../ArticlesPage/model/selectors/articlesPageSelectors';
+import { articlesPageActions } from '../../../ArticlesPage/model/slices/articlesPageSlice';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useTranslation } from 'react-i18next';
 import { Card } from '@/shared/ui/Card/Card';
 import { Input } from '@/shared/ui/Input/Input';
 import { type SortOrder } from '@/shared/types';
-import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
+import { fetchArticlesList } from '../../../ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import { type TabItem } from '@/shared/ui/Tabs/Tabs';
 
@@ -32,7 +32,7 @@ interface ArticlesPageFiltersProps {
 }
 
 // todo: переписать на фичу
-export const ArticlesPageFilters = memo(({ className }: ArticlesPageFiltersProps) => {
+export const ArticlesDetailsPageFilters = memo(({ className }: ArticlesPageFiltersProps) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
     const view = useSelector(getArticlesPageView);

@@ -1,9 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react';
+// eslint-disable-next-line ulbitv-fsd/layer-imports-validator
 import '@/app/styles/index.scss';
-import { Theme } from '@/app/providers/ThemeProvider';
+import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Sidebar } from './Sidebar';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { Theme } from '@/shared';
 
 const meta: Meta<typeof Sidebar> = {
     title: 'widgets/Sidebar',

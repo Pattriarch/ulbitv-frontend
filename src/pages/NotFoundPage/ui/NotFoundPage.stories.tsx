@@ -1,9 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react';
+// eslint-disable-next-line ulbitv-fsd/layer-imports-validator
 import '@/app/styles/index.scss';
+import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
 import { NotFoundPage } from './NotFoundPage';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { Theme } from '@/shared';
 
 const meta: Meta<typeof NotFoundPage> = {
     title: 'pages/NotFoundPage',

@@ -37,6 +37,10 @@ module.exports = {
             alias: '@',
             testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
         }],
+        'ulbitv-fsd/layer-imports-validator': [2, {
+            alias: '@',
+            ignoreImportPatterns: ['**/StoreProvider', '**/testing']
+        }],
         semi: [2, 'always'],
         '@typescript-eslint/consistent-type-imports': 'off',
         'react/jsx-no-constructed-context-values': 2,

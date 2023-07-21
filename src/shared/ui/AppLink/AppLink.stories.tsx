@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react';
+// eslint-disable-next-line ulbitv-fsd/layer-imports-validator
 import '@/app/styles/index.scss';
+import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { AppLink, AppLinkTheme } from '../AppLink/AppLink';
-import { Theme } from '@/app/providers/ThemeProvider';
 
 const meta: Meta<typeof AppLink> = {
     title: 'shared/AppLink',

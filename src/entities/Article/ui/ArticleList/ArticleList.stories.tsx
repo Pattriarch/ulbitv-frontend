@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleList } from './ArticleList';
 import { type Article } from '../../model/types/article';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ArticleView } from '../../consts/articleConsts';
 

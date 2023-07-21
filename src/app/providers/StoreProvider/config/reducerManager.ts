@@ -3,7 +3,7 @@ import { type StateSchema } from '@/app/providers/StoreProvider';
 import {
     type ReducerManager,
     type StateSchemaKey
-} from '@/app/providers/StoreProvider/config/StateSchema';
+} from './StateSchema';
 
 export function createReducerManager(initialReducers: ReducersMapObject<StateSchema>): ReducerManager {
     const reducers = { ...initialReducers };

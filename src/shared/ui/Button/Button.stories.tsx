@@ -1,7 +1,7 @@
+// eslint-disable-next-line ulbitv-fsd/layer-imports-validator
+import '@/app/styles/index.scss';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button, ButtonSize, ButtonTheme } from './Button';
-import '@/app/styles/index.scss';
-import { Theme } from '@/app/providers/ThemeProvider';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
 const meta: Meta<typeof Button> = {
