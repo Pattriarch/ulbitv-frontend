@@ -40,13 +40,13 @@ module.exports = {
         'ulbitv-fsd'
     ],
     rules: {
-        'ulbitv-fsd/path-validator': 2, // todo: пофиксить пути и установить значение в 2
+        'ulbitv-fsd/path-validator': [2, {alias: '@'}], // todo: пофиксить пути и установить значение в 2
         semi: [2, 'always'],
         '@typescript-eslint/consistent-type-imports': 'off',
         'react/jsx-no-constructed-context-values': 2,
         '@typescript-eslint/semi': 'off',
         'react/jsx-indent': 'off',
-        'no-tabs': ['error', { allowIndentationTabs: true }],
+        'no-tabs': ['error', {allowIndentationTabs: true}],
         'react/jsx-indent-props': 'off',
         indent: 'off',
         'react/jsx-filename-extension': [2, {
@@ -73,7 +73,7 @@ module.exports = {
                 'justify', 'align', 'gap', 'border'
             ]
         }],
-        'max-len': ['error', { code: 130, ignoreComments: true }],
+        'max-len': ['error', {code: 130, ignoreComments: true}],
         'react/display-name': 'off',
         '@typescript-eslint/prefer-includes': 'off',
         '@typescript-eslint/no-unused-vars': 'warn',
