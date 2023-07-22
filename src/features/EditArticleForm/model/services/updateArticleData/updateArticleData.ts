@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import { getEditArticleForm } from '../../../model/selectors/editArticleFormSelectors';
+// import { getEditArticleForm } from '../../../model/selectors/editArticleFormSelectors';
 
 import { type ThunkConfig } from '@/app/providers/StoreProvider';
 import { type Article } from '@/entities/Article';
@@ -18,11 +18,11 @@ export const updateArticleData = createAsyncThunk<
             getState
         } = thunkAPI;
 
-        const formData = getEditArticleForm(getState());
+        // const formData = getEditArticleForm(getState());
 
-        if (!formData?.id) {
-            throw new Error();
-        }
+        // if (!formData?.id) {
+        //     throw new Error();
+        // }
 
         // const errors = validateProfileData(formData);
         //
@@ -31,17 +31,19 @@ export const updateArticleData = createAsyncThunk<
         // }
 
         try {
-            const response = await extra.api.put<Article>(
-                // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-                `/articles/${formData?.id}`,
-                formData
-            );
+            // const response = await extra.api.put<Article>(
+            //     // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+            //     `/articles/${formData?.id}`,
+            //     formData
+            // );
 
-            if (!response.data) {
-                throw new Error();
-            }
+            // if (!response.data) {
+            //     throw new Error();
+            // }
 
-            return response.data;
+            // return response.data;
+            return {};
+            // eslint-disable-next-line no-unreachable
         } catch (e) {
             console.error(e);
             return rejectWithValue('error');
