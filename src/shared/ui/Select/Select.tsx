@@ -1,6 +1,7 @@
 import { classNames, type Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Select.module.scss';
 import { type ChangeEvent, useMemo } from 'react';
+import { typedMemo } from '@/shared/types';
 
 export interface SelectOption<T extends string> {
 	value: T;
@@ -16,7 +17,7 @@ interface SelectProps<T extends string> {
 	readonly?: boolean;
 }
 
-export const Select = <T extends string>(props: SelectProps<T>): JSX.Element => {
+export const Select = typedMemo(<T extends string>(props: SelectProps<T>): JSX.Element => {
     const {
         className,
         label,
@@ -59,4 +60,4 @@ export const Select = <T extends string>(props: SelectProps<T>): JSX.Element => 
             </select>
         </div>
     );
-};
+});
