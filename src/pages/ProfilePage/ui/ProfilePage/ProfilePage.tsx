@@ -1,7 +1,7 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo } from 'react';
 import { Page } from '@/widgets/Page';
-import { VStack } from '@/shared/ui/Stack/VStack/VStack';
+import { VStack } from '@/shared/ui/Stack';
 import { EditableProfileCard } from '@/features/editableProfileCard';
 import { useParams } from 'react-router-dom';
 import { ProfileRating } from '@/features/profileRating';

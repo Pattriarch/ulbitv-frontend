@@ -5,7 +5,7 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { useSelector } from 'react-redux';
 import { getEditArticleForm } from '../../model/selectors/editArticleFormSelectors';
 import { editArticleFormActions } from '../../model/slices/editArticleFormSlice';
-import { Input } from '@/shared/ui/Input/Input';
+import { Input } from '@/shared/ui/Input';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { fetchArticleById } from '@/entities/Article';
 

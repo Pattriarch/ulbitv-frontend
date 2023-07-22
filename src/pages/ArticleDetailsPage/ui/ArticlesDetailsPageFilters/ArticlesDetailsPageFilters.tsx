@@ -20,12 +20,12 @@ import {
 import { articlesPageActions } from '../../../ArticlesPage/model/slices/articlesPageSlice';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useTranslation } from 'react-i18next';
-import { Card } from '@/shared/ui/Card/Card';
-import { Input } from '@/shared/ui/Input/Input';
+import { Card } from '@/shared/ui/Card';
+import { Input } from '@/shared/ui/Input';
 import { type SortOrder } from '@/shared/types';
 import { fetchArticlesList } from '../../../ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
-import { type TabItem } from '@/shared/ui/Tabs/Tabs';
+import { type TabItem } from '@/shared/ui/Tabs';
 
 interface ArticlesPageFiltersProps {
 	className?: string;

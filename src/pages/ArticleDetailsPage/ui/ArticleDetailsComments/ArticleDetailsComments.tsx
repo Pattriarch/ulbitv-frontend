@@ -9,12 +9,12 @@ import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitial
 import {
 	fetchCommentsByArticleId
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { TextSize, Text } from '@/shared/ui/Text/Text';
+import { TextSize, Text } from '@/shared/ui/Text';
 import { AddCommentForm } from '@/features/AddCommentForm';
 import { CommentList } from '@/entities/Comment';
 import { useTranslation } from 'react-i18next';
 import { VStack } from '@/shared/ui/Stack';
-import { Loader } from '@/shared/ui/Loader/Loader';
+import { Loader } from '@/shared/ui/Loader';
 
 interface ArticleDetailsCommentsProps {
 	className?: string;
