@@ -3,6 +3,7 @@ import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorat
 import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
 import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
+import { Theme } from '@/shared';
 
 const preview: Preview = {
 	parameters: {
@@ -12,7 +13,8 @@ const preview: Preview = {
 				color: /(background|color)$/i,
 				date: /Date$/
 			}
-		}
+		},
+		layout: 'fullscreen'
 	},
 	decorators: [
 		ThemeDecorator(Theme.LIGHT),

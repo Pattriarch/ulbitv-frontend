@@ -5,13 +5,10 @@ import { getCounterValue } from '../model/selectors/getCounterValue/getCounterVa
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
-interface CounterProps {
-	className?: string;
-}
-
-export const Counter = ({ className }: CounterProps): JSX.Element => {
+export const Counter = (): JSX.Element => {
     const dispatch = useAppDispatch();
     const counterValue = useSelector(getCounterValue);
+    const { t } = useTranslation();
 
     const increment = (): void => {
         dispatch(counterActions.increment());
@@ -19,8 +16,6 @@ export const Counter = ({ className }: CounterProps): JSX.Element => {
     const decrement = (): void => {
         dispatch(counterActions.decrement());
     };
-
-    const { t } = useTranslation();
 
     return (
         <div>

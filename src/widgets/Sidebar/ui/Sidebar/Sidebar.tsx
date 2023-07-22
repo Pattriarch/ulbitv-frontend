@@ -1,6 +1,6 @@
 import React, { memo, useState } from 'react';
-import { ThemeSwitcher } from 'src/features/ThemeSwitcher';
-import { LangSwitcher } from 'src/features/LangSwitcher';
+import { ThemeSwitcher } from '@/features/ThemeSwitcher';
+import { LangSwitcher } from '@/features/LangSwitcher';
 import { useSelector } from 'react-redux';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
