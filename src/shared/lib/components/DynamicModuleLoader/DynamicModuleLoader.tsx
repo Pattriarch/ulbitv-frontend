@@ -9,6 +9,7 @@ import { type Reducer } from '@reduxjs/toolkit';
 import { useAppDispatch } from '../../hooks/useAppDispatch/useAppDispatch';
 
 export type ReducersList = {
+    // явно указываем, что по ключу мы хотим получить reducer из StateSchema
 	[name in StateSchemaKey]?: Reducer<NonNullable<StateSchema[name]>>;
 }
 
