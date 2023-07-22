@@ -1,39 +1,52 @@
-import { Button } from '@/shared/ui/Button';
-import { useSelector } from 'react-redux';
-import { counterActions } from '../model/slice/counterSlice';
-import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
 import { useTranslation } from 'react-i18next';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+
+import { useCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
+import { useCounterActions } from '../model/slice/counterSlice';
+
+import { Button } from '@/shared/ui/Button';
 
 export const Counter = (): JSX.Element => {
-    const dispatch = useAppDispatch();
-    const counterValue = useSelector(getCounterValue);
-    const { t } = useTranslation();
+	// const dispatch = useAppDispatch();
+	// const counterValue = useSelector(getCounterValue);
+	const counterValue = useCounterValue();
+	const {
+		add,
+		decrement,
+		increment
+	} = useCounterActions();
+	const { t } = useTranslation();
 
-    const increment = (): void => {
-        dispatch(counterActions.increment());
-    };
-    const decrement = (): void => {
-        dispatch(counterActions.decrement());
-    };
+	const handleIncrement = (): void => {
+		increment();
+		// dispatch(counterActions.increment());
+	};
+	const handleDecrement = (): void => {
+		decrement();
+		// dispatch(counterActions.decrement());
+	};
 
-    return (
-        <div>
-            <h1 data-testid={'value-title'}>{counterValue}</h1>
-            <Button
-                data-testid={'increment-btn'}
-                onClick={increment}
-                type={'button'}
-            >
-                {t('increment')}
-            </Button>
-            <Button
-                data-testid={'decrement-btn'}
-                onClick={decrement}
-                type={'button'}
-            >
-                {t('decrement')}
-            </Button>
-        </div>
-    );
+	const handleAddFive = (): void => {
+		add(5);
+		// dispatch(counterActions.decrement());
+	};
+
+	return (
+		<div>
+			<h1 data-testid={'value-title'}>{counterValue}</h1>
+			<Button
+				data-testid={'increment-btn'}
+				onClick={handleIncrement}
+				type={'button'}
+			>
+				{t('increment')}
+			</Button>
+			<Button
+				data-testid={'decrement-btn'}
+				onClick={handleDecrement}
+				type={'button'}
+			>
+				{t('decrement')}
+			</Button>
+		</div>
+	);
 };
