@@ -9,7 +9,6 @@ import { type ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
 import { type AddCommentFormSchema } from '@/features/AddCommentForm';
 import { type ArticlesPageSchema } from '@/pages/ArticlesPage';
 import { type ScrollRestorationSchema } from '@/features/ScrollRestoration';
-import { type EditArticleForm } from '@/features/EditArticleForm';
 import { type rtkApi } from '@/shared/api/rtkApi';
 import { type ProfileSchema } from '@/features/editableProfileCard';
 
@@ -26,7 +25,6 @@ export interface StateSchema {
 	articleDetailsPage?: ArticleDetailsPageSchema;
 	addCommentForm?: AddCommentFormSchema;
 	articlesPage?: ArticlesPageSchema;
-	editArticleForm?: EditArticleForm;
 }
 
 export type StateSchemaKey = keyof StateSchema;

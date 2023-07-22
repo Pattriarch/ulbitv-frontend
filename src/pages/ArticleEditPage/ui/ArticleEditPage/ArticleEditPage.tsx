@@ -4,7 +4,7 @@ import { memo } from 'react';
 import { Page } from '@/widgets/Page';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { EditArticleForm, editArticleFormReducer } from '@/features/EditArticleForm';
+import { EditArticleForm } from '@/features/EditArticleForm';
 import { DynamicModuleLoader, type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
 export interface ArticleEditPageProps {
@@ -12,7 +12,7 @@ export interface ArticleEditPageProps {
 }
 
 const reducers: ReducersList = {
-    editArticleForm: editArticleFormReducer
+    // editArticleForm: editArticleFormReducer
 };
 
 const ArticleEditPage = memo(({ className }: ArticleEditPageProps) => {

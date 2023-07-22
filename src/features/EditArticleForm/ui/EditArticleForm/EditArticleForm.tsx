@@ -2,10 +2,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './EditArticleForm.module.scss';
 import { memo, useCallback } from 'react';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useSelector } from 'react-redux';
-import { getEditArticleForm } from '../../model/selectors/editArticleFormSelectors';
 import { editArticleFormActions } from '../../model/slices/editArticleFormSlice';
-import { Input } from '@/shared/ui/Input';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { fetchArticleById } from '@/entities/Article';
 
@@ -23,7 +20,7 @@ export const EditArticleForm = memo(({ className, id }: EditArticleFormProps) =>
         }
     });
 
-    const formData = useSelector(getEditArticleForm);
+    // const formData = useSelector(getEditArticleForm);
 
     const onChangeImage = useCallback((value: string) => {
         void dispatch(editArticleFormActions.updateArticle({ img: value || '' }));
@@ -39,7 +36,7 @@ export const EditArticleForm = memo(({ className, id }: EditArticleFormProps) =>
 
     return (
         <div className={classNames(cls.EditArticleForm, {}, [className])}>
-            <Input className={cls.title} value={formData?.title} onChange={onChangeTitle}/>
+            {/* <Input className={cls.title} value={formData?.title} onChange={onChangeTitle}/> */}
         </div>
     );
 });

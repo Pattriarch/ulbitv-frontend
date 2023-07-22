@@ -32,11 +32,11 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
 		element: <AboutPage/>
 	},
 	[AppRoutes.ARTICLES]: {
-		path: getRouterProfile(':id'),
+		path: getRouteArticles(),
 		element: <ArticlesPage/>
 	},
 	[AppRoutes.PROFILE]: {
-		path: getRouteArticles(),
+		path: getRouterProfile(':id'),
 		element: <ProfilePage/>,
 		authOnly: true
 	},

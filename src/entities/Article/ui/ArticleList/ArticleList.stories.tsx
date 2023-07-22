@@ -4,6 +4,7 @@ import { type Article } from '../../model/types/article';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ArticleView } from '../../consts/articleConsts';
+import { Theme } from '@/shared/const/theme';
 
 const meta: Meta<typeof ArticleList> = {
     title: 'entities/Article/ArticleList',

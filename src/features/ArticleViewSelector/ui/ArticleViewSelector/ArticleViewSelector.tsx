@@ -5,12 +5,12 @@ import ListIcon from '../../../../shared/assets/icons/list-24-24.svg';
 import TiledIcon from '../../../../shared/assets/icons/tiled-24-24.svg';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Icon } from '@/shared/ui/Icon';
-import { ArticleView } from '../../consts/articleConsts';
+import { ArticleView } from '@/entities/Article';
 
 interface ArticleViewSelectorProps {
-	className?: string;
-	view?: ArticleView; // для подсветки выбранного
-	onViewClick?: (view: ArticleView) => void; // для переключения отображения
+    className?: string;
+    view?: ArticleView; // для подсветки выбранного
+    onViewClick?: (view: ArticleView) => void; // для переключения отображения
 }
 
 const viewTypes = [

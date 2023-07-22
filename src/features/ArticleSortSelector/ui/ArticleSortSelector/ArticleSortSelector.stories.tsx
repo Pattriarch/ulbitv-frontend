@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleSortSelector } from './ArticleSortSelector';
 
 const meta: Meta<typeof ArticleSortSelector> = {
-    title: 'entities/Article/ArticleSortSelector',
+    title: 'features/ArticleSortSelector',
     component: ArticleSortSelector,
     tags: ['autodocs']
 };
@@ -10,6 +10,6 @@ const meta: Meta<typeof ArticleSortSelector> = {
 export default meta;
 type Story = StoryObj<typeof ArticleSortSelector>;
 
-export const Primary: Story = {
+export const Normal: Story = {
     args: {}
 };
