@@ -33,7 +33,28 @@ module.exports = {
     ignorePatterns: ['.eslintrc.js'],
     rules: {
         'import/newline-after-import': 2,
-        // 'import/order': 2, // todo: uncomment to get order
+        'import/order': [
+            2,
+            {
+                "pathGroups": [
+                    {
+                        "pattern": "@/**",
+                        "group": "internal",
+                        "position": "after"
+                    },
+                    {
+                        pattern: './**.module.*',
+                        group: 'internal',
+                        position: 'after',
+                    },
+                ],
+                "newlines-between": "always",
+                "alphabetize": {
+                    "order": "asc",
+                    "caseInsensitive": false
+                }
+            }
+        ], // todo: uncomment to get order
         'unused-imports/no-unused-imports': 2,
         'ulbitv-fsd/path-validator': [2, {alias: '@'}],
         'ulbitv-fsd/public-api-validator': [2, {

@@ -25,7 +25,11 @@
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook",
     "prepare": "husky install",
-    "generate:slice": "node ./scripts/createSlice/index.js"
+    "postinstall": "ts-node scripts/clearCache/clearCache.ts",
+    "scripts:generate:slice": "node ./scripts/createSlice/index.js",
+    "scripts:update:imports": "ts-node ./scripts/refactoring/updateImports.ts",
+    "scripts:create:public:api:shared": "ts-node scripts/createPublicApi/createPublicApiForSharedUi-v2.ts",
+    "scripts:create:readme": "ts-node scripts/createReadme/createReadmeForSlices.ts"
   },
   "keywords": [
     "ulbitv"
@@ -77,7 +81,7 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-button-has-type": "^0.0.3",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-ulbitv-fsd": "^0.0.7",
+    "eslint-plugin-ulbitv-fsd": "^0.0.8",
     "eslint-plugin-unused-imports": "^3.0.0",
     "file-loader": "^6.2.0",
     "fork-ts-checker-webpack-plugin": "^8.0.0",

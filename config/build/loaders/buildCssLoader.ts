@@ -3,6 +3,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 export function buildCssLoader(isDev: boolean): object {
     return {
         test: /\.s[ac]ss$/i,
+        exclude: /node_modules/,
         use: [
             // Creates `style` nodes from JS strings
             // "style-loader",
