@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteAdminPanel, getRouterProfile } from '@/shared/const/router';
 
 interface AvatarDropdownProps {
 	className?: string;
@@ -37,13 +37,12 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
 				...(isAdminPanelAvailable
 					? [{
 						content: t('Админка'),
-						href: RoutePath.admin_panel
+						href: getRouteAdminPanel()
 					}]
 					: []),
 				{
 					content: t('Профиль'),
-					// eslint-disable-next-line @typescript-eslint/restrict-plus-operands
-					href: RoutePath.profile + authData.id
+					href: getRouterProfile(authData.id)
 				},
 				{
 					content: t('Выйти'),

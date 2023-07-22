@@ -11,7 +11,7 @@ import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleCreate, getRouteMain } from '@/shared/const/router';
 
 interface NavbarProps {
 	className?: string;
@@ -33,7 +33,7 @@ export const Navbar = memo(({ className }: NavbarProps): JSX.Element => {
 	if (authData) {
 		return (
 			<header className={classNames(cls.Navbar, {}, [className])}>
-				<AppLink to={RoutePath.main}>
+				<AppLink to={getRouteMain()}>
 					<Text
 						className={cls.appName}
 						title={t('Pattriarch App')}
@@ -41,7 +41,7 @@ export const Navbar = memo(({ className }: NavbarProps): JSX.Element => {
 					/>
 				</AppLink>
 				<AppLink
-					to={RoutePath.article_create}
+					to={getRouteArticleCreate()}
 					theme={AppLinkTheme.SECONDARY}
 					className={cls.createBtn}
 				>

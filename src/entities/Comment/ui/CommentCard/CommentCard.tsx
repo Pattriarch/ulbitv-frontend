@@ -6,7 +6,7 @@ import { Text } from '@/shared/ui/Text';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { AppLink } from '@/shared/ui/AppLink';
 import { VStack } from '@/shared/ui/Stack';
-import { RoutePath } from '@/shared/const/router';
+import { getRouterProfile } from '@/shared/const/router';
 
 interface CommentCardProps {
 	className?: string;
@@ -35,8 +35,7 @@ export const CommentCard = (props: CommentCardProps): JSX.Element | null => {
 
     return (
         <VStack gap={'8'} max className={classNames(cls.CommentCard, {}, [className])}>
-            {/* eslint-disable-next-line @typescript-eslint/restrict-plus-operands */}
-            <AppLink to={RoutePath.profile + comment.user?.id} className={cls.header}>
+            <AppLink to={getRouterProfile(comment.user?.id)} className={cls.header}>
                 {comment.user?.avatar ? <Avatar src={comment.user?.avatar} size={30}/> : null}
                 <Text className={cls.username} title={comment.user?.username}/>
             </AppLink>

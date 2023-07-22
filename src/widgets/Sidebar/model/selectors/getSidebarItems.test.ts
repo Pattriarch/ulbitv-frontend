@@ -5,29 +5,29 @@ import MainIcon from '@/shared/assets/icons/main-20-20.svg';
 import AboutIcon from '@/shared/assets/icons/about-20-20.svg';
 import ProfileIcon from '@/shared/assets/icons/profile-20-20.svg';
 import ArticlesIcon from '@/shared/assets/icons/articles-20-20.svg';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticles, getRouteMain, getRouterAbout, getRouterProfile } from '@/shared/const/router';
 
 describe('getSidebarItems', () => {
     test('should return sidebar items', () => {
         const data: SidebarItemType[] = [
             {
-                path: RoutePath.main,
+                path: getRouteMain(),
                 Icon: MainIcon,
                 text: 'Главная'
             },
             {
-                path: RoutePath.about,
+                path: getRouterAbout(),
                 Icon: AboutIcon,
                 text: 'О сайте'
             },
             {
-                path: `${RoutePath.profile}1`,
+                path: getRouterProfile('1'),
                 Icon: ProfileIcon,
                 text: 'Профиль',
                 authOnly: true
             },
             {
-                path: RoutePath.articles,
+                path: getRouteArticles(),
                 Icon: ArticlesIcon,
                 text: 'Статьи',
                 authOnly: true
@@ -45,12 +45,12 @@ describe('getSidebarItems', () => {
     test('should return sidebar items', () => {
         const data: SidebarItemType[] = [
             {
-                path: RoutePath.main,
+                path: getRouteMain(),
                 Icon: MainIcon,
                 text: 'Главная'
             },
             {
-                path: RoutePath.about,
+                path: getRouterAbout(),
                 Icon: AboutIcon,
                 text: 'О сайте'
             }
