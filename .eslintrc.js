@@ -1,14 +1,4 @@
 module.exports = {
-    globals: {
-        __IS_DEV__: true,
-        __API__: true,
-        __PROJECT__: true
-    },
-    env: {
-        browser: true,
-        es2021: true
-    },
-    extends: ['standard-with-typescript', 'plugin:react/recommended', 'plugin:i18next/recommended'],
     overrides: [{
         env: {
             node: true
@@ -20,18 +10,31 @@ module.exports = {
     }, {
         files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
         rules: {
-            'i18next/no-literal-string': 'off',
-            'max-len': 'off'
+            'i18next/no-literal-string': 0,
+            'max-len': 0
         }
     }],
+    globals: {
+        __IS_DEV__: true,
+        __API__: true,
+        __PROJECT__: true
+    },
     parserOptions: {
         project: './tsconfig.json',
         ecmaVersion: 'latest',
         sourceType: 'module'
     },
+    env: {
+        browser: true,
+        es2021: true
+    },
+    extends: ['standard-with-typescript', 'plugin:react/recommended', 'plugin:i18next/recommended'],
+    plugins: ['react', 'i18next', 'react-hooks', 'ulbitv-fsd', 'unused-imports', 'import'],
     ignorePatterns: ['.eslintrc.js'],
-    plugins: ['react', 'i18next', 'react-hooks', 'ulbitv-fsd'],
     rules: {
+        'import/newline-after-import': 2,
+        // 'import/order': 2, // todo: uncomment to get order
+        'unused-imports/no-unused-imports': 2,
         'ulbitv-fsd/path-validator': [2, {alias: '@'}],
         'ulbitv-fsd/public-api-validator': [2, {
             alias: '@',
@@ -42,51 +45,25 @@ module.exports = {
             ignoreImportPatterns: ['**/StoreProvider', '**/testing']
         }],
         semi: [2, 'always'],
-        '@typescript-eslint/consistent-type-imports': 'off',
         'react/jsx-no-constructed-context-values': 2,
-        '@typescript-eslint/semi': 'off',
-        'react/jsx-indent': 'off',
-        'no-tabs': ['error', {allowIndentationTabs: true}],
-        'react/jsx-indent-props': 'off',
-        indent: 'off',
         'react/jsx-filename-extension': [2, {
             extensions: ['.js', '.jsx', '.tsx']
         }],
-        'import/no-unresolved': 'off',
-        'no-unused-vars': 'off',
-        '@typescript-eslint/indent': 'off',
-        '@typescript-eslint/array-type': 'off',
-        '@typescript-eslint/space-before-function-paren': 'off',
-        'react/button-has-type': 'error',
-        'react/function-component-definition': 'off',
-        'no-shadow': 'off',
-        '@typescript-eslint/strict-boolean-expressions': 'off',
-        'react/react-in-jsx-scope': 'off',
-        '@typescript-eslint/naming-convention': 'off',
-        '@typescript-eslint/ban-ts-comment': 'warn',
-        'i18next/no-literal-string': ['warn', {
-            markupOnly: true,
-            ignoreAttribute: ['tag', 'as', 'nav', 'role', 'to', 'data-testid', 'placeholder', 'name', 'target', 'direction', 'justify', 'align', 'gap', 'border']
-        }],
-        'max-len': ['error', {
+        'no-tabs': [2, {allowIndentationTabs: true}],
+        'react/button-has-type': 2,
+        'react-hooks/rules-of-hooks': 2,
+        'react-hooks/exhaustive-deps': 2,
+        'max-len': [2, {
             code: 130,
             ignoreComments: true
         }],
-        'react/display-name': 'off',
-        '@typescript-eslint/prefer-includes': 'off',
-        '@typescript-eslint/no-unused-vars': 'warn',
-        'n/handle-callback-err': 'off',
-        '@typescript-eslint/no-confusing-void-expression': 'off',
-        'react-hooks/rules-of-hooks': 'error',
-        'react-hooks/exhaustive-deps': 'error',
-        '@typescript-eslint/prefer-nullish-coalescing': 'off', // временно
-        '@typescript-eslint/no-dynamic-delete': 'off',
-        '@typescript-eslint/explicit-function-return-type': 'off',
-        'no-void': 'off',
-        '@typescript-eslint/no-invalid-void-type': 'off',
-        'no-mixed-spaces-and-tabs': 'off', // временно
-        '@typescript-eslint/consistent-type-assertions': 'off', // временно
-        '@typescript-eslint/member-delimiter-style': ['warn', {
+        '@typescript-eslint/ban-ts-comment': 1,
+        'i18next/no-literal-string': [1, {
+            markupOnly: true,
+            ignoreAttribute: ['tag', 'as', 'nav', 'role', 'to', 'data-testid', 'placeholder', 'name', 'target', 'direction', 'justify', 'align', 'gap', 'border']
+        }],
+        '@typescript-eslint/no-unused-vars': 1,
+        '@typescript-eslint/member-delimiter-style': [1, {
             multiline: {
                 delimiter: 'comma',
                 requireLast: true
@@ -103,6 +80,32 @@ module.exports = {
                     }
                 }
             }
-        }]
+        }],
+        '@typescript-eslint/consistent-type-imports': 0,
+        '@typescript-eslint/semi': 0,
+        'react/jsx-indent': 0,
+        'react/jsx-indent-props': 0,
+        indent: 0,
+        'import/no-unresolved': 0,
+        'no-unused-vars': 0,
+        '@typescript-eslint/indent': 0,
+        '@typescript-eslint/array-type': 0,
+        '@typescript-eslint/space-before-function-paren': 0,
+        'react/function-component-definition': 0,
+        'no-shadow': 0,
+        '@typescript-eslint/strict-boolean-expressions': 0,
+        'react/react-in-jsx-scope': 0,
+        '@typescript-eslint/naming-convention': 0,
+        'react/display-name': 0,
+        '@typescript-eslint/prefer-includes': 0,
+        'n/handle-callback-err': 0,
+        '@typescript-eslint/no-confusing-void-expression': 0,
+        '@typescript-eslint/prefer-nullish-coalescing': 0, // временно
+        '@typescript-eslint/no-dynamic-delete': 0,
+        '@typescript-eslint/explicit-function-return-type': 0,
+        'no-void': 0,
+        '@typescript-eslint/no-invalid-void-type': 0,
+        'no-mixed-spaces-and-tabs': 0, // временно
+        '@typescript-eslint/consistent-type-assertions': 0 // временно
     }
 };
