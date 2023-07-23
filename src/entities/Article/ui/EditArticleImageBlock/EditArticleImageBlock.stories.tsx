@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+
 import { EditArticleImageBlock } from './EditArticleImageBlock';
 
 const meta: Meta<typeof EditArticleImageBlock> = {

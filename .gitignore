@@ -1,7 +1,7 @@
 .idea
 /node_modules
 /dist
-/reports
+/reports/unit
 /storybook-static
 .loki/report.html
 .loki/report.json

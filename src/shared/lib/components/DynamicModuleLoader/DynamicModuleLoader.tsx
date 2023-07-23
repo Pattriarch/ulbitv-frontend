@@ -1,12 +1,14 @@
+import { type Reducer } from '@reduxjs/toolkit';
 import { type ReactNode, useEffect } from 'react';
 import { useStore } from 'react-redux';
+
+import { useAppDispatch } from '../../hooks/useAppDispatch/useAppDispatch';
+
 import {
     type ReduxStoreWithManager,
     type StateSchema,
     type StateSchemaKey
 } from '@/app/providers/StoreProvider';
-import { type Reducer } from '@reduxjs/toolkit';
-import { useAppDispatch } from '../../hooks/useAppDispatch/useAppDispatch';
 
 export type ReducersList = {
     // явно указываем, что по ключу мы хотим получить reducer из StateSchema

@@ -1,4 +1,5 @@
 import { getCounter } from './getCounter';
+
 import { type StateSchema } from '@/app/providers/StoreProvider';
 
 describe('getCounter', () => {

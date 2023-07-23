@@ -1,6 +1,8 @@
-import { classNames, type Mods } from '@/shared/lib/classNames/classNames';
-import cls from './Button.module.scss';
 import React, { type ButtonHTMLAttributes, memo, type ReactNode } from 'react';
+
+import { classNames, type Mods } from '@/shared/lib/classNames/classNames';
+
+import cls from './Button.module.scss';
 
 export enum ButtonTheme {
     CLEAR = 'clear', // без рамок, заднего фона

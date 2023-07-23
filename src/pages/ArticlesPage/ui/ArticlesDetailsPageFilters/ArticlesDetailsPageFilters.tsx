@@ -26,8 +26,6 @@ import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import { type SortOrder } from '@/shared/types';
 import { Card } from '@/shared/ui/Card';
 import { Input } from '@/shared/ui/Input';
-
-
 import { type TabItem } from '@/shared/ui/Tabs';
 
 import cls from './ArticlesDetailsPageFilters.module.scss';

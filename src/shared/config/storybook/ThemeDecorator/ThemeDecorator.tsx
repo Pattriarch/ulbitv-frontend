@@ -1,4 +1,5 @@
 import { type StoryFn } from '@storybook/react';
+
 // eslint-disable-next-line ulbitv-fsd/layer-imports-validator
 import { Theme, ThemeProvider } from '@/app/providers/ThemeProvider';
 

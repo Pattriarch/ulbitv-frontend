@@ -1,10 +1,11 @@
-import { type ReactNode } from 'react';
-import { render } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
-import { I18nextProvider } from 'react-i18next';
-import i18nForTest from '@/shared/config/i18n/i18nForTest';
-import { type StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
 import { type ReducersMapObject } from '@reduxjs/toolkit';
+import { render } from '@testing-library/react';
+import { type ReactNode } from 'react';
+import { I18nextProvider } from 'react-i18next';
+import { MemoryRouter } from 'react-router-dom';
+
+import { type StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
+import i18nForTest from '@/shared/config/i18n/i18nForTest';
 
 export interface ComponentRenderOptions {
     route?: string;

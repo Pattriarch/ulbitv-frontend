@@ -1,9 +1,11 @@
 import { type DeepPartial } from '@reduxjs/toolkit';
-import { type StateSchema } from '@/app/providers/StoreProvider';
+
 import {
     getArticleDetailsCommentsError,
     getArticleDetailsCommentsIsLoading
 } from './comments';
+
+import { type StateSchema } from '@/app/providers/StoreProvider';
 
 describe('getArticleDetailsCommentsState', () => {
     test('should return isLoading', () => {

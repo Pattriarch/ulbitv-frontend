@@ -1,9 +1,11 @@
-import { articleDetailsCommentsReducer } from './articleDetailsCommentsSlice';
-import { type ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema';
+import { type DeepPartial } from '@reduxjs/toolkit';
+
 import {
     fetchCommentsByArticleId
 } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { type DeepPartial } from '@reduxjs/toolkit';
+import { type ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema';
+
+import { articleDetailsCommentsReducer } from './articleDetailsCommentsSlice';
 
 describe('articleDetailsCommentsSlice', () => {
     test('test pending state', () => {

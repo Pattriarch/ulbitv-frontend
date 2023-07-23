@@ -149,7 +149,7 @@ export const EditArticleForm = memo((props: EditArticleFormProps) => {
 	const onCancel = useCallback(() => {
 		void dispatch(editArticleFormActions.cancelEdit());
 		navigate(getRouteArticles());
-	}, [dispatch]);
+	}, [dispatch, navigate]);
 
 	const onSave = useCallback(() => {
 		void dispatch(updateArticleData());

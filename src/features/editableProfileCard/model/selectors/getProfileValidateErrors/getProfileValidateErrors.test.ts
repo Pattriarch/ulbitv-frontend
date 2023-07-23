@@ -1,6 +1,8 @@
-import { type StateSchema } from '@/app/providers/StoreProvider';
-import { getProfileValidateErrors } from './getProfileValidateErrors';
 import { ValidateProfileError } from '../../consts/consts';
+
+import { getProfileValidateErrors } from './getProfileValidateErrors';
+
+import { type StateSchema } from '@/app/providers/StoreProvider';
 
 describe('getProfileValidateErrors', () => {
     test('should return is loading state', () => {

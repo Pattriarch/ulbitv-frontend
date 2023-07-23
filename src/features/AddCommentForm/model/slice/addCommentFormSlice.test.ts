@@ -1,6 +1,8 @@
-import { addCommentFormActions, addCommentFormReducer } from './addCommentFormSlice';
-import { type AddCommentFormSchema } from '../types/addCommentForm';
 import { type DeepPartial } from '@reduxjs/toolkit';
+
+import { type AddCommentFormSchema } from '../types/addCommentForm';
+
+import { addCommentFormActions, addCommentFormReducer } from './addCommentFormSlice';
 
 describe('addCommentFormSlice', () => {
     test('test set text', () => {

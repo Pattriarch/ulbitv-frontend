@@ -1,11 +1,13 @@
 import { type DeepPartial } from '@reduxjs/toolkit';
-import { type StateSchema } from '@/app/providers/StoreProvider';
-import { ArticleSortField, ArticleType, ArticleView } from '@/entities/Article';
+
 import {
     getArticlesPageError, getArticlesPageInited,
     getArticlesPageIsLoading,
     getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors';
+
+import { type StateSchema } from '@/app/providers/StoreProvider';
+import { ArticleSortField, ArticleType, ArticleView } from '@/entities/Article';
 
 describe('articlesPageSelectors', () => {
     test('should return isLoading', () => {

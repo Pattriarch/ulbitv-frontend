@@ -1,6 +1,8 @@
-import { type StateSchema } from '@/app/providers/StoreProvider';
-import { getUserInited } from './getUserInited';
 import { type DeepPartial } from '@reduxjs/toolkit';
+
+import { getUserInited } from './getUserInited';
+
+import { type StateSchema } from '@/app/providers/StoreProvider';
 
 describe('getUserAuthData', () => {
     test('should return auth data', () => {

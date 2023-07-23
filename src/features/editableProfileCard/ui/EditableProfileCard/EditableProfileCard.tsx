@@ -6,24 +6,20 @@ import { ValidateProfileError } from '../../model/consts/consts';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
-
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
+import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
+import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
+import { profileActions, profileReducer } from '../../model/slice/profileSlice';
+import { EditableProfileCardHeader } from '../../ui/EditableProfileCardHeader/EditableProfileCardHeader';
+
 import { type Country } from '@/entities/Country';
 import { type Currency } from '@/entities/Currency';
+import { ProfileCard } from '@/entities/Profile';
 import { classNames } from '@/shared/lib/classNames/classNames';
-
 import { DynamicModuleLoader, type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { VStack } from '@/shared/ui/Stack';
 import { Text, TextTheme } from '@/shared/ui/Text';
-
-import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
-import { profileActions, profileReducer } from '../../model/slice/profileSlice';
-
-import { ProfileCard } from '@/entities/Profile';
-
-import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
-import { EditableProfileCardHeader } from '../../ui/EditableProfileCardHeader/EditableProfileCardHeader';
 
 interface EditableProfileCardProps {
     className?: string;
