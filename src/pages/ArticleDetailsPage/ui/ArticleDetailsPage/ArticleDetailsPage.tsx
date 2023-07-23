@@ -1,16 +1,18 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './ArticleDetailsPage.module.scss';
 import React, { memo } from 'react';
-import { ArticleDetails } from '@/entities/Article';
 import { useParams } from 'react-router-dom';
+
+import { articleDetailsPageReducer } from '../../model/slices';
+import { ArticleDetailsComments } from '../../ui/ArticleDetailsComments/ArticleDetailsComments';
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+
+import { ArticleDetails } from '@/entities/Article';
+import { ArticleRating } from '@/features/articleRating';
+import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { Page } from '@/widgets/Page';
-import { articleDetailsPageReducer } from '../../model/slices';
-import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
-import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
-import { ArticleDetailsComments } from '../../ui/ArticleDetailsComments/ArticleDetailsComments';
-import { ArticleRating } from '@/features/articleRating';
-import { ArticlesDetailsPageFilters } from '../ArticlesDetailsPageFilters/ArticlesDetailsPageFilters';
+
+import cls from './ArticleDetailsPage.module.scss';
 
 export interface ArticleDetailsPageProps {
     className?: string;
@@ -34,7 +36,7 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
                 <ArticleDetailsPageHeader/>
                 <ArticleDetails id={id}/>
                 <ArticleRating articleId={id}/>
-                <ArticleRecommendationsList Header={() => <ArticlesDetailsPageFilters/>}/>
+                <ArticleRecommendationsList />
                 <ArticleDetailsComments id={id}/>
             </Page>
         </DynamicModuleLoader>

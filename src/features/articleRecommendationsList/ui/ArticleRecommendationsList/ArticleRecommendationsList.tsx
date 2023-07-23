@@ -1,49 +1,50 @@
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { memo, type ReactNode } from 'react';
-import cls from './ArticleRecommendationsList.module.scss';
-import { Text, TextSize, TextTheme } from '@/shared/ui/Text';
-import { ArticleList, ArticleView } from '@/entities/Article';
-import { Loader } from '@/shared/ui/Loader';
+
 import { useArticleRecommendationsList } from '../../api/articleRecommendationsList';
-import { VStack } from '@/shared/ui/Stack';
+
+import { ArticleList, ArticleView } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { Loader } from '@/shared/ui/Loader';
+import { VStack } from '@/shared/ui/Stack';
+import { Text, TextSize, TextTheme } from '@/shared/ui/Text';
+
+import cls from './ArticleRecommendationsList.module.scss';
 
 interface ArticleRecommendationsListProps {
-    className?: string;
-    Header?: () => ReactNode;
+	className?: string;
 }
 
 export const ArticleRecommendationsList = memo((props: ArticleRecommendationsListProps) => {
-    const { className, Header } = props;
-    const { t } = useTranslation();
-    const { data: articles, isLoading, error } = useArticleRecommendationsList(3);
+	const { className } = props;
+	const { t } = useTranslation();
+	const { data: articles, isLoading, error } = useArticleRecommendationsList(3);
 
-    if (isLoading) {
-        return <Loader/>;
-    }
+	if (isLoading) {
+		return <Loader/>;
+	}
 
-    if (error || !articles) {
-        return <Text
-            theme={TextTheme.ERROR}
-            title={t('Произошла ошибка при загрузке данных')}
-        />;
-    }
+	if (error || !articles) {
+		return <Text
+			theme={TextTheme.ERROR}
+			title={t('Произошла ошибка при загрузке данных')}
+		/>;
+	}
 
-    return (
-        <VStack gap={'8'} max className={classNames(cls.ArticleRecommendationsList, {}, [className])}>
-            <Text
-                size={TextSize.L}
-                title={t('Рекомендуем')}
-            />
-            <ArticleList
-                Header={Header}
-                virtualized={false}
-                isLoading={isLoading}
-                className={cls.recommendations}
-                view={ArticleView.SMALL}
-                articles={articles}
-                target={'_blank'}
-            />
-        </VStack>
-    );
+	return (
+		<VStack gap={'8'} max className={classNames(cls.ArticleRecommendationsList, {}, [className])}>
+			<Text
+				size={TextSize.L}
+				title={t('Рекомендуем')}
+			/>
+			<ArticleList
+				virtualized={false}
+				isLoading={isLoading}
+				className={cls.recommendations}
+				view={ArticleView.SMALL}
+				articles={articles}
+				target={'_blank'}
+			/>
+		</VStack>
+	);
 });

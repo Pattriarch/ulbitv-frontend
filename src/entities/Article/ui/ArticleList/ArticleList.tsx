@@ -1,13 +1,16 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './ArticleList.module.scss';
 import { type FC, type HTMLAttributeAnchorTarget, memo, type ReactNode, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Virtuoso, VirtuosoGrid, type VirtuosoGridHandle } from 'react-virtuoso';
+
+import { ArticleView } from '../../consts/articleConsts';
+import { type Article } from '../../model/types/article';
 import { ArticleListItem } from '../../ui/ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
-import { useTranslation } from 'react-i18next';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Text, TextSize } from '@/shared/ui/Text';
-import { Virtuoso, VirtuosoGrid, type VirtuosoGridHandle } from 'react-virtuoso';
-import { type Article } from '../../model/types/article';
-import { ArticleView } from '../../consts/articleConsts';
+
+import cls from './ArticleList.module.scss';
 
 interface ArticleListProps {
 	Header?: () => ReactNode;
@@ -22,7 +25,7 @@ interface ArticleListProps {
 	virtualized?: boolean;
 }
 
-const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 9 : 3)
+const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.BIG ? 8 : 25)
 	.fill(0)
 	.map((item, index) => (
 		<ArticleListItemSkeleton

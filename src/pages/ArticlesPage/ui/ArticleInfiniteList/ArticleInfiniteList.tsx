@@ -1,23 +1,26 @@
 import { memo, useCallback } from 'react';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { articlesPageActions, getArticles } from '../../model/slices/articlesPageSlice';
+
 import {
 	getArticlesLastScrolledIndex,
 	getArticlesPageError,
 	getArticlesPageIsLoading,
 	getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors';
-import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import { articlesPageActions, getArticles } from '../../model/slices/articlesPageSlice';
+
 import { ArticleList } from '@/entities/Article';
-import { useTranslation } from 'react-i18next';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Text, TextTheme } from '@/shared/ui/Text';
 
 interface ArticleInfiniteListProps {
 	className?: string;
+	virtualized?: boolean;
 }
 
-export const ArticleInfiniteList = memo(({ className }: ArticleInfiniteListProps) => {
+export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
+	const { className, virtualized } = props;
 	const { t } = useTranslation();
 
 	const dispatch = useAppDispatch();
@@ -33,10 +36,6 @@ export const ArticleInfiniteList = memo(({ className }: ArticleInfiniteListProps
 		}
 	}, [dispatch]);
 
-	const onLoadNextPart = useCallback(() => {
-		void dispatch(fetchNextArticlesPage());
-	}, [dispatch]);
-
 	if (error) {
 		return <Text theme={TextTheme.ERROR} title={t('Произошла ошибка при загрузке данных')}/>;
 	}
@@ -46,9 +45,9 @@ export const ArticleInfiniteList = memo(({ className }: ArticleInfiniteListProps
 			isLoading={isLoading}
 			view={view}
 			articles={articles}
-			onLoadNextPart={onLoadNextPart}
 			lastScrolledIndex={lastScrolledIndex}
 			setLastScrolledIndex={setLastScrolledIndex}
+			virtualized={virtualized}
 		/>
 	);
 });

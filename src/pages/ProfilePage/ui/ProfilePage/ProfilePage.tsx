@@ -1,10 +1,11 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo } from 'react';
-import { Page } from '@/widgets/Page';
-import { VStack } from '@/shared/ui/Stack';
-import { EditableProfileCard } from '@/features/editableProfileCard';
 import { useParams } from 'react-router-dom';
+
+import { EditableProfileCard } from '@/features/editableProfileCard';
 import { ProfileRating } from '@/features/profileRating';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { VStack } from '@/shared/ui/Stack';
+import { Page } from '@/widgets/Page';
 
 export interface ProfilePageProps {
     className?: string;
@@ -15,7 +16,7 @@ const ProfilePage = memo((props: ProfilePageProps): JSX.Element => {
     const { id } = useParams<{ id: string, }>();
 
     return (
-        <Page className={classNames('', {}, [className])}>
+        <Page data-testid={'ProfilePage'} className={classNames('', {}, [className])}>
             <VStack max gap={'16'}>
                 <EditableProfileCard id={id}/>
                 {id && <ProfileRating profileId={id}/>}
