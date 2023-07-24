@@ -7,6 +7,7 @@ import { articlesPageReducer } from '../../model/slices/articlesPageSlice';
 import { ArticleInfiniteList } from '../../ui/ArticleInfiniteList/ArticleInfiniteList';
 import { ArticlesDetailsPageFilters } from '../ArticlesDetailsPageFilters/ArticlesDetailsPageFilters';
 
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
@@ -34,7 +35,11 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
 	}, [dispatch]);
 
 	return (
-		<Page onScrollEnd={onLoadNextPart}>
+		<Page
+			data-testid={'ArticlesPage'}
+			onScrollEnd={onLoadNextPart}
+			className={classNames('', {}, [className])}
+		>
 			<DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
 				<VStack gap={'8'} max align={'stretch'}>
 					<ArticlesDetailsPageFilters/>

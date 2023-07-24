@@ -1022,6 +1022,15 @@
         "MANAGER"
       ],
       "avatar": "https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png"
+    },
+    {
+      "id": "4",
+      "username": "testuser",
+      "password": "123",
+      "role": [
+        "ADMIN"
+      ],
+      "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/1:1/w_1350,h_1350,c_limit/security_hacker_names.jpg"
     }
   ],
   "profile": [
