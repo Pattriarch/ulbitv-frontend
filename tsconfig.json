@@ -33,14 +33,18 @@
   "exclude": [
     "cypress",
     "cypress.config.ts"
-  ],
-  "include": [
-    "./*.ts",
-    "./*.tsx",
-    "./config/**/*.ts",
-    "./scripts/**/*.ts",
-    "./config/**/*.tsx",
-    "./src/**/*.ts",
-    "./src/**/*.tsx"
   ]
+  //  "exclude": [
+//    "cypress",
+//    "cypress.config.ts"
+//  ],
+//  "include": [
+//    "./*.ts",
+//    "./*.tsx",
+//    "./config/**/*.ts",
+//    "./scripts/**/*.ts",
+//    "./config/**/*.tsx",
+//    "./src/**/*.ts",
+//    "./src/**/*.tsx"
+//  ]
 }

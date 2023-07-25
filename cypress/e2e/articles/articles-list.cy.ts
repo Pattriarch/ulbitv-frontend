@@ -1,8 +1,8 @@
 describe('Пользователь заходит на страницу со списком статей', () => {
     beforeEach(() => {
         cy.login().then((data) => {
-            cy.visit('articles')
-        })
+            cy.visit('articles');
+        });
     });
     describe('Работа с API', () => {
         it('Статьи успешно подгружаются', () => {
@@ -25,14 +25,14 @@ describe('Пользователь заходит на страницу со с�
             cy.getByTestId('asdasdasdasd')
                 .should('exist');
         });
-    })
+    });
     describe('Работа на фикстурах', () => {
         it('На стабах (фикстурах)', () => {
-            cy.intercept('GET', '**/articles?*', {fixture: 'articles.json'});
+            cy.intercept('GET', '**/articles?*', { fixture: 'articles.json' });
             cy.getByTestId('ArticleList')
                 .should('exist');
             cy.getByTestId('ArticleListItem')
                 .should('have.length.greaterThan', 3);
         });
-    })
-})
+    });
+});

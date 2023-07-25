@@ -5,7 +5,7 @@ describe('Пользователь заходит на страницу стат
     beforeEach(() => {
         cy.login();
         cy.createArticle().then((article) => {
-            currentArticleId = article.id;
+            currentArticleId = article.id || '-1';
             cy.visit(`articles/${currentArticleId}`);
         });
     });
@@ -34,7 +34,7 @@ describe('Пользователь заходит на страницу стат
         cy.get('[data-selected=true]').should('have.length', 4);
     });
     it('И ставит оценку (на стабах)', () => {
-        cy.intercept('GET', '**/articles/*', {fixture: 'article-details.json'});
+        cy.intercept('GET', '**/articles/*', { fixture: 'article-details.json' });
         // дожидаемся загрузки информации о статье
         cy.getByTestId('ArticleDetails.Info');
         cy.getByTestId('RatingCard').scrollIntoView();
@@ -42,4 +42,4 @@ describe('Пользователь заходит на страницу стат
         // получаем количество выбранных звезд
         cy.get('[data-selected=true]').should('have.length', 4);
     });
-})
+});
