@@ -1,34 +1,37 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import { type Article } from "../../types/article";
+import { type Article } from '../../types/article';
 
-import { type ThunkConfig } from "@/app/providers/StoreProvider";
+import { type ThunkConfig } from '@/app/providers/StoreProvider';
 
 export const fetchArticleById = createAsyncThunk<
-  Article,
-  string | undefined,
-  ThunkConfig<string>
->("article/fetchArticleById", async (articleId, thunkAPI) => {
-  const { extra, rejectWithValue } = thunkAPI;
+	Article,
+	string | undefined,
+	ThunkConfig<string>
+>('article/fetchArticleById', async (articleId, thunkAPI) => {
+	const { extra, rejectWithValue } = thunkAPI;
 
-  try {
-    if (!articleId) {
-      throw new Error("id не был передан в параметрах запроса");
-    }
+	try {
+		if (!articleId) {
+			throw new Error('id не был передан в параметрах запроса');
+		}
 
-    const response = await extra.api.get<Article>(`/articles/${articleId}`, {
-      params: {
-        _expand: "user",
-      },
-    });
+		const response = await extra.api.get<Article>(
+			`/articles/${articleId}`,
+			{
+				params: {
+					_expand: 'user',
+				},
+			},
+		);
 
-    if (!response.data) {
-      throw new Error();
-    }
+		if (!response.data) {
+			throw new Error();
+		}
 
-    return response.data;
-  } catch (e) {
-    console.error(e);
-    return rejectWithValue("error");
-  }
+		return response.data;
+	} catch (e) {
+		console.error(e);
+		return rejectWithValue('error');
+	}
 });

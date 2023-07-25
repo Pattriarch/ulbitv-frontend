@@ -1,16 +1,16 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { StarRating } from "./StarRating";
+import { StarRating } from './StarRating';
 
 const meta: Meta<typeof StarRating> = {
-  title: "shared/StarRating",
-  component: StarRating,
-  tags: ["autodocs"],
+	title: 'shared/StarRating',
+	component: StarRating,
+	tags: ['autodocs'],
 };
 
 export default meta;
 type Story = StoryObj<typeof StarRating>;
 
 export const Primary: Story = {
-  args: {},
+	args: {},
 };

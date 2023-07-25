@@ -1,61 +1,61 @@
-import path from "path";
+import path from 'path';
 
-import type webpack from "webpack";
-import { DefinePlugin } from "webpack";
+import type webpack from 'webpack';
+import { DefinePlugin } from 'webpack';
 
-import { buildCssLoader } from "../build/loaders/buildCssLoader";
-import { type BuildPaths } from "../build/types/config";
+import { buildCssLoader } from '../build/loaders/buildCssLoader';
+import { type BuildPaths } from '../build/types/config';
 
 export default ({
-  config,
+	config,
 }: {
-  config: webpack.Configuration;
+	config: webpack.Configuration;
 }): webpack.Configuration => {
-  const paths: BuildPaths = {
-    build: "",
-    html: "",
-    entry: "",
-    src: path.resolve(__dirname, "..", "..", "src"),
-    locales: "",
-    buildLocales: "",
-  };
+	const paths: BuildPaths = {
+		build: '',
+		html: '',
+		entry: '',
+		src: path.resolve(__dirname, '..', '..', 'src'),
+		locales: '',
+		buildLocales: '',
+	};
 
-  config.resolve?.modules?.push(paths.src);
-  config.resolve?.extensions?.push(".ts", ".tsx");
+	config.resolve?.modules?.push(paths.src);
+	config.resolve?.extensions?.push('.ts', '.tsx');
 
-  if (config?.resolve?.alias) {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      "@": paths.src,
-    };
-  }
+	if (config?.resolve?.alias) {
+		config.resolve.alias = {
+			...config.resolve.alias,
+			'@': paths.src,
+		};
+	}
 
-  if (config?.module?.rules) {
-    config.module.rules = config.module.rules.map((rule: any) => {
-      if (/svg/.test(rule.test as string)) {
-        return {
-          ...rule,
-          exclude: /\.svg$/i,
-        };
-      }
+	if (config?.module?.rules) {
+		config.module.rules = config.module.rules.map((rule: any) => {
+			if (/svg/.test(rule.test as string)) {
+				return {
+					...rule,
+					exclude: /\.svg$/i,
+				};
+			}
 
-      return rule;
-    });
+			return rule;
+		});
 
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ["@svgr/webpack"],
-    });
-    config.module.rules.push(buildCssLoader(true));
-  }
+		config.module.rules.push({
+			test: /\.svg$/,
+			use: ['@svgr/webpack'],
+		});
+		config.module.rules.push(buildCssLoader(true));
+	}
 
-  config?.plugins?.push(
-    new DefinePlugin({
-      __IS_DEV__: JSON.stringify(true),
-      __API__: JSON.stringify("https://testapi.ru"),
-      __PROJECT__: JSON.stringify("storybook"),
-    })
-  );
+	config?.plugins?.push(
+		new DefinePlugin({
+			__IS_DEV__: JSON.stringify(true),
+			__API__: JSON.stringify('https://testapi.ru'),
+			__PROJECT__: JSON.stringify('storybook'),
+		}),
+	);
 
-  return config;
+	return config;
 };

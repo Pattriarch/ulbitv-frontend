@@ -1,50 +1,50 @@
-import { type AsyncThunkAction, type DeepPartial } from "@reduxjs/toolkit";
-import axios, { type AxiosStatic } from "axios";
+import { type AsyncThunkAction, type DeepPartial } from '@reduxjs/toolkit';
+import axios, { type AxiosStatic } from 'axios';
 
-import { type StateSchema } from "@/app/providers/StoreProvider";
+import { type StateSchema } from '@/app/providers/StoreProvider';
 
 type ActionCreatorType<Return, Arg, RejectedValue> = (
-  arg: Arg
+	arg: Arg,
 ) => AsyncThunkAction<
-  Return,
-  Arg,
-  {
-    rejectValue: RejectedValue;
-  }
+	Return,
+	Arg,
+	{
+		rejectValue: RejectedValue;
+	}
 >;
 
-jest.mock("axios");
+jest.mock('axios');
 
 const mockedAxios = jest.mocked(axios, true);
 
 export class TestAsyncThunk<Return, Arg, RejectedValue> {
-  actionCreator: ActionCreatorType<Return, Arg, RejectedValue>;
+	actionCreator: ActionCreatorType<Return, Arg, RejectedValue>;
 
-  dispatch: jest.MockedFn<any>;
+	dispatch: jest.MockedFn<any>;
 
-  getState: () => StateSchema;
+	getState: () => StateSchema;
 
-  api: jest.MockedFunctionDeep<AxiosStatic>;
-  navigate: jest.MockedFn<any>;
+	api: jest.MockedFunctionDeep<AxiosStatic>;
+	navigate: jest.MockedFn<any>;
 
-  constructor(
-    actionCreator: ActionCreatorType<Return, Arg, RejectedValue>,
-    state?: DeepPartial<StateSchema>
-  ) {
-    this.actionCreator = actionCreator;
-    this.dispatch = jest.fn();
-    this.getState = jest.fn(() => state as StateSchema);
-    this.api = mockedAxios;
-    this.navigate = jest.fn();
-  }
+	constructor(
+		actionCreator: ActionCreatorType<Return, Arg, RejectedValue>,
+		state?: DeepPartial<StateSchema>,
+	) {
+		this.actionCreator = actionCreator;
+		this.dispatch = jest.fn();
+		this.getState = jest.fn(() => state as StateSchema);
+		this.api = mockedAxios;
+		this.navigate = jest.fn();
+	}
 
-  async callThunk(arg: Arg) {
-    const action = this.actionCreator(arg);
-    const result = await action(this.dispatch, this.getState, {
-      api: this.api,
-      navigate: this.navigate,
-    });
+	async callThunk(arg: Arg) {
+		const action = this.actionCreator(arg);
+		const result = await action(this.dispatch, this.getState, {
+			api: this.api,
+			navigate: this.navigate,
+		});
 
-    return result;
-  }
+		return result;
+	}
 }

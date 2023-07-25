@@ -1,1 +1,1 @@
-export { ProfileRating } from "./ui/ProfileRating/ProfileRating";
+export { ProfileRating } from './ui/ProfileRating/ProfileRating';

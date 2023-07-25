@@ -1,14 +1,14 @@
-import { type UserRole } from "../../consts/userConsts";
+import { type UserRole } from '../../consts/userConsts';
 
 export interface AuthData {
-  id: string;
-  username: string;
-  avatar?: string;
-  roles?: UserRole[];
+	id: string;
+	username: string;
+	avatar?: string;
+	roles?: UserRole[];
 }
 
 export interface UserSchema {
-  authData?: AuthData;
+	authData?: AuthData;
 
-  _inited: boolean;
+	_inited: boolean;
 }

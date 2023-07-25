@@ -85,7 +85,7 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-button-has-type": "^0.0.3",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-ulbitv-fsd": "^0.0.12",
+    "eslint-plugin-ulbitv-fsd": "^0.0.13",
     "eslint-plugin-unused-imports": "^3.0.0",
     "file-loader": "^6.2.0",
     "fork-ts-checker-webpack-plugin": "^8.0.0",

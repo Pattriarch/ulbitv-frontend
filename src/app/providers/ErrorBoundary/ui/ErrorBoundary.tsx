@@ -1,49 +1,49 @@
-import React, { type ErrorInfo, type ReactNode, Suspense } from "react";
+import React, { type ErrorInfo, type ReactNode, Suspense } from 'react';
 
-import { PageError } from "@/widgets/PageError";
+import { PageError } from '@/widgets/PageError';
 
 interface ErrorBoundaryProps {
-  children: ReactNode;
+	children: ReactNode;
 }
 
 interface ErrorBoundaryState {
-  hasError: boolean;
+	hasError: boolean;
 }
 
 class ErrorBoundary extends React.Component<
-  ErrorBoundaryProps,
-  ErrorBoundaryState
+	ErrorBoundaryProps,
+	ErrorBoundaryState
 > {
-  constructor(props: ErrorBoundaryProps) {
-    super(props);
-    this.state = { hasError: false };
-  }
+	constructor(props: ErrorBoundaryProps) {
+		super(props);
+		this.state = { hasError: false };
+	}
 
-  static getDerivedStateFromError(error: Error): ErrorBoundaryState {
-    // Update state so the next render will show the fallback ScrollRestoration.
-    return { hasError: true };
-  }
+	static getDerivedStateFromError(error: Error): ErrorBoundaryState {
+		// Update state so the next render will show the fallback ScrollRestoration.
+		return { hasError: true };
+	}
 
-  // eslint-disable-next-line
-  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    // You can also log the error to an error reporting service
-    console.log(error, errorInfo);
-  }
+	// eslint-disable-next-line
+	componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+		// You can also log the error to an error reporting service
+		console.log(error, errorInfo);
+	}
 
-  render(): React.ReactNode {
-    const { hasError } = this.state;
-    // const { children } = this.props;
-    if (hasError) {
-      // You can render any custom fallback ScrollRestoration
-      return (
-        <Suspense fallback={""}>
-          <PageError />
-        </Suspense>
-      );
-    }
+	render(): React.ReactNode {
+		const { hasError } = this.state;
+		// const { children } = this.props;
+		if (hasError) {
+			// You can render any custom fallback ScrollRestoration
+			return (
+				<Suspense fallback={''}>
+					<PageError />
+				</Suspense>
+			);
+		}
 
-    return this.props.children;
-  }
+		return this.props.children;
+	}
 }
 
 export default ErrorBoundary;

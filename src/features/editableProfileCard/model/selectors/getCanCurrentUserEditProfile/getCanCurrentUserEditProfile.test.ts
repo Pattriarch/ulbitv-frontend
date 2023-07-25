@@ -10,52 +10,58 @@
 //     (authData, profileData) => authData?.id === profileData?.id
 // );
 
-import { getCanCurrentUserEditProfile } from "./getCanCurrentUserEditProfile";
+import { getCanCurrentUserEditProfile } from './getCanCurrentUserEditProfile';
 
-import { type StateSchema } from "@/app/providers/StoreProvider";
+import { type StateSchema } from '@/app/providers/StoreProvider';
 
-describe("getCanCurrentUserEditProfile", () => {
-  test("should return true", () => {
-    const state: DeepPartial<StateSchema> = {
-      user: {
-        authData: {
-          id: "1",
-          username: "test",
-        },
-      },
-      profile: {
-        data: {
-          id: "1",
-          username: "test",
-        },
-      },
-    };
-    expect(getCanCurrentUserEditProfile(state as StateSchema)).toEqual(true);
-  });
+describe('getCanCurrentUserEditProfile', () => {
+	test('should return true', () => {
+		const state: DeepPartial<StateSchema> = {
+			user: {
+				authData: {
+					id: '1',
+					username: 'test',
+				},
+			},
+			profile: {
+				data: {
+					id: '1',
+					username: 'test',
+				},
+			},
+		};
+		expect(getCanCurrentUserEditProfile(state as StateSchema)).toEqual(
+			true,
+		);
+	});
 
-  test("should return false", () => {
-    const state: DeepPartial<StateSchema> = {
-      user: {
-        authData: {
-          id: "1",
-          username: "test",
-        },
-      },
-      profile: {
-        data: {
-          id: "2",
-          username: "test_2",
-        },
-      },
-    };
-    expect(getCanCurrentUserEditProfile(state as StateSchema)).toEqual(false);
-  });
+	test('should return false', () => {
+		const state: DeepPartial<StateSchema> = {
+			user: {
+				authData: {
+					id: '1',
+					username: 'test',
+				},
+			},
+			profile: {
+				data: {
+					id: '2',
+					username: 'test_2',
+				},
+			},
+		};
+		expect(getCanCurrentUserEditProfile(state as StateSchema)).toEqual(
+			false,
+		);
+	});
 
-  test("should work with empty state", () => {
-    const state: DeepPartial<StateSchema> = {
-      user: {},
-      profile: {},
-    };
-    expect(getCanCurrentUserEditProfile(state as StateSchema)).toEqual(false);
-  });
+	test('should work with empty state', () => {
+		const state: DeepPartial<StateSchema> = {
+			user: {},
+			profile: {},
+		};
+		expect(getCanCurrentUserEditProfile(state as StateSchema)).toEqual(
+			false,
+		);
+	});
 });

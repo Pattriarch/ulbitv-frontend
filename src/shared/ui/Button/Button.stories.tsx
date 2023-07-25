@@ -1,116 +1,116 @@
 // eslint-disable-next-line ulbitv-fsd/layer-imports-validator
-import "@/app/styles/index.scss";
-import type { Meta, StoryObj } from "@storybook/react";
+import '@/app/styles/index.scss';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { Button, ButtonSize, ButtonTheme } from "./Button";
+import { Button, ButtonSize, ButtonTheme } from './Button';
 
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Theme } from "@/shared/const/theme";
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
 
 const meta: Meta<typeof Button> = {
-  title: "shared/Button",
-  component: Button,
-  tags: ["autodocs"],
+	title: 'shared/Button',
+	component: Button,
+	tags: ['autodocs'],
 };
 
 export default meta;
 type Story = StoryObj<typeof Button>;
 
 export const Normal: Story = {
-  args: {
-    children: "Text",
-  },
+	args: {
+		children: 'Text',
+	},
 };
 
 export const Clear: Story = {
-  args: {
-    children: "Text",
-    theme: ButtonTheme.CLEAR,
-  },
+	args: {
+		children: 'Text',
+		theme: ButtonTheme.CLEAR,
+	},
 };
 
 export const ClearInverted: Story = {
-  args: {
-    children: "Text",
-    theme: ButtonTheme.CLEAR_INVERTED,
-  },
+	args: {
+		children: 'Text',
+		theme: ButtonTheme.CLEAR_INVERTED,
+	},
 };
 
 export const Outline: Story = {
-  args: {
-    children: "Text",
-    theme: ButtonTheme.OUTLINE,
-  },
+	args: {
+		children: 'Text',
+		theme: ButtonTheme.OUTLINE,
+	},
 };
 
 export const OutlineSizeL: Story = {
-  args: {
-    children: "Text",
-    theme: ButtonTheme.OUTLINE,
-    size: ButtonSize.L,
-  },
+	args: {
+		children: 'Text',
+		theme: ButtonTheme.OUTLINE,
+		size: ButtonSize.L,
+	},
 };
 
 export const OutlineXL: Story = {
-  args: {
-    children: "Text",
-    theme: ButtonTheme.OUTLINE,
-    size: ButtonSize.XL,
-  },
+	args: {
+		children: 'Text',
+		theme: ButtonTheme.OUTLINE,
+		size: ButtonSize.XL,
+	},
 };
 
 export const OutlineDark: Story = {
-  decorators: [ThemeDecorator(Theme.DARK)],
-  args: {
-    children: "Text",
-    theme: ButtonTheme.OUTLINE,
-  },
+	decorators: [ThemeDecorator(Theme.DARK)],
+	args: {
+		children: 'Text',
+		theme: ButtonTheme.OUTLINE,
+	},
 };
 
 export const BackgroundTheme: Story = {
-  args: {
-    children: "Text",
-    theme: ButtonTheme.BACKGROUND,
-  },
+	args: {
+		children: 'Text',
+		theme: ButtonTheme.BACKGROUND,
+	},
 };
 
 export const BackgroundInverted: Story = {
-  args: {
-    children: "Text",
-    theme: ButtonTheme.BACKGROUND_INVERTED,
-  },
+	args: {
+		children: 'Text',
+		theme: ButtonTheme.BACKGROUND_INVERTED,
+	},
 };
 
 export const Square: Story = {
-  args: {
-    children: ">",
-    theme: ButtonTheme.BACKGROUND_INVERTED,
-    square: true,
-  },
+	args: {
+		children: '>',
+		theme: ButtonTheme.BACKGROUND_INVERTED,
+		square: true,
+	},
 };
 
 export const SquareSizeL: Story = {
-  args: {
-    children: ">",
-    theme: ButtonTheme.BACKGROUND_INVERTED,
-    square: true,
-    size: ButtonSize.L,
-  },
+	args: {
+		children: '>',
+		theme: ButtonTheme.BACKGROUND_INVERTED,
+		square: true,
+		size: ButtonSize.L,
+	},
 };
 
 export const SquareSizeXL: Story = {
-  args: {
-    children: ">",
-    theme: ButtonTheme.BACKGROUND_INVERTED,
-    square: true,
-    size: ButtonSize.XL,
-  },
+	args: {
+		children: '>',
+		theme: ButtonTheme.BACKGROUND_INVERTED,
+		square: true,
+		size: ButtonSize.XL,
+	},
 };
 
 export const Disabled: Story = {
-  args: {
-    children: ">",
-    theme: ButtonTheme.OUTLINE,
-    disabled: true,
-  },
+	args: {
+		children: '>',
+		theme: ButtonTheme.OUTLINE,
+		disabled: true,
+	},
 };
