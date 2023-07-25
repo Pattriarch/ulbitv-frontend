@@ -1,0 +1,1047 @@
+[
+  {
+    "id": "1",
+    "title": "JavaScript News!",
+    "subtitle": "Что добавили нового в ECMAScript 2023",
+    "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+    "views": 1022,
+    "createdAt": "26.02.2022",
+    "userId": "1",
+    "type": [
+      "IT"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "order": 2,
+        "type": "TEXT",
+        "title": "ECMAScript2023 (ES14)",
+        "paragraphs": [
+          "Традиционно обновления ECMAScript публикуются в июне. Но уже сейчас можно посмотреть 14-ю редакцию ECMAScript от 2023, которая сейчас находится в статусе freezed, т.е. никакие изменения в нее вноситься уже не будут.",
+          "В данной версии спецификации не такой большой список изменений, что абсолютно нормально когда мы переходим на годовой цикл релиза.",
+          "Итак, спецификация 2023 года представила нам методы toSorted, toReversed, with, findLast и findLastIndex для Array.prototypeи TypedArray.prototype,в\nа также метод toSpliced для Array.prototype.",
+          "Кроме того добавлена поддержка #! комментарии в начале файлов для облегчения запуска исполняемых файлов ECMAScript.",
+          "и разрешено использовать Symbols в качестве ключей в WeakMap.\n",
+          "Подробнее обо всем можно почитать в официальном репозитории организации Ecma International TC39.\n"
+        ]
+      },
+      {
+        "id": "2",
+        "order": 4,
+        "type": "TEXT",
+        "title": ".findlast() и .findLastIndex() для Array и TypedArray",
+        "paragraphs": [
+          "Предназначены для поиска элементов в массиве.\n",
+          "Работают так же, как .find() и .findIndex(), но итерируются в обратном порядке."
+        ]
+      },
+      {
+        "id": "3",
+        "order": 3,
+        "type": "CODE",
+        "code": "const array = [{ value: 1 }, { value: 2 }, { value: 3 }, { value: 4 }];\n\narray.find(n => n.value % 2 === 1); // { value: 1 }\narray.findIndex(n => n.value % 2 === 1); // 0\n\n// ======== Before the proposal =========== \n// find\n[...array].reverse().find(n => n.value % 2 === 1); // { value: 3 }\n\n// findIndex\narray.length - 1 - [...array].reverse().findIndex(n => n.value % 2 === 1); // 2\narray.length - 1 - [...array].reverse().findIndex(n => n.value === 42); // should be -1, but 4\n\n// ======== In the proposal =========== \n// find\narray.findLast(n => n.value % 2 === 1); // { value: 3 }\n// findIndex\narray.findLastIndex(n => n.value % 2 === 1); // 2\narray.findLastIndex(n => n.value === 42); // -1"
+      },
+      {
+        "id": "4",
+        "order": 1,
+        "type": "TEXT",
+        "title": "ECMAScript 2025",
+        "paragraphs": [
+          "На официальном сайте уже опубликован драфт на 2024 год, но какие изменения в него войдут пока достоверно неизвестно.\n"
+        ]
+      },
+      {
+        "id": "5",
+        "order": 5,
+        "type": "IMAGE",
+        "src": "https://habrastorage.org/r/w1560/getpro/habr/upload_files/b26/f56/47a/b26f5647a7b761dac02a2832828fc1a9.png",
+        "title": "ES, ECMAScript 2024"
+      },
+      {
+        "id": "6",
+        "order": 6,
+        "type": "TEXT",
+        "title": "ECMAScript2023 (ES14)",
+        "paragraphs": [
+          "Традиционно обновления ECMAScript публикуются в июне. Но уже сейчас можно посмотреть 14-ю редакцию ECMAScript от 2023, которая сейчас находится в статусе freezed, т.е. никакие изменения в нее вноситься уже не будут.в",
+          "и разрешено использовать Symbols в качестве ключей в WeakMap.\n",
+          "Подробнее обо всем можно почитать в официальном репозитории организации Ecma International TC39.\n"
+        ]
+      },
+      {
+        "id": "8",
+        "order": 8,
+        "type": "CODE",
+        "code": "const array = [{ value: 1 }, { value: 2 }, { value: 3 }, { value: 4 }];\n\narray.find(n => n.value % 2 === 1); // { value: 1 }\narray.findIndex(n => n.value % 2 === 1); // 0\n\n// ======== Before the proposal =========== \n// find\n[...array].reverse().find(n => n.value % 2 === 1); // { value: 3 }\n\n// findIndex\narray.length - 1 - [...array].reverse().findIndex(n => n.value % 2 === 1); // 2\narray.length - 1 - [...array].reverse().findIndex(n => n.value === 42); // should be -1, but 4\n\n// ======== In the proposal =========== \n// find\narray.findLast(n => n.value % 2 === 1); // { value: 3 }\n// findIndex\narray.findLastIndex(n => n.value % 2 === 1); // 2\narray.findLastIndex(n => n.value === 42); // -1"
+      },
+      {
+        "id": "9",
+        "order": 9,
+        "type": "IMAGE",
+        "title": "",
+        "src": ""
+      },
+      {
+        "id": "10",
+        "order": 10,
+        "type": "CODE",
+        "code": ""
+      }
+    ],
+    "user": {
+      "id": "1",
+      "username": "admin",
+      "password": "123",
+      "role": [
+        "ADMIN"
+      ],
+      "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/1:1/w_1350,h_1350,c_limit/security_hacker_names.jpg"
+    }
+  },
+  {
+    "id": "2",
+    "title": "Python News",
+    "subtitle": "Что добавили нового в Python 2023",
+    "img": "https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png",
+    "views": 1442,
+    "createdAt": "26.02.2022",
+    "userId": "2",
+    "type": [
+      "IT"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "order": 1,
+        "type": "TEXT",
+        "title": "ECMAScript2023 (ES14)",
+        "paragraphs": [
+          "Традиционно обновления ECMAScript публикуются в июне. Но уже сейчас можно посмотреть 14-ю редакцию ECMAScript от 2023, которая сейчас находится в статусе freezed, т.е. никакие изменения в нее вноситься уже не будут.",
+          "В данной версии спецификации не такой большой список изменений, что абсолютно нормально когда мы переходим на годовой цикл релиза.",
+          "Итак, спецификация 2023 года представила нам методы toSorted, toReversed, with, findLast и findLastIndex для Array.prototypeи TypedArray.prototype,\nа также метод toSpliced для Array.prototype.",
+          "Кроме того добавлена поддержка #! комментарии в начале файлов для облегчения запуска исполняемых файлов ECMAScript.",
+          "и разрешено использовать Symbols в качестве ключей в WeakMap.\n",
+          "Подробнее обо всем можно почитать в официальном репозитории организации Ecma International TC39.\n"
+        ]
+      },
+      {
+        "id": "2",
+        "order": 2,
+        "type": "TEXT",
+        "title": ".findlast() и .findLastIndex() для Array и TypedArray",
+        "paragraphs": [
+          "Предназначены для поиска элементов в массиве.\n",
+          "Работают так же, как .find() и .findIndex(), но итерируются в обратном порядке."
+        ]
+      },
+      {
+        "id": "3",
+        "order": 3,
+        "type": "CODE",
+        "code": "const array = [{ value: 1 }, { value: 2 }, { value: 3 }, { value: 4 }];\n\narray.find(n => n.value % 2 === 1); // { value: 1 }\narray.findIndex(n => n.value % 2 === 1); // 0\n\n// ======== Before the proposal =========== \n// find\n[...array].reverse().find(n => n.value % 2 === 1); // { value: 3 }\n\n// findIndex\narray.length - 1 - [...array].reverse().findIndex(n => n.value % 2 === 1); // 2\narray.length - 1 - [...array].reverse().findIndex(n => n.value === 42); // should be -1, but 4\n\n// ======== In the proposal =========== \n// find\narray.findLast(n => n.value % 2 === 1); // { value: 3 }\n// findIndex\narray.findLastIndex(n => n.value % 2 === 1); // 2\narray.findLastIndex(n => n.value === 42); // -1"
+      },
+      {
+        "id": "4",
+        "order": 4,
+        "type": "TEXT",
+        "title": "ECMAScript 2024",
+        "paragraphs": [
+          "На официальном сайте уже опубликован драфт на 2024 год, но какие изменения в него войдут пока достоверно неизвестно.\n"
+        ]
+      },
+      {
+        "id": "5",
+        "order": 5,
+        "type": "IMAGE",
+        "src": "https://habrastorage.org/r/w1560/getpro/habr/upload_files/b26/f56/47a/b26f5647a7b761dac02a2832828fc1a9.png",
+        "title": "ES, ECMAScript 2024"
+      },
+      {
+        "id": "6",
+        "order": 6,
+        "type": "TEXT",
+        "title": "ECMAScript2023 (ES14)",
+        "paragraphs": [
+          "Традиционно обновления ECMAScript публикуются в июне. Но уже сейчас можно посмотреть 14-ю редакцию ECMAScript от 2023, которая сейчас находится в статусе freezed, т.е. никакие изменения в нее вноситься уже не будут.",
+          "и разрешено использовать Symbols в качестве ключей в WeakMap.\n",
+          "Подробнее обо всем можно почитать в официальном репозитории организации Ecma International TC39.\n"
+        ]
+      },
+      {
+        "id": "7",
+        "order": 7,
+        "type": "IMAGE",
+        "src": "https://habrastorage.org/r/w1560/getpro/habr/upload_files/b26/f56/47a/b26f5647a7b761dac02a2832828fc1a9.png",
+        "title": "ES, ECMAScript 2024"
+      },
+      {
+        "id": "8",
+        "order": 8,
+        "type": "CODE",
+        "code": "const array = [{ value: 1 }, { value: 2 }, { value: 3 }, { value: 4 }];\n\narray.find(n => n.value % 2 === 1); // { value: 1 }\narray.findIndex(n => n.value % 2 === 1); // 0\n\n// ======== Before the proposal =========== \n// find\n[...array].reverse().find(n => n.value % 2 === 1); // { value: 3 }\n\n// findIndex\narray.length - 1 - [...array].reverse().findIndex(n => n.value % 2 === 1); // 2\narray.length - 1 - [...array].reverse().findIndex(n => n.value === 42); // should be -1, but 4\n\n// ======== In the proposal =========== \n// find\narray.findLast(n => n.value % 2 === 1); // { value: 3 }\n// findIndex\narray.findLastIndex(n => n.value % 2 === 1); // 2\narray.findLastIndex(n => n.value === 42); // -1"
+      }
+    ],
+    "user": {
+      "id": "2",
+      "username": "user",
+      "password": "123",
+      "role": [
+        "USER"
+      ],
+      "avatar": "https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png"
+    }
+  },
+  {
+    "id": "3",
+    "title": "Kotlin News",
+    "subtitle": "Что добавили нового в Kotlin 2023",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kotlin_logo.svg/2560px-Kotlin_logo.svg.png",
+    "views": 5123,
+    "createdAt": "26.03.2022",
+    "userId": "1",
+    "type": [
+      "IT"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "order": 1,
+        "type": "TEXT",
+        "title": "ECMAScript2023 (ES14)",
+        "paragraphs": [
+          "Традиционно обновления ECMAScript публикуются в июне. Но уже сейчас можно посмотреть 14-ю редакцию ECMAScript от 2023, которая сейчас находится в статусе freezed, т.е. никакие изменения в нее вноситься уже не будут.",
+          "В данной версии спецификации не такой большой список изменений, что абсолютно нормально когда мы переходим на годовой цикл релиза.",
+          "Итак, спецификация 2023 года представила нам методы toSorted, toReversed, with, findLast и findLastIndex для Array.prototypeи TypedArray.prototype,\nа также метод toSpliced для Array.prototype.",
+          "Кроме того добавлена поддержка #! комментарии в начале файлов для облегчения запуска исполняемых файлов ECMAScript.",
+          "и разрешено использовать Symbols в качестве ключей в WeakMap.\n",
+          "Подробнее обо всем можно почитать в официальном репозитории организации Ecma International TC39.\n"
+        ]
+      }
+    ],
+    "user": {
+      "id": "1",
+      "username": "admin",
+      "password": "123",
+      "role": [
+        "ADMIN"
+      ],
+      "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/1:1/w_1350,h_1350,c_limit/security_hacker_names.jpg"
+    }
+  },
+  {
+    "id": "4",
+    "title": "Test 4",
+    "subtitle": "Что добавили нового в Kotlin 2023",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kotlin_logo.svg/2560px-Kotlin_logo.svg.png",
+    "views": 12666,
+    "createdAt": "27.02.2022",
+    "userId": "1",
+    "type": [
+      "IT"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "order": 1,
+        "type": "TEXT",
+        "title": "ECMAScript2023 (ES14)",
+        "paragraphs": [
+          "Традиционно обновления ECMAScript публикуются в июне. Но уже сейчас можно посмотреть 14-ю редакцию ECMAScript от 2023, которая сейчас находится в статусе freezed, т.е. никакие изменения в нее вноситься уже не будут.",
+          "В данной версии спецификации не такой большой список изменений, что абсолютно нормально когда мы переходим на годовой цикл релиза.",
+          "Итак, спецификация 2023 года представила нам методы toSorted, toReversed, with, findLast и findLastIndex для Array.prototypeи TypedArray.prototype,\nа также метод toSpliced для Array.prototype.",
+          "Кроме того добавлена поддержка #! комментарии в начале файлов для облегчения запуска исполняемых файлов ECMAScript.",
+          "и разрешено использовать Symbols в качестве ключей в WeakMap.\n",
+          "Подробнее обо всем можно почитать в официальном репозитории организации Ecma International TC39.\n"
+        ]
+      }
+    ],
+    "user": {
+      "id": "1",
+      "username": "admin",
+      "password": "123",
+      "role": [
+        "ADMIN"
+      ],
+      "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/1:1/w_1350,h_1350,c_limit/security_hacker_names.jpg"
+    }
+  },
+  {
+    "id": "5",
+    "title": "Test 5",
+    "subtitle": "Что добавили нового в Kotlin 2023",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kotlin_logo.svg/2560px-Kotlin_logo.svg.png",
+    "views": 3232,
+    "createdAt": "26.02.2023",
+    "userId": "1",
+    "type": [
+      "IT"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "order": 1,
+        "type": "TEXT",
+        "title": "ECMAScript2023 (ES14)",
+        "paragraphs": [
+          "Традиционно обновления ECMAScript публикуются в июне. Но уже сейчас можно посмотреть 14-ю редакцию ECMAScript от 2023, которая сейчас находится в статусе freezed, т.е. никакие изменения в нее вноситься уже не будут.",
+          "В данной версии спецификации не такой большой список изменений, что абсолютно нормально когда мы переходим на годовой цикл релиза.",
+          "Итак, спецификация 2023 года представила нам методы toSorted, toReversed, with, findLast и findLastIndex для Array.prototypeи TypedArray.prototype,\nа также метод toSpliced для Array.prototype.",
+          "Кроме того добавлена поддержка #! комментарии в начале файлов для облегчения запуска исполняемых файлов ECMAScript.",
+          "и разрешено использовать Symbols в качестве ключей в WeakMap.\n",
+          "Подробнее обо всем можно почитать в официальном репозитории организации Ecma International TC39.\n"
+        ]
+      }
+    ],
+    "user": {
+      "id": "1",
+      "username": "admin",
+      "password": "123",
+      "role": [
+        "ADMIN"
+      ],
+      "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/1:1/w_1350,h_1350,c_limit/security_hacker_names.jpg"
+    }
+  },
+  {
+    "id": "6",
+    "title": "Test 6",
+    "subtitle": "Что добавили нового в Kotlin 2023",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kotlin_logo.svg/2560px-Kotlin_logo.svg.png",
+    "views": 5231,
+    "createdAt": "26.01.2022",
+    "userId": "1",
+    "type": [
+      "IT"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "order": 1,
+        "type": "TEXT",
+        "title": "ECMAScript2023 (ES14)",
+        "paragraphs": [
+          "Традиционно обновления ECMAScript публикуются в июне. Но уже сейчас можно посмотреть 14-ю редакцию ECMAScript от 2023, которая сейчас находится в статусе freezed, т.е. никакие изменения в нее вноситься уже не будут.",
+          "В данной версии спецификации не такой большой список изменений, что абсолютно нормально когда мы переходим на годовой цикл релиза.",
+          "Итак, спецификация 2023 года представила нам методы toSorted, toReversed, with, findLast и findLastIndex для Array.prototypeи TypedArray.prototype,\nа также метод toSpliced для Array.prototype.",
+          "Кроме того добавлена поддержка #! комментарии в начале файлов для облегчения запуска исполняемых файлов ECMAScript.",
+          "и разрешено использовать Symbols в качестве ключей в WeakMap.\n",
+          "Подробнее обо всем можно почитать в официальном репозитории организации Ecma International TC39.\n"
+        ]
+      }
+    ],
+    "user": {
+      "id": "1",
+      "username": "admin",
+      "password": "123",
+      "role": [
+        "ADMIN"
+      ],
+      "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/1:1/w_1350,h_1350,c_limit/security_hacker_names.jpg"
+    }
+  },
+  {
+    "id": "7",
+    "title": "Test 7",
+    "subtitle": "Что добавили нового в Kotlin 2023",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kotlin_logo.svg/2560px-Kotlin_logo.svg.png",
+    "views": 1111,
+    "createdAt": "22.02.2022",
+    "userId": "1",
+    "type": [
+      "IT"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "order": 1,
+        "type": "TEXT",
+        "title": "ECMAScript2023 (ES14)",
+        "paragraphs": [
+          "Традиционно обновления ECMAScript публикуются в июне. Но уже сейчас можно посмотреть 14-ю редакцию ECMAScript от 2023, которая сейчас находится в статусе freezed, т.е. никакие изменения в нее вноситься уже не будут.",
+          "В данной версии спецификации не такой большой список изменений, что абсолютно нормально когда мы переходим на годовой цикл релиза.",
+          "Итак, спецификация 2023 года представила нам методы toSorted, toReversed, with, findLast и findLastIndex для Array.prototypeи TypedArray.prototype,\nа также метод toSpliced для Array.prototype.",
+          "Кроме того добавлена поддержка #! комментарии в начале файлов для облегчения запуска исполняемых файлов ECMAScript.",
+          "и разрешено использовать Symbols в качестве ключей в WeakMap.\n",
+          "Подробнее обо всем можно почитать в официальном репозитории организации Ecma International TC39.\n"
+        ]
+      }
+    ],
+    "user": {
+      "id": "1",
+      "username": "admin",
+      "password": "123",
+      "role": [
+        "ADMIN"
+      ],
+      "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/1:1/w_1350,h_1350,c_limit/security_hacker_names.jpg"
+    }
+  },
+  {
+    "id": "8",
+    "title": "Test 8",
+    "subtitle": "Что добавили нового в Kotlin 2023",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kotlin_logo.svg/2560px-Kotlin_logo.svg.png",
+    "views": 22222,
+    "createdAt": "28.02.2022",
+    "userId": "1",
+    "type": [
+      "IT",
+      "COMPUTER_SCIENCE"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "order": 1,
+        "type": "TEXT",
+        "title": "ECMAScript2023 (ES14)",
+        "paragraphs": [
+          "Традиционно обновления ECMAScript публикуются в июне. Но уже сейчас можно посмотреть 14-ю редакцию ECMAScript от 2023, которая сейчас находится в статусе freezed, т.е. никакие изменения в нее вноситься уже не будут.",
+          "В данной версии спецификации не такой большой список изменений, что абсолютно нормально когда мы переходим на годовой цикл релиза.",
+          "Итак, спецификация 2023 года представила нам методы toSorted, toReversed, with, findLast и findLastIndex для Array.prototypeи TypedArray.prototype,\nа также метод toSpliced для Array.prototype.",
+          "Кроме того добавлена поддержка #! комментарии в начале файлов для облегчения запуска исполняемых файлов ECMAScript.",
+          "и разрешено использовать Symbols в качестве ключей в WeakMap.\n",
+          "Подробнее обо всем можно почитать в официальном репозитории организации Ecma International TC39.\n"
+        ]
+      }
+    ],
+    "user": {
+      "id": "1",
+      "username": "admin",
+      "password": "123",
+      "role": [
+        "ADMIN"
+      ],
+      "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/1:1/w_1350,h_1350,c_limit/security_hacker_names.jpg"
+    }
+  },
+  {
+    "id": "9",
+    "title": "Test 9",
+    "subtitle": "Что добавили нового в Kotlin 2023",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kotlin_logo.svg/2560px-Kotlin_logo.svg.png",
+    "views": 124214,
+    "createdAt": "24.08.2022",
+    "userId": "1",
+    "type": [
+      "IT"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "order": 1,
+        "type": "TEXT",
+        "title": "ECMAScript2023 (ES14)",
+        "paragraphs": [
+          "Традиционно обновления ECMAScript публикуются в июне. Но уже сейчас можно посмотреть 14-ю редакцию ECMAScript от 2023, которая сейчас находится в статусе freezed, т.е. никакие изменения в нее вноситься уже не будут.",
+          "В данной версии спецификации не такой большой список изменений, что абсолютно нормально когда мы переходим на годовой цикл релиза.",
+          "Итак, спецификация 2023 года представила нам методы toSorted, toReversed, with, findLast и findLastIndex для Array.prototypeи TypedArray.prototype,\nа также метод toSpliced для Array.prototype.",
+          "Кроме того добавлена поддержка #! комментарии в начале файлов для облегчения запуска исполняемых файлов ECMAScript.",
+          "и разрешено использовать Symbols в качестве ключей в WeakMap.\n",
+          "Подробнее обо всем можно почитать в официальном репозитории организации Ecma International TC39.\n"
+        ]
+      }
+    ],
+    "user": {
+      "id": "1",
+      "username": "admin",
+      "password": "123",
+      "role": [
+        "ADMIN"
+      ],
+      "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/1:1/w_1350,h_1350,c_limit/security_hacker_names.jpg"
+    }
+  },
+  {
+    "id": "10",
+    "title": "Test 10",
+    "subtitle": "Что добавили нового в Kotlin 2023",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kotlin_logo.svg/2560px-Kotlin_logo.svg.png",
+    "views": 1155,
+    "createdAt": "12.04.2022",
+    "userId": "1",
+    "type": [
+      "IT"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "order": 1,
+        "type": "TEXT",
+        "title": "ECMAScript2023 (ES14)",
+        "paragraphs": [
+          "Традиционно обновления ECMAScript публикуются в июне. Но уже сейчас можно посмотреть 14-ю редакцию ECMAScript от 2023, которая сейчас находится в статусе freezed, т.е. никакие изменения в нее вноситься уже не будут.",
+          "В данной версии спецификации не такой большой список изменений, что абсолютно нормально когда мы переходим на годовой цикл релиза.",
+          "Итак, спецификация 2023 года представила нам методы toSorted, toReversed, with, findLast и findLastIndex для Array.prototypeи TypedArray.prototype,\nа также метод toSpliced для Array.prototype.",
+          "Кроме того добавлена поддержка #! комментарии в начале файлов для облегчения запуска исполняемых файлов ECMAScript.",
+          "и разрешено использовать Symbols в качестве ключей в WeakMap.\n",
+          "Подробнее обо всем можно почитать в официальном репозитории организации Ecma International TC39.\n"
+        ]
+      }
+    ],
+    "user": {
+      "id": "1",
+      "username": "admin",
+      "password": "123",
+      "role": [
+        "ADMIN"
+      ],
+      "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/1:1/w_1350,h_1350,c_limit/security_hacker_names.jpg"
+    }
+  },
+  {
+    "id": "11",
+    "title": "Test 11",
+    "subtitle": "Что добавили нового в Kotlin 2023",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kotlin_logo.svg/2560px-Kotlin_logo.svg.png",
+    "views": 1155,
+    "createdAt": "11.05.2023",
+    "userId": "1",
+    "type": [
+      "IT"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "order": 1,
+        "type": "TEXT",
+        "title": "ECMAScript2023 (ES14)",
+        "paragraphs": [
+          "Традиционно обновления ECMAScript публикуются в июне. Но уже сейчас можно посмотреть 14-ю редакцию ECMAScript от 2023, которая сейчас находится в статусе freezed, т.е. никакие изменения в нее вноситься уже не будут.",
+          "В данной версии спецификации не такой большой список изменений, что абсолютно нормально когда мы переходим на годовой цикл релиза.",
+          "Итак, спецификация 2023 года представила нам методы toSorted, toReversed, with, findLast и findLastIndex для Array.prototypeи TypedArray.prototype,\nа также метод toSpliced для Array.prototype.",
+          "Кроме того добавлена поддержка #! комментарии в начале файлов для облегчения запуска исполняемых файлов ECMAScript.",
+          "и разрешено использовать Symbols в качестве ключей в WeakMap.\n",
+          "Подробнее обо всем можно почитать в официальном репозитории организации Ecma International TC39.\n"
+        ]
+      }
+    ],
+    "user": {
+      "id": "1",
+      "username": "admin",
+      "password": "123",
+      "role": [
+        "ADMIN"
+      ],
+      "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/1:1/w_1350,h_1350,c_limit/security_hacker_names.jpg"
+    }
+  },
+  {
+    "id": "12",
+    "title": "Test 12",
+    "subtitle": "Что добавили нового в Kotlin 2023",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kotlin_logo.svg/2560px-Kotlin_logo.svg.png",
+    "views": 7534,
+    "createdAt": "23.01.2022",
+    "userId": "1",
+    "type": [
+      "IT",
+      "COMPUTER_SCIENCE"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "order": 1,
+        "type": "TEXT",
+        "title": "ECMAScript2023 (ES14)",
+        "paragraphs": [
+          "Традиционно обновления ECMAScript публикуются в июне. Но уже сейчас можно посмотреть 14-ю редакцию ECMAScript от 2023, которая сейчас находится в статусе freezed, т.е. никакие изменения в нее вноситься уже не будут.",
+          "В данной версии спецификации не такой большой список изменений, что абсолютно нормально когда мы переходим на годовой цикл релиза.",
+          "Итак, спецификация 2023 года представила нам методы toSorted, toReversed, with, findLast и findLastIndex для Array.prototypeи TypedArray.prototype,\nа также метод toSpliced для Array.prototype.",
+          "Кроме того добавлена поддержка #! комментарии в начале файлов для облегчения запуска исполняемых файлов ECMAScript.",
+          "и разрешено использовать Symbols в качестве ключей в WeakMap.\n",
+          "Подробнее обо всем можно почитать в официальном репозитории организации Ecma International TC39.\n"
+        ]
+      }
+    ],
+    "user": {
+      "id": "1",
+      "username": "admin",
+      "password": "123",
+      "role": [
+        "ADMIN"
+      ],
+      "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/1:1/w_1350,h_1350,c_limit/security_hacker_names.jpg"
+    }
+  },
+  {
+    "id": "13",
+    "title": "Test 13",
+    "subtitle": "Что добавили нового в Kotlin 2023",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kotlin_logo.svg/2560px-Kotlin_logo.svg.png",
+    "views": 6345,
+    "createdAt": "26.02.2020",
+    "userId": "1",
+    "type": [
+      "IT"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "order": 1,
+        "type": "TEXT",
+        "title": "ECMAScript2023 (ES14)",
+        "paragraphs": [
+          "Традиционно обновления ECMAScript публикуются в июне. Но уже сейчас можно посмотреть 14-ю редакцию ECMAScript от 2023, которая сейчас находится в статусе freezed, т.е. никакие изменения в нее вноситься уже не будут.",
+          "В данной версии спецификации не такой большой список изменений, что абсолютно нормально когда мы переходим на годовой цикл релиза.",
+          "Итак, спецификация 2023 года представила нам методы toSorted, toReversed, with, findLast и findLastIndex для Array.prototypeи TypedArray.prototype,\nа также метод toSpliced для Array.prototype.",
+          "Кроме того добавлена поддержка #! комментарии в начале файлов для облегчения запуска исполняемых файлов ECMAScript.",
+          "и разрешено использовать Symbols в качестве ключей в WeakMap.\n",
+          "Подробнее обо всем можно почитать в официальном репозитории организации Ecma International TC39.\n"
+        ]
+      }
+    ],
+    "user": {
+      "id": "1",
+      "username": "admin",
+      "password": "123",
+      "role": [
+        "ADMIN"
+      ],
+      "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/1:1/w_1350,h_1350,c_limit/security_hacker_names.jpg"
+    }
+  },
+  {
+    "id": "14",
+    "title": "Test 14",
+    "subtitle": "Что добавили нового в Kotlin 2023",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kotlin_logo.svg/2560px-Kotlin_logo.svg.png",
+    "views": 745,
+    "createdAt": "26.05.2023",
+    "userId": "1",
+    "type": [
+      "IT"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "order": 1,
+        "type": "TEXT",
+        "title": "ECMAScript2023 (ES14)",
+        "paragraphs": [
+          "Традиционно обновления ECMAScript публикуются в июне. Но уже сейчас можно посмотреть 14-ю редакцию ECMAScript от 2023, которая сейчас находится в статусе freezed, т.е. никакие изменения в нее вноситься уже не будут.",
+          "В данной версии спецификации не такой большой список изменений, что абсолютно нормально когда мы переходим на годовой цикл релиза.",
+          "Итак, спецификация 2023 года представила нам методы toSorted, toReversed, with, findLast и findLastIndex для Array.prototypeи TypedArray.prototype,\nа также метод toSpliced для Array.prototype.",
+          "Кроме того добавлена поддержка #! комментарии в начале файлов для облегчения запуска исполняемых файлов ECMAScript.",
+          "и разрешено использовать Symbols в качестве ключей в WeakMap.\n",
+          "Подробнее обо всем можно почитать в официальном репозитории организации Ecma International TC39.\n"
+        ]
+      }
+    ],
+    "user": {
+      "id": "1",
+      "username": "admin",
+      "password": "123",
+      "role": [
+        "ADMIN"
+      ],
+      "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/1:1/w_1350,h_1350,c_limit/security_hacker_names.jpg"
+    }
+  },
+  {
+    "id": "15",
+    "title": "Test 15",
+    "subtitle": "Что добавили нового в Kotlin 2023",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kotlin_logo.svg/2560px-Kotlin_logo.svg.png",
+    "views": 667,
+    "createdAt": "29.02.2022",
+    "userId": "1",
+    "type": [
+      "IT"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "order": 1,
+        "type": "TEXT",
+        "title": "ECMAScript2023 (ES14)",
+        "paragraphs": [
+          "Традиционно обновления ECMAScript публикуются в июне. Но уже сейчас можно посмотреть 14-ю редакцию ECMAScript от 2023, которая сейчас находится в статусе freezed, т.е. никакие изменения в нее вноситься уже не будут.",
+          "В данной версии спецификации не такой большой список изменений, что абсолютно нормально когда мы переходим на годовой цикл релиза.",
+          "Итак, спецификация 2023 года представила нам методы toSorted, toReversed, with, findLast и findLastIndex для Array.prototypeи TypedArray.prototype,\nа также метод toSpliced для Array.prototype.",
+          "Кроме того добавлена поддержка #! комментарии в начале файлов для облегчения запуска исполняемых файлов ECMAScript.",
+          "и разрешено использовать Symbols в качестве ключей в WeakMap.\n",
+          "Подробнее обо всем можно почитать в официальном репозитории организации Ecma International TC39.\n"
+        ]
+      }
+    ],
+    "user": {
+      "id": "1",
+      "username": "admin",
+      "password": "123",
+      "role": [
+        "ADMIN"
+      ],
+      "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/1:1/w_1350,h_1350,c_limit/security_hacker_names.jpg"
+    }
+  },
+  {
+    "id": "16",
+    "title": "Test 16",
+    "subtitle": "Что добавили нового в Kotlin 2023",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kotlin_logo.svg/2560px-Kotlin_logo.svg.png",
+    "views": 65435,
+    "createdAt": "13.04.2022",
+    "userId": "1",
+    "type": [
+      "IT"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "order": 1,
+        "type": "TEXT",
+        "title": "ECMAScript2023 (ES14)",
+        "paragraphs": [
+          "Традиционно обновления ECMAScript публикуются в июне. Но уже сейчас можно посмотреть 14-ю редакцию ECMAScript от 2023, которая сейчас находится в статусе freezed, т.е. никакие изменения в нее вноситься уже не будут.",
+          "В данной версии спецификации не такой большой список изменений, что абсолютно нормально когда мы переходим на годовой цикл релиза.",
+          "Итак, спецификация 2023 года представила нам методы toSorted, toReversed, with, findLast и findLastIndex для Array.prototypeи TypedArray.prototype,\nа также метод toSpliced для Array.prototype.",
+          "Кроме того добавлена поддержка #! комментарии в начале файлов для облегчения запуска исполняемых файлов ECMAScript.",
+          "и разрешено использовать Symbols в качестве ключей в WeakMap.\n",
+          "Подробнее обо всем можно почитать в официальном репозитории организации Ecma International TC39.\n"
+        ]
+      }
+    ],
+    "user": {
+      "id": "1",
+      "username": "admin",
+      "password": "123",
+      "role": [
+        "ADMIN"
+      ],
+      "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/1:1/w_1350,h_1350,c_limit/security_hacker_names.jpg"
+    }
+  },
+  {
+    "id": "17",
+    "title": "Test 17",
+    "subtitle": "Что добавили нового в Kotlin 2023",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kotlin_logo.svg/2560px-Kotlin_logo.svg.png",
+    "views": 765,
+    "createdAt": "20.02.2020",
+    "userId": "1",
+    "type": [
+      "IT"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "order": 1,
+        "type": "TEXT",
+        "title": "ECMAScript2023 (ES14)",
+        "paragraphs": [
+          "Традиционно обновления ECMAScript публикуются в июне. Но уже сейчас можно посмотреть 14-ю редакцию ECMAScript от 2023, которая сейчас находится в статусе freezed, т.е. никакие изменения в нее вноситься уже не будут.",
+          "В данной версии спецификации не такой большой список изменений, что абсолютно нормально когда мы переходим на годовой цикл релиза.",
+          "Итак, спецификация 2023 года представила нам методы toSorted, toReversed, with, findLast и findLastIndex для Array.prototypeи TypedArray.prototype,\nа также метод toSpliced для Array.prototype.",
+          "Кроме того добавлена поддержка #! комментарии в начале файлов для облегчения запуска исполняемых файлов ECMAScript.",
+          "и разрешено использовать Symbols в качестве ключей в WeakMap.\n",
+          "Подробнее обо всем можно почитать в официальном репозитории организации Ecma International TC39.\n"
+        ]
+      }
+    ],
+    "user": {
+      "id": "1",
+      "username": "admin",
+      "password": "123",
+      "role": [
+        "ADMIN"
+      ],
+      "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/1:1/w_1350,h_1350,c_limit/security_hacker_names.jpg"
+    }
+  },
+  {
+    "id": "18",
+    "title": "Test 18",
+    "subtitle": "Что добавили нового в Kotlin 2023",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kotlin_logo.svg/2560px-Kotlin_logo.svg.png",
+    "views": 3573,
+    "createdAt": "09.09.2022",
+    "userId": "1",
+    "type": [
+      "IT"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "order": 1,
+        "type": "TEXT",
+        "title": "ECMAScript2023 (ES14)",
+        "paragraphs": [
+          "Традиционно обновления ECMAScript публикуются в июне. Но уже сейчас можно посмотреть 14-ю редакцию ECMAScript от 2023, которая сейчас находится в статусе freezed, т.е. никакие изменения в нее вноситься уже не будут.",
+          "В данной версии спецификации не такой большой список изменений, что абсолютно нормально когда мы переходим на годовой цикл релиза.",
+          "Итак, спецификация 2023 года представила нам методы toSorted, toReversed, with, findLast и findLastIndex для Array.prototypeи TypedArray.prototype,\nа также метод toSpliced для Array.prototype.",
+          "Кроме того добавлена поддержка #! комментарии в начале файлов для облегчения запуска исполняемых файлов ECMAScript.",
+          "и разрешено использовать Symbols в качестве ключей в WeakMap.\n",
+          "Подробнее обо всем можно почитать в официальном репозитории организации Ecma International TC39.\n"
+        ]
+      }
+    ],
+    "user": {
+      "id": "1",
+      "username": "admin",
+      "password": "123",
+      "role": [
+        "ADMIN"
+      ],
+      "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/1:1/w_1350,h_1350,c_limit/security_hacker_names.jpg"
+    }
+  },
+  {
+    "id": "19",
+    "title": "Test 19",
+    "subtitle": "Что добавили нового в Kotlin 2023",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kotlin_logo.svg/2560px-Kotlin_logo.svg.png",
+    "views": 5423,
+    "createdAt": "22.02.2021",
+    "userId": "1",
+    "type": [
+      "IT"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "order": 1,
+        "type": "TEXT",
+        "title": "ECMAScript2023 (ES14)",
+        "paragraphs": [
+          "Традиционно обновления ECMAScript публикуются в июне. Но уже сейчас можно посмотреть 14-ю редакцию ECMAScript от 2023, которая сейчас находится в статусе freezed, т.е. никакие изменения в нее вноситься уже не будут.",
+          "В данной версии спецификации не такой большой список изменений, что абсолютно нормально когда мы переходим на годовой цикл релиза.",
+          "Итак, спецификация 2023 года представила нам методы toSorted, toReversed, with, findLast и findLastIndex для Array.prototypeи TypedArray.prototype,\nа также метод toSpliced для Array.prototype.",
+          "Кроме того добавлена поддержка #! комментарии в начале файлов для облегчения запуска исполняемых файлов ECMAScript.",
+          "и разрешено использовать Symbols в качестве ключей в WeakMap.\n",
+          "Подробнее обо всем можно почитать в официальном репозитории организации Ecma International TC39.\n"
+        ]
+      }
+    ],
+    "user": {
+      "id": "1",
+      "username": "admin",
+      "password": "123",
+      "role": [
+        "ADMIN"
+      ],
+      "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/1:1/w_1350,h_1350,c_limit/security_hacker_names.jpg"
+    }
+  },
+  {
+    "id": "20",
+    "title": "Test 20",
+    "subtitle": "Что добавили нового в Kotlin 2023",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kotlin_logo.svg/2560px-Kotlin_logo.svg.png",
+    "views": 75464,
+    "createdAt": "11.02.2023",
+    "userId": "1",
+    "type": [
+      "IT"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "order": 1,
+        "type": "TEXT",
+        "title": "ECMAScript2023 (ES14)",
+        "paragraphs": [
+          "Традиционно обновления ECMAScript публикуются в июне. Но уже сейчас можно посмотреть 14-ю редакцию ECMAScript от 2023, которая сейчас находится в статусе freezed, т.е. никакие изменения в нее вноситься уже не будут.",
+          "В данной версии спецификации не такой большой список изменений, что абсолютно нормально когда мы переходим на годовой цикл релиза.",
+          "Итак, спецификация 2023 года представила нам методы toSorted, toReversed, with, findLast и findLastIndex для Array.prototypeи TypedArray.prototype,\nа также метод toSpliced для Array.prototype.",
+          "Кроме того добавлена поддержка #! комментарии в начале файлов для облегчения запуска исполняемых файлов ECMAScript.",
+          "и разрешено использовать Symbols в качестве ключей в WeakMap.\n",
+          "Подробнее обо всем можно почитать в официальном репозитории организации Ecma International TC39.\n"
+        ]
+      }
+    ],
+    "user": {
+      "id": "1",
+      "username": "admin",
+      "password": "123",
+      "role": [
+        "ADMIN"
+      ],
+      "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/1:1/w_1350,h_1350,c_limit/security_hacker_names.jpg"
+    }
+  },
+  {
+    "id": "21",
+    "title": "Test 21",
+    "subtitle": "Что добавили нового в Kotlin 2023",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kotlin_logo.svg/2560px-Kotlin_logo.svg.png",
+    "views": 456,
+    "createdAt": "11.06.2023",
+    "userId": "1",
+    "type": [
+      "IT"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "order": 1,
+        "type": "TEXT",
+        "title": "ECMAScript2023 (ES14)",
+        "paragraphs": [
+          "Традиционно обновления ECMAScript публикуются в июне. Но уже сейчас можно посмотреть 14-ю редакцию ECMAScript от 2023, которая сейчас находится в статусе freezed, т.е. никакие изменения в нее вноситься уже не будут.",
+          "В данной версии спецификации не такой большой список изменений, что абсолютно нормально когда мы переходим на годовой цикл релиза.",
+          "Итак, спецификация 2023 года представила нам методы toSorted, toReversed, with, findLast и findLastIndex для Array.prototypeи TypedArray.prototype,\nа также метод toSpliced для Array.prototype.",
+          "Кроме того добавлена поддержка #! комментарии в начале файлов для облегчения запуска исполняемых файлов ECMAScript.",
+          "и разрешено использовать Symbols в качестве ключей в WeakMap.\n",
+          "Подробнее обо всем можно почитать в официальном репозитории организации Ecma International TC39.\n"
+        ]
+      }
+    ],
+    "user": {
+      "id": "1",
+      "username": "admin",
+      "password": "123",
+      "role": [
+        "ADMIN"
+      ],
+      "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/1:1/w_1350,h_1350,c_limit/security_hacker_names.jpg"
+    }
+  },
+  {
+    "id": "22",
+    "title": "Test 22",
+    "subtitle": "Что добавили нового в Kotlin 2023",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kotlin_logo.svg/2560px-Kotlin_logo.svg.png",
+    "views": 7456,
+    "createdAt": "02.07.2023",
+    "userId": "1",
+    "type": [
+      "IT"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "order": 1,
+        "type": "TEXT",
+        "title": "ECMAScript2023 (ES14)",
+        "paragraphs": [
+          "Традиционно обновления ECMAScript публикуются в июне. Но уже сейчас можно посмотреть 14-ю редакцию ECMAScript от 2023, которая сейчас находится в статусе freezed, т.е. никакие изменения в нее вноситься уже не будут.",
+          "В данной версии спецификации не такой большой список изменений, что абсолютно нормально когда мы переходим на годовой цикл релиза.",
+          "Итак, спецификация 2023 года представила нам методы toSorted, toReversed, with, findLast и findLastIndex для Array.prototypeи TypedArray.prototype,\nа также метод toSpliced для Array.prototype.",
+          "Кроме того добавлена поддержка #! комментарии в начале файлов для облегчения запуска исполняемых файлов ECMAScript.",
+          "и разрешено использовать Symbols в качестве ключей в WeakMap.\n",
+          "Подробнее обо всем можно почитать в официальном репозитории организации Ecma International TC39.\n"
+        ]
+      }
+    ],
+    "user": {
+      "id": "1",
+      "username": "admin",
+      "password": "123",
+      "role": [
+        "ADMIN"
+      ],
+      "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/1:1/w_1350,h_1350,c_limit/security_hacker_names.jpg"
+    }
+  },
+  {
+    "id": "23",
+    "title": "Test 23",
+    "subtitle": "Что добавили нового в Kotlin 2023",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kotlin_logo.svg/2560px-Kotlin_logo.svg.png",
+    "views": 4323,
+    "createdAt": "23.04.2022",
+    "userId": "1",
+    "type": [
+      "IT"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "order": 1,
+        "type": "TEXT",
+        "title": "ECMAScript2023 (ES14)",
+        "paragraphs": [
+          "Традиционно обновления ECMAScript публикуются в июне. Но уже сейчас можно посмотреть 14-ю редакцию ECMAScript от 2023, которая сейчас находится в статусе freezed, т.е. никакие изменения в нее вноситься уже не будут.",
+          "В данной версии спецификации не такой большой список изменений, что абсолютно нормально когда мы переходим на годовой цикл релиза.",
+          "Итак, спецификация 2023 года представила нам методы toSorted, toReversed, with, findLast и findLastIndex для Array.prototypeи TypedArray.prototype,\nа также метод toSpliced для Array.prototype.",
+          "Кроме того добавлена поддержка #! комментарии в начале файлов для облегчения запуска исполняемых файлов ECMAScript.",
+          "и разрешено использовать Symbols в качестве ключей в WeakMap.\n",
+          "Подробнее обо всем можно почитать в официальном репозитории организации Ecma International TC39.\n"
+        ]
+      }
+    ],
+    "user": {
+      "id": "1",
+      "username": "admin",
+      "password": "123",
+      "role": [
+        "ADMIN"
+      ],
+      "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/1:1/w_1350,h_1350,c_limit/security_hacker_names.jpg"
+    }
+  },
+  {
+    "id": "24",
+    "title": "Test 24",
+    "subtitle": "Что добавили нового в Kotlin 2023",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kotlin_logo.svg/2560px-Kotlin_logo.svg.png",
+    "views": 534,
+    "createdAt": "21.04.2022",
+    "userId": "1",
+    "type": [
+      "IT"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "order": 1,
+        "type": "TEXT",
+        "title": "ECMAScript2023 (ES14)",
+        "paragraphs": [
+          "Традиционно обновления ECMAScript публикуются в июне. Но уже сейчас можно посмотреть 14-ю редакцию ECMAScript от 2023, которая сейчас находится в статусе freezed, т.е. никакие изменения в нее вноситься уже не будут.",
+          "В данной версии спецификации не такой большой список изменений, что абсолютно нормально когда мы переходим на годовой цикл релиза.",
+          "Итак, спецификация 2023 года представила нам методы toSorted, toReversed, with, findLast и findLastIndex для Array.prototypeи TypedArray.prototype,\nа также метод toSpliced для Array.prototype.",
+          "Кроме того добавлена поддержка #! комментарии в начале файлов для облегчения запуска исполняемых файлов ECMAScript.",
+          "и разрешено использовать Symbols в качестве ключей в WeakMap.\n",
+          "Подробнее обо всем можно почитать в официальном репозитории организации Ecma International TC39.\n"
+        ]
+      }
+    ],
+    "user": {
+      "id": "1",
+      "username": "admin",
+      "password": "123",
+      "role": [
+        "ADMIN"
+      ],
+      "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/1:1/w_1350,h_1350,c_limit/security_hacker_names.jpg"
+    }
+  },
+  {
+    "id": "25",
+    "title": "Экономическая статья!",
+    "subtitle": "Что ж там с инфляцией?",
+    "img": "https://gpbi-1c-prod-bitrix-uploads.storage.yandexcloud.net/resize_cache/14229/dc5e10191752e69d7cdeb29f8e02c154/iblock/ec7/ec7bfa31e01e3eab19f81c4f27ffcdc7/inflation-main.jpg",
+    "views": 6534,
+    "createdAt": "21.04.2022",
+    "userId": "1",
+    "type": [
+      "ECONOMICS"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "order": 1,
+        "type": "TEXT",
+        "title": "ECMAScript2023 (ES14)",
+        "paragraphs": [
+          "Традиционно обновления ECMAScript публикуются в июне. Но уже сейчас можно посмотреть 14-ю редакцию ECMAScript от 2023, которая сейчас находится в статусе freezed, т.е. никакие изменения в нее вноситься уже не будут.",
+          "В данной версии спецификации не такой большой список изменений, что абсолютно нормально когда мы переходим на годовой цикл релиза.",
+          "Итак, спецификация 2023 года представила нам методы toSorted, toReversed, with, findLast и findLastIndex для Array.prototypeи TypedArray.prototype,\nа также метод toSpliced для Array.prototype.",
+          "Кроме того добавлена поддержка #! комментарии в начале файлов для облегчения запуска исполняемых файлов ECMAScript.",
+          "и разрешено использовать Symbols в качестве ключей в WeakMap.\n",
+          "Подробнее обо всем можно почитать в официальном репозитории организации Ecma International TC39.\n"
+        ]
+      }
+    ],
+    "user": {
+      "id": "1",
+      "username": "admin",
+      "password": "123",
+      "role": [
+        "ADMIN"
+      ],
+      "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/1:1/w_1350,h_1350,c_limit/security_hacker_names.jpg"
+    }
+  }
+]
