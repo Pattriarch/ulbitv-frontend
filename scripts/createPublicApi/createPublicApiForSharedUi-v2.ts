@@ -1,45 +1,49 @@
-import path from 'path';
+import path from "path";
 
-import { Project } from 'ts-morph';
+import { Project } from "ts-morph";
 
 const project = new Project({});
 
-project.addSourceFilesAtPaths('src/**/*.ts');
-project.addSourceFilesAtPaths('src/**/*.tsx');
+project.addSourceFilesAtPaths("src/**/*.ts");
+project.addSourceFilesAtPaths("src/**/*.tsx");
 
-const uiPath = path.resolve(__dirname, '..', '..', 'src', 'shared', 'ui');
+const uiPath = path.resolve(__dirname, "..", "..", "src", "shared", "ui");
 const sharedUiDirectory = project.getDirectory(uiPath);
 const componentDirs = sharedUiDirectory?.getDirectories();
-const indexFilename = 'index.ts';
+const indexFilename = "index.ts";
 
 componentDirs?.forEach((directory) => {
-	const folderName = directory.getPath();
-	const isIndexFileExist = directory.getSourceFile(`${folderName}/${indexFilename}`);
+  const folderName = directory.getPath();
+  const isIndexFileExist = directory.getSourceFile(
+    `${folderName}/${indexFilename}`
+  );
 
-	if (!isIndexFileExist) {
-		const filesInFolder = directory.getSourceFiles([
-			'**/*.tsx',
-			'!**/*.stories.*',
-			'!**/*.test.*'
-		]);
+  if (!isIndexFileExist) {
+    const filesInFolder = directory.getSourceFiles([
+      "**/*.tsx",
+      "!**/*.stories.*",
+      "!**/*.test.*",
+    ]);
 
-		let content = '';
+    let content = "";
 
-		filesInFolder?.forEach((component) => {
-			const folderLen = folderName.length;
-			const moduleName = component.getBaseNameWithoutExtension();
-			const modulePath = `.${component.getFilePath().slice(folderLen, -4)}`;
-			content += `export {${moduleName}} from "${modulePath}"\n`;
-		});
+    filesInFolder?.forEach((component) => {
+      const folderLen = folderName.length;
+      const moduleName = component.getBaseNameWithoutExtension();
+      const modulePath = `.${component.getFilePath().slice(folderLen, -4)}`;
+      content += `export {${moduleName}} from "${modulePath}"\n`;
+    });
 
-		const file = directory.createSourceFile(
-			`${folderName}/${indexFilename}`,
-			content,
-			{ overwrite: true }
-		);
+    const file = directory.createSourceFile(
+      `${folderName}/${indexFilename}`,
+      content,
+      { overwrite: true }
+    );
 
-		void file.save().then(() => console.log(`${folderName} --> index.ts created!`));
-	}
+    void file
+      .save()
+      .then(() => console.log(`${folderName} --> index.ts created!`));
+  }
 });
 
 void project.save();

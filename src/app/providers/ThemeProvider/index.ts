@@ -1,7 +1,7 @@
-import { useTheme } from '../../../shared/lib/hooks/useTheme/useTheme';
+import { useTheme } from "../../../shared/lib/hooks/useTheme/useTheme";
 
-import ThemeProvider from './ui/ThemeProvider';
+import ThemeProvider from "./ui/ThemeProvider";
 
-import { Theme } from '@/shared/const/theme';
+import { Theme } from "@/shared/const/theme";
 
 export { ThemeProvider, useTheme, Theme };

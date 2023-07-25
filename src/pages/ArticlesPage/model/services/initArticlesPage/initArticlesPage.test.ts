@@ -1,62 +1,62 @@
-import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
+import { fetchArticlesList } from "../fetchArticlesList/fetchArticlesList";
 
-import { initArticlesPage } from './initArticlesPage';
+import { initArticlesPage } from "./initArticlesPage";
 
-import { ArticleSortField, ArticleType, ArticleView } from '@/entities/Article';
-import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import { ArticleSortField, ArticleType, ArticleView } from "@/entities/Article";
+import { TestAsyncThunk } from "@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
 
-jest.mock('../fetchArticlesList/fetchArticlesList');
+jest.mock("../fetchArticlesList/fetchArticlesList");
 
-describe('initArticlesPage', () => {
-    test('fetchArticlesList should be called', async () => {
-        const thunk = new TestAsyncThunk(initArticlesPage, {
-            articlesPage: {
-                page: 2,
-                ids: [],
-                entities: {},
-                limit: 5,
-                isLoading: false,
-                hasMore: true,
-                _inited: false,
-                view: ArticleView.BIG,
-                order: 'asc',
-                search: '',
-                sort: ArticleSortField.CREATED,
-                type: ArticleType.ALL
-            }
-        });
-
-        const searchParams = new URLSearchParams(window.location.search);
-        await thunk.callThunk(searchParams);
-
-        // pending, fulfilled, 2 внутри action
-        expect(thunk.dispatch).toHaveBeenCalledTimes(4);
-        expect(fetchArticlesList).toHaveBeenCalled();
+describe("initArticlesPage", () => {
+  test("fetchArticlesList should be called", async () => {
+    const thunk = new TestAsyncThunk(initArticlesPage, {
+      articlesPage: {
+        page: 2,
+        ids: [],
+        entities: {},
+        limit: 5,
+        isLoading: false,
+        hasMore: true,
+        _inited: false,
+        view: ArticleView.BIG,
+        order: "asc",
+        search: "",
+        sort: ArticleSortField.CREATED,
+        type: ArticleType.ALL,
+      },
     });
 
-    test('fetchArticlesList should not be called', async () => {
-        const thunk = new TestAsyncThunk(initArticlesPage, {
-            articlesPage: {
-                page: 2,
-                ids: [],
-                entities: {},
-                limit: 5,
-                isLoading: false,
-                hasMore: true,
-                _inited: true,
-                view: ArticleView.BIG,
-                order: 'asc',
-                search: '',
-                sort: ArticleSortField.CREATED,
-                type: ArticleType.ALL
-            }
-        });
+    const searchParams = new URLSearchParams(window.location.search);
+    await thunk.callThunk(searchParams);
 
-        const searchParams = new URLSearchParams(window.location.search);
-        await thunk.callThunk(searchParams);
+    // pending, fulfilled, 2 внутри action
+    expect(thunk.dispatch).toHaveBeenCalledTimes(4);
+    expect(fetchArticlesList).toHaveBeenCalled();
+  });
 
-        // pending, fulfilled, 2 внутри action
-        expect(thunk.dispatch).toHaveBeenCalledTimes(2);
-        expect(fetchArticlesList).not.toHaveBeenCalled();
+  test("fetchArticlesList should not be called", async () => {
+    const thunk = new TestAsyncThunk(initArticlesPage, {
+      articlesPage: {
+        page: 2,
+        ids: [],
+        entities: {},
+        limit: 5,
+        isLoading: false,
+        hasMore: true,
+        _inited: true,
+        view: ArticleView.BIG,
+        order: "asc",
+        search: "",
+        sort: ArticleSortField.CREATED,
+        type: ArticleType.ALL,
+      },
     });
+
+    const searchParams = new URLSearchParams(window.location.search);
+    await thunk.callThunk(searchParams);
+
+    // pending, fulfilled, 2 внутри action
+    expect(thunk.dispatch).toHaveBeenCalledTimes(2);
+    expect(fetchArticlesList).not.toHaveBeenCalled();
+  });
 });

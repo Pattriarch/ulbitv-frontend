@@ -1,7 +1,7 @@
-import { type Article } from '../types/article';
+import { type Article } from "../types/article";
 
 export interface ArticleDetailsSchema {
-    isLoading?: boolean;
-    error?: string;
-    data?: Article;
+  isLoading?: boolean;
+  error?: string;
+  data?: Article;
 }

@@ -1,3 +1,5 @@
-import { type FC, lazy } from 'react';
+import { type FC, lazy } from "react";
 
-export const ForbiddenPageAsync = lazy<FC>(async () => await import('./ForbiddenPage'));
+export const ForbiddenPageAsync = lazy<FC>(
+  async () => await import("./ForbiddenPage")
+);

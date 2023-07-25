@@ -1,1 +1,5 @@
-export type DropdownDirection = 'topRight' | 'topLeft' | 'bottomRight' | 'bottomLeft';
+export type DropdownDirection =
+  | "topRight"
+  | "topLeft"
+  | "bottomRight"
+  | "bottomLeft";
