@@ -134,7 +134,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
 	if (!virtualized) {
 		return (
-			<div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+			<div data-testid={'ArticleList'} className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
 				{articles.length > 0 ? articles.map((article, index) => renderArticle(index, article)) : null}
 				{isLoading && getSkeletons(view)}
 			</div>
@@ -142,7 +142,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
 	}
 
 	return (
-		<div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+		<div data-testid={'ArticleList'} className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
 			{view === ArticleView.BIG
 				? (
 					<Virtuoso

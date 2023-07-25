@@ -32,6 +32,7 @@ export const Tabs = typedMemo(<T extends string>(props: TabsProps<T>) => {
         <div className={classNames(cls.Tabs, {}, [className])}>
             {tabs.map(tab => (
                 <Card
+                    data-testid={`Card.${tab.value}`}
                     theme={tab.value === value ? CardTheme.NORMAL : CardTheme.OUTLINED}
                     key={tab.value}
                     className={cls.tab}

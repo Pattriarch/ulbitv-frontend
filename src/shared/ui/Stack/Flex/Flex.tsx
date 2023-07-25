@@ -1,6 +1,6 @@
-import { memo, type ReactNode, type RefObject } from 'react';
+import {DetailedHTMLProps, DetailsHTMLAttributes, HTMLAttributes, memo, type ReactNode, type RefObject} from 'react';
 
-import { classNames } from '@/shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 
 import cls from './Flex.module.scss';
 
@@ -37,7 +37,9 @@ const gapClasses: Record<FlexGap, any> = {
 
 export type FlexTag = 'div' | 'nav';
 
-export interface FlexProps {
+type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+
+export interface FlexProps extends DivProps {
     ref?: RefObject<HTMLDivElement>;
     className?: string;
     children: ReactNode;
@@ -58,7 +60,8 @@ export const Flex = memo((props: FlexProps) => {
         direction = 'row',
         tag = 'div',
         gap,
-        max
+        max,
+        ...otherProps
     } = props;
 
     const classes = [
@@ -75,8 +78,8 @@ export const Flex = memo((props: FlexProps) => {
 
     switch (tag) {
         case 'div':
-            return <div className={classNames(cls.Flex, mods, classes)}>{children}</div>;
+            return <div className={classNames(cls.Flex, mods, classes)} {...otherProps}>{children}</div>;
         case 'nav':
-            return <nav className={classNames(cls.Flex, mods, classes)}>{children}</nav>;
+            return <nav className={classNames(cls.Flex, mods, classes)} {...otherProps}>{children}</nav>;
     }
 });

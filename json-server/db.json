@@ -1055,6 +1055,17 @@
       "city": "Moscow",
       "username": "ivan",
       "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/1:1/w_1350,h_1350,c_limit/security_hacker_names.jpg"
+    },
+    {
+      "id": "4",
+      "firstName": "test",
+      "lastName": "test",
+      "age": 423,
+      "currency": "EUR",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "testuser",
+      "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/1:1/w_1350,h_1350,c_limit/security_hacker_names.jpg"
     }
   ],
   "article-ratings": [
