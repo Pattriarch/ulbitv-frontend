@@ -32,7 +32,7 @@
   },
   "exclude": [
     "cypress",
-    "cypress.config.ts"
+    "cypress.config.ts",
   ]
   //  "exclude": [
 //    "cypress",

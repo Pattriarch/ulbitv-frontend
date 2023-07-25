@@ -45,7 +45,7 @@ module.exports = {
     "unused-imports",
     "import",
   ],
-  ignorePatterns: [".eslintrc.js"],
+  ignorePatterns: [".eslintrc.js", 'json-server/index.js'],
   rules: {
     "import/newline-after-import": 2,
     "import/order": [
