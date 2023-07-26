@@ -1,5 +1,6 @@
 import { type StateSchema } from '@/app/providers/StoreProvider';
 import { ArticleSortField, ArticleType, ArticleView } from '@/entities/Article';
+import { buildSelector } from '@/shared/lib/store';
 
 export const getArticlesPageIsLoading = (state: StateSchema) =>
 	state.articlesPage?.isLoading || false;
@@ -25,3 +26,7 @@ export const getArticlesLastScrolledIndex = (state: StateSchema) =>
 	state.articlesPage?.lastScrolledIndex;
 export const getArticlesPageInited = (state: StateSchema) =>
 	state.articlesPage?._inited;
+
+export const [useArticleItemById] = buildSelector(
+	(state, id: string) => state.articlesPage?.entities[id],
+);

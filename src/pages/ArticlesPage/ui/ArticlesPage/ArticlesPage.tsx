@@ -1,6 +1,7 @@
 import React, { memo, useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
+import { useArticleItemById } from '../../model/selectors/articlesPageSelectors';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { articlesPageReducer } from '../../model/slices/articlesPageSlice';
@@ -28,6 +29,9 @@ const reducers: ReducersList = {
 const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
 	const dispatch = useAppDispatch();
 	const [searchParams] = useSearchParams();
+	const data = useArticleItemById('1');
+
+	console.log(data);
 
 	useInitialEffect(() => {
 		void dispatch(initArticlesPage(searchParams));
