@@ -9,7 +9,7 @@ type ActionCreatorType<Return, Arg, RejectedValue> = (
 	Return,
 	Arg,
 	{
-		rejectValue: RejectedValue;
+		rejectValue: RejectedValue,
 	}
 >;
 

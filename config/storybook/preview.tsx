@@ -1,5 +1,7 @@
 import type { Preview } from '@storybook/react';
 
+import { I18nDecorator } from '../../src/shared/config/storybook/I18nDecorator/I18nDecorator';
+import { PaddingDecorator } from '../../src/shared/config/storybook/PaddingDecorator/PaddingDecorator';
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
 import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
 import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
@@ -7,6 +9,20 @@ import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDec
 import { Theme } from '@/shared/const/theme';
 
 const preview: Preview = {
+	globalTypes: {
+		locale: {
+			name: 'Locale',
+			description: 'Internationalization locale',
+			toolbar: {
+				icon: 'globe',
+				items: [
+					{ value: 'ru', title: 'Русский' },
+					{ value: 'en', title: 'English' },
+				],
+				showName: true,
+			},
+		},
+	},
 	parameters: {
 		actions: { argTypesRegex: '^on[A-Z].*' },
 		controls: {
@@ -29,7 +45,13 @@ const preview: Preview = {
 			],
 		},
 	},
-	decorators: [StyleDecorator, RouterDecorator, SuspenseDecorator],
+	decorators: [
+		StyleDecorator,
+		RouterDecorator,
+		SuspenseDecorator,
+		PaddingDecorator,
+		I18nDecorator,
+	],
 };
 
 export default preview;

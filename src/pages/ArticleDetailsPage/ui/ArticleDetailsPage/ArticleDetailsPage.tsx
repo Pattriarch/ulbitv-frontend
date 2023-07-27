@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 
 import { articleDetailsPageReducer } from '../../model/slices';
@@ -6,15 +7,15 @@ import { ArticleDetailsComments } from '../../ui/ArticleDetailsComments/ArticleD
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 
 import { ArticleDetails } from '@/entities/Article';
-import { Counter } from '@/entities/Counter';
-import { ArticleRating } from '@/features/articleRating';
-import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
+import { ArticleRating } from '@/features/ArticleRating';
+import { ArticleRecommendationsList } from '@/features/ArticleRecommendationsList';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
 	DynamicModuleLoader,
 	type ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { getFeatureFlag } from '@/shared/lib/features';
+import { toggleFeatures } from '@/shared/lib/features';
+import { Card } from '@/shared/ui/Card';
 import { Page } from '@/widgets/Page';
 
 import cls from './ArticleDetailsPage.module.scss';
@@ -29,13 +30,18 @@ const reducers: ReducersList = {
 };
 
 const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
-	const { id } = useParams<{ id: string }>();
-	const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
-	const isCounterEnabled = getFeatureFlag('isCounterEnabled');
+	const { t } = useTranslation();
+	const { id } = useParams<{ id: string, }>();
 
 	if (!id) {
 		return null;
 	}
+
+	const articleRatingCard = toggleFeatures({
+		name: 'isArticleRatingEnabled',
+		on: () => <ArticleRating articleId={id} />,
+		off: () => <Card>{t('Оценка статей скоро появится!')}</Card>,
+	});
 
 	return (
 		<DynamicModuleLoader reducers={reducers}>
@@ -44,8 +50,7 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
 			>
 				<ArticleDetailsPageHeader />
 				<ArticleDetails id={id} />
-				{isCounterEnabled && <Counter />}
-				{isArticleRatingEnabled && <ArticleRating articleId={id} />}
+				{articleRatingCard}
 				<ArticleRecommendationsList />
 				<ArticleDetailsComments id={id} />
 			</Page>

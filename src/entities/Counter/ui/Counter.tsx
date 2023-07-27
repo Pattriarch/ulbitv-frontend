@@ -6,24 +6,15 @@ import { useCounterActions } from '../model/slice/counterSlice';
 import { Button } from '@/shared/ui/Button';
 
 export const Counter = (): JSX.Element => {
-	// const dispatch = useAppDispatch();
-	// const counterValue = useSelector(getCounterValue);
 	const counterValue = useCounterValue();
-	const { add, decrement, increment } = useCounterActions();
+	const { decrement, increment } = useCounterActions();
 	const { t } = useTranslation();
 
 	const handleIncrement = (): void => {
 		increment();
-		// dispatch(counterActions.increment());
 	};
 	const handleDecrement = (): void => {
 		decrement();
-		// dispatch(counterActions.decrement());
-	};
-
-	const handleAddFive = (): void => {
-		add(5);
-		// dispatch(counterActions.decrement());
 	};
 
 	return (

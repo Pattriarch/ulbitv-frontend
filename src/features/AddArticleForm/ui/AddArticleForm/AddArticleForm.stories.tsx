@@ -2,8 +2,10 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { AddArticleForm } from './AddArticleForm';
 
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+
 const meta: Meta<typeof AddArticleForm> = {
-	title: 'shared/AddArticleForm',
+	title: 'features/AddArticleForm',
 	component: AddArticleForm,
 	tags: ['autodocs'],
 };
@@ -11,6 +13,7 @@ const meta: Meta<typeof AddArticleForm> = {
 export default meta;
 type Story = StoryObj<typeof AddArticleForm>;
 
-export const Primary: Story = {
+export const Normal: Story = {
+	decorators: [StoreDecorator({})],
 	args: {},
 };

@@ -49,6 +49,7 @@ export const CountrySelect = (props: CountrySelectProps): JSX.Element => {
 
 	return (
 		// todo: добавить label
+		// todo: floating UI для позиционирования
 		<ListBox
 			className={className}
 			defaultValue={t('Укажите страну')}

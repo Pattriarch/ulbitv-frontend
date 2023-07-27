@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader';
 
+import { articleStub } from '@/shared/assets/tests/articleStub';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 const meta: Meta<typeof ArticleDetailsPageHeader> = {
@@ -13,7 +14,20 @@ const meta: Meta<typeof ArticleDetailsPageHeader> = {
 export default meta;
 type Story = StoryObj<typeof ArticleDetailsPageHeader>;
 
-export const Primary: Story = {
+export const Normal: Story = {
 	decorators: [StoreDecorator({})],
 	args: {},
+};
+
+export const Editable: Story = {
+	decorators: [
+		StoreDecorator({
+			articleDetails: {
+				data: articleStub,
+			},
+			user: {
+				authData: { id: '1' },
+			},
+		}),
+	],
 };

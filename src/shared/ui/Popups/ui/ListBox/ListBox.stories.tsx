@@ -18,86 +18,50 @@ const meta: Meta<typeof ListBox> = {
 export default meta;
 type Story = StoryObj<typeof ListBox>;
 
-export const Primary: Story = {
+const args = {
+	value: '123',
+	items: [
+		{
+			content: 'lae123',
+			value: '123',
+		},
+		{
+			content: 'asdascasc',
+			value: '1232',
+		},
+	],
+};
+
+export const Normal: Story = {
 	args: {
-		value: '123',
-		items: [
-			{
-				content: 'lae123',
-				value: '123',
-			},
-			{
-				content: 'asdascasc',
-				value: '1232',
-			},
-		],
+		...args,
 	},
 };
 
 export const TopLeft: Story = {
 	args: {
-		value: '123',
+		...args,
 		direction: 'topLeft',
-		items: [
-			{
-				content: 'lae123',
-				value: '123',
-			},
-			{
-				content: 'asdascasc',
-				value: '1232',
-			},
-		],
 	},
 };
 
 export const TopRight: Story = {
 	args: {
-		value: '123',
+		...args,
 		direction: 'topRight',
-		items: [
-			{
-				content: 'lae123',
-				value: '123',
-			},
-			{
-				content: 'asdascasc',
-				value: '1232',
-			},
-		],
 	},
 };
 
 export const BottomLeft: Story = {
 	args: {
-		value: '123',
+		...args,
 		direction: 'bottomLeft',
-		items: [
-			{
-				content: 'lae123',
-				value: '123',
-			},
-			{
-				content: 'asdascasc',
-				value: '1232',
-			},
-		],
 	},
 };
 
 export const BottomRight: Story = {
 	args: {
-		value: '123',
+		...args,
 		direction: 'bottomRight',
-		items: [
-			{
-				content: 'lae123',
-				value: '123',
-			},
-			{
-				content: 'asdascasc',
-				value: '1232',
-			},
-		],
 	},
 };

@@ -5,8 +5,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 import MainPage from './MainPage';
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/const/theme';
 
 const meta: Meta<typeof MainPage> = {
 	title: 'pages/MainPage',
@@ -22,10 +20,5 @@ export default meta;
 type Story = StoryObj<typeof MainPage>;
 
 export const Normal: Story = {
-	args: {},
-};
-
-export const Dark: Story = {
-	decorators: [ThemeDecorator(Theme.DARK)],
 	args: {},
 };

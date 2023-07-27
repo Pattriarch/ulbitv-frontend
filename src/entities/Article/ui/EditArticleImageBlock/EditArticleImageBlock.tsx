@@ -1,4 +1,5 @@
 import { type HTMLAttributes, memo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { type ArticleImageBlock } from '../../model/types/article';
 
@@ -20,6 +21,7 @@ interface EditArticleImageBlockProps extends HTMLAttributes<HTMLDivElement> {
 
 export const EditArticleImageBlock = memo(
 	(props: EditArticleImageBlockProps) => {
+		const { t } = useTranslation();
 		const { className, block, onChangeBlockState, ...otherProps } = props;
 
 		const [imageBlock, setImageBlock] = useState(block);
@@ -76,18 +78,16 @@ export const EditArticleImageBlock = memo(
 						onClick={onClickCancelIcon}
 						className={classNames(cls.icon, {}, [cls.cancelIcon])}
 					/>
-					<img
-						src={imageBlock.src}
-						className={cls.preview}
-						alt={imageBlock.title}
-					/>
-					<Text text={'Путь к изображению'} />
+					<div className={cls.preview}>
+						<img src={imageBlock.src} alt={imageBlock.title} />
+					</div>
+					<Text text={t('Путь к изображению')} />
 					<Input
 						theme={'outlined'}
 						value={imageBlock?.src}
 						onChange={onChangeImage}
 					/>
-					<Text text={'Текст под изображенением'} />
+					<Text text={t('Текст под изображением')} />
 					<Input
 						theme={'outlined'}
 						value={imageBlock?.title}

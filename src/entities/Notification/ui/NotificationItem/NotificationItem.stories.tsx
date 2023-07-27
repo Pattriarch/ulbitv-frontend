@@ -11,6 +11,12 @@ const meta: Meta<typeof NotificationItem> = {
 export default meta;
 type Story = StoryObj<typeof NotificationItem>;
 
-export const Primary: Story = {
-	args: {},
+export const Normal: Story = {
+	args: {
+		item: {
+			id: '1',
+			title: 'Уведомление 1',
+			description: 'Текст уведомления',
+		},
+	},
 };

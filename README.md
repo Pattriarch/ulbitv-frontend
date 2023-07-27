@@ -166,7 +166,7 @@ Clear.args = {
 
 ---
 
-### Работа с данными
+## Работа с данными
 
 Взаимодействие с данными осуществляется с помощью redux toolkit.
 По возможности переиспользуемые сущности необходимо нормализовать с помощью EntityAdapter
@@ -175,6 +175,21 @@ Clear.args = {
 
 Для асинхронного подключения редюсеров (чтобы не тянуть их в общий бандл) используется
 [DynamicModuleLoader](/src/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader.tsx)
+
+---
+
+## Работа с feature-flags
+
+Разрешено использование feature flags только с помощью хелпера toggleFeatures
+
+Хелпер принимает в себя объект с опциями:
+
+{ name: название feature flag; on: функция, отрабатывающая после включения фичи; off: функция, отрабатывающая после выключения фичи }
+
+Для автоматического удаления фичи следует использовать remove-feature.ts (из папки scripts), принимающий в себя 2 аргумента:
+
+1. Название удаляемого feature flag
+2. Состояние (on/off)
 
 ---
 
@@ -194,13 +209,13 @@ Clear.args = {
 
 - [addCommentForm](/src/features/addCommentForm)
 - [articleEditForm](/src/features/articleEditForm)
-- [articleRating](/src/features/articleRating)
-- [articleRecommendationsList](/src/features/articleRecommendationsList)
+- [articleRating](/src/features/ArticleRating)
+- [articleRecommendationsList](/src/features/ArticleRecommendationsList)
 - [AuthByUsername](/src/features/AuthByUsername)
-- [avatarDropdown](/src/features/avatarDropdown)
-- [editableProfileCard](/src/features/editableProfileCard)
+- [avatarDropdown](/src/features/AvatarDropdown)
+- [editableProfileCard](/src/features/EditableProfileCard)
 - [LangSwitcher](/src/features/LangSwitcher)
-- [notificationButton](/src/features/notificationButton)
-- [profileRating](/src/features/profileRating)
+- [notificationButton](/src/features/NotificationButton)
+- [profileRating](/src/features/ProfileRating)
 - [ThemeSwitcher](/src/features/ThemeSwitcher)
 - [UI](/src/features/UI)

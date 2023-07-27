@@ -29,3 +29,23 @@ export const Normal: Story = {
 			'    navigate: jest.MockedFn<any>;',
 	},
 };
+
+export const NormalWithoutCopyIcon: Story = {
+	args: {
+		text:
+			"jest.mock('axios');\n" +
+			'\n' +
+			'const mockedAxios = jest.mocked(axios, true);\n' +
+			'\n' +
+			'export class TestAsyncThunk<Return, Arg, RejectedValue> {\n' +
+			'    actionCreator: ActionCreatorType<Return, Arg, RejectedValue>;\n' +
+			'\n' +
+			'    dispatch: jest.MockedFn<any>;\n' +
+			'\n' +
+			'    getState: () => StateSchema;\n' +
+			'\n' +
+			'    api: jest.MockedFunctionDeep<AxiosStatic>;\n' +
+			'    navigate: jest.MockedFn<any>;',
+		withCopyIcon: false,
+	},
+};

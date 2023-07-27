@@ -1,6 +1,5 @@
 import {
 	DetailedHTMLProps,
-	DetailsHTMLAttributes,
 	HTMLAttributes,
 	memo,
 	type ReactNode,

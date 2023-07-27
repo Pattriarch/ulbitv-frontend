@@ -12,7 +12,27 @@ const meta: Meta<typeof Tabs> = {
 export default meta;
 type Story = StoryObj<typeof Tabs>;
 
-export const Primary: Story = {
+export const Normal: Story = {
+	args: {
+		tabs: [
+			{
+				value: 'tab 1',
+				content: 'tab 1',
+			},
+			{
+				value: 'tab 2',
+				content: 'tab 2',
+			},
+			{
+				value: 'tab 3',
+				content: 'tab 3',
+			},
+		],
+		onTabClick: action('onTabClick'),
+	},
+};
+
+export const Selected: Story = {
 	args: {
 		tabs: [
 			{

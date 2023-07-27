@@ -183,3 +183,33 @@ export const ColumnAlignEnd: Story = {
 		),
 	},
 };
+
+export const ColumnJustifyStart: Story = {
+	args: {
+		justify: 'start',
+		direction: 'column',
+		children: (
+			<>
+				<div>first</div>
+				<div>second</div>
+				<div>third</div>
+				<div>fourth</div>
+			</>
+		),
+	},
+};
+
+export const ColumnJustifyEnd: Story = {
+	args: {
+		align: 'end',
+		direction: 'column',
+		children: (
+			<>
+				<div>first</div>
+				<div>second</div>
+				<div>third</div>
+				<div>fourth</div>
+			</>
+		),
+	},
+};

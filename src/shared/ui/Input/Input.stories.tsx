@@ -2,9 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Input } from './Input';
 
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/const/theme';
-
 const meta: Meta<typeof Input> = {
 	title: 'shared/Input',
 	component: Input,
@@ -21,9 +18,9 @@ export const Normal: Story = {
 	},
 };
 
-export const Dark: Story = {
-	decorators: [ThemeDecorator(Theme.DARK)],
+export const Outlined: Story = {
 	args: {
+		theme: 'outlined',
 		placeholder: 'Введите текст',
 		value: 'Text',
 	},

@@ -11,6 +11,7 @@ const config: StorybookConfig = {
 			},
 		},
 		'@storybook/addon-interactions',
+		'@storybook/addon-queryparams',
 		'storybook-addon-mock',
 		'storybook-addon-themes',
 	],
@@ -21,5 +22,6 @@ const config: StorybookConfig = {
 	docs: {
 		autodocs: 'tag',
 	},
+	staticDirs: ['../../public'],
 };
 export default config;

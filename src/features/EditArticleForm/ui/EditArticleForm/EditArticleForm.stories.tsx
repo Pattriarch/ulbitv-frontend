@@ -14,6 +14,6 @@ const meta: Meta<typeof EditArticleForm> = {
 export default meta;
 type Story = StoryObj<typeof EditArticleForm>;
 
-export const Primary: Story = {
+export const Normal: Story = {
 	args: {},
 };

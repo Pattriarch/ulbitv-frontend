@@ -11,6 +11,13 @@ const meta: Meta<typeof Drawer> = {
 export default meta;
 type Story = StoryObj<typeof Drawer>;
 
-export const Primary: Story = {
-	args: {},
+export const Normal: Story = {
+	args: {
+		children:
+			'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dolorem doloribus esse harum\n' +
+			'iusto, labore maiores necessitatibus nesciunt quasi quos temporibus unde vero voluptatibus. Debitis\n' +
+			'explicabo harum id natus nisi quibusdam, tenetur ut. Ad beatae facilis iure odio, sapiente\n' +
+			'voluptate?',
+		isOpen: true,
+	},
 };

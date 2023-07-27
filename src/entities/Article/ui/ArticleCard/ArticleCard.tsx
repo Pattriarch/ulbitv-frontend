@@ -5,7 +5,7 @@ import { Article, ArticleBlock } from '../../model/types/article';
 import { EditArticleBlock } from '../EditArticleBlock/EditArticleBlock';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { AppImage } from '@/shared/ui/AppImage';
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
 import { Input } from '@/shared/ui/Input/Input';
 import { Loader } from '@/shared/ui/Loader/Loader';
@@ -83,31 +83,32 @@ export const ArticleCard = memo((props: ArticleCardProps) => {
 
 	return (
 		<div className={classNames(cls.ArticleCard, {}, [className])}>
-			<Text text={'Заголовок статьи'} />
+			<Text text={t('Заголовок статьи')} />
 			<Input
 				theme={'outlined'}
 				className={cls.title}
 				value={data?.title}
 				onChange={onChangeTitle}
 			/>
-			<Text text={'Подзаголовок статьи'} />
+			<Text text={t('Подзаголовок статьи')} />
 			<Input
 				theme={'outlined'}
 				className={cls.subtitle}
 				value={data?.subtitle}
 				onChange={onChangeSubtitle}
 			/>
-			<div className={cls.avatarWrapper}>
-				<Avatar size={200} src={data?.img} className={cls.avatar} />
+			<div className={cls.imageWrapper}>
+				<AppImage src={data?.img} className={cls.image} />
+				{/* <Avatar size={200} src={data?.img} className={cls.avatar} /> */}
 			</div>
-			<Text text={'Путь к изображению'} />
+			<Text text={t('Путь к изображению')} />
 			<Input
 				theme={'outlined'}
 				className={cls.subtitle}
 				value={data?.img}
 				onChange={onChangeImage}
 			/>
-			<Text text={'Содержимое статьи'} />
+			<Text text={t('Содержимое статьи')} />
 			{data?.blocks
 				?.slice()
 				?.sort(sortBlocks)

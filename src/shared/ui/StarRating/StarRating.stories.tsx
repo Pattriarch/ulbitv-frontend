@@ -11,6 +11,25 @@ const meta: Meta<typeof StarRating> = {
 export default meta;
 type Story = StoryObj<typeof StarRating>;
 
-export const Primary: Story = {
+export const Normal: Story = {
 	args: {},
+};
+
+export const Selected: Story = {
+	args: {
+		selectedStars: 3,
+	},
+};
+
+export const Size48: Story = {
+	args: {
+		size: 48,
+	},
+};
+
+export const SelectedSize48: Story = {
+	args: {
+		selectedStars: 4,
+		size: 48,
+	},
 };

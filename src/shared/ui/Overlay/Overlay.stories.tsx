@@ -11,6 +11,6 @@ const meta: Meta<typeof Overlay> = {
 export default meta;
 type Story = StoryObj<typeof Overlay>;
 
-export const Primary: Story = {
+export const Normal: Story = {
 	args: {},
 };

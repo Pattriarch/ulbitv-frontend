@@ -37,11 +37,12 @@
     cursor: pointer;
 }
 
-.img {
+.img,
+.preview {
+    max-height: 128px;
     max-width: 100%;
 }
 
 .preview {
-    height: 64px;
-    max-width: 100%;
+    max-height: 96px;
 }

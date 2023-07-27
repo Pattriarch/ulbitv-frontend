@@ -11,6 +11,15 @@ const meta: Meta<typeof RatingCard> = {
 export default meta;
 type Story = StoryObj<typeof RatingCard>;
 
-export const Primary: Story = {
-	args: {},
+export const Normal: Story = {
+	args: {
+		title: 'Укажите оценку',
+	},
+};
+
+export const Rated: Story = {
+	args: {
+		title: 'Спасибо за оценку!',
+		rate: 4,
+	},
 };

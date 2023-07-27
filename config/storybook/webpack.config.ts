@@ -9,7 +9,7 @@ import { type BuildPaths } from '../build/types/config';
 export default ({
 	config,
 }: {
-	config: webpack.Configuration;
+	config: webpack.Configuration,
 }): webpack.Configuration => {
 	const paths: BuildPaths = {
 		build: '',

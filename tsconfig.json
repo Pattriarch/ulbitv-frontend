@@ -1,50 +1,46 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "jsx": "react-jsx",
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "baseUrl": ".",
-    /* Specify the base directory to resolve non-relative module names. */
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    },
-    /* Specify a set of entries that re-map imports to additional lookup locations. */
-    "allowJs": true,
-    "outDir": "./dist/",
-    "allowSyntheticDefaultImports": true,
-    // require() и module.exports заменяется на обычные import, export
-    "esModuleInterop": true,
-    // дефолтные импорты в обычных node js пакетах не используются
-    // и пишется import * as ..., это позволит убрать * as
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "noImplicitAny": true,
-    "skipLibCheck": true,
-    "isolatedModules": true
-  },
-  "ts-node": {
-    "compilerOptions": {
-      "module": "CommonJS"
-    }
-  },
-  "exclude": [
-    "cypress",
-    "cypress.config.ts",
-  ]
-  //  "exclude": [
-//    "cypress",
-//    "cypress.config.ts"
-//  ],
-//  "include": [
-//    "./*.ts",
-//    "./*.tsx",
-//    "./config/**/*.ts",
-//    "./scripts/**/*.ts",
-//    "./config/**/*.tsx",
-//    "./src/**/*.ts",
-//    "./src/**/*.tsx"
-//  ]
+	"compilerOptions": {
+		"target": "es5",
+		"jsx": "react-jsx",
+		"module": "ESNext",
+		"moduleResolution": "node",
+		"baseUrl": ".",
+		/* Specify the base directory to resolve non-relative module names. */
+		"paths": {
+			"@/*": [
+				"./src/*"
+			]
+		},
+		/* Specify a set of entries that re-map imports to additional lookup locations. */
+		"allowJs": true,
+		"outDir": "./dist/",
+		"allowSyntheticDefaultImports": true,
+		// require() и module.exports заменяется на обычные import, export
+		"esModuleInterop": true,
+		// дефолтные импорты в обычных node js пакетах не используются
+		// и пишется import * as ..., это позволит убрать * as
+		"forceConsistentCasingInFileNames": true,
+		"strict": true,
+		"noImplicitAny": true,
+		"skipLibCheck": true,
+		"isolatedModules": true
+	},
+	"ts-node": {
+		"compilerOptions": {
+			"module": "CommonJS"
+		}
+	},
+	"exclude": [
+//		"cypress",
+		"cypress.config.ts"
+	],
+//	"include": [
+//		"./vite.config.ts",
+//		"./webpack.config.ts",
+//		"./scripts/**/*.ts",
+//		"./config/**/*.ts",
+//		"./config/**/*.tsx",
+//		"./src/**/*.ts",
+//		"./src/**/*.tsx"
+//	]
 }

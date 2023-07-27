@@ -6,6 +6,7 @@ import {
 } from '@reduxjs/toolkit';
 import { type EnhancedStore } from '@reduxjs/toolkit/src/configureStore';
 import { type AxiosInstance } from 'axios';
+import { ProfileSchema } from 'src/features/EditableProfileCard';
 
 import { type ArticleDetailsSchema } from '@/entities/Article';
 import { type CounterSchema } from '@/entities/Counter';
@@ -15,7 +16,6 @@ import { type AddCommentFormSchema } from '@/features/AddCommentForm';
 import { type LoginSchema } from '@/features/AuthByUsername';
 import { EditArticleFormSchema } from '@/features/EditArticleForm';
 import { type ScrollRestorationSchema } from '@/features/ScrollRestoration';
-import { ProfileSchema } from '@/features/editableProfileCard';
 import { type ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
 import { type ArticlesPageSchema } from '@/pages/ArticlesPage';
 import { rtkApi } from '@/shared/api/rtkApi';

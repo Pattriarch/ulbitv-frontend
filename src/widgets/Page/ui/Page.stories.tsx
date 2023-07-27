@@ -14,6 +14,8 @@ const meta: Meta<typeof Page> = {
 export default meta;
 type Story = StoryObj<typeof Page>;
 
-export const Primary: Story = {
-	args: {},
+export const Normal: Story = {
+	args: {
+		children: <div>test</div>,
+	},
 };
