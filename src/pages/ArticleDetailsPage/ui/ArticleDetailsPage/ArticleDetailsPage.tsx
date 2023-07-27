@@ -6,6 +6,7 @@ import { ArticleDetailsComments } from '../../ui/ArticleDetailsComments/ArticleD
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 
 import { ArticleDetails } from '@/entities/Article';
+import { Counter } from '@/entities/Counter';
 import { ArticleRating } from '@/features/articleRating';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -13,6 +14,7 @@ import {
 	DynamicModuleLoader,
 	type ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { getFeatureFlag } from '@/shared/lib/features';
 import { Page } from '@/widgets/Page';
 
 import cls from './ArticleDetailsPage.module.scss';
@@ -28,6 +30,8 @@ const reducers: ReducersList = {
 
 const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
 	const { id } = useParams<{ id: string }>();
+	const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
+	const isCounterEnabled = getFeatureFlag('isCounterEnabled');
 
 	if (!id) {
 		return null;
@@ -40,7 +44,8 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
 			>
 				<ArticleDetailsPageHeader />
 				<ArticleDetails id={id} />
-				<ArticleRating articleId={id} />
+				{isCounterEnabled && <Counter />}
+				{isArticleRatingEnabled && <ArticleRating articleId={id} />}
 				<ArticleRecommendationsList />
 				<ArticleDetailsComments id={id} />
 			</Page>
