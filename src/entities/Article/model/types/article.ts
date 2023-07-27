@@ -1,6 +1,6 @@
 import { ArticleBlockType, ArticleType } from '../../consts/articleConsts';
 
-import { type AuthData } from '@/entities/User';
+import { type User } from '@/entities/User';
 
 export interface ArticleBlockBase {
 	id: string;
@@ -33,7 +33,7 @@ export type ArticleBlock =
 export interface Article {
 	id?: string;
 	title?: string;
-	user?: AuthData;
+	user?: User;
 	subtitle?: string;
 	img?: string;
 	views?: number;

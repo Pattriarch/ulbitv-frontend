@@ -1,6 +1,6 @@
-import { type AuthData } from '../../types/authData';
+import { type User } from '../../types/user';
 
 import { type StateSchema } from '@/app/providers/StoreProvider';
 
-export const getUserAuthData = (state: StateSchema): AuthData | undefined =>
+export const getUserAuthData = (state: StateSchema): User | undefined =>
 	state.user.authData;

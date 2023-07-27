@@ -43,6 +43,7 @@ server.post('/login', (req, res) => {
 				username: userFromDb.username,
 				avatar: userFromDb.avatar,
 				features: userFromDb.features,
+				jsonSettings: userFromDb.jsonSettings,
 			});
 		}
 

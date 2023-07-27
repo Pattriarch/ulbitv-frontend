@@ -1,4 +1,4 @@
-import { AuthData } from '../../../src/entities/User';
+import { User } from '../../../src/entities/User';
 import { USER_LOCALSTORAGE_KEY } from '../../../src/shared/const/localStorage';
 import { selectByTestId } from '../../helpers/selectByTestId';
 
@@ -33,7 +33,7 @@ declare global {
 	namespace Cypress {
 		interface Chainable {
 			// eslint-disable-next-line @typescript-eslint/method-signature-style
-			login(username?: string, password?: string): Chainable<AuthData>;
+			login(username?: string, password?: string): Chainable<User>;
 
 			// eslint-disable-next-line @typescript-eslint/method-signature-style
 			getByTestId(testId: string): Chainable<JQuery<HTMLElement>>;

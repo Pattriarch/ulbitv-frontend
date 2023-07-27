@@ -1,7 +1,7 @@
-import { type AuthData } from '@/entities/User';
+import { type User } from '@/entities/User';
 
 export interface Comment {
 	id: string;
-	user: AuthData;
+	user: User;
 	text: string;
 }
