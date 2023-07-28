@@ -1,7 +1,7 @@
 import { FeatureFlags } from '@/shared/types/featureFlags';
 
 // фичи не меняются в ходе сессии, их делать реактивными необязательно
-let featureFlags: FeatureFlags;
+let featureFlags: FeatureFlags = {};
 
 export function setFeatureFlags(newFeatureFlags?: FeatureFlags) {
 	if (newFeatureFlags) {
