@@ -6,7 +6,7 @@ import {
 } from '@reduxjs/toolkit';
 import { type EnhancedStore } from '@reduxjs/toolkit/src/configureStore';
 import { type AxiosInstance } from 'axios';
-import { ProfileSchema } from 'src/features/EditableProfileCard';
+import { ProfileSchema } from '@/features/EditableProfileCard';
 
 import { type ArticleDetailsSchema } from '@/entities/Article';
 import { type CounterSchema } from '@/entities/Counter';

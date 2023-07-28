@@ -1,9 +1,8 @@
 import { useTranslation } from 'react-i18next';
+import { Button } from '@/shared/ui/deprecated/Button';
 
 import { useCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
 import { useCounterActions } from '../model/slice/counterSlice';
-
-import { Button } from '@/shared/ui/Button';
 
 export const Counter = (): JSX.Element => {
 	const counterValue = useCounterValue();

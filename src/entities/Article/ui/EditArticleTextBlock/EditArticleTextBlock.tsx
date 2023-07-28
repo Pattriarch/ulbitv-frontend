@@ -9,10 +9,10 @@ import MinusIcon from '@/shared/assets/icons/minus-512-512.svg';
 import MoveIcon from '@/shared/assets/icons/move-512-512.svg';
 import PlusIcon from '@/shared/assets/icons/plus-512-512.svg';
 import { classNames, type Mods } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
-import { Input } from '@/shared/ui/Input/Input';
-import { Text } from '@/shared/ui/Text/Text';
-import { Textarea } from '@/shared/ui/Textarea/Textarea';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
+import { Input } from '@/shared/ui/deprecated/Input/Input';
+import { Text } from '@/shared/ui/deprecated/Text/Text';
+import { Textarea } from '@/shared/ui/deprecated/Textarea/Textarea';
 
 import cls from './EditArticleTextBlock.module.scss';
 

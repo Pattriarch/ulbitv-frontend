@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import { AddArticleForm } from '@/features/AddArticleForm';
 import { EditArticleForm } from '@/features/EditArticleForm';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text, TextSize } from '@/shared/ui/Text/Text';
+import { Text, TextSize } from '@/shared/ui/deprecated/Text/Text';
 import { Page } from '@/widgets/Page';
 
 import cls from './ArticleEditPage.module.scss';
@@ -16,7 +16,7 @@ export interface ArticleEditPageProps {
 
 const ArticleEditPage = memo(({ className }: ArticleEditPageProps) => {
 	const { t } = useTranslation();
-	const { id } = useParams<{ id: string, }>();
+	const { id } = useParams<{ id: string }>();
 	const isEdit = Boolean(id);
 
 	return (

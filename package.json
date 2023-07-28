@@ -30,6 +30,7 @@
 		"postinstall": "ts-node ./scripts/clearCache/clearCache.ts",
 		"scripts:generate-slice": "node ./scripts/createSlice/index.js",
 		"scripts:update-imports": "ts-node ./scripts/refactoring/updateImports.ts",
+		"scripts:update-src-imports": "ts-node ./scripts/refactoring/updateSrcImports.ts",
 		"scripts:create-public-api": "ts-node ./scripts/createPublicApi/createPublicApiForSharedUi-v2.ts",
 		"scripts:create-readme": "ts-node ./scripts/createReadme/createReadmeForSlices.ts",
 		"scripts:remove-feature": "ts-node ./scripts/refactoring/remove-feature.ts"

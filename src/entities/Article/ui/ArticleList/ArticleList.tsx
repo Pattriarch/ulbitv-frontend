@@ -12,6 +12,7 @@ import {
 	VirtuosoGrid,
 	type VirtuosoGridHandle,
 } from 'react-virtuoso';
+import { Text, TextSize } from '@/shared/ui/deprecated/Text';
 
 import { ArticleView } from '../../consts/articleConsts';
 import { type Article } from '../../model/types/article';
@@ -19,7 +20,6 @@ import { ArticleListItem } from '../../ui/ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text, TextSize } from '@/shared/ui/Text';
 
 import cls from './ArticleList.module.scss';
 
@@ -130,9 +130,9 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
 	// можно вынести за пределы компонента
 	const ItemContainerComp: FC<{
-		height: number,
-		width: number,
-		index: number,
+		height: number;
+		width: number;
+		index: number;
 	}> = ({ height, width, index }) => (
 		<div className={cls.ItemContainer}>
 			<ArticleListItemSkeleton

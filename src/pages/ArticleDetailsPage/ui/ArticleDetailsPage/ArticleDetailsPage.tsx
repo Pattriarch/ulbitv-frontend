@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
+import { Card } from '@/shared/ui/deprecated/Card';
 
 import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsComments } from '../../ui/ArticleDetailsComments/ArticleDetailsComments';
@@ -15,7 +16,6 @@ import {
 	type ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { Card } from '@/shared/ui/Card';
 import { Page } from '@/widgets/Page';
 
 import cls from './ArticleDetailsPage.module.scss';

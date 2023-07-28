@@ -1,6 +1,9 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { Card } from '@/shared/ui/deprecated/Card';
+import { Input } from '@/shared/ui/deprecated/Input';
+import { type TabItem } from '@/shared/ui/deprecated/Tabs';
 
 import {
 	getArticlesPageOrder,
@@ -24,9 +27,6 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import { type SortOrder } from '@/shared/types';
-import { Card } from '@/shared/ui/Card';
-import { Input } from '@/shared/ui/Input';
-import { type TabItem } from '@/shared/ui/Tabs';
 
 import cls from './ArticlesDetailsPageFilters.module.scss';
 

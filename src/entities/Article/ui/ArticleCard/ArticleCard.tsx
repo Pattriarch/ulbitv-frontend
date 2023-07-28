@@ -1,15 +1,15 @@
 import { type DragEvent, Fragment, memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { AppImage } from '@/shared/ui/deprecated/AppImage';
 
 import { Article, ArticleBlock } from '../../model/types/article';
 import { EditArticleBlock } from '../EditArticleBlock/EditArticleBlock';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppImage } from '@/shared/ui/AppImage';
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
-import { Input } from '@/shared/ui/Input/Input';
-import { Loader } from '@/shared/ui/Loader/Loader';
-import { Text, TextTheme } from '@/shared/ui/Text/Text';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
+import { Input } from '@/shared/ui/deprecated/Input/Input';
+import { Loader } from '@/shared/ui/deprecated/Loader/Loader';
+import { Text, TextTheme } from '@/shared/ui/deprecated/Text/Text';
 
 import cls from './ArticleCard.module.scss';
 

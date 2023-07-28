@@ -7,8 +7,8 @@ import EditIcon from '@/shared/assets/icons/edit-512-512.svg';
 import MarkIcon from '@/shared/assets/icons/mark-512-512.svg';
 import MoveIcon from '@/shared/assets/icons/move-512-512.svg';
 import { classNames, type Mods } from '@/shared/lib/classNames/classNames';
-import { Code } from '@/shared/ui/Code/Code';
-import { Textarea } from '@/shared/ui/Textarea/Textarea';
+import { Code } from '@/shared/ui/deprecated/Code/Code';
+import { Textarea } from '@/shared/ui/deprecated/Textarea/Textarea';
 
 import cls from './EditArticleCodeBlock.module.scss';
 

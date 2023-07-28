@@ -8,8 +8,8 @@ import EditIcon from '@/shared/assets/icons/edit-512-512.svg';
 import MarkIcon from '@/shared/assets/icons/mark-512-512.svg';
 import MoveIcon from '@/shared/assets/icons/move-512-512.svg';
 import { classNames, type Mods } from '@/shared/lib/classNames/classNames';
-import { Input } from '@/shared/ui/Input/Input';
-import { Text, TextAlign } from '@/shared/ui/Text/Text';
+import { Input } from '@/shared/ui/deprecated/Input/Input';
+import { Text, TextAlign } from '@/shared/ui/deprecated/Text/Text';
 
 import cls from './EditArticleImageBlock.module.scss';
 

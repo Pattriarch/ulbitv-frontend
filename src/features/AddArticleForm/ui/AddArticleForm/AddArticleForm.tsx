@@ -23,7 +23,11 @@ import {
 	type ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button/Button';
+import {
+	Button,
+	ButtonSize,
+	ButtonTheme,
+} from '@/shared/ui/deprecated/Button/Button';
 
 import cls from './AddArticleForm.module.scss';
 

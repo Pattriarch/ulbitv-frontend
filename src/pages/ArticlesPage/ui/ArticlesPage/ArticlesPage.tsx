@@ -1,5 +1,6 @@
 import React, { memo, useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { VStack } from '@/shared/ui/deprecated/Stack';
 
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
@@ -15,7 +16,6 @@ import {
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { VStack } from '@/shared/ui/Stack';
 import { Page } from '@/widgets/Page';
 
 export interface ArticlesPageProps {

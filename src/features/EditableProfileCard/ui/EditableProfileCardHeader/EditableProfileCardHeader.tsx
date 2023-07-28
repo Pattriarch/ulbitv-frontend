@@ -1,6 +1,9 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import { HStack } from '@/shared/ui/deprecated/Stack';
+import { Text } from '@/shared/ui/deprecated/Text';
 
 import { getCanCurrentUserEditProfile } from '../../model/selectors/getCanCurrentUserEditProfile/getCanCurrentUserEditProfile';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
@@ -9,9 +12,6 @@ import { profileActions } from '../../model/slice/profileSlice';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { HStack } from '@/shared/ui/Stack';
-import { Text } from '@/shared/ui/Text';
 
 interface EditableProfileCardHeaderProps {
 	className?: string;
