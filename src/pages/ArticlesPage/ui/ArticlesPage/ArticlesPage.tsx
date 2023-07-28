@@ -1,13 +1,13 @@
 import React, { memo, useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-import { useArticleItemById } from '../../model/selectors/articlesPageSelectors';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { articlesPageReducer } from '../../model/slices/articlesPageSlice';
 import { ArticleInfiniteList } from '../../ui/ArticleInfiniteList/ArticleInfiniteList';
 import { ArticlesDetailsPageFilters } from '../ArticlesDetailsPageFilters/ArticlesDetailsPageFilters';
 
+import { ArticlePageGreeting } from '@/features/articlePageGreeting';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
 	DynamicModuleLoader,
@@ -29,9 +29,6 @@ const reducers: ReducersList = {
 const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
 	const dispatch = useAppDispatch();
 	const [searchParams] = useSearchParams();
-	const data = useArticleItemById('1');
-
-	console.log(data);
 
 	useInitialEffect(() => {
 		void dispatch(initArticlesPage(searchParams));
@@ -42,18 +39,19 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
 	}, [dispatch]);
 
 	return (
-		<Page
-			data-testid={'ArticlesPage'}
-			onScrollEnd={onLoadNextPart}
-			className={classNames('', {}, [className])}
-		>
-			<DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
+		<DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
+			<Page
+				data-testid={'ArticlesPage'}
+				onScrollEnd={onLoadNextPart}
+				className={classNames('', {}, [className])}
+			>
 				<VStack gap={'8'} max align={'stretch'}>
 					<ArticlesDetailsPageFilters />
 					<ArticleInfiniteList virtualized={false} />
+					<ArticlePageGreeting />
 				</VStack>
-			</DynamicModuleLoader>
-		</Page>
+			</Page>
+		</DynamicModuleLoader>
 	);
 });
 

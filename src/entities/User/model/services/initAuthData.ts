@@ -10,7 +10,7 @@ export const initAuthData = createAsyncThunk<
 	User,
 	void,
 	ThunkConfig<string>
->('user/saveJsonSettings', async (newJsonSettings, thunkAPI) => {
+>('user/initAuthData', async (newJsonSettings, thunkAPI) => {
 	const { rejectWithValue, dispatch } = thunkAPI;
 
 	const userId = localStorage.getItem(USER_LOCALSTORAGE_KEY);
