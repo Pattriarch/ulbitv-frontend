@@ -14,7 +14,7 @@ import {
 	DynamicModuleLoader,
 	type ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { toggleFeatures } from '@/shared/lib/features';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { Card } from '@/shared/ui/Card';
 import { Page } from '@/widgets/Page';
 
@@ -31,17 +31,11 @@ const reducers: ReducersList = {
 
 const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
 	const { t } = useTranslation();
-	const { id } = useParams<{ id: string, }>();
+	const { id } = useParams<{ id: string }>();
 
 	if (!id) {
 		return null;
 	}
-
-	const articleRatingCard = toggleFeatures({
-		name: 'isArticleRatingEnabled',
-		on: () => <ArticleRating articleId={id} />,
-		off: () => <Card>{t('Оценка статей скоро появится!')}</Card>,
-	});
 
 	return (
 		<DynamicModuleLoader reducers={reducers}>
@@ -50,7 +44,11 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
 			>
 				<ArticleDetailsPageHeader />
 				<ArticleDetails id={id} />
-				{articleRatingCard}
+				<ToggleFeatures
+					name={'isArticleRatingEnabled'}
+					on={<ArticleRating articleId={id} />}
+					off={<Card>{t('Оценка статей скоро появится!')}</Card>}
+				/>
 				<ArticleRecommendationsList />
 				<ArticleDetailsComments id={id} />
 			</Page>

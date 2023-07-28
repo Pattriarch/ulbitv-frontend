@@ -122,6 +122,7 @@ module.exports = {
 			{
 				markupOnly: true,
 				ignoreAttribute: [
+					'name',
 					'tag',
 					'as',
 					'nav',
