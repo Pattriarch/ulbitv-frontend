@@ -10,3 +10,4 @@ export {
 export { UserRole } from '@/entities/User/consts/userConsts';
 export { useJsonSettings } from './model/selectors/getUserJsonSettings/getUserJsonSettings';
 export { saveJsonSettings } from './model/services/saveJsonSettings';
+export { initAuthData } from './model/services/initAuthData';

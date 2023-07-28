@@ -3,11 +3,12 @@ import { useSelector } from 'react-redux';
 
 import { AppRouter } from './providers/AppRouter';
 
-import { getUserInited, userActions } from '@/entities/User';
+import { getUserInited, initAuthData } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { Navbar } from '@/widgets/Navbar';
+import { PageLoader } from '@/widgets/PageLoader';
 import { Sidebar } from '@/widgets/Sidebar';
 
 const App = (): JSX.Element => {
@@ -16,8 +17,12 @@ const App = (): JSX.Element => {
 	const inited = useSelector(getUserInited);
 
 	useEffect(() => {
-		dispatch(userActions.initAuthData());
+		void dispatch(initAuthData());
 	}, [dispatch]);
+
+	if (!inited) {
+		return <PageLoader />;
+	}
 
 	return (
 		<div className={`${classNames('app', {}, [theme])}`}>

@@ -24,11 +24,6 @@ export const loginByUsername = createAsyncThunk<
 			throw new Error();
 		}
 
-		// сохраняем токен
-		localStorage.setItem(
-			USER_LOCALSTORAGE_KEY,
-			JSON.stringify(response.data),
-		);
 		// обновляем стейт
 		dispatch(userActions.setAuthData(response.data));
 
