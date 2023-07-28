@@ -1,7 +1,7 @@
 import { Menu } from '@headlessui/react';
 import { Fragment, memo, type ReactNode } from 'react';
 
-import { AppLink } from '../../../AppLink/AppLink';
+import { AppLink } from '../../../AppLink';
 import popupCls from '../../styles/popup.module.scss';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -39,30 +39,28 @@ export const Dropdown = memo((props: DropdownProps) => {
 			<Menu.Button className={popupCls.trigger}>{trigger}</Menu.Button>
 			<Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
 				{items.map((item, index) => {
-					const content = ({ active }: { active: boolean, }) => (
-						<button
-							type={'button'}
-							onClick={item.onClick}
-							className={classNames(cls.item, {
-								[popupCls.active]: active,
-							})}
-						>
-							{item.content}
-						</button>
-					);
-
-					if (item.href) {
-						return (
-							<Menu.Item
-								key={`dropdown-key-${index}`}
-								as={AppLink}
+					const content = ({ active }: { active: boolean }) => {
+						return item.href ? (
+							<AppLink
 								to={item.href}
-								disabled={item.disabled}
+								className={classNames(cls.item, {
+									[popupCls.active]: active,
+								})}
 							>
-								{content}
-							</Menu.Item>
+								{item.content}
+							</AppLink>
+						) : (
+							<button
+								type={'button'}
+								onClick={item.onClick}
+								className={classNames(cls.item, {
+									[popupCls.active]: active,
+								})}
+							>
+								{item.content}
+							</button>
 						);
-					}
+					};
 
 					return (
 						<Menu.Item

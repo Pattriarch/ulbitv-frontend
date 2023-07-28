@@ -1,0 +1,44 @@
+.MainLayout {
+  min-height: 100vh; // or 100% for ios devices
+  display: grid;
+  grid-template-areas:
+  'sidebar content rightbar';
+  grid-template-columns: 284px 1fr 176px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  // центруем сайдбар внутри паддингов
+  justify-self: center;
+  padding: 32px;
+}
+
+.content {
+  grid-area: content;
+  max-width: 1176px;
+  // контент так же центруем
+  justify-self: center;
+}
+
+.rightbar {
+  grid-area: rightbar;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.rightbar,
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.header {
+  justify-self: end;
+}
+
+.toolbar {
+  justify-self: end;
+  height: 100%;
+}

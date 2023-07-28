@@ -183,6 +183,7 @@ module.exports = {
 		'no-void': 0,
 		'@typescript-eslint/no-invalid-void-type': 0,
 		'cypress/unsafe-to-chain-command': 0,
+		'react/prop-types': 0,
 		// "no-mixed-spaces-and-tabs": 0, // временно
 		'@typescript-eslint/consistent-type-assertions': 0, // временно
 	},

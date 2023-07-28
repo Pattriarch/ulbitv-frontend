@@ -8,6 +8,7 @@ import { AvatarDropdown } from '@/features/AvatarDropdown';
 import { NotificationButton } from '@/features/NotificationButton';
 import { getRouteArticleCreate, getRouteMain } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { HStack } from '@/shared/ui/Stack';
@@ -34,26 +35,43 @@ export const Navbar = memo(({ className }: NavbarProps): JSX.Element => {
 
 	if (authData) {
 		return (
-			<header className={classNames(cls.Navbar, {}, [className])}>
-				<AppLink to={getRouteMain()}>
-					<Text
-						className={cls.appName}
-						title={t('Pattriarch App')}
-						theme={TextTheme.INVERTED}
-					/>
-				</AppLink>
-				<AppLink
-					to={getRouteArticleCreate()}
-					theme={AppLinkTheme.SECONDARY}
-					className={cls.createBtn}
-				>
-					{t('Создать статью')}
-				</AppLink>
-				<HStack gap={'16'} className={cls.actions}>
-					<NotificationButton />
-					<AvatarDropdown />
-				</HStack>
-			</header>
+			<ToggleFeatures
+				name={'isAppRedesigned'}
+				on={
+					<header
+						className={classNames(cls.NavbarRedesigned, {}, [
+							className,
+						])}
+					>
+						<HStack gap={'16'} className={cls.actions}>
+							<NotificationButton />
+							<AvatarDropdown />
+						</HStack>
+					</header>
+				}
+				off={
+					<header className={classNames(cls.Navbar, {}, [className])}>
+						<AppLink to={getRouteMain()}>
+							<Text
+								className={cls.appName}
+								title={t('Pattriarch App')}
+								theme={TextTheme.INVERTED}
+							/>
+						</AppLink>
+						<AppLink
+							to={getRouteArticleCreate()}
+							theme={AppLinkTheme.SECONDARY}
+							className={cls.createBtn}
+						>
+							{t('Создать статью')}
+						</AppLink>
+						<HStack gap={'16'} className={cls.actions}>
+							<NotificationButton />
+							<AvatarDropdown />
+						</HStack>
+					</header>
+				}
+			/>
 		);
 	}
 
