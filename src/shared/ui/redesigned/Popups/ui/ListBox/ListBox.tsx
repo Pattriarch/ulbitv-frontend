@@ -8,7 +8,10 @@ import popupCls from '../../styles/popup.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { type DropdownDirection, typedMemo } from '@/shared/types';
 
+import ArrowIcon from '@/shared/assets/icons/arrow-32-32.svg';
+
 import cls from './ListBox.module.scss';
+import { Icon } from '@/shared/ui/redesigned/Icon';
 
 export interface ListBoxItem<T extends string> {
 	value: string;
@@ -72,7 +75,11 @@ export const ListBox = typedMemo(
 						className={popupCls.trigger}
 						as={'div'}
 					>
-						<Button variant={'filled'} disabled={readonly}>
+						<Button
+							variant={'filled'}
+							disabled={readonly}
+							addonRight={<Icon Svg={ArrowIcon} />}
+						>
 							{selectedItem?.content ?? defaultValue}
 						</Button>
 					</HListBox.Button>
