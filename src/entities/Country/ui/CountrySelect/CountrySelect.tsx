@@ -1,8 +1,10 @@
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ListBox } from '@/shared/ui/deprecated/Popups';
+import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popups';
 
 import { Country } from '../../model/types/country';
+import { ListBox } from '@/shared/ui/redesigned/Popups';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 interface CountrySelectProps {
 	className?: string;
@@ -46,18 +48,26 @@ export const CountrySelect = (props: CountrySelectProps): JSX.Element => {
 		[onChange],
 	);
 
+	const listBoxProps = {
+		className,
+		value,
+		defaultValue: t('Укажите страну'),
+		label: t('Укажите страну'),
+		items: options,
+		readonly,
+		onChange,
+		direction: 'topRight',
+	};
+
+	// todo: floating UI для позиционирования
+	// todo: добавить label
 	return (
-		// todo: добавить label
-		// todo: floating UI для позиционирования
-		<ListBox
-			className={className}
-			defaultValue={t('Укажите страну')}
-			label={t('Укажите страну')}
-			value={value}
-			items={options}
-			readonly={readonly}
-			onChange={onChangeHandler}
-			direction={'topRight'}
+		<ToggleFeatures
+			name={'isAppRedesigned'}
+			// @ts-ignore todo fix it
+			on={<ListBox {...listBoxProps} />}
+			// @ts-ignore todo fix it
+			off={<ListBoxDeprecated {...listBoxProps} />}
 		/>
 	);
 };
