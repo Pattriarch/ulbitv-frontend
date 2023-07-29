@@ -17,6 +17,7 @@ interface TextProps {
 	align?: TextAlign;
 	size?: TextSize;
 	tag?: TextTag;
+
 	'data-testid'?: string;
 }
 

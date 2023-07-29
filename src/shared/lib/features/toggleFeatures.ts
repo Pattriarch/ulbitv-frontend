@@ -13,5 +13,6 @@ export function toggleFeatures<T>({
 	on,
 	name,
 }: ToggleFeaturesOptions<T>): T {
+	console.log(getFeatureFlag(name));
 	return getFeatureFlag(name) ? on() : off();
 }

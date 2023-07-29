@@ -1,7 +1,11 @@
-.icon {
-    fill: var(--primary-color);
+.ArticleViewSelector {
+    .notSelected {
+        fill: var(--secondary-color);
+    }
 }
 
-.selected {
-    fill: var(--secondary-color);
+.ArticleViewSelectorRedesigned {
+    .notSelected {
+        color: var(--light-bg-redesigned);
+    }
 }

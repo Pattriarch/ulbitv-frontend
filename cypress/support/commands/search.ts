@@ -1,5 +1,5 @@
 export const searchArticles = (text: string) => {
-	cy.getByTestId('ArticlesDetailsPageFilters.Input').type(text);
+	cy.getByTestId('ArticlesPageFilters.Input').type(text);
 };
 
 declare global {
