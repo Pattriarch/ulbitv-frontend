@@ -1,11 +1,12 @@
 import { memo } from 'react';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 
 import { useNotifications } from '../../api/notificationApi';
 import { NotificationItem } from '../../ui/NotificationItem/NotificationItem';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 interface NotificationListProps {
 	className?: string;
@@ -19,11 +20,53 @@ export const NotificationList = memo((props: NotificationListProps) => {
 
 	if (isLoading) {
 		return (
-			<VStack gap={'16'} className={classNames('', {}, [className])}>
-				<Skeleton width={'100%'} border={'8px'} height={'80px'} />
-				<Skeleton width={'100%'} border={'8px'} height={'80px'} />
-				<Skeleton width={'100%'} border={'8px'} height={'80px'} />
-			</VStack>
+			<ToggleFeatures
+				name={'isAppRedesigned'}
+				on={
+					<VStack
+						gap={'16'}
+						className={classNames('', {}, [className])}
+					>
+						<Skeleton
+							width={'100%'}
+							border={'8px'}
+							height={'80px'}
+						/>
+						<Skeleton
+							width={'100%'}
+							border={'8px'}
+							height={'80px'}
+						/>
+						<Skeleton
+							width={'100%'}
+							border={'8px'}
+							height={'80px'}
+						/>
+					</VStack>
+				}
+				off={
+					<VStack
+						gap={'16'}
+						className={classNames('', {}, [className])}
+					>
+						<Skeleton
+							width={'100%'}
+							border={'8px'}
+							height={'80px'}
+						/>
+						<Skeleton
+							width={'100%'}
+							border={'8px'}
+							height={'80px'}
+						/>
+						<Skeleton
+							width={'100%'}
+							border={'8px'}
+							height={'80px'}
+						/>
+					</VStack>
+				}
+			/>
 		);
 	}
 

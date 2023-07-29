@@ -2,7 +2,7 @@ import { memo, Suspense, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { Loader } from '@/shared/ui/deprecated/Loader';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { TextSize, Text } from '@/shared/ui/deprecated/Text';
 
 import { getArticleDetailsCommentsIsLoading } from '../../model/selectors/comments';

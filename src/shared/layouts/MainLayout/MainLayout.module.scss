@@ -4,13 +4,14 @@
   grid-template-areas:
   'sidebar content rightbar';
   // todo: проверить с заменой 100px на 176px в конце редизайна
-  grid-template-columns: 284px 1fr 100px;
+  grid-template-columns: min-content 1fr 100px;
 }
 
 .sidebar {
   grid-area: sidebar;
   // центруем сайдбар внутри паддингов
   padding: 32px;
+  max-width: 284px;
 }
 
 .content {

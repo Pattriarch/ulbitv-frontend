@@ -139,7 +139,7 @@
         "id": "1",
         "username": "admin",
         "password": "123",
-        "role": [
+        "roles": [
           "ADMIN"
         ],
         "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/1:1/w_1350,h_1350,c_limit/security_hacker_names.jpg"
@@ -1026,7 +1026,7 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": [
+      "roles": [
         "ADMIN"
       ],
       "features": {
@@ -1046,7 +1046,7 @@
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": [
+      "roles": [
         "USER"
       ],
       "features": {
@@ -1065,7 +1065,7 @@
       "id": "3",
       "username": "manager",
       "password": "123",
-      "role": [
+      "roles": [
         "MANAGER"
       ],
       "features": {
@@ -1084,7 +1084,7 @@
       "id": "4",
       "username": "testuser",
       "password": "123",
-      "role": [
+      "roles": [
         "ADMIN"
       ],
       "features": {

@@ -1,7 +1,7 @@
 import { Portal } from '@headlessui/react';
 import { memo, type ReactNode, useCallback, useEffect } from 'react';
 
-import { Overlay } from '../Overlay/Overlay';
+import { Overlay } from '@/shared/ui/redesigned/Overlay/Overlay';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {

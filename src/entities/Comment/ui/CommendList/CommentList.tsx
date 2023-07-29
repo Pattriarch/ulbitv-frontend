@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/deprecated/Text';
 
 import { type Comment } from '../../model/types/comment';

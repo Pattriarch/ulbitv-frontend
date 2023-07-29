@@ -1,6 +1,6 @@
 import { type DragEvent, Fragment, memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { AppImage } from '@/shared/ui/deprecated/AppImage';
+import { AppImage } from '@/shared/ui/redesigned/AppImage';
 
 import { Article, ArticleBlock } from '../../model/types/article';
 import { EditArticleBlock } from '../EditArticleBlock/EditArticleBlock';

@@ -41,6 +41,7 @@ server.post('/login', (req, res) => {
 			return res.json({
 				id: userFromDb.id,
 				username: userFromDb.username,
+				roles: userFromDb.roles,
 				avatar: userFromDb.avatar,
 				features: userFromDb.features,
 				jsonSettings: userFromDb.jsonSettings,

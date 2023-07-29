@@ -1,7 +1,7 @@
 import React, { type ReactNode } from 'react';
 
-import { Overlay } from '../Overlay/Overlay';
-import { Portal } from '../Portal/Portal';
+import { Overlay } from '@/shared/ui/redesigned/Overlay/Overlay';
+import { Portal } from '@/shared/ui/redesigned/Portal/Portal';
 
 import { classNames, type Mods } from '@/shared/lib/classNames/classNames';
 import { useModal } from '@/shared/lib/hooks/useModal/useModal';

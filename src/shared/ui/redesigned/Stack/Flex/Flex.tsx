@@ -60,10 +60,6 @@ export interface FlexProps extends DivProps {
 	tag?: FlexTag;
 }
 
-/**
- * Устарел, используем новые компоненты из папки redesigned
- * @deprecated
- */
 export const Flex = memo((props: FlexProps) => {
 	const {
 		className,
