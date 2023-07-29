@@ -67,3 +67,21 @@
         font: var(--font-l-redesigned);
     }
 }
+
+.normal {
+    .title, .text {
+        font-weight: 400;
+    }
+}
+
+.bold {
+    .title, .text {
+        font-weight: 700;
+    }
+}
+
+.extrabold {
+    .title, .text {
+        font-weight: 900;
+    }
+}

@@ -4,6 +4,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 
 import cls from './Text.module.scss';
 
+export type TextWeight = 'normal' | 'bold' | 'extrabold';
 export type TextVariant = 'primary' | 'error' | 'accent';
 export type TextAlign = 'left' | 'center' | 'right';
 export type TextSize = 's' | 'm' | 'l';
@@ -17,6 +18,7 @@ interface TextProps {
 	align?: TextAlign;
 	size?: TextSize;
 	tag?: TextTag;
+	weight?: TextWeight;
 
 	'data-testid'?: string;
 }
@@ -30,10 +32,17 @@ export const Text = memo((props: TextProps): JSX.Element => {
 		align = 'left',
 		size = 'm',
 		tag = 'p',
+		weight = 'normal',
 		'data-testid': dataTestId = 'Text',
 	} = props;
 
-	const additionalClasses = [className, cls[variant], cls[align], cls[size]];
+	const additionalClasses = [
+		className,
+		cls[variant],
+		cls[align],
+		cls[size],
+		cls[weight],
+	];
 
 	const getTitle = useCallback(() => {
 		switch (tag) {
