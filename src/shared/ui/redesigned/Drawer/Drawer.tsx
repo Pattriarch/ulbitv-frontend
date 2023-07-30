@@ -115,10 +115,6 @@ const DrawerAsync = (props: DrawerProps) => {
 	return isLoaded ? <DrawerContent {...props} /> : null;
 };
 
-/**
- * Устарел, используем новые компоненты из папки redesigned
- * @deprecated
- */
 export const Drawer = (props: DrawerProps) => {
 	return (
 		<AnimationProvider>

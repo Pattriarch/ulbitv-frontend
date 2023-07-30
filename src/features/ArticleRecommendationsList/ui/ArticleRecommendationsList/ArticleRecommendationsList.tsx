@@ -1,13 +1,19 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Loader } from '@/shared/ui/deprecated/Loader';
-import { VStack } from '@/shared/ui/redesigned/Stack';
-import { Text, TextSize, TextTheme } from '@/shared/ui/deprecated/Text';
 
 import { useArticleRecommendationsList } from '../../api/articleRecommendationsList';
 
 import { ArticleList, ArticleView } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Loader } from '@/shared/ui/deprecated/Loader';
+import {
+	Text as TextDeprecated,
+	TextSize,
+	TextTheme,
+} from '@/shared/ui/deprecated/Text';
+import { VStack } from '@/shared/ui/redesigned/Stack';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 import cls from './ArticleRecommendationsList.module.scss';
 
@@ -31,9 +37,20 @@ export const ArticleRecommendationsList = memo(
 
 		if (error || !articles) {
 			return (
-				<Text
-					theme={TextTheme.ERROR}
-					title={t('Произошла ошибка при загрузке данных')}
+				<ToggleFeatures
+					name={'isAppRedesigned'}
+					on={
+						<Text
+							variant={'error'}
+							title={t('Произошла ошибка при загрузке данных')}
+						/>
+					}
+					off={
+						<TextDeprecated
+							theme={TextTheme.ERROR}
+							title={t('Произошла ошибка при загрузке данных')}
+						/>
+					}
 				/>
 			);
 		}
@@ -47,7 +64,16 @@ export const ArticleRecommendationsList = memo(
 					className,
 				])}
 			>
-				<Text size={TextSize.L} title={t('Рекомендуем')} />
+				<ToggleFeatures
+					name={'isAppRedesigned'}
+					on={<Text size={'l'} title={t('Рекомендуем')} />}
+					off={
+						<TextDeprecated
+							size={TextSize.L}
+							title={t('Рекомендуем')}
+						/>
+					}
+				/>
 				<ArticleList
 					virtualized={false}
 					isLoading={isLoading}
