@@ -1,8 +1,6 @@
 import React, { memo, useState } from 'react';
-import { useSelector } from 'react-redux';
 
-
-import { getSidebarItems } from '../../model/selectors/getSidebarItems';
+import { useSidebarItems } from '../../model/selectors/useSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 
 import { LangSwitcher } from '@/features/LangSwitcher';
@@ -10,14 +8,10 @@ import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import ArrowIcon from '@/shared/assets/icons/arrow-32-32.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
-import {
-	Button,
-	ButtonSize,
-	ButtonTheme,
-} from '@/shared/ui/deprecated/Button';
-import { VStack } from '@/shared/ui/redesigned/Stack';
+import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { AppLogo } from '@/shared/ui/redesigned/AppLogo';
 import { Icon } from '@/shared/ui/redesigned/Icon';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 
 import cls from './Sidebar.module.scss';
 
@@ -27,7 +21,7 @@ interface SidebarProps {
 
 export const Sidebar = memo(({ className }: SidebarProps): JSX.Element => {
 	const [collapsed, setCollapsed] = useState(false);
-	const sidebarItemsList = useSelector(getSidebarItems);
+	const sidebarItemsList = useSidebarItems();
 
 	const onToggle = (): void => {
 		setCollapsed((prev) => !prev);
@@ -45,7 +39,10 @@ export const Sidebar = memo(({ className }: SidebarProps): JSX.Element => {
 						[className],
 					)}
 				>
-					<AppLogo size={collapsed ? 30 : 50} className={cls.appLogo} />
+					<AppLogo
+						size={collapsed ? 30 : 50}
+						className={cls.appLogo}
+					/>
 					<VStack tag={'nav'} gap={'8'} className={cls.items}>
 						{sidebarItemsList.map((item) => (
 							<SidebarItem

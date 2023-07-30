@@ -19,8 +19,10 @@ const App = (): JSX.Element => {
 	const inited = useSelector(getUserInited);
 
 	useEffect(() => {
-		void dispatch(initAuthData());
-	}, [dispatch]);
+		if (!inited) {
+			void dispatch(initAuthData());
+		}
+	}, [inited, dispatch]);
 
 	if (!inited) {
 		return <PageLoader />;
