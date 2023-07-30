@@ -1,19 +1,20 @@
-import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { memo } from 'react';
-import { Card } from '@/shared/ui/redesigned/Card';
-import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
-import { Avatar } from '@/shared/ui/redesigned/Avatar';
-import { Input } from '@/shared/ui/redesigned/Input';
-import { CurrencySelect } from '@/entities/Currency';
-import { CountrySelect } from '@/entities/Country';
 import { useTranslation } from 'react-i18next';
-import { ProfileCardProps } from '@/entities/Profile/ui/ProfileCard/ProfileCard';
+
+import { ProfileCardProps } from '../ProfileCard/ProfileCard';
+
+import { CountrySelect } from '@/entities/Country';
+import { CurrencySelect } from '@/entities/Currency';
+import { Avatar } from '@/shared/ui/redesigned/Avatar';
+import { Card } from '@/shared/ui/redesigned/Card';
+import { Input } from '@/shared/ui/redesigned/Input';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
 
 export const ProfileCardRedesignedSkeleton = () => {
 	return (
-		<Card padding={'24'} max>
+		<Card padding={'24'} border={'partial'} max>
 			<VStack gap={'32'}>
 				<HStack max justify={'center'}>
 					<Skeleton border={'100%'} width={128} height={128} />
@@ -69,7 +70,7 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
 	const { t } = useTranslation('profile');
 
 	return (
-		<Card max padding={'24'} className={className}>
+		<Card max padding={'24'} border={'partial'} className={className}>
 			<VStack gap={'32'}>
 				{data?.avatar && (
 					<HStack justify={'center'} max>

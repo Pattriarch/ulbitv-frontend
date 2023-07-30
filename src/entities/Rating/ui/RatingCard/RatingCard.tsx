@@ -10,7 +10,7 @@ import {
 } from '@/shared/ui/deprecated/Button';
 import { Card as CardDeprecated } from '@/shared/ui/deprecated/Card';
 import { Input as InputDeprecated } from '@/shared/ui/deprecated/Input';
-import { StarRating } from '@/shared/ui/deprecated/StarRating';
+import { StarRating as StarRatingDeprecated } from '@/shared/ui/deprecated/StarRating';
 import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
 import { Button } from '@/shared/ui/redesigned/Button';
 import { Card } from '@/shared/ui/redesigned/Card';
@@ -18,6 +18,7 @@ import { Drawer } from '@/shared/ui/redesigned/Drawer';
 import { Input } from '@/shared/ui/redesigned/Input';
 import { Modal } from '@/shared/ui/redesigned/Modal';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
+import { StarRating } from '@/shared/ui/redesigned/StarRating';
 import { Text } from '@/shared/ui/redesigned/Text';
 
 interface RatingCardProps {
@@ -118,7 +119,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
 						<TextDeprecated
 							title={starsCount ? t('Спасибо за оценку') : title}
 						/>
-						<StarRating
+						<StarRatingDeprecated
 							selectedStars={starsCount}
 							size={40}
 							onSelect={onSelectStars}
@@ -138,7 +139,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
 						max
 						className={className}
 						padding={'24'}
-						border={'round'}
+						border={'partial'}
 					>
 						{ratingComponent}
 					</Card>
@@ -241,7 +242,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
 					max
 					className={className}
 					padding={'24'}
-					border={'round'}
+					border={'partial'}
 				>
 					{content}
 				</Card>

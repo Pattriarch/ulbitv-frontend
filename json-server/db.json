@@ -1185,6 +1185,13 @@
       "userId": "1",
       "rate": 3,
       "id": "whDK7ZX"
+    },
+    {
+      "articleId": "5",
+      "userId": "1",
+      "rate": 4,
+      "feedback": "круто",
+      "id": "L0XrR2G"
     }
   ],
   "profile-ratings": [

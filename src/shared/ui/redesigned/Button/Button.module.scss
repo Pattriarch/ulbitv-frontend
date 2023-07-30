@@ -38,15 +38,41 @@
     border: none;
     outline: none;
     border-radius: 34px;
+
+    // todo добавить стили normal, error, success для filled
 }
 
 .outline {
     background: none;
-    border: 1px solid var(--icon-redesigned);
+    border: 2px solid var(--icon-redesigned);
     border-radius: 34px;
 
     &:hover {
-        border: 1px solid var(--accent-redesigned);
+        border: 2px solid var(--accent-redesigned);
+    }
+
+    &.normal {
+        border: 2px solid var(--icon-redesigned);
+
+        &:hover {
+            border: 2px solid var(--accent-redesigned);
+        }
+    }
+
+    &.error {
+        border: 2px solid var(--cancel-redesigned);
+
+        &:hover {
+            opacity: 0.75;
+        }
+    }
+
+    &.success {
+        border: 2px solid var(--save-redesigned);
+
+        &:hover {
+            opacity: 0.75;
+        }
     }
 }
 

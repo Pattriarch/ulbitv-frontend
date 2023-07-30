@@ -1,10 +1,6 @@
 import React, { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { AppLink, AppLinkTheme } from '@/shared/ui/deprecated/AppLink';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
-import { HStack } from '@/shared/ui/redesigned/Stack';
-import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
 
 import { getUserAuthData } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
@@ -12,7 +8,15 @@ import { AvatarDropdown } from '@/features/AvatarDropdown';
 import { NotificationButton } from '@/features/NotificationButton';
 import { getRouteArticleCreate, getRouteMain } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { ToggleFeatures } from '@/shared/lib/features';
+import { toggleFeatures, ToggleFeatures } from '@/shared/lib/features';
+import { AppLink, AppLinkTheme } from '@/shared/ui/deprecated/AppLink';
+import {
+	Button as ButtonDeprecated,
+	ButtonTheme,
+} from '@/shared/ui/deprecated/Button';
+import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
+import { Button } from '@/shared/ui/redesigned/Button';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 
 import cls from './Navbar.module.scss';
 
@@ -75,16 +79,37 @@ export const Navbar = memo(({ className }: NavbarProps): JSX.Element => {
 		);
 	}
 
+	const mainClass = toggleFeatures({
+		name: 'isAppRedesigned',
+		on: () => cls.NavbarRedesigned,
+		off: () => cls.Navbar,
+	});
+
 	return (
-		<header className={classNames(cls.Navbar, {}, [className])}>
-			<Button
-				theme={ButtonTheme.CLEAR_INVERTED}
-				type={'button'}
-				className={cls.links}
-				onClick={onShowModal}
-			>
-				{t('Войти')}
-			</Button>
+		<header className={classNames(mainClass, {}, [className])}>
+			<ToggleFeatures
+				name={'isAppRedesigned'}
+				on={
+					<Button
+						variant={'clear'}
+						type={'button'}
+						className={cls.links}
+						onClick={onShowModal}
+					>
+						{t('Войти')}
+					</Button>
+				}
+				off={
+					<ButtonDeprecated
+						theme={ButtonTheme.CLEAR_INVERTED}
+						type={'button'}
+						className={cls.links}
+						onClick={onShowModal}
+					>
+						{t('Войти')}
+					</ButtonDeprecated>
+				}
+			/>
 			{isAuthModal && (
 				<LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
 			)}

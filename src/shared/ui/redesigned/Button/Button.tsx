@@ -5,7 +5,7 @@ import { classNames, type Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
 
 export type ButtonVariant = 'clear' | 'outline' | 'filled';
-
+export type ButtonColor = 'normal' | 'success' | 'error';
 export type ButtonSize = 'm' | 'l' | 'xl';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -33,6 +33,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	/**
 	 * Содержимое кнопки
 	 */
+	color?: ButtonColor;
 	children?: ReactNode;
 	addonLeft?: ReactNode;
 	addonRight?: ReactNode;
@@ -49,6 +50,7 @@ export const Button = memo((props: ButtonProps) => {
 		fullWidth,
 		addonLeft,
 		addonRight,
+		color = 'normal',
 		...otherProps
 	} = props;
 
@@ -66,6 +68,7 @@ export const Button = memo((props: ButtonProps) => {
 				className,
 				cls[size],
 				cls[variant],
+				cls[color],
 			])}
 			disabled={disabled}
 			{...otherProps}

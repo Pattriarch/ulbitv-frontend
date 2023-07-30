@@ -1,12 +1,12 @@
 import { type ReactNode, useCallback } from 'react';
 
 import { Card } from '../Card/Card';
+import { Flex, FlexDirection } from '../Stack/Flex/Flex';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { typedMemo } from '@/shared/types';
 
 import cls from './Tabs.module.scss';
-import { Flex, FlexDirection } from '@/shared/ui/redesigned/Stack/Flex/Flex';
 
 export interface TabItem<T extends string> {
 	value: T;

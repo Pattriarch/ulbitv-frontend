@@ -50,7 +50,6 @@ const App = (): JSX.Element => {
 							header={<Navbar />}
 							content={<AppRouter />}
 							sidebar={<Sidebar />}
-							toolbar={<div>test</div>}
 						/>
 					</Suspense>
 				</div>
