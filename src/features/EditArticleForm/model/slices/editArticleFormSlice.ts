@@ -17,7 +17,8 @@ export const editArticleFormSlice = createSlice({
 	name: 'editArticleForm',
 	initialState,
 	reducers: {
-		updateArticle: (state, action: PayloadAction<Article>) => {
+		updateArticle: (state, action: PayloadAction<Partial<Article>>) => {
+			// @ts-expect-error todo fix it later
 			state.form = {
 				...state.data,
 				...action.payload,

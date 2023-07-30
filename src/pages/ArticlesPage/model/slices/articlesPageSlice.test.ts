@@ -46,6 +46,7 @@ describe('articlesPageSlice', () => {
 		expect(
 			articlesPageReducer(
 				state as ArticlesPageSchema,
+				// @ts-expect-error todo fix it later
 				fetchArticlesList.fulfilled([{ id: '1' }], '', {
 					replace: true,
 				}),

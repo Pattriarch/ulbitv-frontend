@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { ArticleCard } from './ArticleCard';
 
-import { getStorybookImage } from '@/shared/lib/tests/getStorybookImage/getStorybookImage';
+import { articleStub } from '@/shared/assets/tests/articleStub';
 
 const meta: Meta<typeof ArticleCard> = {
 	title: 'entities/Article/ArticleCard',
@@ -15,11 +15,7 @@ type Story = StoryObj<typeof ArticleCard>;
 
 export const Normal: Story = {
 	args: {
-		data: {
-			title: 'Статья',
-			subtitle: 'Подзаголовок',
-			img: getStorybookImage(),
-		},
+		data: articleStub,
 	},
 };
 

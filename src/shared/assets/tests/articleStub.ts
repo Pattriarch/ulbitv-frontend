@@ -1,11 +1,12 @@
 // eslint-disable-next-line ulbitv-fsd/layer-imports-validator
 import { Article, ArticleBlockType, ArticleType } from '@/entities/Article';
+import { getStorybookImage } from '@/shared/lib/tests/getStorybookImage/getStorybookImage';
 
 export const articleStub: Article = {
 	id: '1',
 	title: 'JavaScript News',
 	subtitle: 'Что добавили нового в ECMAScript 2023',
-	img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
+	img: getStorybookImage(),
 	views: 1022,
 	createdAt: '26.02.2022',
 	type: [ArticleType.IT, ArticleType.COMPUTER_SCIENCE],
