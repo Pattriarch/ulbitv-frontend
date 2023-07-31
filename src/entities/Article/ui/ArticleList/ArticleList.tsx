@@ -132,9 +132,9 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
 	// можно вынести за пределы компонента
 	const ItemContainerComp: FC<{
-		height: number,
-		width: number,
-		index: number,
+		height: number;
+		width: number;
+		index: number;
 	}> = ({ height, width, index }) => (
 		<div className={cls.ItemContainer}>
 			<ArticleListItemSkeleton
