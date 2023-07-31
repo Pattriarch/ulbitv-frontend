@@ -1,126 +1,120 @@
-import { type HTMLAttributes, memo, useState } from 'react';
+import { type HTMLAttributes, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { type ArticleImageBlock } from '../../model/types/article';
 
-import CancelIcon from '@/shared/assets/icons/cancel-512-512.svg';
-import EditIcon from '@/shared/assets/icons/edit-512-512.svg';
-import MarkIcon from '@/shared/assets/icons/mark-512-512.svg';
-import MoveIcon from '@/shared/assets/icons/move-512-512.svg';
-import { classNames, type Mods } from '@/shared/lib/classNames/classNames';
-import { Input } from '@/shared/ui/deprecated/Input/Input';
-import { Text, TextAlign } from '@/shared/ui/deprecated/Text/Text';
+import { Input as InputDeprecated } from '@/shared/ui/deprecated/Input/Input';
+import { Input } from '@/shared/ui/redesigned/Input/Input';
+import { Text } from '@/shared/ui/redesigned/Text/Text';
+import {
+	Text as TextDeprecated,
+	TextAlign,
+} from '@/shared/ui/deprecated/Text/Text';
 
 import cls from './EditArticleImageBlock.module.scss';
+import { VStack } from '@/shared/ui/redesigned/Stack';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 interface EditArticleImageBlockProps extends HTMLAttributes<HTMLDivElement> {
 	className?: string;
+	isEdit: boolean;
 	block: ArticleImageBlock;
 	onChangeBlockState: (editedBlock: ArticleImageBlock) => void;
+	setEditBlock: (block: ArticleImageBlock) => void;
+	editBlock: ArticleImageBlock;
 }
 
 export const EditArticleImageBlock = memo(
 	(props: EditArticleImageBlockProps) => {
 		const { t } = useTranslation();
-		const { className, block, onChangeBlockState, ...otherProps } = props;
-
-		const [imageBlock, setImageBlock] = useState(block);
-		const [isEdit, setIsEdit] = useState<boolean>(false);
-
-		const onClickEditIcon = () => setIsEdit(true);
-
-		const onClickCancelIcon = () => {
-			setIsEdit(false);
-			setImageBlock(block);
-		};
-
-		const onClickMarkIcon = () => {
-			setIsEdit(false);
-			onChangeBlockState(imageBlock);
-		};
+		const {
+			className,
+			isEdit,
+			block,
+			editBlock,
+			onChangeBlockState,
+			setEditBlock,
+			...otherProps
+		} = props;
 
 		const onChangeImage = (value: string) => {
-			setImageBlock(() => {
-				return {
-					...imageBlock,
-					src: value,
-				};
+			setEditBlock({
+				...editBlock,
+				src: value,
 			});
 		};
 
 		const onChangeTitle = (value: string) => {
-			setImageBlock(() => {
-				return {
-					...imageBlock,
-					title: value,
-				};
+			setEditBlock({
+				...editBlock,
+				title: value,
 			});
-		};
-
-		const mods: Mods = {
-			[cls.draggable]: !isEdit,
 		};
 
 		if (isEdit) {
 			return (
-				<div
-					className={classNames(cls.EditArticleImageBlock, mods, [
-						className,
-					])}
-					draggable={!isEdit}
-					{...otherProps}
-				>
-					<MarkIcon
-						onClick={onClickMarkIcon}
-						className={classNames(cls.icon, {}, [cls.markIcon])}
-					/>
-					<CancelIcon
-						onClick={onClickCancelIcon}
-						className={classNames(cls.icon, {}, [cls.cancelIcon])}
-					/>
+				<>
 					<div className={cls.preview}>
-						<img src={imageBlock.src} alt={imageBlock.title} />
+						<img
+							src={editBlock.src}
+							className={cls.img}
+							alt={editBlock.title}
+						/>
 					</div>
-					<Text text={t('Путь к изображению')} />
-					<Input
-						theme={'outlined'}
-						value={imageBlock?.src}
-						onChange={onChangeImage}
+					<ToggleFeatures
+						name={'isAppRedesigned'}
+						on={
+							<>
+								<Text text={t('Путь к изображению')} />
+								<Input
+									theme={'outlined'}
+									value={editBlock?.src}
+									onChange={onChangeImage}
+								/>
+								<Text text={t('Текст под изображением')} />
+								<Input
+									theme={'outlined'}
+									value={editBlock?.title}
+									onChange={onChangeTitle}
+								/>
+							</>
+						}
+						off={
+							<>
+								<TextDeprecated
+									text={t('Путь к изображению')}
+								/>
+								<InputDeprecated
+									theme={'outlined'}
+									value={editBlock?.src}
+									onChange={onChangeImage}
+								/>
+								<TextDeprecated
+									text={t('Текст под изображением')}
+								/>
+								<InputDeprecated
+									theme={'outlined'}
+									value={editBlock?.title}
+									onChange={onChangeTitle}
+								/>
+							</>
+						}
 					/>
-					<Text text={t('Текст под изображением')} />
-					<Input
-						theme={'outlined'}
-						value={imageBlock?.title}
-						onChange={onChangeTitle}
-					/>
-				</div>
+				</>
 			);
 		}
 
 		return (
-			<div
-				className={classNames(cls.EditArticleImageBlock, mods, [
-					className,
-				])}
-				draggable={!isEdit}
-				{...otherProps}
-			>
-				<EditIcon
-					onClick={onClickEditIcon}
-					className={classNames(cls.icon, {}, [cls.editIcon])}
-				/>
-				<MoveIcon
-					className={classNames(cls.icon, {}, [cls.moveIcon])}
-				/>
+			<VStack gap={'16'} align={'center'}>
 				<img
-					src={imageBlock.src}
+					src={editBlock.src}
 					className={cls.img}
-					alt={imageBlock.title}
+					alt={editBlock.title}
 				/>
-				{imageBlock.title && (
-					<Text text={imageBlock.title} align={TextAlign.CENTER} />
+				{editBlock.title && (
+					<Text text={editBlock.title} align={TextAlign.CENTER} />
 				)}
-			</div>
+			</VStack>
 		);
 	},
 );

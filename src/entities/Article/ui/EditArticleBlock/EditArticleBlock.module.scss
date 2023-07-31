@@ -1,0 +1,43 @@
+.EditArticleBlockRedesigned {
+  position: relative;
+  border: 2px solid var(--icon-redesigned);
+
+  min-height: 72px;
+  width: 100%;
+  padding: 16px 80px 16px 16px
+}
+
+.EditArticleBlock {
+  position: relative;
+  border: 1px solid black;
+  padding: 8px;
+  min-height: 56px;
+  width: 100%;
+}
+
+.draggable {
+  cursor: grab;
+}
+
+.icon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.editIcon,
+.cancelIcon {
+  top: 24px;
+  right: 48px;
+  position: absolute;
+  cursor: pointer;
+}
+
+.moveIcon,
+.markIcon {
+  top: 24px;
+  right: 16px;
+  position: absolute;
+  cursor: pointer;
+}

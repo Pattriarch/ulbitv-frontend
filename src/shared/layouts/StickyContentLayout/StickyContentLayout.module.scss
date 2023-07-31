@@ -20,6 +20,7 @@
 
 .right {
 	grid-area: right;
+	z-index: var(--sticky-content-right-z-index);
 }
 
 .left,

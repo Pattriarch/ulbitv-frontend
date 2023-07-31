@@ -1,7 +1,6 @@
 import { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-
 import { ArticleSortField } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
@@ -51,7 +50,7 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
 			},
 			{
 				value: ArticleSortField.VIEWS,
-				content: t('количеству просмотров'),
+				content: t('просмотрам'),
 			},
 		],
 		[t],

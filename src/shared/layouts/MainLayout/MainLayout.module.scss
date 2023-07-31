@@ -3,8 +3,7 @@
   display: grid;
   grid-template-areas:
   'sidebar content rightbar';
-  // todo: проверить с заменой 100px на 176px в конце редизайна
-  grid-template-columns: min-content 1fr 100px;
+  grid-template-columns: min-content 1fr 176px;
 }
 
 .sidebar {
@@ -20,6 +19,7 @@
   // контент так же центруем
   justify-self: center;
   width: 100%;
+
 }
 
 .rightbar {
@@ -43,4 +43,12 @@
 .toolbar {
   height: 100%;
   width: 100%;
+}
+
+.rightbar,
+.sidebar,
+.content,
+.toolbar
+{
+  background: var(--bg-redesigned);
 }

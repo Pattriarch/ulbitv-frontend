@@ -34,7 +34,7 @@ export const Icon = memo((props: IconProps) => {
 
 	const icon = (
 		<Svg
-			className={classNames(cls.Icon, {}, [className])}
+			className={!clickable ? classNames(cls.Icon, {}, [className]) : ''}
 			width={width}
 			height={height}
 			{...otherProps}
@@ -47,7 +47,11 @@ export const Icon = memo((props: IconProps) => {
 			// устанавливаем height, width; чтобы размер кнопки всегда совпадал с размером иконки
 			<button
 				type={'button'}
-				className={cls.button}
+				className={
+					clickable
+						? classNames(cls.Icon, {}, [className, cls.button])
+						: ''
+				}
 				onClick={props.onClick}
 				style={{ height, width }}
 			>

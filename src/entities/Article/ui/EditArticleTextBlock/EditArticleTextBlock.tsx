@@ -1,165 +1,175 @@
-import { type HTMLAttributes, memo, type MouseEvent, useState } from 'react';
+import { type HTMLAttributes, memo, type MouseEvent } from 'react';
 
 import { type ArticleTextBlock } from '../../model/types/article';
 
-import CancelIcon from '@/shared/assets/icons/cancel-512-512.svg';
-import EditIcon from '@/shared/assets/icons/edit-512-512.svg';
-import MarkIcon from '@/shared/assets/icons/mark-512-512.svg';
 import MinusIcon from '@/shared/assets/icons/minus-512-512.svg';
-import MoveIcon from '@/shared/assets/icons/move-512-512.svg';
 import PlusIcon from '@/shared/assets/icons/plus-512-512.svg';
-import { classNames, type Mods } from '@/shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
-import { Input } from '@/shared/ui/deprecated/Input/Input';
-import { Text } from '@/shared/ui/deprecated/Text/Text';
-import { Textarea } from '@/shared/ui/deprecated/Textarea/Textarea';
+import { Input as InputDeprecated } from '@/shared/ui/deprecated/Input/Input';
+import { Input } from '@/shared/ui/redesigned/Input/Input';
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text/Text';
+import { Text } from '@/shared/ui/redesigned/Text/Text';
+import { Textarea as TextareaDeprecated } from '@/shared/ui/deprecated/Textarea/Textarea';
+import { Textarea } from '@/shared/ui/redesigned/Textarea/Textarea';
 
 import cls from './EditArticleTextBlock.module.scss';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Icon } from '@/shared/ui/redesigned/Icon';
+import EditIcon from '@/shared/assets/icons/edit-512-512.svg';
 
 interface EditArticleTextBlockProps extends HTMLAttributes<HTMLDivElement> {
 	className?: string;
+	isEdit: boolean;
 	block: ArticleTextBlock;
 	onChangeBlockState: (editedBlock: ArticleTextBlock) => void;
+	setEditBlock: (block: ArticleTextBlock) => void;
+	editBlock: ArticleTextBlock;
 }
 
 export const EditArticleTextBlock = memo((props: EditArticleTextBlockProps) => {
-	const { className, block, onChangeBlockState, ...otherProps } = props;
-
-	const [textBlock, setTextBlock] = useState(block);
-	const [isEdit, setIsEdit] = useState<boolean>(false);
-
-	const onClickEditIcon = () => setIsEdit(true);
-
-	const onCancel = () => {
-		setIsEdit(false);
-		setTextBlock(block);
-	};
-
-	const onSave = () => {
-		setIsEdit(false);
-		onChangeBlockState(textBlock);
-	};
+	const {
+		className,
+		isEdit,
+		block,
+		editBlock,
+		onChangeBlockState,
+		setEditBlock,
+		...otherProps
+	} = props;
 
 	const onAddBlock = () => {
-		setTextBlock(() => {
-			return {
-				...block,
-				paragraphs: [...textBlock.paragraphs, ''],
-			};
+		setEditBlock({
+			...block,
+			paragraphs: [...editBlock.paragraphs, ''],
 		});
 	};
 
 	const onDeleteBlock = (index: number) => (e: MouseEvent) => {
-		const newParagraphs = [...textBlock.paragraphs];
+		const newParagraphs = [...editBlock.paragraphs];
 		newParagraphs.splice(index, 1);
 
-		setTextBlock(() => {
-			return {
-				...block,
-				paragraphs: newParagraphs,
-			};
+		setEditBlock({
+			...block,
+			paragraphs: newParagraphs,
 		});
 	};
 
 	const onChangeTitle = (value: string) => {
-		setTextBlock((block) => {
-			return {
-				...block,
-				title: value,
-			};
+		setEditBlock({
+			...block,
+			title: value,
 		});
 	};
 
 	const onChangeParagraph = (index: number) => (value: string) => {
-		setTextBlock((block) => {
-			const newParagraphs = [...textBlock.paragraphs];
-			newParagraphs[index] = value;
-
-			return {
-				...block,
-				paragraphs: newParagraphs,
-			};
+		const newParagraphs = [...editBlock.paragraphs];
+		newParagraphs[index] = value;
+		setEditBlock({
+			...block,
+			paragraphs: newParagraphs,
 		});
-	};
-
-	const mods: Mods = {
-		[cls.draggable]: !isEdit,
 	};
 
 	if (isEdit) {
 		return (
-			<div
-				className={classNames(cls.EditArticleTextBlock, mods, [
-					className,
-				])}
-				draggable={!isEdit}
-				{...otherProps}
-			>
-				<Button
-					theme={ButtonTheme.CLEAR}
-					onClick={onSave}
-					className={classNames(cls.icon, {}, [cls.markIcon])}
-				>
-					<MarkIcon />
-				</Button>
-				<Button
-					theme={ButtonTheme.CLEAR}
-					onClick={onCancel}
-					className={classNames(cls.icon, {}, [cls.cancelIcon])}
-				>
-					<CancelIcon />
-				</Button>
-				<Input
-					className={cls.title}
-					theme={'outlined'}
-					value={textBlock.title}
-					onChange={onChangeTitle}
-				/>
-				{textBlock.paragraphs.map((paragraph, index) => (
-					<div className={cls.paragraph} key={`key${index}`}>
-						<Textarea
+			<>
+				<ToggleFeatures
+					name={'isAppRedesigned'}
+					on={
+						<Input
+							className={cls.title}
 							theme={'outlined'}
-							value={paragraph}
-							onChange={onChangeParagraph(index)}
+							value={editBlock.title}
+							onChange={onChangeTitle}
 						/>
-						<MinusIcon
-							onClick={onDeleteBlock(index)}
+					}
+					off={
+						<InputDeprecated
+							className={cls.title}
+							theme={'outlined'}
+							value={editBlock.title}
+							onChange={onChangeTitle}
+						/>
+					}
+				/>
+				{editBlock.paragraphs.map((paragraph, index) => (
+					<div className={cls.paragraph} key={`key${index}`}>
+						<ToggleFeatures
+							name={'isAppRedesigned'}
+							on={
+								<Textarea
+									theme={'outlined'}
+									value={paragraph}
+									onChange={onChangeParagraph(index)}
+								/>
+							}
+							off={
+								<TextareaDeprecated
+									theme={'outlined'}
+									value={paragraph}
+									onChange={onChangeParagraph(index)}
+								/>
+							}
+						/>
+						<Icon
+							width={20}
+							height={20}
+							clickable
+							onClick={() => onDeleteBlock(index)}
 							className={classNames(cls.icon, {}, [
 								cls.minusIcon,
 							])}
+							Svg={MinusIcon}
 						/>
 					</div>
 				))}
 				<div className={cls.plusBtnWrapper}>
-					<Button
-						theme={ButtonTheme.CLEAR}
+					<Icon
+						clickable
 						onClick={onAddBlock}
 						className={classNames(cls.icon, {}, [])}
-					>
-						<PlusIcon />
-					</Button>
+						Svg={PlusIcon}
+					/>
 				</div>
-			</div>
+			</>
 		);
 	}
 
 	return (
-		<div
-			className={classNames(cls.EditArticleTextBlock, mods, [className])}
-			draggable={!isEdit}
-			{...otherProps}
-		>
-			<EditIcon
-				onClick={onClickEditIcon}
-				className={classNames(cls.icon, {}, [cls.editIcon])}
-			/>
-			<MoveIcon className={classNames(cls.icon, {}, [cls.moveIcon])} />
-			{textBlock.title && (
-				<Text title={textBlock.title} className={cls.title} />
+		<>
+			{editBlock.title && (
+				<ToggleFeatures
+					name={'isAppRedesigned'}
+					on={<Text title={editBlock.title} className={cls.title} />}
+					off={
+						<TextDeprecated
+							title={editBlock.title}
+							className={cls.title}
+						/>
+					}
+				/>
 			)}
-			{textBlock.paragraphs.map((paragraph, index) => (
-				<Text key={index} text={paragraph} className={cls.pargraph} />
+			{editBlock.paragraphs.map((paragraph, index) => (
+				<ToggleFeatures
+					key={index}
+					name={'isAppRedesigned'}
+					on={
+						<Text
+							key={index}
+							text={paragraph}
+							className={cls.paragraph}
+						/>
+					}
+					off={
+						<TextDeprecated
+							key={index}
+							text={paragraph}
+							className={cls.paragraph}
+						/>
+					}
+				/>
 			))}
-		</div>
+		</>
 	);
 });

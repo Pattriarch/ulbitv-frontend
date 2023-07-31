@@ -1,16 +1,4 @@
-.EditArticleCodeBlock {
-    position: relative;
-    border: 1px solid black;
-    padding: 8px;
-    min-height: 56px;
-}
-
-.draggable {
-    cursor: grab;
-}
-
 .title {
-    margin-right: 64px;
 }
 
 .paragraph {
@@ -22,18 +10,4 @@
     width: 20px;
     height: 20px;
     z-index: 10;
-}
-
-.editIcon,
-.cancelIcon {
-    top: 16px;
-    right: 48px;
-    cursor: pointer;
-}
-
-.moveIcon,
-.markIcon {
-    top: 16px;
-    right: 16px;
-    cursor: pointer;
 }

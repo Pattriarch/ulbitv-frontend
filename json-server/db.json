@@ -120,19 +120,6 @@
           "order": 8,
           "type": "CODE",
           "code": "const array = [{ value: 1 }, { value: 2 }, { value: 3 }, { value: 4 }];\n\narray.find(n => n.value % 2 === 1); // { value: 1 }\narray.findIndex(n => n.value % 2 === 1); // 0\n\n// ======== Before the proposal =========== \n// find\n[...array].reverse().find(n => n.value % 2 === 1); // { value: 3 }\n\n// findIndex\narray.length - 1 - [...array].reverse().findIndex(n => n.value % 2 === 1); // 2\narray.length - 1 - [...array].reverse().findIndex(n => n.value === 42); // should be -1, but 4\n\n// ======== In the proposal =========== \n// find\narray.findLast(n => n.value % 2 === 1); // { value: 3 }\n// findIndex\narray.findLastIndex(n => n.value % 2 === 1); // 2\narray.findLastIndex(n => n.value === 42); // -1"
-        },
-        {
-          "id": "9",
-          "order": 9,
-          "type": "IMAGE",
-          "title": "",
-          "src": ""
-        },
-        {
-          "id": "10",
-          "order": 10,
-          "type": "CODE",
-          "code": ""
         }
       ],
       "user": {
@@ -142,6 +129,17 @@
         "roles": [
           "ADMIN"
         ],
+        "features": {
+          "isArticleRatingEnabled": true,
+          "isCounterEnabled": true,
+          "isAppRedesigned": true
+        },
+        "jsonSettings": {
+          "theme": "app_dark_theme",
+          "isFirstVisit": true,
+          "settingsPageHasBeenOpen": false,
+          "isArticlesPageWasOpened": true
+        },
         "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/1:1/w_1350,h_1350,c_limit/security_hacker_names.jpg"
       }
     },
@@ -1047,7 +1045,7 @@
         "isAppRedesigned": true
       },
       "jsonSettings": {
-        "theme": "app_light_theme",
+        "theme": "app_dark_theme",
         "isFirstVisit": true,
         "settingsPageHasBeenOpen": false,
         "isArticlesPageWasOpened": true

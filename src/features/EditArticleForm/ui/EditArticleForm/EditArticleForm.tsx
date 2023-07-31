@@ -20,19 +20,25 @@ import {
 	ArticleBlock,
 	ArticleCard,
 } from '@/entities/Article';
-import { getRouteArticles } from '@/shared/const/router';
+import {
+	getRouteArticleDetails,
+	getRouteArticles,
+} from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
 	DynamicModuleLoader,
 	type ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import {
-	Button,
+	Button as ButtonDeprecated,
 	ButtonSize,
 	ButtonTheme,
 } from '@/shared/ui/deprecated/Button/Button';
+import { Button } from '@/shared/ui/redesigned/Button';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 
 import cls from './EditArticleForm.module.scss';
 
@@ -205,7 +211,8 @@ export const EditArticleForm = memo((props: EditArticleFormProps) => {
 
 	const onSave = useCallback(() => {
 		void dispatch(updateArticleData());
-	}, [dispatch]);
+		navigate(getRouteArticleDetails(id));
+	}, [dispatch, id, navigate]);
 
 	const dragStartHandler = (
 		e: DragEvent<HTMLDivElement>,
@@ -215,12 +222,12 @@ export const EditArticleForm = memo((props: EditArticleFormProps) => {
 	};
 
 	const dragEndHandler = (e: DragEvent<HTMLDivElement>) => {
-		e.currentTarget.style.background = 'lightgray';
+		e.currentTarget.style.opacity = '1';
 	};
 
 	const dragOverHandler = (e: DragEvent<HTMLDivElement>) => {
 		e.preventDefault();
-		e.currentTarget.style.background = 'white';
+		e.currentTarget.style.opacity = '0.2';
 	};
 
 	const dropHandler = (
@@ -249,7 +256,7 @@ export const EditArticleForm = memo((props: EditArticleFormProps) => {
 			}),
 		);
 
-		e.currentTarget.style.background = 'lightgray';
+		e.currentTarget.style.opacity = '1';
 	};
 
 	const sortBlocks = (a: ArticleBlock, b: ArticleBlock) => {
@@ -281,24 +288,53 @@ export const EditArticleForm = memo((props: EditArticleFormProps) => {
 					onChangeBlockState={onChangeBlockState}
 					onRemoveBlock={onRemoveBlock}
 				/>
-				<div className={cls.actionBtns}>
-					<Button
-						type={'button'}
-						size={ButtonSize.L}
-						theme={ButtonTheme.BACKGROUND_INVERTED}
-						onClick={onCancel}
-					>
-						{t('Отменить')}
-					</Button>
-					<Button
-						type={'button'}
-						size={ButtonSize.L}
-						theme={ButtonTheme.BACKGROUND_INVERTED}
-						onClick={onSave}
-					>
-						{t('Сохранить')}
-					</Button>
-				</div>
+				<HStack gap={'16'} justify={'end'} max>
+					<ToggleFeatures
+						name={'isAppRedesigned'}
+						on={
+							<>
+								<Button
+									type={'button'}
+									size={'l'}
+									variant={'outline'}
+									color={'error'}
+									onClick={onCancel}
+								>
+									{t('Отменить')}
+								</Button>
+								<Button
+									type={'button'}
+									size={'l'}
+									variant={'outline'}
+									color={'success'}
+									onClick={onSave}
+								>
+									{t('Сохранить')}
+								</Button>
+							</>
+						}
+						off={
+							<>
+								<ButtonDeprecated
+									type={'button'}
+									size={ButtonSize.L}
+									theme={ButtonTheme.BACKGROUND_INVERTED}
+									onClick={onCancel}
+								>
+									{t('Отменить')}
+								</ButtonDeprecated>
+								<ButtonDeprecated
+									type={'button'}
+									size={ButtonSize.L}
+									theme={ButtonTheme.BACKGROUND_INVERTED}
+									onClick={onSave}
+								>
+									{t('Сохранить')}
+								</ButtonDeprecated>
+							</>
+						}
+					/>
+				</HStack>
 			</div>
 		</DynamicModuleLoader>
 	);

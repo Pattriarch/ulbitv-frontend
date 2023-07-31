@@ -1,41 +1,6 @@
-.EditArticleTextBlock {
-    position: relative;
-    border: 1px solid black;
-    padding: 8px;
-    min-height: 56px;
-}
-
-.draggable {
-    cursor: grab;
-}
-
-.title {
-    margin-right: 64px;
-}
-
-.paragraph {
-    margin: 12px 64px 12px 0;
-    position: relative;
-}
-
 .icon {
-    width: 20px;
-    height: 20px;
+    color: white;
     cursor: pointer;
-}
-
-.editIcon,
-.cancelIcon {
-    top: 16px;
-    right: 48px;
-    position: absolute;
-}
-
-.moveIcon,
-.markIcon {
-    top: 16px;
-    right: 16px;
-    position: absolute;
 }
 
 .plusBtnWrapper {
@@ -59,4 +24,13 @@
     &:hover {
         opacity: 0.6;
     }
+}
+
+.title {
+    padding-right: 64px;
+}
+
+.paragraph {
+    margin: 16px 0;
+    position: relative;
 }
