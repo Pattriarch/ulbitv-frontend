@@ -32,7 +32,8 @@ export const updateFeatureFlags = createAsyncThunk<
 		);
 
 		setFeatureFlags(allFeatures);
-
+		// оставил reload, ибо появляются баги с иконками с ForceUpdateReload
+		window.location.reload();
 		return undefined;
 	} catch (e) {
 		console.log(e);

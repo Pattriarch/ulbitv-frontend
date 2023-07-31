@@ -1063,7 +1063,8 @@
       ],
       "features": {
         "isArticleRatingEnabled": false,
-        "isCounterEnabled": false
+        "isCounterEnabled": false,
+        "isAppRedesigned": true
       },
       "jsonSettings": {
         "theme": "app_light_theme",
