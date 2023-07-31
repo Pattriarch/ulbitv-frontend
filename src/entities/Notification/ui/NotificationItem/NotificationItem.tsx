@@ -4,9 +4,10 @@ import { type Notification } from '../../model/types/notification';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { AppLink } from '@/shared/ui/deprecated/AppLink';
+import { AppLink as AppLinkDeprecated } from '@/shared/ui/deprecated/AppLink';
 import { Card as CardDeprecated, CardTheme } from '@/shared/ui/deprecated/Card';
 import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
+import { AppLink } from '@/shared/ui/redesigned/AppLink';
 import { Card } from '@/shared/ui/redesigned/Card';
 import { Text } from '@/shared/ui/redesigned/Text';
 
@@ -50,9 +51,19 @@ export const NotificationItem = memo((props: NotificationItemProps) => {
 
 	if (item.href) {
 		return (
-			<AppLink to={item.href} className={cls.link}>
-				{content}
-			</AppLink>
+			<ToggleFeatures
+				name={'isAppRedesigned'}
+				on={
+					<AppLink to={item.href} className={cls.link}>
+						{content}
+					</AppLink>
+				}
+				off={
+					<AppLinkDeprecated to={item.href} className={cls.link}>
+						{content}
+					</AppLinkDeprecated>
+				}
+			/>
 		);
 	}
 
