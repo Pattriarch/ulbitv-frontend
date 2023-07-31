@@ -4,9 +4,12 @@ import { rtkApi } from '@/shared/api/rtkApi';
 
 const notificationApi = rtkApi.injectEndpoints({
 	endpoints: (build) => ({
-		getNotifications: build.query<Notification[], null>({
-			query: () => ({
+		getNotifications: build.query<Notification[], number>({
+			query: (userId) => ({
 				url: '/notifications',
+				params: {
+					userId,
+				},
 			}),
 		}),
 	}),

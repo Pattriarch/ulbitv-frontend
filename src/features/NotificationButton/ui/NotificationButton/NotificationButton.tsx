@@ -1,6 +1,5 @@
 import React, { memo, useCallback, useState } from 'react';
 
-
 import { NotificationList } from '@/entities/Notification';
 import NotificationIconDeprecated from '@/shared/assets/icons/notification-20-20.svg';
 import NotificationIcon from '@/shared/assets/icons/notify-32-32.svg';
@@ -18,6 +17,8 @@ import { Icon } from '@/shared/ui/redesigned/Icon';
 import { Popover } from '@/shared/ui/redesigned/Popups';
 
 import cls from './NotificationButton.module.scss';
+import { useSelector } from 'react-redux';
+import { getUserAuthData } from '@/entities/User';
 
 interface NotificationButtonProps {
 	className?: string;
@@ -26,6 +27,7 @@ interface NotificationButtonProps {
 export const NotificationButton = memo((props: NotificationButtonProps) => {
 	const { className } = props;
 	const isMobile = useDevice();
+	const userData = useSelector(getUserAuthData);
 
 	const [isOpen, setIsOpen] = useState(false);
 
@@ -54,6 +56,10 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
 		/>
 	);
 
+	if (!userData) {
+		return null;
+	}
+
 	return (
 		<div>
 			{isMobile ? (
@@ -63,12 +69,12 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
 						name={'isAppRedesigned'}
 						on={
 							<Drawer isOpen={isOpen} onClose={onCloseDrawer}>
-								<NotificationList />
+								<NotificationList userId={+userData.id} />
 							</Drawer>
 						}
 						off={
 							<Drawer isOpen={isOpen} onClose={onCloseDrawer}>
-								<NotificationList />
+								<NotificationList userId={+userData.id} />
 							</Drawer>
 						}
 					/>
@@ -84,7 +90,10 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
 								className,
 							])}
 						>
-							<NotificationList className={cls.notifications} />
+							<NotificationList
+								userId={+userData.id}
+								className={cls.notifications}
+							/>
 						</Popover>
 					}
 					off={
@@ -95,7 +104,10 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
 								className,
 							])}
 						>
-							<NotificationList className={cls.notifications} />
+							<NotificationList
+								userId={+userData.id}
+								className={cls.notifications}
+							/>
 						</PopoverDeprecated>
 					}
 				/>

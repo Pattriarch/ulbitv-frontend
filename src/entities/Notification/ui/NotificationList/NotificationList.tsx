@@ -11,11 +11,13 @@ import { VStack } from '@/shared/ui/redesigned/Stack';
 
 interface NotificationListProps {
 	className?: string;
+	userId: number;
 }
 
 export const NotificationList = memo((props: NotificationListProps) => {
-	const { className } = props;
-	const { data, isLoading } = useNotifications(null, {
+	const { className, userId } = props;
+
+	const { data, isLoading } = useNotifications(userId, {
 		pollingInterval: 5000,
 	});
 
