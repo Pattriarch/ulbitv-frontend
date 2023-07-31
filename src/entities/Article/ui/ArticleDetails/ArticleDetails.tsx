@@ -116,29 +116,40 @@ const ArticleDetailsSkeleton = () => {
 		<ToggleFeatures
 			name={'isAppRedesigned'}
 			on={
-				<VStack gap={'16'} max>
-					<Skeleton
-						className={cls.avatar}
-						width={200}
-						height={200}
-						border={'50%'}
-					/>
-					<Skeleton className={cls.title} width={300} height={32} />
-					<Skeleton
-						className={cls.skeleton}
-						width={600}
-						height={24}
-					/>
-					<Skeleton
-						className={cls.skeleton}
-						width={'100%'}
-						height={200}
-					/>
-					<Skeleton
-						className={cls.skeleton}
-						width={'100%'}
-						height={200}
-					/>
+				<VStack max gap={'16'}>
+					{/* <Text */}
+					{/*	tag={'h1'} */}
+					{/*	size={'l'} */}
+					{/*	weight={'extrabold'} */}
+					{/*	title={article?.title} */}
+					{/* /> */}
+					{/* <Text title={article?.subtitle} size={'m'} /> */}
+					{/* <AppImage */}
+					{/*	fallback={ */}
+					{/*		<SkeletonRedesigned */}
+					{/*			width={'100%'} */}
+					{/*			height={420} */}
+					{/*			border={'16'} */}
+					{/*		/> */}
+					{/*	} */}
+					{/*	src={article?.img} */}
+					{/*	className={cls.img} */}
+					{/* /> */}
+					{/* {article?.blocks?.map(renderArticleBlock)} */}
+
+					<Skeleton height={36} width={300} />
+					<Skeleton height={32} width={500} />
+
+					<Skeleton width={'100%'} height={420} />
+
+					<Skeleton height={32} width={300} />
+					<Skeleton height={144} width={'100%'} />
+
+					<Skeleton height={32} width={300} />
+					<Skeleton height={196} width={'100%'} />
+
+					<Skeleton height={32} width={300} />
+					<Skeleton height={144} width={'100%'} />
 				</VStack>
 			}
 			off={
