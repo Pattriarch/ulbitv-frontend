@@ -22,8 +22,8 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 - `npm run lint:ts:fix` - Исправление ts файлов линтером
 - `npm run lint:scss` - Проверка scss файлов style линтером
 - `npm run lint:scss:fix` - Исправление scss файлов style линтером
-- `npm run test:unit` - Хапуск unit тестов с jest
-- `npm run test:ui` - Хапуск скриншотных тестов с loki
+- `npm run test:unit` - Запуск unit тестов с jest
+- `npm run test:ui` - Запуск скриншотных тестов с loki
 - `npm run test:ui:ok` - Подтверждение новых скриншотов
 - `npm run test:ui:ci` - Запуск скриншотных тестов в CI
 - `npm run test:ui:report` - Генерация полного отчета для скриншотных тестов
@@ -35,6 +35,12 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 - `npm run generate:slice` - Скрипт для генерации FSD слайсов
 
 ---
+
+## Удаление всех feature-flag
+
+Чтобы удалить все feature-flag's, связанные с дизайном и оставить в проекте только один из дизайнов (старый/новый) необходимо выполнить одну из команд:
+- `npm run scripts:remove-feature isAppRedesigned on` - оставить только новый дизайн
+- `npm run scripts:remove-feature isAppRedesigned off` - оставить только старый дизайн
 
 ## Архитектура проекта
 
@@ -114,24 +120,24 @@ import { Button, ButtonSize, ButtonTheme } from "./Button";
 import { Theme } from "@/shared/const/theme";
 
 export default {
-  title: "shared/Button",
-  component: Button,
-  argTypes: {
-    backgroundColor: { control: "color" },
-  },
+   title: "shared/Button",
+   component: Button,
+   argTypes: {
+      backgroundColor: { control: "color" },
+   },
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  children: "Text",
+   children: "Text",
 };
 
 export const Clear = Template.bind({});
 Clear.args = {
-  children: "Text",
-  theme: ButtonTheme.CLEAR,
+   children: "Text",
+   theme: ButtonTheme.CLEAR,
 };
 ```
 
