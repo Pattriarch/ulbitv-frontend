@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
 
-    &:hover {
+    &:not(:disabled):hover {
         color: var(--accent-redesigned);
         // todo проверить нужно ли: stroke-opacity: var(--accent-redesigned);
 
