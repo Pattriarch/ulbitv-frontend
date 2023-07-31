@@ -1,8 +1,10 @@
 import { memo } from 'react';
 
+import { AppLink } from '../AppLink';
 import { HStack } from '../Stack';
 
 import AppSvg from '@/shared/assets/icons/app-image.svg';
+import { getRouteMain } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 import cls from './AppLogo.module.scss';
@@ -21,12 +23,14 @@ export const AppLogo = memo((props: AppLogoProps) => {
 			justify={'center'}
 			className={classNames(cls.AppLogo, {}, [className])}
 		>
-			<AppSvg
-				width={size}
-				height={size}
-				color="black"
-				className={cls.appLogo}
-			/>
+			<AppLink to={getRouteMain()}>
+				<AppSvg
+					width={size}
+					height={size}
+					color="black"
+					className={cls.appLogo}
+				/>
+			</AppLink>
 			<div className={cls.gradientBig}></div>
 			<div className={cls.gradientSmall}></div>
 		</HStack>
