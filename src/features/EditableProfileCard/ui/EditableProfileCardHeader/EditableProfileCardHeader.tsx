@@ -20,6 +20,8 @@ import { Card } from '@/shared/ui/redesigned/Card';
 import { HStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
 
+import cls from './EditableProfileCardHeader.module.scss';
+
 interface EditableProfileCardHeaderProps {
 	className?: string;
 	isLoading?: boolean;
@@ -57,7 +59,11 @@ export const EditableProfileCardHeader = memo(
 						<HStack
 							max
 							justify={'between'}
-							className={classNames('', {}, [className])}
+							className={classNames(
+								cls.EditableProfileCardHeaderRedesigned,
+								{},
+								[className],
+							)}
 						>
 							<Text title={t('Профиль')} />
 							{canEdit && (
