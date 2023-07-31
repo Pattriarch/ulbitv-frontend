@@ -1,15 +1,18 @@
-import { classNames, Mods } from '@/shared/lib/classNames/classNames';
-import cls from './ProfileCardDeprecated.module.scss';
 import { memo } from 'react';
-import { ProfileCardProps } from '@/entities/Profile/ui/ProfileCard/ProfileCard';
 import { useTranslation } from 'react-i18next';
-import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
+
+import { ProfileCardProps } from '../ProfileCard/ProfileCard';
+
+import { CountrySelect } from '@/entities/Country';
+import { CurrencySelect } from '@/entities/Currency';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar';
 import { Input as InputDeprecated } from '@/shared/ui/deprecated/Input';
-import { CurrencySelect } from '@/entities/Currency';
-import { CountrySelect } from '@/entities/Country';
 import { Loader } from '@/shared/ui/deprecated/Loader';
 import { Text as TextDeprecated, TextTheme } from '@/shared/ui/deprecated/Text';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
+
+import cls from './ProfileCardDeprecated.module.scss';
 
 export const ProfileCardDeprecatedLoader = () => {
 	return (

@@ -1,9 +1,11 @@
 import { StoryContext, type StoryFn } from '@storybook/react';
 import { Suspense, useEffect } from 'react';
 import { I18nextProvider } from 'react-i18next';
-import { Loader } from '@/shared/ui/deprecated/Loader';
 
 import i18nForTest from '../../i18n/i18nForTest';
+
+import { Loader } from '@/shared/ui/deprecated/Loader';
+
 
 export const I18nDecorator = (
 	Story: StoryFn,

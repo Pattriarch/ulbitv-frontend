@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { StarRating } from './StarRating';
 
 const meta: Meta<typeof StarRating> = {
-	title: 'shared/StarRating',
+	title: 'shared/StarRatingDeprecated',
 	component: StarRating,
 	tags: ['autodocs'],
 };

@@ -1,21 +1,20 @@
 import { useTranslation } from 'react-i18next';
 
 import { type Profile } from '../../model/types/profile';
-
-import { type Country } from '@/entities/Country';
-import { type Currency } from '@/entities/Currency';
-
-import { ToggleFeatures } from '@/shared/lib/features';
 import {
 	ProfileCardDeprecated,
 	ProfileCardDeprecatedError,
 	ProfileCardDeprecatedLoader,
-} from '@/entities/Profile/ui/ProfileCardDeprecated/ProfileCardDeprecated';
+} from '../ProfileCardDeprecated/ProfileCardDeprecated';
 import {
 	ProfileCardRedesigned,
 	ProfileCardRedesignedError,
 	ProfileCardRedesignedSkeleton,
-} from '@/entities/Profile/ui/ProfileCardRedesigned/ProfileCardRedesigned';
+} from '../ProfileCardRedesigned/ProfileCardRedesigned';
+
+import { type Country } from '@/entities/Country';
+import { type Currency } from '@/entities/Currency';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 export interface ProfileCardProps {
 	className?: string;

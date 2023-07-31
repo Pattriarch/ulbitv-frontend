@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+
 import { ArticlesFilters } from './ArticlesFilters';
 
 const meta: Meta<typeof ArticlesFilters> = {

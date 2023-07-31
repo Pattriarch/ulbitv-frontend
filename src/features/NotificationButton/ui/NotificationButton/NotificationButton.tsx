@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useState } from 'react';
-import { Drawer } from '@/shared/ui/redesigned/Drawer';
+
 
 import { NotificationList } from '@/entities/Notification';
 import NotificationIconDeprecated from '@/shared/assets/icons/notification-20-20.svg';
@@ -13,6 +13,7 @@ import {
 } from '@/shared/ui/deprecated/Button';
 import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon';
 import { Popover as PopoverDeprecated } from '@/shared/ui/deprecated/Popups';
+import { Drawer } from '@/shared/ui/redesigned/Drawer';
 import { Icon } from '@/shared/ui/redesigned/Icon';
 import { Popover } from '@/shared/ui/redesigned/Popups';
 

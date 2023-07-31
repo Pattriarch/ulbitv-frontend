@@ -43,7 +43,7 @@ export const Dropdown = memo((props: DropdownProps) => {
 			<Menu.Button className={popupCls.trigger}>{trigger}</Menu.Button>
 			<Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
 				{items.map((item, index) => {
-					const content = ({ active }: { active: boolean }) => {
+					const content = ({ active }: { active: boolean, }) => {
 						return item.href ? (
 							<AppLink
 								to={item.href}

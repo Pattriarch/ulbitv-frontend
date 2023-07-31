@@ -35,7 +35,7 @@ const reducers: ReducersList = {
 
 const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
 	const { t } = useTranslation();
-	const { id } = useParams<{ id: string }>();
+	const { id } = useParams<{ id: string, }>();
 
 	if (!id) {
 		return null;

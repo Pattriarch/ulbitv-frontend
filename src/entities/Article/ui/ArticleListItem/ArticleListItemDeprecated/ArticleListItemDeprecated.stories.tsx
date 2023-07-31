@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+
 import { ArticleListItemDeprecated } from './ArticleListItemDeprecated';
 
 const meta: Meta<typeof ArticleListItemDeprecated> = {

@@ -1,5 +1,9 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+
+import { useArticleFilters } from '../../lib/hooks/useArticleFilters';
+import { ViewSelectorContainer } from '../ViewSelectorContainer/ViewSelectorContainer';
+
 import { ArticleSortSelector } from '@/features/ArticleSortSelector';
 import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -7,8 +11,6 @@ import { Card } from '@/shared/ui/deprecated/Card';
 import { Input } from '@/shared/ui/deprecated/Input';
 
 import cls from './ArticlesPageFilters.module.scss';
-import { ViewSelectorContainer } from '@/pages/ArticlesPage/ui/ViewSelectorContainer/ViewSelectorContainer';
-import { useArticleFilters } from '@/pages/ArticlesPage/lib/hooks/useArticleFilters';
 
 interface ArticlesPageFiltersProps {
 	className?: string;

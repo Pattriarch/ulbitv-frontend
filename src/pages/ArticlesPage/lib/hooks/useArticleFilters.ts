@@ -1,19 +1,21 @@
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useCallback } from 'react';
 import { useSelector } from 'react-redux';
+
 import {
 	getArticlesPageOrder,
 	getArticlesPageSearch,
 	getArticlesPageSort,
 	getArticlesPageType,
 	getArticlesPageView,
-} from '@/pages/ArticlesPage/model/selectors/articlesPageSelectors';
-import { useCallback } from 'react';
+} from '../../model/selectors/articlesPageSelectors';
+import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
+import { articlesPageActions } from '../../model/slices/articlesPageSlice';
+
 import { ArticleSortField, ArticleType, ArticleView } from '@/entities/Article';
-import { articlesPageActions } from '@/pages/ArticlesPage/model/slices/articlesPageSlice';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import { SortOrder } from '@/shared/types';
 import { TabItem } from '@/shared/ui/deprecated/Tabs';
-import { fetchArticlesList } from '@/pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
-import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 
 export function useArticleFilters() {
 	const dispatch = useAppDispatch();

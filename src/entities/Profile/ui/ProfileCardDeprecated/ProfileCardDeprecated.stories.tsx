@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+
 import { ProfileCardDeprecated } from './ProfileCardDeprecated';
 
 const meta: Meta<typeof ProfileCardDeprecated> = {

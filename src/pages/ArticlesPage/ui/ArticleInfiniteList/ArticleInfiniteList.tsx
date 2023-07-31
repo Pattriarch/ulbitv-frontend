@@ -1,7 +1,7 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
+
 
 import {
 	getArticlesLastScrolledIndex,
@@ -16,6 +16,7 @@ import {
 
 import { ArticleList } from '@/entities/Article';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
 
 interface ArticleInfiniteListProps {
 	className?: string;

@@ -1,6 +1,6 @@
 import { type DragEvent, Fragment, memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { AppImage } from '@/shared/ui/redesigned/AppImage';
+
 
 import { Article, ArticleBlock } from '../../model/types/article';
 import { EditArticleBlock } from '../EditArticleBlock/EditArticleBlock';
@@ -10,6 +10,7 @@ import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
 import { Input } from '@/shared/ui/deprecated/Input/Input';
 import { Loader } from '@/shared/ui/deprecated/Loader/Loader';
 import { Text, TextTheme } from '@/shared/ui/deprecated/Text/Text';
+import { AppImage } from '@/shared/ui/redesigned/AppImage';
 
 import cls from './ArticleCard.module.scss';
 

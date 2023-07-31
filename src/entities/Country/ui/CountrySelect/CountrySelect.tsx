@@ -1,10 +1,11 @@
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popups';
 
 import { Country } from '../../model/types/country';
-import { ListBox } from '@/shared/ui/redesigned/Popups';
+
 import { ToggleFeatures } from '@/shared/lib/features';
+import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popups';
+import { ListBox } from '@/shared/ui/redesigned/Popups';
 
 interface CountrySelectProps {
 	className?: string;
@@ -64,9 +65,9 @@ export const CountrySelect = (props: CountrySelectProps): JSX.Element => {
 	return (
 		<ToggleFeatures
 			name={'isAppRedesigned'}
-			// @ts-ignore todo fix it
+			// @ts-expect-error todo fix it
 			on={<ListBox {...listBoxProps} />}
-			// @ts-ignore todo fix it
+			// @ts-expect-error todo fix it
 			off={<ListBoxDeprecated {...listBoxProps} />}
 		/>
 	);

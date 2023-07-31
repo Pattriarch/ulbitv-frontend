@@ -11,7 +11,7 @@ interface ArticleDetailsContainerProps {
 export const ArticleDetailsContainer = memo(
 	(props: ArticleDetailsContainerProps) => {
 		const { className } = props;
-		const { id } = useParams<{ id: string }>();
+		const { id } = useParams<{ id: string, }>();
 
 		return (
 			<Card max border={'partial'} className={className} padding={'24'}>

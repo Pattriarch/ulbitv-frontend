@@ -13,7 +13,7 @@ import { type DropdownDirection, typedMemo } from '@/shared/types';
 import cls from './ListBox.module.scss';
 
 export interface ListBoxItem<T extends string> {
-	value: string;
+	value: T;
 	content: ReactNode;
 	disabled?: boolean;
 }

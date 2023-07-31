@@ -1,7 +1,8 @@
 import { memo } from 'react';
-import { Loader } from '@/shared/ui/deprecated/Loader';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { Loader } from '@/shared/ui/deprecated/Loader';
+
 
 import cls from './PageLoader.module.scss';
 

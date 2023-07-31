@@ -11,7 +11,7 @@ export const useForceUpdate = () => {
 	return forceUpdate;
 };
 
-export function ForceUpdateProvider({ children }: { children: ReactNode }) {
+export function ForceUpdateProvider({ children }: { children: ReactNode, }) {
 	const [value, setValue] = useState(true);
 
 	const forceUpdate = () => {

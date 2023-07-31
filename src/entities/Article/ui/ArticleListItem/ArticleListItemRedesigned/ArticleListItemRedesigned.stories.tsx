@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+
 import { ArticleListItemRedesigned } from './ArticleListItemRedesigned';
 
 const meta: Meta<typeof ArticleListItemRedesigned> = {
