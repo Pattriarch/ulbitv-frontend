@@ -6,7 +6,8 @@
     align-items: center;
 
     &:hover {
-        stroke-opacity: var(--accent-redesigned);
+        color: var(--accent-redesigned);
+        // todo проверить нужно ли: stroke-opacity: var(--accent-redesigned);
 
         .addonLeft svg, .addonRight svg {
             color: var(--accent-redesigned)

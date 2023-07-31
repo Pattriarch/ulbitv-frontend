@@ -2,6 +2,7 @@ import { Menu } from '@headlessui/react';
 import { Fragment, memo, type ReactNode } from 'react';
 
 import { AppLink } from '../../../AppLink';
+import { Button } from '../../../Button';
 import popupCls from '../../styles/popup.module.scss';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -41,7 +42,7 @@ export const Dropdown = memo((props: DropdownProps) => {
 				className={classNames(cls.menu, {}, menuAdditionalClasses)}
 			>
 				{items.map((item, index) => {
-					const content = ({ active }: { active: boolean, }) => {
+					const content = ({ active }: { active: boolean }) => {
 						return item.href ? (
 							<AppLink
 								to={item.href}
@@ -52,15 +53,16 @@ export const Dropdown = memo((props: DropdownProps) => {
 								{item.content}
 							</AppLink>
 						) : (
-							<button
+							<Button
 								type={'button'}
+								variant={'clear'}
 								onClick={item.onClick}
 								className={classNames(cls.item, {
 									[popupCls.active]: active,
 								})}
 							>
 								{item.content}
-							</button>
+							</Button>
 						);
 					};
 
