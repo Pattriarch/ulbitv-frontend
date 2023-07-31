@@ -7,11 +7,12 @@ import React, {
 	useState,
 } from 'react';
 
+import { HStack } from '../Stack';
+import { Text } from '../Text';
+
 import { classNames, type Mods } from '@/shared/lib/classNames/classNames';
 
 import cls from './Input.module.scss';
-import { HStack } from '@/shared/ui/redesigned/Stack';
-import { Text } from '@/shared/ui/redesigned/Text';
 
 type HTMLInputProps = Omit<
 	InputHTMLAttributes<HTMLInputElement>,
@@ -109,7 +110,10 @@ export const Input = memo((props: InputProps): JSX.Element => {
 	if (label) {
 		return (
 			<HStack max gap={'8'}>
-				<Text text={label} />
+				<Text
+					className={classNames('', { [cls.readonly]: readonly })}
+					text={label}
+				/>
 				{input}
 			</HStack>
 		);

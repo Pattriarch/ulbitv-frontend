@@ -170,18 +170,12 @@ export const ArticleList = memo((props: ArticleListProps) => {
 							[],
 						)}
 					>
-						{articles
-							.slice(0, 3)
-							.map((article, index) =>
-								renderArticle(index, article),
-							)}
-						{getSkeletons(view)}
-						{/* {articles.length > 0 */}
-						{/*	? articles.map((article, index) => */}
-						{/*			renderArticle(index, article), */}
-						{/*	  ) */}
-						{/*	: null} */}
-						{/* {isLoading && getSkeletons(view)} */}
+						{articles.length > 0
+							? articles.map((article, index) =>
+									renderArticle(index, article),
+							  )
+							: null}
+						{isLoading && getSkeletons(view)}
 					</HStack>
 				}
 				off={

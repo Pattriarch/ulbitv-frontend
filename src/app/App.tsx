@@ -1,6 +1,7 @@
 import React, { Suspense, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
+import { useAppToolbar } from './lib/useAppToolbar';
 import { AppRouter } from './providers/AppRouter';
 
 import { getUserInited, initAuthData } from '@/entities/User';
@@ -18,6 +19,7 @@ const App = (): JSX.Element => {
 	const { theme } = useTheme();
 	const dispatch = useAppDispatch();
 	const inited = useSelector(getUserInited);
+	const toolbar = useAppToolbar();
 
 	useEffect(() => {
 		if (!inited) {
@@ -47,17 +49,6 @@ const App = (): JSX.Element => {
 	return (
 		<ToggleFeatures
 			name={'isAppRedesigned'}
-			off={
-				<div id={'app'} className={`${classNames('app', {}, [theme])}`}>
-					<Suspense fallback={''}>
-						<Navbar />
-						<div className={'content-page'}>
-							<Sidebar />
-							{inited && <AppRouter />}
-						</div>
-					</Suspense>
-				</div>
-			}
 			on={
 				<div
 					id={'app'}
@@ -68,7 +59,19 @@ const App = (): JSX.Element => {
 							header={<Navbar />}
 							content={<AppRouter />}
 							sidebar={<Sidebar />}
+							toolbar={toolbar}
 						/>
+					</Suspense>
+				</div>
+			}
+			off={
+				<div id={'app'} className={`${classNames('app', {}, [theme])}`}>
+					<Suspense fallback={''}>
+						<Navbar />
+						<div className={'content-page'}>
+							<Sidebar />
+							{inited && <AppRouter />}
+						</div>
 					</Suspense>
 				</div>
 			}
