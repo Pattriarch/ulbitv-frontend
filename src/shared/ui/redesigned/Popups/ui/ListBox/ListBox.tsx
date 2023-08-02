@@ -57,7 +57,7 @@ export const ListBox = typedMemo(
 							{ [cls.readonly]: readonly },
 							[],
 						)}
-					>{`${label}>`}</p>
+					>{`${label}:`}</p>
 				)}
 				<HListBox
 					disabled={readonly}

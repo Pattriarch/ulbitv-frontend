@@ -71,7 +71,6 @@ export const ArticleCardRedesigned = memo((props: ArticleCardProps) => {
 				</VStack>
 				<div className={cls.imageWrapper}>
 					<AppImage src={data?.img} className={cls.image} />
-					{/* <Avatar size={200} src={data?.img} className={cls.avatar} /> */}
 				</div>
 				<VStack max>
 					<Text text={t('Путь к изображению')} />

@@ -1,7 +1,6 @@
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
-
 import { Currency } from '../../model/types/currency';
 
 import { ToggleFeatures } from '@/shared/lib/features';
@@ -36,8 +35,8 @@ export const CurrencySelect = (props: CurrencySelectProps): JSX.Element => {
 	const listBoxProps = {
 		className,
 		value,
-		defaultValue: 'Укажите валюту',
-		label: 'Укажите валюту',
+		defaultValue: t('Укажите валюту'),
+		label: t('Укажите валюту'),
 		items: options,
 		readonly,
 		onChange,
