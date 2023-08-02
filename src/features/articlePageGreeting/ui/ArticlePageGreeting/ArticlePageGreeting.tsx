@@ -1,13 +1,14 @@
 import { memo, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-
 import { saveJsonSettings, useJsonSettings } from '@/entities/User';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useDevice } from '@/shared/lib/hooks/useDevice/useDevice';
-import { Text } from '@/shared/ui/deprecated/Text';
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
 import { Drawer } from '@/shared/ui/redesigned/Drawer';
 import { Modal } from '@/shared/ui/redesigned/Modal';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 export const ArticlePageGreeting = memo(() => {
 	const { t } = useTranslation();
@@ -26,11 +27,24 @@ export const ArticlePageGreeting = memo(() => {
 	const onClose = () => setIsOpen(false);
 
 	const text = (
-		<Text
-			title={t('Добро пожаловать на страницу статей')}
-			text={t(
-				'Здесь вы можете искать и просматривать статьи на различные темы',
-			)}
+		<ToggleFeatures
+			name={'isAppRedesigned'}
+			on={
+				<Text
+					title={t('Добро пожаловать на страницу статей')}
+					text={t(
+						'Здесь вы можете искать и просматривать статьи на различные темы',
+					)}
+				/>
+			}
+			off={
+				<TextDeprecated
+					title={t('Добро пожаловать на страницу статей')}
+					text={t(
+						'Здесь вы можете искать и просматривать статьи на различные темы',
+					)}
+				/>
+			}
 		/>
 	);
 
