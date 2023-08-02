@@ -21,6 +21,9 @@ export function useTheme(): UseThemeResult {
 				newTheme = Theme.TAN;
 				break;
 			case Theme.TAN:
+				newTheme = Theme.LAKE;
+				break;
+			case Theme.LAKE:
 				newTheme = Theme.DARK;
 				break;
 			default:
@@ -28,7 +31,6 @@ export function useTheme(): UseThemeResult {
 		}
 		setTheme?.(newTheme);
 		document.body.className = newTheme;
-		// localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
 		saveAction?.(newTheme);
 	};
 
