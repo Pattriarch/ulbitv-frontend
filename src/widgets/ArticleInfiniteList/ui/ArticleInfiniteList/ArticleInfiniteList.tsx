@@ -2,17 +2,16 @@ import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-
 import {
 	getArticlesLastScrolledIndex,
 	getArticlesPageError,
 	getArticlesPageIsLoading,
 	getArticlesPageView,
-} from '../../model/selectors/articlesPageSelectors';
+} from '../../../../pages/ArticlesPage/model/selectors/articlesPageSelectors';
 import {
 	articlesPageActions,
 	getArticles,
-} from '../../model/slices/articlesPageSlice';
+} from '../../../../pages/ArticlesPage/model/slices/articlesPageSlice';
 
 import { ArticleList } from '@/entities/Article';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';

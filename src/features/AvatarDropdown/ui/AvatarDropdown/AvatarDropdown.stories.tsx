@@ -14,7 +14,6 @@ const meta: Meta<typeof AvatarDropdown> = {
 export default meta;
 type Story = StoryObj<typeof AvatarDropdown>;
 
-// todo: поправить направление dropdown после добавления floating ui
 export const Normal: Story = {
 	decorators: [
 		StoreDecorator({

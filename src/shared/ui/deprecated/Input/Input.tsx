@@ -9,6 +9,7 @@ import React, {
 import { classNames, type Mods } from '@/shared/lib/classNames/classNames';
 
 import cls from './Input.module.scss';
+import { useAppEffect } from '@/shared/lib/hooks/useAppEffect/useAppEffect';
 
 type HTMLInputProps = Omit<
 	InputHTMLAttributes<HTMLInputElement>,
@@ -49,7 +50,7 @@ export const Input = memo((props: InputProps): JSX.Element => {
 
 	const isCaretVisible = isFocused && !readonly;
 
-	useEffect(() => {
+	useAppEffect(() => {
 		if (autofocus) {
 			setIsFocused(true);
 			ref?.current?.focus();

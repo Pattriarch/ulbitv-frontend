@@ -9,7 +9,7 @@
 
 .EditArticleBlock {
   position: relative;
-  border: 1px solid black;
+  border: 1px solid var(--primary-color);
   padding: 8px;
   min-height: 56px;
   width: 100%;
@@ -32,6 +32,7 @@
   right: 48px;
   position: absolute;
   cursor: pointer;
+  color: white;
 }
 
 .moveIcon,
@@ -40,4 +41,5 @@
   right: 16px;
   position: absolute;
   cursor: pointer;
+  color: white;
 }

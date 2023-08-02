@@ -1,5 +1,5 @@
 import { Listbox as HListBox } from '@headlessui/react';
-import { Fragment, type ReactNode } from 'react';
+import { Fragment, type ReactNode, useMemo } from 'react';
 
 import { HStack } from '../../../../redesigned/Stack';
 import { Button } from '../../../Button/Button';
@@ -45,6 +45,10 @@ export const ListBox = typedMemo(<T extends string>(props: ListBoxProps<T>) => {
 
 	const optionsClasses = [popupCls[direction]];
 
+	const selectedItem = useMemo(() => {
+		return items?.find((item) => item.value === value);
+	}, [items, value]);
+
 	return (
 		<HStack gap={'8'}>
 			{label && (
@@ -71,7 +75,9 @@ export const ListBox = typedMemo(<T extends string>(props: ListBoxProps<T>) => {
 					className={popupCls.trigger}
 					as={'div'}
 				>
-					<Button disabled={readonly}>{value ?? defaultValue}</Button>
+					<Button disabled={readonly}>
+						{selectedItem?.content ?? defaultValue}
+					</Button>
 				</HListBox.Button>
 				<HListBox.Options
 					className={classNames(cls.options, {}, optionsClasses)}

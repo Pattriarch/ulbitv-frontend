@@ -68,7 +68,6 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
 		},
 	];
 
-	// todo: floating UI for direction
 	return (
 		<ToggleFeatures
 			name={'isAppRedesigned'}

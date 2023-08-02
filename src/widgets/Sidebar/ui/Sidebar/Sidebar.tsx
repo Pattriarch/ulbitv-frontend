@@ -11,7 +11,7 @@ import { ToggleFeatures } from '@/shared/lib/features';
 import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { AppLogo } from '@/shared/ui/redesigned/AppLogo';
 import { Icon } from '@/shared/ui/redesigned/Icon';
-import { VStack } from '@/shared/ui/redesigned/Stack';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 
 import cls from './Sidebar.module.scss';
 
@@ -59,10 +59,10 @@ export const Sidebar = memo(({ className }: SidebarProps): JSX.Element => {
 						Svg={ArrowIcon}
 						clickable
 					/>
-					<div className={cls.switchers}>
+					<HStack gap={'16'} className={cls.switchers}>
 						<ThemeSwitcher />
 						<LangSwitcher short={collapsed} className={cls.lang} />
-					</div>
+					</HStack>
 				</aside>
 			}
 			off={
@@ -94,10 +94,10 @@ export const Sidebar = memo(({ className }: SidebarProps): JSX.Element => {
 							/>
 						))}
 					</VStack>
-					<div className={cls.switchers}>
+					<HStack gap={'16'} className={cls.switchers}>
 						<ThemeSwitcher />
 						<LangSwitcher short={collapsed} className={cls.lang} />
-					</div>
+					</HStack>
 				</aside>
 			}
 		/>

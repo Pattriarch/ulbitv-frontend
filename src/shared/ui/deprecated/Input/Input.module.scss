@@ -1,5 +1,6 @@
 .InputWrapper {
     display: flex;
+    width: 100%;
 }
 
 .placeholder {
@@ -56,6 +57,6 @@
 }
 
 .outlined {
-    border: 1px solid black;
+    border: 1px solid var(--primary-color);
     padding: 8px;
 }

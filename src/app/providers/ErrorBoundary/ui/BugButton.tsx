@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Button } from '@/shared/ui/deprecated/Button';
+import { useAppEffect } from '@/shared/lib/hooks/useAppEffect/useAppEffect';
 
 // Компонент для тестирования ErrorBoundary
 export const BugButton = (): JSX.Element => {
@@ -12,7 +13,7 @@ export const BugButton = (): JSX.Element => {
 		setError(true);
 	};
 
-	useEffect(() => {
+	useAppEffect(() => {
 		if (error) {
 			throw new Error();
 		}

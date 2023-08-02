@@ -1,4 +1,5 @@
 .options {
+    overflow: hidden;
     background: var(--listbox-bg);
     position: absolute;
     z-index: var(--listbox-z-index);
@@ -8,6 +9,7 @@
 }
 
 .item {
+    color: var(--primary-color);
     padding: 10px 20px;
 }
 

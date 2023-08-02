@@ -96,7 +96,6 @@ export const EditArticleBlock = memo((props: EditArticleBlockProps) => {
 		[cls.draggable]: !isEdit,
 	};
 
-	// todo иконки либо сделать обернуть в Button, либо сделать кликабельной Icon
 	const icons = (isEdit: boolean) => {
 		return isEdit ? (
 			<>

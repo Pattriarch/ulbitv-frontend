@@ -57,17 +57,13 @@ export const CountrySelect = (props: CountrySelectProps): JSX.Element => {
 		items: options,
 		readonly,
 		onChange,
-		direction: 'topRight',
+		direction: 'topRight' as const,
 	};
 
-	// todo: floating UI для позиционирования
-	// todo: добавить label
 	return (
 		<ToggleFeatures
 			name={'isAppRedesigned'}
-			// @ts-expect-error todo fix it
 			on={<ListBox {...listBoxProps} />}
-			// @ts-expect-error todo fix it
 			off={<ListBoxDeprecated {...listBoxProps} />}
 		/>
 	);

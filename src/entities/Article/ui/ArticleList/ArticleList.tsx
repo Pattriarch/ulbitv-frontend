@@ -24,6 +24,7 @@ import { Text, TextSize } from '@/shared/ui/deprecated/Text';
 import { HStack } from '@/shared/ui/redesigned/Stack';
 
 import cls from './ArticleList.module.scss';
+import { useAppEffect } from '@/shared/lib/hooks/useAppEffect/useAppEffect';
 
 interface ArticleListProps {
 	Header?: () => ReactNode;
@@ -66,7 +67,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
 	const { t } = useTranslation();
 	const virtuosoGridRef = useRef<VirtuosoGridHandle>(null);
 
-	useEffect(() => {
+	useAppEffect(() => {
 		let timeout: NodeJS.Timeout;
 		if (view === ArticleView.SMALL) {
 			timeout = setTimeout(() => {
@@ -79,7 +80,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
 		return () => clearTimeout(timeout);
 	}, [lastScrolledIndex, view]);
 
-	useEffect(() => {
+	useAppEffect(() => {
 		window.addEventListener('error', (e) => {
 			if (e.message === 'ResizeObserver loop limit exceeded') {
 				const resizeObserverErrDiv = document.getElementById(

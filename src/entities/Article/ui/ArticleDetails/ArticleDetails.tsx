@@ -35,6 +35,7 @@ import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
 
 import cls from './ArticleDetails.module.scss';
+import { useAppEffect } from '@/shared/lib/hooks/useAppEffect/useAppEffect';
 
 interface ArticleDetailsProps {
 	className?: string;
@@ -174,10 +175,8 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 	const error = useSelector(getArticleDetailsError);
 	const article = useSelector(getArticleDetailsData);
 
-	useEffect(() => {
-		if (__PROJECT__ !== 'storybook') {
-			void dispatch(fetchArticleById(id));
-		}
+	useAppEffect(() => {
+		void dispatch(fetchArticleById(id));
 	}, [dispatch, id]);
 
 	let content;

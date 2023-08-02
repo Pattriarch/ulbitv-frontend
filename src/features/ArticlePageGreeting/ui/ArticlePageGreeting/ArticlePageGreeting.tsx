@@ -9,6 +9,7 @@ import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
 import { Drawer } from '@/shared/ui/redesigned/Drawer';
 import { Modal } from '@/shared/ui/redesigned/Modal';
 import { Text } from '@/shared/ui/redesigned/Text';
+import { useAppEffect } from '@/shared/lib/hooks/useAppEffect/useAppEffect';
 
 export const ArticlePageGreeting = memo(() => {
 	const { t } = useTranslation();
@@ -17,7 +18,7 @@ export const ArticlePageGreeting = memo(() => {
 	const dispatch = useAppDispatch();
 	const isMobile = useDevice();
 
-	useEffect(() => {
+	useAppEffect(() => {
 		if (!isArticlesPageWasOpened) {
 			setIsOpen(true);
 			void dispatch(saveJsonSettings({ isArticlesPageWasOpened: true }));

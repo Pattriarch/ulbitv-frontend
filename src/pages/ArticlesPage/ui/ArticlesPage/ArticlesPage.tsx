@@ -4,12 +4,12 @@ import { useSearchParams } from 'react-router-dom';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { articlesPageReducer } from '../../model/slices/articlesPageSlice';
-import { ArticleInfiniteList } from '../../ui/ArticleInfiniteList/ArticleInfiniteList';
-import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
-import { FiltersContainer } from '../FiltersContainer/FiltersContainer';
-import { ViewSelectorContainer } from '../ViewSelectorContainer/ViewSelectorContainer';
+import { ArticleInfiniteList } from '@/widgets/ArticleInfiniteList/ui/ArticleInfiniteList/ArticleInfiniteList';
+import { ArticlesPageFilters } from '@/features/ArticlesPageFilters/ui/ArticlesPageFilters/ArticlesPageFilters';
+import { FiltersContainer } from '@/pages/ArticlesPage/ui/FiltersContainer/FiltersContainer';
+import { ViewSelectorContainer } from '@/pages/ArticlesPage/ui/ViewSelectorContainer/ViewSelectorContainer';
 
-import { ArticlePageGreeting } from '@/features/articlePageGreeting';
+import { ArticlePageGreeting } from '@/features/ArticlePageGreeting';
 import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {

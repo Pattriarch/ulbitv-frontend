@@ -3,12 +3,18 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
 import { getUserAuthData } from '@/entities/User';
-import { getFeatureFlag, updateFeatureFlags } from '@/shared/lib/features';
+import {
+	getFeatureFlag,
+	ToggleFeatures,
+	updateFeatureFlags,
+} from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useForceUpdate } from '@/shared/lib/render/forceUpdate';
+import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popups';
 import { ListBox } from '@/shared/ui/redesigned/Popups';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 import { HStack } from '@/shared/ui/redesigned/Stack';
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
 import { Text } from '@/shared/ui/redesigned/Text';
 
 interface UiDesignSwitcherProps {
@@ -53,15 +59,32 @@ export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
 
 	return (
 		<HStack gap={'8'}>
-			<Text text={t('Вариант интерфейса')} />
+			<ToggleFeatures
+				name={'isAppRedesigned'}
+				on={<Text text={t('Вариант интерфейса')} />}
+				off={<TextDeprecated text={t('Вариант интерфейса')} />}
+			/>
 			{isLoading ? (
 				<Skeleton width={100} height={40} />
 			) : (
-				<ListBox
-					onChange={onChange}
-					items={items}
-					value={isAppRedesigned ? 'new' : 'old'}
-					className={className}
+				<ToggleFeatures
+					name={'isAppRedesigned'}
+					on={
+						<ListBox
+							onChange={onChange}
+							items={items}
+							value={isAppRedesigned ? 'new' : 'old'}
+							className={className}
+						/>
+					}
+					off={
+						<ListBoxDeprecated
+							onChange={onChange}
+							items={items}
+							value={isAppRedesigned ? 'new' : 'old'}
+							className={className}
+						/>
+					}
 				/>
 			)}
 		</HStack>

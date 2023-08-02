@@ -15,6 +15,7 @@ import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { Navbar } from '@/widgets/Navbar';
 import { PageLoader } from '@/widgets/PageLoader';
 import { Sidebar } from '@/widgets/Sidebar';
+import { useAppEffect } from '@/shared/lib/hooks/useAppEffect/useAppEffect';
 
 const App = memo((): JSX.Element => {
 	const { theme } = useTheme();
@@ -22,7 +23,7 @@ const App = memo((): JSX.Element => {
 	const inited = useSelector(getUserInited);
 	const toolbar = useAppToolbar();
 
-	useEffect(() => {
+	useAppEffect(() => {
 		if (!inited) {
 			void dispatch(initAuthData());
 		}

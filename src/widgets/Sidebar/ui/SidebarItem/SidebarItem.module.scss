@@ -9,7 +9,9 @@
 }
 
 .icon {
-    color: var(--inverted-primary-color);
+    fill: var(--inverted-primary-color);
+    width: 20px;
+    height: 20px;
 }
 
 .collapsed {

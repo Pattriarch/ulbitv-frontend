@@ -8,6 +8,7 @@ import React, {
 import { classNames, type Mods } from '@/shared/lib/classNames/classNames';
 
 import cls from './Textarea.module.scss';
+import { useAppEffect } from '@/shared/lib/hooks/useAppEffect/useAppEffect';
 
 type HTMLTextareaProps = Omit<
 	TextareaHTMLAttributes<HTMLTextAreaElement>,
@@ -39,7 +40,7 @@ export const Textarea = memo((props: TextareaProps) => {
 
 	const ref = useRef<HTMLTextAreaElement>(null);
 
-	useEffect(() => {
+	useAppEffect(() => {
 		if (autofocus) {
 			ref?.current?.focus();
 		}
@@ -62,14 +63,14 @@ export const Textarea = memo((props: TextareaProps) => {
 				cls[theme],
 			])}
 		>
-				<textarea
-					ref={ref}
-					value={value}
-					onChange={onChangeHandler}
-					className={cls.textarea}
-					readOnly={readonly}
-					{...otherProps}
-				/>
+			<textarea
+				ref={ref}
+				value={value}
+				onChange={onChangeHandler}
+				className={cls.textarea}
+				readOnly={readonly}
+				{...otherProps}
+			/>
 		</div>
 	);
 });

@@ -9,6 +9,7 @@ import {
 	type StateSchema,
 	type StateSchemaKey,
 } from '@/app/providers/StoreProvider';
+import { useAppEffect } from '@/shared/lib/hooks/useAppEffect/useAppEffect';
 
 export type ReducersList = {
 	// явно указываем, что по ключу мы хотим получить reducer из StateSchema
@@ -28,7 +29,7 @@ export const DynamicModuleLoader = (
 	const store = useStore() as ReduxStoreWithManager;
 	const dispatch = useAppDispatch();
 
-	useEffect(() => {
+	useAppEffect(() => {
 		// const mountedReducers = store.reducerManager.getMountedReducers();
 		const mountedReducers = store.reducerManager.getReducerMap();
 

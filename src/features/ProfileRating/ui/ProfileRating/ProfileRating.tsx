@@ -2,7 +2,6 @@ import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-
 import {
 	useGetProfileRating,
 	useRateProfile,
@@ -10,7 +9,9 @@ import {
 
 import { RatingCard } from '@/entities/Rating';
 import { getUserAuthData } from '@/entities/User';
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
+import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 interface ProfileRatingProps {
 	className?: string;
@@ -56,7 +57,13 @@ export const ProfileRating = memo((props: ProfileRatingProps) => {
 	}
 
 	if (isLoading) {
-		return <Skeleton width={'100%'} height={120} />;
+		return (
+			<ToggleFeatures
+				name={'isAppRedesigned'}
+				on={<Skeleton width={'100%'} height={135} />}
+				off={<SkeletonDeprecated width={'100%'} height={120} />}
+			/>
+		);
 	}
 
 	const rating = data?.[0];

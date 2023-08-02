@@ -16,4 +16,10 @@
     outline: none;
     color: var(--primary-color);
     cursor: pointer;
+    font-size: var(--font-m);
+    text-align: left;
+
+    &:hover {
+        opacity: 0.75;
+    }
 }

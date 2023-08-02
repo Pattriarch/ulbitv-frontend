@@ -44,7 +44,6 @@ export function createReduxStore(
 			}).concat(rtkApi.middleware),
 	});
 
-	// todo: fix it
 	// @ts-expect-error
 	store.reducerManager = reducerManager;
 

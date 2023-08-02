@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { useAppEffect } from '@/shared/lib/hooks/useAppEffect/useAppEffect';
 
 interface UseModalProps {
 	isOpen?: boolean;
@@ -17,7 +18,7 @@ export function useModal(props: UseModalProps) {
 	const [isMounted, setIsMounted] = useState(false);
 	const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
-	useEffect(() => {
+	useAppEffect(() => {
 		if (isOpen) {
 			setIsMounted(true);
 		}
@@ -44,7 +45,7 @@ export function useModal(props: UseModalProps) {
 		[close],
 	);
 
-	useEffect(() => {
+	useAppEffect(() => {
 		if (isOpen) {
 			window.addEventListener('keydown', onKeyDown);
 		}

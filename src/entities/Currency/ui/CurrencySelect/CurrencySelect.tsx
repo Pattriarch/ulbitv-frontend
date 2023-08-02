@@ -9,7 +9,7 @@ import { ListBox } from '@/shared/ui/redesigned/Popups';
 interface CurrencySelectProps {
 	className?: string;
 	value?: Currency;
-	onChange: (value: Currency) => void;
+	onChange?: (value: Currency) => void;
 	readonly?: boolean;
 }
 

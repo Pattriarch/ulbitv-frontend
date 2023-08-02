@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
 import { FiltersContainer } from './FiltersContainer';
 
 const meta: Meta<typeof FiltersContainer> = {

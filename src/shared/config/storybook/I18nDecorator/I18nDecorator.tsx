@@ -5,7 +5,7 @@ import { I18nextProvider } from 'react-i18next';
 import i18nForTest from '../../i18n/i18nForTest';
 
 import { Loader } from '@/shared/ui/deprecated/Loader';
-
+import { useAppEffect } from '@/shared/lib/hooks/useAppEffect/useAppEffect';
 
 export const I18nDecorator = (
 	Story: StoryFn,
@@ -13,7 +13,7 @@ export const I18nDecorator = (
 ): JSX.Element => {
 	const { locale } = context.globals;
 
-	useEffect(() => {
+	useAppEffect(() => {
 		void i18nForTest.changeLanguage(locale);
 	}, [locale]);
 

@@ -4,6 +4,7 @@ import { ThemeContext } from '../../../../shared/context/ThemeContext';
 
 import { LOCAL_STORAGE_THEME_KEY } from '@/shared/const/localStorage';
 import { Theme } from '@/shared/const/theme';
+import { useAppEffect } from '@/shared/lib/hooks/useAppEffect/useAppEffect';
 
 interface ThemeProviderProps {
 	initialTheme?: Theme;
@@ -19,14 +20,14 @@ const ThemeProvider = (props: ThemeProviderProps) => {
 		initialTheme || fallbackTheme || Theme.LIGHT,
 	);
 
-	useEffect(() => {
+	useAppEffect(() => {
 		if (!isThemeInited && initialTheme) {
 			setTheme(initialTheme);
 			setThemeInited(true);
 		}
 	}, [initialTheme, isThemeInited]);
 
-	useEffect(() => {
+	useAppEffect(() => {
 		localStorage.setItem(LOCAL_STORAGE_THEME_KEY, theme);
 	}, [theme]);
 

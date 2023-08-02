@@ -2,7 +2,6 @@ import { memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-
 import { ValidateProfileError } from '../../model/consts/consts';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
@@ -24,6 +23,7 @@ import {
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
 import { VStack } from '@/shared/ui/redesigned/Stack';
+import { useAppEffect } from '@/shared/lib/hooks/useAppEffect/useAppEffect';
 
 interface EditableProfileCardProps {
 	className?: string;
@@ -57,12 +57,9 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 		[ValidateProfileError.NO_DATA]: t('Данные не указаны'),
 	};
 
-	// todo: Нужно пофиксить (через RTKQ), ибо useInitialEffect не перерендеривает страничку при изменении айдишника профиля
-	useEffect(() => {
-		if (__PROJECT__ !== 'storybook' && __PROJECT__ !== 'jest') {
-			if (id) {
-				void dispatch(fetchProfileData(id));
-			}
+	useAppEffect(() => {
+		if (id) {
+			void dispatch(fetchProfileData(id));
 		}
 	}, [dispatch, id]);
 

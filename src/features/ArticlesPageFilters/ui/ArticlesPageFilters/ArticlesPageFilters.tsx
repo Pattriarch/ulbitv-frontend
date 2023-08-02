@@ -1,8 +1,8 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { useArticleFilters } from '../../lib/hooks/useArticleFilters';
-import { ViewSelectorContainer } from '../ViewSelectorContainer/ViewSelectorContainer';
+import { useArticleFilters } from '../../../../pages/ArticlesPage/lib/hooks/useArticleFilters';
+import { ViewSelectorContainer } from '@/pages/ArticlesPage/ui/ViewSelectorContainer/ViewSelectorContainer';
 
 import { ArticleSortSelector } from '@/features/ArticleSortSelector';
 import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
@@ -16,7 +16,6 @@ interface ArticlesPageFiltersProps {
 	className?: string;
 }
 
-// todo: переписать на фичу
 export const ArticlesPageFilters = memo(
 	({ className }: ArticlesPageFiltersProps) => {
 		const { t } = useTranslation();

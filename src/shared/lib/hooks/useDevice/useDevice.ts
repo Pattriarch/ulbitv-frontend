@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
+import { useAppEffect } from '@/shared/lib/hooks/useAppEffect/useAppEffect';
 
 export function useDevice() {
 	const [isMobile, setIsMobile] = useState(false);
 
-	useEffect(() => {
+	useAppEffect(() => {
 		const handleResize = () =>
 			setIsMobile(window.matchMedia('(pointer:coarse)').matches);
 

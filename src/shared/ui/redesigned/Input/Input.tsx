@@ -13,6 +13,7 @@ import { Text } from '../Text';
 import { classNames, type Mods } from '@/shared/lib/classNames/classNames';
 
 import cls from './Input.module.scss';
+import { useAppEffect } from '@/shared/lib/hooks/useAppEffect/useAppEffect';
 
 type HTMLInputProps = Omit<
 	InputHTMLAttributes<HTMLInputElement>,
@@ -56,7 +57,7 @@ export const Input = memo((props: InputProps): JSX.Element => {
 	const ref = useRef<HTMLInputElement>(null);
 	const [isFocused, setIsFocused] = useState(false);
 
-	useEffect(() => {
+	useAppEffect(() => {
 		if (autofocus) {
 			setIsFocused(true);
 			ref?.current?.focus();

@@ -11,6 +11,7 @@ import {
 import { toggleFeatures } from '@/shared/lib/features';
 
 import cls from './Drawer.module.scss';
+import { useAppEffect } from '@/shared/lib/hooks/useAppEffect/useAppEffect';
 
 interface DrawerProps {
 	className?: string;
@@ -31,7 +32,7 @@ export const DrawerContent = memo((props: DrawerProps) => {
 		api.start({ y: 0, immediate: false });
 	}, [api]);
 
-	useEffect(() => {
+	useAppEffect(() => {
 		if (isOpen) {
 			openDrawer();
 		}
