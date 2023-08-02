@@ -26,9 +26,6 @@ export const loginByUsername = createAsyncThunk<
 		// обновляем стейт
 		dispatch(userActions.setAuthData(response.data));
 
-		// todo: поправить переход
-		// extra?.navigate?.('/profile');
-
 		return response.data;
 	} catch (e) {
 		console.error(e);

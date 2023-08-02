@@ -1,4 +1,3 @@
-import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Currency } from '../../model/types/currency';
@@ -10,7 +9,7 @@ import { ListBox } from '@/shared/ui/redesigned/Popups';
 interface CurrencySelectProps {
 	className?: string;
 	value?: Currency;
-	onChange?: (value: Currency) => void;
+	onChange: (value: Currency) => void;
 	readonly?: boolean;
 }
 
@@ -24,13 +23,6 @@ export const CurrencySelect = (props: CurrencySelectProps): JSX.Element => {
 	const { className, value, onChange, readonly } = props;
 
 	const { t } = useTranslation();
-
-	const onChangeHandler = useCallback(
-		(value: string) => {
-			onChange?.(value as Currency);
-		},
-		[onChange],
-	);
 
 	const listBoxProps = {
 		className,
@@ -46,9 +38,7 @@ export const CurrencySelect = (props: CurrencySelectProps): JSX.Element => {
 	return (
 		<ToggleFeatures
 			name={'isAppRedesigned'}
-			// @ts-expect-error todo fix it
 			on={<ListBox {...listBoxProps} />}
-			// @ts-expect-error todo fix it
 			off={<ListBoxDeprecated {...listBoxProps} />}
 		/>
 	);

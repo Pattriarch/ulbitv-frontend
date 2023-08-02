@@ -1,27 +1,27 @@
 import { Listbox as HListBox } from '@headlessui/react';
-import { Fragment, memo, type ReactNode } from 'react';
+import { Fragment, type ReactNode } from 'react';
 
 import { HStack } from '../../../../redesigned/Stack';
 import { Button } from '../../../Button/Button';
 import popupCls from '../../styles/popup.module.scss';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { type DropdownDirection } from '@/shared/types';
+import { type DropdownDirection, typedMemo } from '@/shared/types';
 
 import cls from './ListBox.module.scss';
 
-export interface ListBoxItem {
-	value: string;
+export interface ListBoxItem<T extends string> {
+	value: T;
 	content: ReactNode;
 	disabled?: boolean;
 }
 
-interface ListBoxProps {
+interface ListBoxProps<T extends string> {
 	className?: string;
-	items?: ListBoxItem[];
-	value?: string;
+	items?: ListBoxItem<T>[];
+	value?: T;
 	defaultValue?: string;
-	onChange: <T extends string>(value: T) => void;
+	onChange?: (value: T) => void;
 	readonly?: boolean;
 	direction?: DropdownDirection;
 	label?: string;
@@ -31,7 +31,7 @@ interface ListBoxProps {
  * Устарел, используем новые компоненты из папки redesigned
  * @deprecated
  */
-export const ListBox = memo((props: ListBoxProps) => {
+export const ListBox = typedMemo(<T extends string>(props: ListBoxProps<T>) => {
 	const {
 		className,
 		items,

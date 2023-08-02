@@ -31,16 +31,7 @@
 		}
 	},
 	"exclude": [
-//		"cypress",
-		"cypress.config.ts"
+		"cypress.config.ts",
+		"scripts"
 	],
-//	"include": [
-//		"./vite.config.ts",
-//		"./webpack.config.ts",
-//		"./scripts/**/*.ts",
-//		"./config/**/*.ts",
-//		"./config/**/*.tsx",
-//		"./src/**/*.ts",
-//		"./src/**/*.tsx"
-//	]
 }

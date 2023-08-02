@@ -142,6 +142,3 @@ files.forEach((sourceFile) => {
 });
 
 void project.save();
-
-// todo: fix it
-export {};
