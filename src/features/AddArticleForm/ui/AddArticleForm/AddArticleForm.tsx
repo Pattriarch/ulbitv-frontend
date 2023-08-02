@@ -22,12 +22,14 @@ import {
 	DynamicModuleLoader,
 	type ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
-	Button,
+	Button as ButtonDeprecated,
 	ButtonSize,
 	ButtonTheme,
 } from '@/shared/ui/deprecated/Button/Button';
+import { Button } from '@/shared/ui/redesigned/Button/Button';
 
 import cls from './AddArticleForm.module.scss';
 
@@ -268,14 +270,30 @@ export const AddArticleForm = memo((props: AddArticleProps) => {
 					onChangeBlockState={onChangeBlockState}
 				/>
 				<div className={cls.actionBtns}>
-					<Button
-						type={'button'}
-						size={ButtonSize.L}
-						theme={ButtonTheme.BACKGROUND_INVERTED}
-						onClick={onSave}
-					>
-						{t('Сохранить')}
-					</Button>
+					<ToggleFeatures
+						name={'isAppRedesigned'}
+						on={
+							<Button
+								type={'button'}
+								size={'l'}
+								variant={'outline'}
+								color={'success'}
+								onClick={onSave}
+							>
+								{t('Сохранить')}
+							</Button>
+						}
+						off={
+							<ButtonDeprecated
+								type={'button'}
+								size={ButtonSize.L}
+								theme={ButtonTheme.BACKGROUND_INVERTED}
+								onClick={onSave}
+							>
+								{t('Сохранить')}
+							</ButtonDeprecated>
+						}
+					/>
 				</div>
 			</div>
 		</DynamicModuleLoader>

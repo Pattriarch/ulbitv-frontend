@@ -979,6 +979,60 @@
       ],
       "blocks": [],
       "id": "J-RvSxR"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "order": 1,
+          "type": "TEXT",
+          "title": "тест название",
+          "paragraphs": [
+            "тест параграф 1",
+            "тест параграф 2"
+          ]
+        },
+        {
+          "id": "2",
+          "order": 2,
+          "type": "CODE",
+          "code": "<div></div>"
+        },
+        {
+          "id": "3",
+          "order": 3,
+          "type": "IMAGE",
+          "title": "This it the best image you've ever saw",
+          "src": "https://cpmr-islands.org/wp-content/uploads/sites/4/2019/07/test.png"
+        }
+      ],
+      "title": "тестовое название",
+      "subtitle": "тестовый подзаголовок",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Test-Logo.svg/783px-Test-Logo.svg.png",
+      "views": 0,
+      "createdAt": "3.7.2023",
+      "userId": "2",
+      "id": "dDlZ81c",
+      "user": {
+        "id": "2",
+        "username": "user",
+        "password": "123",
+        "roles": [
+          "USER"
+        ],
+        "features": {
+          "isArticleRatingEnabled": false,
+          "isCounterEnabled": false,
+          "isAppRedesigned": true
+        },
+        "jsonSettings": {
+          "theme": "app_dark_theme",
+          "isFirstVisit": true,
+          "settingsPageHasBeenOpen": false,
+          "isArticlesPageWasOpened": true
+        },
+        "avatar": "https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png"
+      }
     }
   ],
   "comments": [
@@ -1197,6 +1251,20 @@
       "rate": 4,
       "feedback": "круто",
       "id": "L0XrR2G"
+    },
+    {
+      "articleId": "dDlZ81c",
+      "userId": "2",
+      "rate": 2,
+      "feedback": "норм статья",
+      "id": "71cqpIw"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "rate": 4,
+      "feedback": "good",
+      "id": "Uio-MHA"
     }
   ],
   "profile-ratings": [

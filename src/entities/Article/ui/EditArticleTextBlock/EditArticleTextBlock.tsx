@@ -5,18 +5,16 @@ import { type ArticleTextBlock } from '../../model/types/article';
 import MinusIcon from '@/shared/assets/icons/minus-512-512.svg';
 import PlusIcon from '@/shared/assets/icons/plus-512-512.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { Input as InputDeprecated } from '@/shared/ui/deprecated/Input/Input';
-import { Input } from '@/shared/ui/redesigned/Input/Input';
 import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text/Text';
-import { Text } from '@/shared/ui/redesigned/Text/Text';
 import { Textarea as TextareaDeprecated } from '@/shared/ui/deprecated/Textarea/Textarea';
+import { Icon } from '@/shared/ui/redesigned/Icon';
+import { Input } from '@/shared/ui/redesigned/Input/Input';
+import { Text } from '@/shared/ui/redesigned/Text/Text';
 import { Textarea } from '@/shared/ui/redesigned/Textarea/Textarea';
 
 import cls from './EditArticleTextBlock.module.scss';
-import { ToggleFeatures } from '@/shared/lib/features';
-import { Icon } from '@/shared/ui/redesigned/Icon';
-import EditIcon from '@/shared/assets/icons/edit-512-512.svg';
 
 interface EditArticleTextBlockProps extends HTMLAttributes<HTMLDivElement> {
 	className?: string;
@@ -40,7 +38,7 @@ export const EditArticleTextBlock = memo((props: EditArticleTextBlockProps) => {
 
 	const onAddBlock = () => {
 		setEditBlock({
-			...block,
+			...editBlock,
 			paragraphs: [...editBlock.paragraphs, ''],
 		});
 	};
@@ -50,14 +48,14 @@ export const EditArticleTextBlock = memo((props: EditArticleTextBlockProps) => {
 		newParagraphs.splice(index, 1);
 
 		setEditBlock({
-			...block,
+			...editBlock,
 			paragraphs: newParagraphs,
 		});
 	};
 
 	const onChangeTitle = (value: string) => {
 		setEditBlock({
-			...block,
+			...editBlock,
 			title: value,
 		});
 	};
@@ -66,7 +64,7 @@ export const EditArticleTextBlock = memo((props: EditArticleTextBlockProps) => {
 		const newParagraphs = [...editBlock.paragraphs];
 		newParagraphs[index] = value;
 		setEditBlock({
-			...block,
+			...editBlock,
 			paragraphs: newParagraphs,
 		});
 	};
