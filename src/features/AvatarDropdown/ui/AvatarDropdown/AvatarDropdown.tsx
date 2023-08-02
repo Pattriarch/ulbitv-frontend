@@ -21,6 +21,8 @@ import { Dropdown as DropdownDeprecated } from '@/shared/ui/deprecated/Popups';
 import { Avatar } from '@/shared/ui/redesigned/Avatar';
 import { Dropdown } from '@/shared/ui/redesigned/Popups/ui/Dropdown/Dropdown';
 
+import cls from './AvatarDropdown.module.scss';
+
 interface AvatarDropdownProps {
 	className?: string;
 }
@@ -75,7 +77,7 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
 					direction={'bottomLeft'}
 					items={items}
 					trigger={<Avatar size={36} src={authData.avatar} />}
-					className={classNames('', {}, [className])}
+					className={classNames(cls.AvatarDropdown, {}, [className])}
 				/>
 			}
 			off={

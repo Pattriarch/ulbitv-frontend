@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
+import { CreateNewArticleButton } from '@/features/CreateNewArticleButton';
 import { NotificationButton } from '@/features/NotificationButton';
 import { getRouteArticleCreate, getRouteMain } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -48,7 +49,10 @@ export const Navbar = memo(({ className }: NavbarProps): JSX.Element => {
 						])}
 					>
 						<HStack gap={'16'} className={cls.actions}>
-							<NotificationButton />
+							<CreateNewArticleButton
+								className={cls.actionsBtn}
+							/>
+							<NotificationButton className={cls.actionsBtn} />
 							<AvatarDropdown />
 						</HStack>
 					</header>

@@ -64,6 +64,7 @@
         border: 2px solid var(--cancel-redesigned);
 
         &:hover {
+            color: var(--cancel-redesigned);
             opacity: 0.75;
         }
     }
@@ -72,6 +73,7 @@
         border: 2px solid var(--save-redesigned);
 
         &:hover {
+            color: var(--save-redesigned);
             opacity: 0.75;
         }
     }

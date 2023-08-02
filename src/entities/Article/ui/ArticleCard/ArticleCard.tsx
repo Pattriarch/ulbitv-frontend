@@ -1,5 +1,4 @@
 import { type DragEvent, memo } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { Article, ArticleBlock } from '../../model/types/article';
 import {
@@ -42,10 +41,7 @@ export interface ArticleCardProps {
 }
 
 export const ArticleCard = memo((props: ArticleCardProps) => {
-	const {
-		isLoading,
-		error,
-	} = props;
+	const { isLoading, error } = props;
 
 	if (isLoading) {
 		return (
@@ -74,86 +70,4 @@ export const ArticleCard = memo((props: ArticleCardProps) => {
 			off={<ArticleCardDeprecated {...props} />}
 		/>
 	);
-
-	// if (isLoading) {
-	// 	return (
-	// 		<div className={classNames(cls.EditArticleForm, {}, [className])}>
-	// 			<Loader />
-	// 		</div>
-	// 	);
-	// }
-
-	// if (error) {
-	// 	return (
-	// 		<div className={classNames(cls.EditArticleForm, {}, [className])}>
-	// 			<Text
-	// 				theme={TextTheme.ERROR}
-	// 				title={t('Произошла ошибка при загрузке статьи')}
-	// 			/>
-	// 		</div>
-	// 	);
-	// }
-
-	// return (
-	// 	<div className={classNames(cls.ArticleCard, {}, [className])}>
-	// 		<Text text={t('Заголовок статьи')} />
-	// 		<Input
-	// 			theme={'outlined'}
-	// 			className={cls.title}
-	// 			value={data?.title}
-	// 			onChange={onChangeTitle}
-	// 		/>
-	// 		<Text text={t('Подзаголовок статьи')} />
-	// 		<Input
-	// 			theme={'outlined'}
-	// 			className={cls.subtitle}
-	// 			value={data?.subtitle}
-	// 			onChange={onChangeSubtitle}
-	// 		/>
-	// 		<div className={cls.imageWrapper}>
-	// 			<AppImage src={data?.img} className={cls.image} />
-	// 			{/* <Avatar size={200} src={data?.img} className={cls.avatar} /> */}
-	// 		</div>
-	// 		<Text text={t('Путь к изображению')} />
-	// 		<Input
-	// 			theme={'outlined'}
-	// 			className={cls.subtitle}
-	// 			value={data?.img}
-	// 			onChange={onChangeImage}
-	// 		/>
-	// 		<Text text={t('Содержимое статьи')} />
-	// 		{data?.blocks
-	// 			?.slice()
-	// 			?.sort(sortBlocks)
-	// 			?.map((block) => (
-	// 				<Fragment key={block.id}>
-	// 					<EditArticleBlock
-	// 						onDragStart={(e) => dragStartHandler(e, block)}
-	// 						onDragLeave={(e) => dragEndHandler(e)}
-	// 						onDragEnd={(e) => dragEndHandler(e)}
-	// 						onDragOver={(e) => dragOverHandler(e)}
-	// 						onDrop={(e) => dropHandler(e, block)}
-	// 						draggable={true}
-	// 						onChangeBlockState={onChangeBlockState}
-	// 						block={block}
-	// 						className={cls.block}
-	// 					/>
-	// 					<Button
-	// 						className={cls.deleteBtn}
-	// 						theme={ButtonTheme.BACKGROUND_INVERTED}
-	// 						onClick={() => onRemoveBlock(block.id)}
-	// 					>
-	// 						{t('Удалить')}
-	// 					</Button>
-	// 				</Fragment>
-	// 			))}
-	// 		<HStack gap={'16'} className={cls.actions}>
-	// 			<Button onClick={onAddCodeBlock}>{t('Добавить код')}</Button>
-	// 			<Button onClick={onAddTextBlock}>{t('Добавить текст')}</Button>
-	// 			<Button onClick={onAddImageBlock}>
-	// 				{t('Добавить изображение')}
-	// 			</Button>
-	// 		</HStack>
-	// 	</div>
-	// );
 });

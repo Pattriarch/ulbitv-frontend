@@ -114,9 +114,13 @@ export const ArticleCardRedesigned = memo((props: ArticleCardProps) => {
 					))}
 			</VStack>
 			<HStack gap={'16'} className={cls.actions}>
-				<Button onClick={onAddCodeBlock}>{t('Добавить код')}</Button>
-				<Button onClick={onAddTextBlock}>{t('Добавить текст')}</Button>
-				<Button onClick={onAddImageBlock}>
+				<Button color={'success'} onClick={onAddCodeBlock}>
+					{t('Добавить код')}
+				</Button>
+				<Button color={'success'} onClick={onAddTextBlock}>
+					{t('Добавить текст')}
+				</Button>
+				<Button color={'success'} onClick={onAddImageBlock}>
 					{t('Добавить изображение')}
 				</Button>
 			</HStack>
