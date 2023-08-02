@@ -25,13 +25,9 @@ export const resetProfile = (profileId: string) => {
 };
 
 declare global {
-	// eslint-disable-next-line @typescript-eslint/no-namespace
 	namespace Cypress {
 		interface Chainable {
-			// eslint-disable-next-line @typescript-eslint/method-signature-style
 			updateProfile(firstName: string, lastName: string): Chainable<void>;
-
-			// eslint-disable-next-line @typescript-eslint/method-signature-style
 			resetProfile(profileId: string): Chainable<void>;
 		}
 	}

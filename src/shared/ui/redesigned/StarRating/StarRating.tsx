@@ -45,12 +45,6 @@ export const StarRating = memo((props: StarRatingProps) => {
 		}
 	};
 
-	// todo: fix it
-	// const mods = {
-	//     [cls.normal]: currentStarsCount >= starNumber,
-	//     [cls.hovered]: isHovered
-	// };
-
 	const mainClass = toggleFeatures({
 		name: 'isAppRedesigned',
 		on: () => cls.StarRatingRedesigned,

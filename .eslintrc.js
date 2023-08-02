@@ -75,7 +75,7 @@ module.exports = {
 					caseInsensitive: false,
 				},
 			},
-		], // todo: uncomment to get order
+		],
 		'unused-imports/no-unused-imports': 2,
 		'ulbitv-fsd/path-validator': [2, { alias: '@' }],
 		'ulbitv-fsd/public-api-validator': [
@@ -105,7 +105,6 @@ module.exports = {
 			},
 		],
 		'react/jsx-max-props-per-line': [2, { maximum: 3, when: 'multiline' }],
-		// "no-tabs": [2, {allowIndentationTabs: true}],
 		'react/button-has-type': 2,
 		'react-hooks/rules-of-hooks': 2,
 		'react-hooks/exhaustive-deps': 2,
@@ -182,14 +181,16 @@ module.exports = {
 		'@typescript-eslint/prefer-includes': 0,
 		'n/handle-callback-err': 0,
 		'@typescript-eslint/no-confusing-void-expression': 0,
-		'@typescript-eslint/prefer-nullish-coalescing': 0, // временно
+		'@typescript-eslint/prefer-nullish-coalescing': 0,
 		'@typescript-eslint/no-dynamic-delete': 0,
 		'@typescript-eslint/explicit-function-return-type': 0,
 		'no-void': 0,
 		'@typescript-eslint/no-invalid-void-type': 0,
 		'cypress/unsafe-to-chain-command': 0,
 		'react/prop-types': 0,
+		'@typescript-eslint/no-namespace': 0,
 		'@typescript-eslint/no-misused-promises': 0,
-		'@typescript-eslint/consistent-type-assertions': 0, // временно
+		'@typescript-eslint/method-signature-style': 0,
+		'@typescript-eslint/consistent-type-assertions': 0,
 	},
 };

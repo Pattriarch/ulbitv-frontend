@@ -31,12 +31,9 @@ export const removeArticle = (articleId: number) => {
 };
 
 declare global {
-	// eslint-disable-next-line @typescript-eslint/no-namespace
 	namespace Cypress {
 		interface Chainable {
-			// eslint-disable-next-line @typescript-eslint/method-signature-style
 			createArticle(article?: Article): Chainable<Article>;
-			// eslint-disable-next-line @typescript-eslint/method-signature-style
 			removeArticle(articleId: string): Chainable<void>;
 		}
 	}

@@ -28,8 +28,6 @@ export const updateProfileData = createAsyncThunk<
 
 	try {
 		const response = await extra.api.put<Profile>(
-			// todo: fix any
-			// eslint-disable-next-line @typescript-eslint/restrict-template-expressions
 			`/profile/${formData?.id}`,
 			formData,
 		);
