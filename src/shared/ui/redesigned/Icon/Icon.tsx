@@ -34,7 +34,9 @@ export const Icon = memo((props: IconProps) => {
 
 	const icon = (
 		<Svg
-			className={!clickable ? classNames(cls.Icon, {}, [className]) : ''}
+			className={
+				!clickable ? classNames(cls.Icon, {}, [className]) : cls.Icon
+			}
 			width={width}
 			height={height}
 			{...otherProps}

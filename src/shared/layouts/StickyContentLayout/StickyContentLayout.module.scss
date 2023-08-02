@@ -3,7 +3,7 @@
 	gap: 16px;
 	grid-template-areas:
 			'left content right';
-	grid-template-columns: min-content 1fr min-content;
+	grid-template-columns: min-content minmax(0px, 1fr) max-content;
 }
 
 .left {
@@ -20,7 +20,6 @@
 
 .right {
 	grid-area: right;
-	z-index: var(--sticky-content-right-z-index);
 }
 
 .left,
