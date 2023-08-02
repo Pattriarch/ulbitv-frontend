@@ -7,7 +7,6 @@
 
     &:not(:disabled):hover {
         color: var(--accent-redesigned);
-        // todo проверить нужно ли: stroke-opacity: var(--accent-redesigned);
 
         .addonLeft svg, .addonRight svg {
             color: var(--accent-redesigned)
@@ -40,7 +39,30 @@
     outline: none;
     border-radius: 34px;
 
-    // todo добавить стили normal, error, success для filled
+    &.normal {
+        &:hover {
+            color: var(--text-redesigned);
+            opacity: 0.75;
+        }
+    }
+
+    &.error {
+        background: var(--cancel-redesigned);
+
+        &:hover {
+            color: var(--text-redesigned);
+            opacity: 0.75;
+        }
+    }
+
+    &.success {
+        background: var(--save-redesigned);
+
+        &:hover {
+            color: var(--text-redesigned);
+            opacity: 0.75;
+        }
+    }
 }
 
 .outline {
