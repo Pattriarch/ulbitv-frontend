@@ -100,7 +100,9 @@ const Redesigned = () => {
 				src={article?.img}
 				className={cls.img}
 			/>
-			{article?.blocks?.map(renderArticleBlock)}
+			<VStack gap={'32'} max>
+				{article?.blocks?.map(renderArticleBlock)}
+			</VStack>
 		</>
 	);
 };
@@ -117,26 +119,6 @@ const ArticleDetailsSkeleton = () => {
 			name={'isAppRedesigned'}
 			on={
 				<VStack max gap={'16'}>
-					{/* <Text */}
-					{/*	tag={'h1'} */}
-					{/*	size={'l'} */}
-					{/*	weight={'extrabold'} */}
-					{/*	title={article?.title} */}
-					{/* /> */}
-					{/* <Text title={article?.subtitle} size={'m'} /> */}
-					{/* <AppImage */}
-					{/*	fallback={ */}
-					{/*		<SkeletonRedesigned */}
-					{/*			width={'100%'} */}
-					{/*			height={420} */}
-					{/*			border={'16'} */}
-					{/*		/> */}
-					{/*	} */}
-					{/*	src={article?.img} */}
-					{/*	className={cls.img} */}
-					{/* /> */}
-					{/* {article?.blocks?.map(renderArticleBlock)} */}
-
 					<Skeleton height={36} width={300} />
 					<Skeleton height={32} width={500} />
 
