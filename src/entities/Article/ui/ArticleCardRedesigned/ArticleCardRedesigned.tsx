@@ -70,7 +70,14 @@ export const ArticleCardRedesigned = memo((props: ArticleCardProps) => {
 					/>
 				</VStack>
 				<div className={cls.imageWrapper}>
-					<AppImage src={data?.img} className={cls.image} />
+					<AppImage
+						src={
+							!data?.img
+								? 'https://placehold.co/800x420'
+								: data.img
+						}
+						className={cls.image}
+					/>
 				</div>
 				<VStack max>
 					<Text text={t('Путь к изображению')} />

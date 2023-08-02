@@ -1,9 +1,7 @@
 .imageWrapper {
-	display: flex;
 	width: 100%;
-	justify-content: center;
 	margin: 16px 0;
-	max-height: 420px;
+	min-height: 100%;
 }
 
 .image {
