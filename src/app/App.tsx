@@ -2,7 +2,7 @@ import React, { memo, Suspense, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import { useAppToolbar } from './lib/useAppToolbar';
-import { AppRouter } from './providers/AppRouter';
+import { AppRouter } from './router/AppRouter';
 import { withTheme } from './providers/ThemeProvider/ui/withTheme';
 
 import { getUserInited, initAuthData } from '@/entities/User';

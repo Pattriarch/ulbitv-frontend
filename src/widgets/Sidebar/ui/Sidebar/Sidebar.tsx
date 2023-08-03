@@ -1,6 +1,6 @@
 import React, { memo, useState } from 'react';
 
-import { useSidebarItems } from '../../model/selectors/useSidebarItems';
+import { useSidebarItems } from '../../model/lib/useSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 
 import { LangSwitcher } from '@/features/LangSwitcher';

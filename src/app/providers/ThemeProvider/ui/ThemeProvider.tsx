@@ -1,4 +1,4 @@
-import React, { type ReactNode, useEffect, useMemo, useState } from 'react';
+import React, { type ReactNode, useMemo, useState } from 'react';
 
 import { ThemeContext } from '../../../../shared/context/ThemeContext';
 

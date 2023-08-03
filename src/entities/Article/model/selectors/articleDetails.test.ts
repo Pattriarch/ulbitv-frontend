@@ -8,7 +8,7 @@ import {
 
 import { type StateSchema } from '@/app/providers/StoreProvider';
 
-describe('articleDetails', () => {
+describe('entities/Article/selectors/articleDetails', () => {
 	test('should return article data', () => {
 		const data = {
 			id: '1',

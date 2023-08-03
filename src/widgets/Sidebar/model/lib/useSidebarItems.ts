@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 
-import { type SidebarItemType } from '../../model/types/sidebar';
+import { type SidebarItemType } from '../types/sidebar';
 
 import { getUserAuthData } from '@/entities/User';
 import AboutIconDeprecated from '@/shared/assets/icons/about-20-20.svg';
