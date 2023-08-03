@@ -5,6 +5,7 @@ import { NotificationList } from './NotificationList';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 import mock = jest.mock;
+import { NOTIFICATIONS_FIXTURE } from '@/entities/Notification/tests/notificationFixtures';
 
 const meta: Meta<typeof NotificationList> = {
 	title: 'entities/Notification/NotificationList',
@@ -23,28 +24,7 @@ export const Normal: Story = {
 				url: `${__API__}/notifications`,
 				method: 'GET',
 				status: 200,
-				response: [
-					{
-						id: '1',
-						title: 'Уведомление 1',
-						description: 'Текст уведомления',
-					},
-					{
-						id: '2',
-						title: 'Уведомление 2',
-						description: 'Текст уведомления',
-					},
-					{
-						id: '3',
-						title: 'Уведомление 3',
-						description: 'Текст уведомления',
-					},
-					{
-						id: '4',
-						title: 'Уведомление 4',
-						description: 'Текст уведомления',
-					},
-				],
+				response: NOTIFICATIONS_FIXTURE,
 			},
 		],
 	},

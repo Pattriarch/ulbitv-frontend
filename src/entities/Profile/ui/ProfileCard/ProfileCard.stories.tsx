@@ -2,9 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { ProfileCard } from './ProfileCard';
 
-import { profileStub } from '@/shared/assets/tests/profileStub';
 import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { PROFILE_STORYBOOK_FIXTURE } from '@/entities/Profile/tests/profileStorybookFixture';
 
 const meta: Meta<typeof ProfileCard> = {
 	title: 'entities/Profile/ProfileCard',
@@ -19,20 +19,20 @@ export const NormalReadonly: Story = {
 	decorators: [
 		StoreDecorator({
 			profile: {
-				data: profileStub,
+				data: PROFILE_STORYBOOK_FIXTURE,
 			},
 		}),
 	],
 	args: {
 		readonly: true,
-		data: profileStub,
+		data: PROFILE_STORYBOOK_FIXTURE,
 	},
 };
 
 export const NormalEditable: Story = {
 	args: {
 		readonly: false,
-		data: profileStub,
+		data: PROFILE_STORYBOOK_FIXTURE,
 	},
 };
 
@@ -43,7 +43,7 @@ export const Loading: Story = {
 };
 export const Error: Story = {
 	args: {
-		error: 'true',
+		error: 'error',
 	},
 };
 
@@ -52,13 +52,13 @@ export const NormalReadonlyRedesigned: Story = {
 		NewDesignDecorator,
 		StoreDecorator({
 			profile: {
-				data: profileStub,
+				data: PROFILE_STORYBOOK_FIXTURE,
 			},
 		}),
 	],
 	args: {
 		readonly: true,
-		data: profileStub,
+		data: PROFILE_STORYBOOK_FIXTURE,
 	},
 };
 
@@ -66,7 +66,7 @@ export const NormalEditableRedesigned: Story = {
 	decorators: [NewDesignDecorator],
 	args: {
 		readonly: false,
-		data: profileStub,
+		data: PROFILE_STORYBOOK_FIXTURE,
 	},
 };
 
@@ -79,6 +79,6 @@ export const LoadingRedesigned: Story = {
 export const ErrorRedesigned: Story = {
 	decorators: [NewDesignDecorator],
 	args: {
-		error: 'true',
+		error: 'error',
 	},
 };

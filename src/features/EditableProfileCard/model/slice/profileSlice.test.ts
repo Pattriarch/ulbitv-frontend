@@ -3,18 +3,7 @@ import { updateProfileData } from '../services/updateProfileData/updateProfileDa
 import { type ProfileSchema } from '../types/editableProfileCardSchema';
 
 import { profileActions, profileReducer } from './profileSlice';
-
-import { Country } from '@/entities/Country';
-import { Currency } from '@/entities/Currency';
-
-const data = {
-	username: 'admin',
-	age: 21,
-	country: Country.Russia,
-	lastName: 'Pereverzev',
-	firstName: 'Daniil',
-	currency: Currency.USD,
-};
+import { PROFILE_FIXTURE } from '@/entities/Profile/testing';
 
 describe('profileSlice', () => {
 	test('test set readonly', () => {
@@ -45,7 +34,7 @@ describe('profileSlice', () => {
 
 	test('test cancel edit', () => {
 		const state: DeepPartial<ProfileSchema> = {
-			data,
+			data: PROFILE_FIXTURE,
 			form: { username: '' },
 		};
 		expect(
@@ -53,8 +42,8 @@ describe('profileSlice', () => {
 		).toEqual({
 			readonly: true,
 			validateErrors: undefined,
-			data,
-			form: data,
+			data: PROFILE_FIXTURE,
+			form: PROFILE_FIXTURE,
 		});
 	});
 
@@ -78,14 +67,14 @@ describe('profileSlice', () => {
 		expect(
 			profileReducer(
 				state as ProfileSchema,
-				updateProfileData.fulfilled(data, ''),
+				updateProfileData.fulfilled(PROFILE_FIXTURE, ''),
 			),
 		).toEqual({
 			isLoading: false,
 			validateErrors: undefined,
 			readonly: true,
-			form: data,
-			data,
+			form: PROFILE_FIXTURE,
+			data: PROFILE_FIXTURE,
 		});
 	});
 });

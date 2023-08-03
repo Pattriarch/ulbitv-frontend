@@ -11,8 +11,10 @@ import i18nForTest from '@/shared/config/i18n/i18nForTest';
 
 // eslint-disable-next-line ulbitv-fsd/layer-imports-validator
 import '@/app/styles/index.scss';
+import { SetupApiStoreType } from '@/shared/lib/tests/setupApiStore/setupApiStore';
 
 export interface ComponentRenderOptions {
+	providedStore?: SetupApiStoreType;
 	route?: string;
 	initialState?: DeepPartial<StateSchema>;
 	asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>;
@@ -28,6 +30,7 @@ export function TestProvider(props: TestProviderProps) {
 	const { children, options = {} } = props;
 	const {
 		route = '/',
+		providedStore,
 		initialState,
 		asyncReducers,
 		theme = Theme.LIGHT,
@@ -36,6 +39,7 @@ export function TestProvider(props: TestProviderProps) {
 	return (
 		<MemoryRouter initialEntries={[route]}>
 			<StoreProvider
+				providedStore={providedStore}
 				asyncReducers={asyncReducers}
 				initialState={initialState}
 			>

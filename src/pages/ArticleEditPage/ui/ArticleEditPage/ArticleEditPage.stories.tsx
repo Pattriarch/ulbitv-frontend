@@ -3,8 +3,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import ArticleEditPage from './ArticleEditPage';
 
-import { articleStub } from '@/shared/assets/tests/articleStub';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+
+import { ARTICLE_STORYBOOK_FIXTURE } from '@/entities/Article/tests/articleStorybookFixture';
 
 const meta: Meta<typeof ArticleEditPage> = {
 	title: 'pages/ArticleEditPage',
@@ -20,7 +21,7 @@ export const Normal: Story = {
 	decorators: [
 		StoreDecorator({
 			addArticleForm: {
-				data: articleStub,
+				data: ARTICLE_STORYBOOK_FIXTURE,
 			},
 			user: {
 				authData: {

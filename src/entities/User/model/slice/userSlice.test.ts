@@ -1,11 +1,7 @@
-import { type User, type UserSchema } from '../types/user';
+import { type UserSchema } from '../types/user';
 
 import { userActions, userReducer } from './userSlice';
-
-const data: User = {
-	id: '1',
-	username: 'admin',
-};
+import { USER_FIXTURE } from '@/entities/User/tests/userFixture';
 
 describe('userSlice', () => {
 	test('test set auth data', () => {
@@ -13,7 +9,10 @@ describe('userSlice', () => {
 			authData: {},
 		};
 		expect(
-			userReducer(state as UserSchema, userActions.setAuthData(data)),
-		).toEqual({ authData: data });
+			userReducer(
+				state as UserSchema,
+				userActions.setAuthData(USER_FIXTURE),
+			),
+		).toEqual({ authData: USER_FIXTURE });
 	});
 });

@@ -4,8 +4,9 @@ import { ArticleView } from '../../consts/articleConsts';
 
 import { ArticleList } from './ArticleList';
 
-import { articleStub } from '@/shared/assets/tests/articleStub';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+
+import { ARTICLE_STORYBOOK_FIXTURE } from '@/entities/Article/tests/articleStorybookFixture';
 
 const meta: Meta<typeof ArticleList> = {
 	title: 'entities/Article/ArticleList',
@@ -20,7 +21,7 @@ type Story = StoryObj<typeof ArticleList>;
 export const Big: Story = {
 	args: {
 		articles: new Array(3).fill(0).map((item, index) => ({
-			...articleStub,
+			...ARTICLE_STORYBOOK_FIXTURE,
 			id: String(index),
 		})),
 		virtualized: false,
@@ -39,7 +40,7 @@ export const LoadingBig: Story = {
 export const Small: Story = {
 	args: {
 		articles: new Array(9).fill(0).map((item, index) => ({
-			...articleStub,
+			...ARTICLE_STORYBOOK_FIXTURE,
 			id: String(index),
 		})),
 		virtualized: false,

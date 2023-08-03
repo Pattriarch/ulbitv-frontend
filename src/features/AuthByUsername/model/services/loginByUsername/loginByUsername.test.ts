@@ -2,6 +2,7 @@ import { loginByUsername } from '../../services/loginByUsername/loginByUsername'
 
 import { userActions } from '@/entities/User';
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import { REJECTED_FIXTURE } from '@/shared/tests/rejectedFixture';
 
 describe('loginByUsername', () => {
 	test('success common', async () => {
@@ -25,7 +26,7 @@ describe('loginByUsername', () => {
 
 	test('error common', async () => {
 		const thunk = new TestAsyncThunk(loginByUsername);
-		thunk.api.post.mockReturnValue(Promise.resolve({ status: 403 }));
+		thunk.api.post.mockReturnValue(Promise.resolve(REJECTED_FIXTURE));
 		const result = await thunk.callThunk({
 			username: '123',
 			password: '123',

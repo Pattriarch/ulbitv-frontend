@@ -11,6 +11,4 @@ const meta: Meta<typeof ArticleListItemRedesigned> = {
 export default meta;
 type Story = StoryObj<typeof ArticleListItemRedesigned>;
 
-export const Primary: Story = {
-	args: {},
-};
+export const Primary: Story = {};

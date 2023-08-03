@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import { User } from '../..';
-import { getUserDataByIdQuery } from '../../api/userApi';
+import { User } from '../../../index';
+import { getUserDataByIdQuery } from '../../../api/userApi';
 
 import { type ThunkConfig } from '@/app/providers/StoreProvider';
 import {
@@ -17,7 +17,7 @@ export const initAuthData = createAsyncThunk<User, void, ThunkConfig<string>>(
 		const userId = localStorage.getItem(USER_LOCALSTORAGE_KEY);
 
 		if (!userId) {
-			return rejectWithValue('');
+			return rejectWithValue('Не был передан userId');
 		}
 
 		try {
@@ -33,7 +33,7 @@ export const initAuthData = createAsyncThunk<User, void, ThunkConfig<string>>(
 			return response;
 		} catch (e) {
 			console.error(e);
-			return rejectWithValue('');
+			return rejectWithValue('error');
 		}
 	},
 );

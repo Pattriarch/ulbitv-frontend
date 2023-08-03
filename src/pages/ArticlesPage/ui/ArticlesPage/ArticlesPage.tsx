@@ -4,12 +4,11 @@ import { useSearchParams } from 'react-router-dom';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { articlesPageReducer } from '../../model/slices/articlesPageSlice';
-import { ArticleInfiniteList } from '@/widgets/ArticleInfiniteList/ui/ArticleInfiniteList/ArticleInfiniteList';
-import { ArticlesPageFilters } from '@/features/ArticlesPageFilters/ui/ArticlesPageFilters/ArticlesPageFilters';
-import { FiltersContainer } from '@/pages/ArticlesPage/ui/FiltersContainer/FiltersContainer';
-import { ViewSelectorContainer } from '@/pages/ArticlesPage/ui/ViewSelectorContainer/ViewSelectorContainer';
+import { FiltersContainer } from '../FiltersContainer/FiltersContainer';
+import { ViewSelectorContainer } from '../ViewSelectorContainer/ViewSelectorContainer';
 
 import { ArticlePageGreeting } from '@/features/ArticlePageGreeting';
+import { ArticlesPageFilters } from '@/features/ArticlesPageFilters';
 import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
@@ -20,6 +19,7 @@ import { ToggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { VStack } from '@/shared/ui/redesigned/Stack';
+import { ArticleInfiniteList } from '@/widgets/ArticleInfiniteList';
 import { Page } from '@/widgets/Page';
 
 export interface ArticlesPageProps {

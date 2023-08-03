@@ -4,27 +4,15 @@ import {
 	getAddArticleError,
 	getAddArticleIsLoading,
 } from '@/features/AddArticleForm/model/selectors/addArticleSelectors';
+import { ARTICLE_FIXTURE } from '@/entities/Article/tests/articleFixture';
 
 describe('addArticleSelectors', () => {
 	describe('getAddArticleData', () => {
 		test('should return error', () => {
-			const data = {
-				id: '1',
-				title: 'test',
-				subtitle: 'test',
-				user: { id: '1', username: 'test' },
-				img: '',
-				views: 100,
-				createdAt: '',
-				type: [],
-				blocks: [],
-			};
 			const state: DeepPartial<StateSchema> = {
-				addArticleForm: {
-					data
-				}
+				addArticleForm: ARTICLE_FIXTURE
 			};
-			expect(getAddArticleData(state as StateSchema)).toEqual(data);
+			expect(getAddArticleData(state as StateSchema)).toEqual(ARTICLE_FIXTURE.data);
 		});
 
 		test('should work with empty state', () => {

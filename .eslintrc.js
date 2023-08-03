@@ -1,32 +1,14 @@
 module.exports = {
-	overrides: [
-		{
-			env: {
-				node: true,
-			},
-			files: ['.eslintrc.{js,cjs}'],
-			parserOptions: {
-				sourceType: 'script',
-			},
-		},
-		{
-			files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
-			rules: {
-				'i18next/no-literal-string': 0,
-				'max-len': 0,
-			},
-		},
-	],
-	globals: {
-		__IS_DEV__: true,
-		__API__: true,
-		__PROJECT__: true,
-	},
 	parserOptions: {
 		project: './tsconfig.json',
 		tsconfigRootDir: __dirname,
 		ecmaVersion: 'latest',
 		sourceType: 'module',
+	},
+	globals: {
+		__IS_DEV__: true,
+		__API__: true,
+		__PROJECT__: true,
 	},
 	env: {
 		browser: true,
@@ -52,7 +34,27 @@ module.exports = {
 		'json-server/index.js',
 		'cypress.config.ts',
 	],
+	overrides: [
+		{
+			env: {
+				node: true,
+			},
+			files: ['.eslintrc.{js,cjs}'],
+			parserOptions: {
+				sourceType: 'script',
+			},
+		},
+		{
+			files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
+			rules: {
+				'i18next/no-literal-string': 0,
+				'max-len': 0,
+			},
+		},
+	],
 	rules: {
+		// error
+
 		'import/newline-after-import': 2,
 		'import/order': [
 			2,
@@ -115,6 +117,9 @@ module.exports = {
 				ignoreComments: true,
 			},
 		],
+
+		// warning
+
 		'@typescript-eslint/ban-ts-comment': 1,
 		'i18next/no-literal-string': [
 			1,
@@ -166,6 +171,9 @@ module.exports = {
 				},
 			},
 		],
+
+		// off
+
 		'@typescript-eslint/consistent-type-imports': 0,
 		'@typescript-eslint/semi': 0,
 		'import/no-unresolved': 0,
@@ -192,5 +200,6 @@ module.exports = {
 		'@typescript-eslint/no-misused-promises': 0,
 		'@typescript-eslint/method-signature-style': 0,
 		'@typescript-eslint/consistent-type-assertions': 0,
+		'@typescript-eslint/promise-function-async': 0,
 	},
 };

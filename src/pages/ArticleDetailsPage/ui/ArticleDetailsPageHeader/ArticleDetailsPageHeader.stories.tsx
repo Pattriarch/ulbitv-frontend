@@ -2,8 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader';
 
-import { articleStub } from '@/shared/assets/tests/articleStub';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+
+import { ARTICLE_STORYBOOK_FIXTURE } from '@/entities/Article/tests/articleStorybookFixture';
 
 const meta: Meta<typeof ArticleDetailsPageHeader> = {
 	title: 'pages/ArticleDetailsPage/ArticleDetailsPageHeader',
@@ -23,7 +24,7 @@ export const Editable: Story = {
 	decorators: [
 		StoreDecorator({
 			articleDetails: {
-				data: articleStub,
+				data: ARTICLE_STORYBOOK_FIXTURE,
 			},
 			user: {
 				authData: { id: '1' },

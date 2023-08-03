@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1691133647488" clover="3.2.0">
+  <project timestamp="1691133647488" name="All files">
+    <metrics statements="64" coveredstatements="43" conditionals="22" coveredconditionals="14" methods="28" coveredmethods="21" elements="114" coveredelements="78" complexity="0" loc="64" ncloc="64" packages="18" files="18" classes="18"/>
+    <package name="entities.Counter.model.selectors.getCounter">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="getCounter.ts" path="/Users/daniilpereverzev/uuul/ulbitv-frontend/src/entities/Counter/model/selectors/getCounter/getCounter.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="entities.User.model.selectors.getUserInited">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="getUserInited.ts" path="/Users/daniilpereverzev/uuul/ulbitv-frontend/src/entities/User/model/selectors/getUserInited/getUserInited.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="features.AddCommentForm.model.selectors">
+      <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <file name="addCommentFormSelectors.ts" path="/Users/daniilpereverzev/uuul/ulbitv-frontend/src/features/AddCommentForm/model/selectors/addCommentFormSelectors.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="features.AddCommentForm.model.slice">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="addCommentFormSlice.ts" path="/Users/daniilpereverzev/uuul/ulbitv-frontend/src/features/AddCommentForm/model/slice/addCommentFormSlice.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="features.AuthByUsername.model.selectors.getLoginError">
+      <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="getLoginError.ts" path="/Users/daniilpereverzev/uuul/ulbitv-frontend/src/features/AuthByUsername/model/selectors/getLoginError/getLoginError.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="2" type="cond" truecount="2" falsecount="0"/>
+      </file>
+    </package>
+    <package name="features.AuthByUsername.model.selectors.getLoginIsLoading">
+      <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="getLoginIsLoading.ts" path="/Users/daniilpereverzev/uuul/ulbitv-frontend/src/features/AuthByUsername/model/selectors/getLoginIsLoading/getLoginIsLoading.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="2" type="cond" truecount="2" falsecount="0"/>
+      </file>
+    </package>
+    <package name="features.AuthByUsername.model.selectors.getLoginPassword">
+      <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="getLoginPassword.ts" path="/Users/daniilpereverzev/uuul/ulbitv-frontend/src/features/AuthByUsername/model/selectors/getLoginPassword/getLoginPassword.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="2" type="cond" truecount="2" falsecount="0"/>
+      </file>
+    </package>
+    <package name="features.AuthByUsername.model.selectors.getLoginUsername">
+      <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="getLoginUsername.ts" path="/Users/daniilpereverzev/uuul/ulbitv-frontend/src/features/AuthByUsername/model/selectors/getLoginUsername/getLoginUsername.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="2" type="cond" truecount="2" falsecount="0"/>
+      </file>
+    </package>
+    <package name="features.EditableProfileCard.model.consts">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="consts.ts" path="/Users/daniilpereverzev/uuul/ulbitv-frontend/src/features/EditableProfileCard/model/consts/consts.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="features.EditableProfileCard.model.selectors.getProfileError">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="getProfileError.ts" path="/Users/daniilpereverzev/uuul/ulbitv-frontend/src/features/EditableProfileCard/model/selectors/getProfileError/getProfileError.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="features.EditableProfileCard.model.selectors.getProfileIsLoading">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="getProfileIsLoading.ts" path="/Users/daniilpereverzev/uuul/ulbitv-frontend/src/features/EditableProfileCard/model/selectors/getProfileIsLoading/getProfileIsLoading.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="features.EditableProfileCard.model.selectors.getProfileReadonly">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="getProfileReadonly.ts" path="/Users/daniilpereverzev/uuul/ulbitv-frontend/src/features/EditableProfileCard/model/selectors/getProfileReadonly/getProfileReadonly.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="features.EditableProfileCard.model.selectors.getProfileValidateErrors">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="getProfileValidateErrors.ts" path="/Users/daniilpereverzev/uuul/ulbitv-frontend/src/features/EditableProfileCard/model/selectors/getProfileValidateErrors/getProfileValidateErrors.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="pages.ArticleDetailsPage.model.selectors">
+      <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <file name="comments.ts" path="/Users/daniilpereverzev/uuul/ulbitv-frontend/src/pages/ArticleDetailsPage/model/selectors/comments.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="pages.ArticleDetailsPage.model.services.fetchCommentsByArticleId">
+      <metrics statements="11" coveredstatements="1" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="fetchCommentsByArticleId.ts" path="/Users/daniilpereverzev/uuul/ulbitv-frontend/src/pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId.ts">
+        <metrics statements="11" coveredstatements="1" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="25" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="pages.ArticleDetailsPage.model.slices">
+      <metrics statements="13" coveredstatements="7" conditionals="2" coveredconditionals="0" methods="6" coveredmethods="2"/>
+      <file name="articleDetailsCommentsSlice.ts" path="/Users/daniilpereverzev/uuul/ulbitv-frontend/src/pages/ArticleDetailsPage/model/slices/articleDetailsCommentsSlice.ts">
+        <metrics statements="13" coveredstatements="7" conditionals="2" coveredconditionals="0" methods="6" coveredmethods="2"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="18" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="53" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="shared.lib.classNames">
+      <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+      <file name="classNames.ts" path="/Users/daniilpereverzev/uuul/ulbitv-frontend/src/shared/lib/classNames/classNames.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="shared.lib.url.addQueryParams">
+      <metrics statements="6" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="1"/>
+      <file name="addQueryParams.ts" path="/Users/daniilpereverzev/uuul/ulbitv-frontend/src/shared/lib/url/addQueryParams/addQueryParams.ts">
+        <metrics statements="6" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

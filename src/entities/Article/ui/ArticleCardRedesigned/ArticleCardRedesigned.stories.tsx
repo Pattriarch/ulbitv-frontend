@@ -11,6 +11,4 @@ const meta: Meta<typeof ArticleCardRedesigned> = {
 export default meta;
 type Story = StoryObj<typeof ArticleCardRedesigned>;
 
-export const Primary: Story = {
-	args: {},
-};
+export const Normal: Story = {};

@@ -8,7 +8,7 @@ interface SetJsonSettingsArg {
 	jsonSettings: JsonSettings;
 }
 
-const userApi = rtkApi.injectEndpoints({
+export const userApi = rtkApi.injectEndpoints({
 	endpoints: (build) => ({
 		setJsonSettings: build.mutation<User, SetJsonSettingsArg>({
 			query: ({ userId, jsonSettings }) => ({

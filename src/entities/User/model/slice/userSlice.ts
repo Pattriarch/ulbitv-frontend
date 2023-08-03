@@ -1,7 +1,7 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
-import { initAuthData } from '../services/initAuthData';
-import { saveJsonSettings } from '../services/saveJsonSettings';
+import { initAuthData } from '../services/initAuthData/initAuthData';
+import { saveJsonSettings } from '../services/saveJsonSettings/saveJsonSettings';
 import { JsonSettings } from '../types/jsonSettings';
 import { type User, type UserSchema } from '../types/user';
 

@@ -1,25 +1,16 @@
 import { getProfileForm } from './getProfileForm';
 
 import { type StateSchema } from '@/app/providers/StoreProvider';
-import { Country } from '@/entities/Country';
-import { Currency } from '@/entities/Currency';
+import { PROFILE_FIXTURE } from '@/entities/Profile/tests/profileFixture';
 
 describe('getProfileForm', () => {
 	test('should return profile form', () => {
-		const data = {
-			username: 'admin',
-			age: 21,
-			country: Country.Russia,
-			lastName: 'Pereverzev',
-			firstName: 'Daniil',
-			currency: Currency.USD,
-		};
 		const state: DeepPartial<StateSchema> = {
 			profile: {
-				form: data,
+				form: PROFILE_FIXTURE,
 			},
 		};
-		expect(getProfileForm(state as StateSchema)).toEqual(data);
+		expect(getProfileForm(state as StateSchema)).toEqual(PROFILE_FIXTURE);
 	});
 
 	test('should work with empty state', () => {

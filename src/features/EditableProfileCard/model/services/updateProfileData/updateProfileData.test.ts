@@ -1,44 +1,33 @@
 import { ValidateProfileError } from '../../consts/consts';
 
 import { updateProfileData } from './updateProfileData';
-
-import { Country } from '@/entities/Country';
-import { Currency } from '@/entities/Currency';
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-
-const data = {
-	id: '1',
-	username: 'admin',
-	age: 21,
-	country: Country.Russia,
-	lastName: 'Pereverzev',
-	firstName: 'Daniil',
-	currency: Currency.USD,
-};
+import { REJECTED_FIXTURE } from '@/shared/tests/rejectedFixture';
+import { PROFILE_FIXTURE } from '@/entities/Profile/tests/profileFixture';
 
 describe('updateProfileData', () => {
 	test('success', async () => {
 		const thunk = new TestAsyncThunk(updateProfileData, {
 			profile: {
-				form: data,
+				form: PROFILE_FIXTURE,
 			},
 		});
 
-		thunk.api.put.mockReturnValue(Promise.resolve({ data }));
+		thunk.api.put.mockReturnValue(Promise.resolve({ PROFILE_FIXTURE }));
 		const result = await thunk.callThunk();
 
 		expect(thunk.api.put).toHaveBeenCalled();
 		expect(result.meta.requestStatus).toBe('fulfilled');
-		expect(result.payload).toBe(data);
+		expect(result.payload).toBe(PROFILE_FIXTURE);
 	});
 
 	test('server error', async () => {
 		const thunk = new TestAsyncThunk(updateProfileData, {
 			profile: {
-				form: data,
+				form: PROFILE_FIXTURE,
 			},
 		});
-		thunk.api.put.mockReturnValue(Promise.resolve({ status: 403 }));
+		thunk.api.put.mockReturnValue(Promise.resolve(REJECTED_FIXTURE));
 		const result = await thunk.callThunk();
 
 		expect(result.meta.requestStatus).toBe('rejected');
@@ -48,7 +37,7 @@ describe('updateProfileData', () => {
 	test('client validation error', async () => {
 		const thunk = new TestAsyncThunk(updateProfileData, {
 			profile: {
-				form: { ...data, lastName: '' },
+				form: { ...PROFILE_FIXTURE, lastName: '' },
 			},
 		});
 		const result = await thunk.callThunk();

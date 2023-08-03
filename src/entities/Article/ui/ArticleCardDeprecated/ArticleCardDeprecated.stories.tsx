@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleCardDeprecated } from './ArticleCardDeprecated';
 
 const meta: Meta<typeof ArticleCardDeprecated> = {
-	title: 'shared/ArticleCardRedesigned',
+	title: 'shared/ArticleCardDeprecated',
 	component: ArticleCardDeprecated,
 	tags: ['autodocs'],
 };
@@ -11,6 +11,4 @@ const meta: Meta<typeof ArticleCardDeprecated> = {
 export default meta;
 type Story = StoryObj<typeof ArticleCardDeprecated>;
 
-export const Primary: Story = {
-	args: {},
-};
+export const Normal: Story = {};

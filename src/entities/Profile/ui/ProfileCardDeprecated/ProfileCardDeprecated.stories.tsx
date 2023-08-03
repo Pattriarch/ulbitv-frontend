@@ -11,6 +11,4 @@ const meta: Meta<typeof ProfileCardDeprecated> = {
 export default meta;
 type Story = StoryObj<typeof ProfileCardDeprecated>;
 
-export const Primary: Story = {
-	args: {},
-};
+export const Primary: Story = {};

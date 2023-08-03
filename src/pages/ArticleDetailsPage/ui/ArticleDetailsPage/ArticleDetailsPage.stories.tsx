@@ -3,8 +3,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import ArticleDetailsPage from './ArticleDetailsPage';
 
-import { articleStub } from '@/shared/assets/tests/articleStub';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+
+import { ARTICLE_STORYBOOK_FIXTURE } from '@/entities/Article/tests/articleStorybookFixture';
 
 const meta: Meta<typeof ArticleDetailsPage> = {
 	title: 'pages/ArticleDetailsPage/ArticleDetailsPage',
@@ -19,7 +20,7 @@ export const Normal: Story = {
 	decorators: [
 		StoreDecorator({
 			articleDetails: {
-				data: articleStub,
+				data: ARTICLE_STORYBOOK_FIXTURE,
 			},
 			user: {
 				authData: {
@@ -41,17 +42,17 @@ export const Normal: Story = {
 				status: 200,
 				response: [
 					{
-						...articleStub,
+						...ARTICLE_STORYBOOK_FIXTURE,
 						title: 'Статья 1',
 						id: '1',
 					},
 					{
-						...articleStub,
+						...ARTICLE_STORYBOOK_FIXTURE,
 						title: 'Статья 2',
 						id: '2',
 					},
 					{
-						...articleStub,
+						...ARTICLE_STORYBOOK_FIXTURE,
 						title: 'Статья 3',
 						id: '3',
 					},

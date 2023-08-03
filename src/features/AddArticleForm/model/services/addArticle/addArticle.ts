@@ -17,7 +17,7 @@ export const addArticle = createAsyncThunk<Article, void, ThunkConfig<string>>(
 
 		try {
 			if (!userData?.id) {
-				throw new Error();
+				throw new Error('Не был передан userId');
 			}
 
 			const response = await extra.api.post<Article>('/articles/', {

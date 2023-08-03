@@ -1,7 +1,13 @@
 import { type DeepPartial } from '@reduxjs/toolkit';
 
 import { type StateSchema } from '@/app/providers/StoreProvider';
-import { getUserRoles, isUserAdmin, isUserManager, UserRole } from '@/entities/User';
+import {
+	getUserRoles,
+	isUserAdmin,
+	isUserManager,
+	UserRole,
+} from '@/entities/User';
+import { USER_FIXTURE } from '@/entities/User/tests/userFixture';
 
 describe('roleSelectors', () => {
 	describe('getUserRoles', () => {
@@ -9,13 +15,15 @@ describe('roleSelectors', () => {
 			const state: DeepPartial<StateSchema> = {
 				user: {
 					authData: {
-						id: '1',
-						username: 'test',
-						roles: [UserRole.USER, UserRole.MANAGER]
-					}
+						...USER_FIXTURE,
+						roles: [UserRole.USER, UserRole.MANAGER],
+					},
 				},
 			};
-			expect(getUserRoles(state as StateSchema)).toEqual([UserRole.USER, UserRole.MANAGER]);
+			expect(getUserRoles(state as StateSchema)).toEqual([
+				UserRole.USER,
+				UserRole.MANAGER,
+			]);
 		});
 
 		test('should work with empty state', () => {
@@ -31,10 +39,9 @@ describe('roleSelectors', () => {
 			const state: DeepPartial<StateSchema> = {
 				user: {
 					authData: {
-						id: '1',
-						username: 'test',
-						roles: [UserRole.ADMIN]
-					}
+						...USER_FIXTURE,
+						roles: [UserRole.ADMIN],
+					},
 				},
 			};
 			expect(isUserAdmin(state as StateSchema)).toEqual(true);
@@ -44,10 +51,9 @@ describe('roleSelectors', () => {
 			const state: DeepPartial<StateSchema> = {
 				user: {
 					authData: {
-						id: '1',
-						username: 'test',
-						roles: [UserRole.USER]
-					}
+						...USER_FIXTURE,
+						roles: [UserRole.USER],
+					},
 				},
 			};
 			expect(isUserAdmin(state as StateSchema)).toEqual(false);
@@ -66,10 +72,9 @@ describe('roleSelectors', () => {
 			const state: DeepPartial<StateSchema> = {
 				user: {
 					authData: {
-						id: '1',
-						username: 'test',
-						roles: [UserRole.MANAGER]
-					}
+						...USER_FIXTURE,
+						roles: [UserRole.MANAGER],
+					},
 				},
 			};
 			expect(isUserManager(state as StateSchema)).toEqual(true);
@@ -79,10 +84,9 @@ describe('roleSelectors', () => {
 			const state: DeepPartial<StateSchema> = {
 				user: {
 					authData: {
-						id: '1',
-						username: 'test',
-						roles: [UserRole.USER]
-					}
+						...USER_FIXTURE,
+						roles: [UserRole.USER],
+					},
 				},
 			};
 			expect(isUserManager(state as StateSchema)).toEqual(false);

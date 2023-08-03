@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { EditableProfileCard } from './EditableProfileCard';
 
-import { profileStub } from '@/shared/assets/tests/profileStub';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { PROFILE_STORYBOOK_FIXTURE } from '@/entities/Profile/tests/profileStorybookFixture';
 
 const meta: Meta<typeof EditableProfileCard> = {
 	title: 'features/EditableProfileCard/EditableProfileCard',
@@ -18,7 +18,7 @@ export const Normal: Story = {
 	decorators: [
 		StoreDecorator({
 			profile: {
-				data: profileStub,
+				data: PROFILE_STORYBOOK_FIXTURE,
 				readonly: true,
 			},
 		}),
@@ -30,7 +30,7 @@ export const NormalEditable: Story = {
 	decorators: [
 		StoreDecorator({
 			profile: {
-				data: profileStub,
+				data: PROFILE_STORYBOOK_FIXTURE,
 				readonly: false,
 			},
 		}),

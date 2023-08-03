@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { NotificationItem } from './NotificationItem';
+import { NOTIFICATION_FIXTURE } from '@/entities/Notification/tests/notificationFixtures';
 
 const meta: Meta<typeof NotificationItem> = {
 	title: 'entities/Notification/NotificationItem',
@@ -13,10 +14,6 @@ type Story = StoryObj<typeof NotificationItem>;
 
 export const Normal: Story = {
 	args: {
-		item: {
-			id: '1',
-			title: 'Уведомление 1',
-			description: 'Текст уведомления',
-		},
+		item: NOTIFICATION_FIXTURE,
 	},
 };

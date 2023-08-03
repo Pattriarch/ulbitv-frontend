@@ -1,24 +1,11 @@
-import { ArticleType } from '../../consts/articleConsts';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
-import { type Article } from '../../model/types/article';
 import { type ArticleDetailsSchema } from '../types/articleDetailsSchema';
 
 import { articleDetailsReducer } from './articleDetailsSlice';
-
-const data: Article = {
-	id: '1',
-	title: 'Title',
-	subtitle: 'Subtitle',
-	img: '',
-	views: 10000,
-	createdAt: '2020-02-02',
-	user: {
-		id: '1',
-		username: 'Pattriarch',
-	},
-	type: [ArticleType.IT],
-	blocks: [],
-};
+import {
+	ARTICLE_FIXTURE,
+	ARTICLE_FIXTURE_ID,
+} from '@/entities/Article/tests/articleFixture';
 
 describe('articleDetailsSlice', () => {
 	test('test fetch article by id service pending', () => {
@@ -42,11 +29,15 @@ describe('articleDetailsSlice', () => {
 		expect(
 			articleDetailsReducer(
 				state as ArticleDetailsSchema,
-				fetchArticleById.fulfilled(data, '1', ''),
+				fetchArticleById.fulfilled(
+					ARTICLE_FIXTURE.data,
+					ARTICLE_FIXTURE_ID,
+					'',
+				),
 			),
 		).toEqual({
 			isLoading: false,
-			data,
+			data: ARTICLE_FIXTURE.data,
 		});
 	});
 });

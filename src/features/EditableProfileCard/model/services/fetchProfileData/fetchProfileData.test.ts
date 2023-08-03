@@ -1,33 +1,23 @@
 import { fetchProfileData } from './fetchProfileData';
-
-import { Country } from '@/entities/Country';
-import { Currency } from '@/entities/Currency';
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-
-const data = {
-	username: 'admin',
-	age: 21,
-	country: Country.Russia,
-	lastName: 'Pereverzev',
-	firstName: 'Daniil',
-	currency: Currency.USD,
-};
+import { REJECTED_FIXTURE } from '@/shared/tests/rejectedFixture';
+import { PROFILE_FIXTURE, PROFILE_FIXTURE_ID } from '@/entities/Profile/tests/profileFixture';
 
 describe('fetchProfileData', () => {
 	test('success', async () => {
 		const thunk = new TestAsyncThunk(fetchProfileData);
-		thunk.api.get.mockReturnValue(Promise.resolve({ data }));
-		const result = await thunk.callThunk('1');
+		thunk.api.get.mockReturnValue(Promise.resolve({ PROFILE_FIXTURE }));
+		const result = await thunk.callThunk(PROFILE_FIXTURE_ID);
 
 		expect(thunk.api.get).toHaveBeenCalled();
 		expect(result.meta.requestStatus).toBe('fulfilled');
-		expect(result.payload).toBe(data);
+		expect(result.payload).toBe(PROFILE_FIXTURE);
 	});
 
 	test('error fetch', async () => {
 		const thunk = new TestAsyncThunk(fetchProfileData);
-		thunk.api.get.mockReturnValue(Promise.resolve({ status: 403 }));
-		const result = await thunk.callThunk('1');
+		thunk.api.get.mockReturnValue(Promise.resolve(REJECTED_FIXTURE));
+		const result = await thunk.callThunk(PROFILE_FIXTURE_ID);
 
 		expect(result.meta.requestStatus).toBe('rejected');
 	});

@@ -4,8 +4,9 @@ import { ArticleView } from '../../consts/articleConsts';
 
 import { ArticleListItem } from './ArticleListItem';
 
-import { articleStub } from '@/shared/assets/tests/articleStub';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+
+import { ARTICLE_STORYBOOK_FIXTURE } from '@/entities/Article/tests/articleStorybookFixture';
 
 const meta: Meta<typeof ArticleListItem> = {
 	title: 'entities/Article/ArticleListItem',
@@ -20,13 +21,13 @@ type Story = StoryObj<typeof ArticleListItem>;
 export const NormalBig: Story = {
 	args: {
 		view: ArticleView.BIG,
-		article: articleStub,
+		article: ARTICLE_STORYBOOK_FIXTURE,
 	},
 };
 
 export const NormalSmall: Story = {
 	args: {
 		view: ArticleView.SMALL,
-		article: articleStub,
+		article: ARTICLE_STORYBOOK_FIXTURE,
 	},
 };

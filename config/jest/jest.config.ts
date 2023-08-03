@@ -20,7 +20,6 @@ export default {
 	moduleNameMapper: {
 		'\\.s?css$': 'identity-obj-proxy',
 		'\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
-		axios: 'axios/dist/node/axios.cjs',
 		'^@/(.*)$': '<rootDir>/src/$1',
 	},
 	moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],

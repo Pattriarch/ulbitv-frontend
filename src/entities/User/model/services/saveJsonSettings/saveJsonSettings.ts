@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import { setJsonSettingsMutation } from '../../api/userApi';
-import { getUserAuthData } from '../selectors/getUserAuthData/getUserAuthData';
-import { getJsonSettings } from '../selectors/getUserJsonSettings/getUserJsonSettings';
-import { JsonSettings } from '../types/jsonSettings';
+import { setJsonSettingsMutation } from '../../../api/userApi';
+import { getUserAuthData } from '../../selectors/getUserAuthData/getUserAuthData';
+import { getJsonSettings } from '../../selectors/getUserJsonSettings/getUserJsonSettings';
+import { JsonSettings } from '../../types/jsonSettings';
 
 import { type ThunkConfig } from '@/app/providers/StoreProvider';
 
@@ -17,7 +17,7 @@ export const saveJsonSettings = createAsyncThunk<
 	const currentSettings = getJsonSettings(getState());
 
 	if (!userData) {
-		return rejectWithValue('');
+		return rejectWithValue('userData is empty');
 	}
 
 	try {
@@ -32,12 +32,12 @@ export const saveJsonSettings = createAsyncThunk<
 		).unwrap();
 
 		if (!response.jsonSettings) {
-			return rejectWithValue('');
+			return rejectWithValue('empty response');
 		}
 
 		return response.jsonSettings;
 	} catch (e) {
 		console.error(e);
-		return rejectWithValue('');
+		return rejectWithValue('got error while mutating');
 	}
 });

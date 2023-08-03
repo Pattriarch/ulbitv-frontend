@@ -7,29 +7,16 @@ import {
 } from '../../model/selectors/articleDetails';
 
 import { type StateSchema } from '@/app/providers/StoreProvider';
+import { ARTICLE_FIXTURE } from '@/entities/Article/tests/articleFixture';
 
 describe('entities/Article/selectors/articleDetails', () => {
 	test('should return article data', () => {
-		const data = {
-			id: '1',
-			title: 'title',
-			subtitle: 'subtitle',
-			img: 'path',
-			views: 1000,
-			createdAt: '2020-02-02',
-			user: {
-				id: '1',
-				username: 'Pattriarch',
-			},
-			type: [],
-			blocks: [],
-		};
 		const state: DeepPartial<StateSchema> = {
-			articleDetails: {
-				data,
-			},
+			articleDetails: ARTICLE_FIXTURE,
 		};
-		expect(getArticleDetailsData(state as StateSchema)).toEqual(data);
+		expect(getArticleDetailsData(state as StateSchema)).toEqual(
+			ARTICLE_FIXTURE,
+		);
 	});
 
 	test('should work with empty data state', () => {
@@ -40,10 +27,12 @@ describe('entities/Article/selectors/articleDetails', () => {
 	test('should return error', () => {
 		const state: DeepPartial<StateSchema> = {
 			articleDetails: {
-				error: 'error',
+				error: 'error'
 			},
 		};
-		expect(getArticleDetailsError(state as StateSchema)).toEqual('error');
+		expect(getArticleDetailsError(state as StateSchema)).toEqual(
+			'error',
+		);
 	});
 
 	test('should work with empty error state', () => {
@@ -54,7 +43,7 @@ describe('entities/Article/selectors/articleDetails', () => {
 	test('should return isLoading', () => {
 		const state: DeepPartial<StateSchema> = {
 			articleDetails: {
-				isLoading: true,
+				isLoading: true
 			},
 		};
 		expect(getArticleDetailsIsLoading(state as StateSchema)).toEqual(true);

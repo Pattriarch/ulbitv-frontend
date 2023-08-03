@@ -11,6 +11,4 @@ const meta: Meta<typeof ArticleListItemDeprecated> = {
 export default meta;
 type Story = StoryObj<typeof ArticleListItemDeprecated>;
 
-export const Primary: Story = {
-	args: {},
-};
+export const Primary: Story = {};

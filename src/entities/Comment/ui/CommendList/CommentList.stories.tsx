@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { CommentList } from './CommentList';
+import { COMMENTS_FIXTURE } from '@/entities/Comment/tests/commentFixture';
 
 const meta: Meta<typeof CommentList> = {
 	title: 'entities/Comment/CommentList',
@@ -13,24 +14,7 @@ type Story = StoryObj<typeof CommentList>;
 
 export const Normal: Story = {
 	args: {
-		comments: [
-			{
-				id: '1',
-				text: 'hey!',
-				user: {
-					id: '1',
-					username: 'Misha',
-				},
-			},
-			{
-				id: '2',
-				text: 'hey again!',
-				user: {
-					id: '2',
-					username: 'Dima',
-				},
-			},
-		],
+		comments: COMMENTS_FIXTURE,
 	},
 };
 
