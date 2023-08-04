@@ -4,6 +4,7 @@ import { ArticleCard } from './ArticleCard';
 
 
 import { ARTICLE_STORYBOOK_FIXTURE } from '@/entities/Article/tests/articleStorybookFixture';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const meta: Meta<typeof ArticleCard> = {
 	title: 'entities/Article/ArticleCard',
@@ -20,13 +21,34 @@ export const Normal: Story = {
 	},
 };
 
+export const NormalRedesigned: Story = {
+	decorators: [NewDesignDecorator],
+	args: {
+		data: ARTICLE_STORYBOOK_FIXTURE,
+	},
+};
+
 export const Loading: Story = {
 	args: {
 		isLoading: true,
 	},
 };
 
+export const LoadingRedesigned: Story = {
+	decorators: [NewDesignDecorator],
+	args: {
+		isLoading: true,
+	},
+};
+
 export const Error: Story = {
+	args: {
+		error: 'Произошла ошибка при загрузке статьи',
+	},
+};
+
+export const ErrorRedesigned: Story = {
+	decorators: [NewDesignDecorator],
 	args: {
 		error: 'Произошла ошибка при загрузке статьи',
 	},

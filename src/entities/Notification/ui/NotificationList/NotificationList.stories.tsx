@@ -3,20 +3,13 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { NotificationList } from './NotificationList';
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-
-import mock = jest.mock;
 import { NOTIFICATIONS_FIXTURE } from '@/entities/Notification/tests/notificationFixtures';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const meta: Meta<typeof NotificationList> = {
 	title: 'entities/Notification/NotificationList',
 	component: NotificationList,
 	tags: ['autodocs'],
-};
-
-export default meta;
-type Story = StoryObj<typeof NotificationList>;
-
-export const Normal: Story = {
 	decorators: [StoreDecorator({})],
 	parameters: {
 		mockData: [
@@ -28,4 +21,14 @@ export const Normal: Story = {
 			},
 		],
 	},
+};
+
+export default meta;
+type Story = StoryObj<typeof NotificationList>;
+
+export const Normal: Story = {
+};
+
+export const NormalRedesigned: Story = {
+	decorators: [NewDesignDecorator],
 };

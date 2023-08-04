@@ -42,13 +42,6 @@ export const CountrySelect = (props: CountrySelectProps): JSX.Element => {
 
 	const { t } = useTranslation();
 
-	const onChangeHandler = useCallback(
-		(value: string) => {
-			onChange?.(value as Country);
-		},
-		[onChange],
-	);
-
 	const listBoxProps = {
 		className,
 		value,
@@ -57,7 +50,7 @@ export const CountrySelect = (props: CountrySelectProps): JSX.Element => {
 		items: options,
 		readonly,
 		onChange,
-		direction: 'topRight' as const,
+		direction: 'bottomLeft' as const,
 	};
 
 	return (

@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Skeleton } from './Skeleton';
 
 const meta: Meta<typeof Skeleton> = {
-	title: 'shared/SkeletonDeprecated',
+	title: 'shared/deprecated/SkeletonDeprecated',
 	component: Skeleton,
 	tags: ['autodocs'],
 };

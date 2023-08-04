@@ -1,8 +1,8 @@
 import { Fragment, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { ArticleCardProps } from '../ArticleCard/ArticleCard';
-import { EditArticleBlock } from '../EditArticleBlock/EditArticleBlock';
+import { ArticleCardProps } from '../ArticleCard';
+import { EditArticleBlock } from '../../EditArticleBlock/EditArticleBlock';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
@@ -77,8 +77,14 @@ export const ArticleCardDeprecated = memo((props: ArticleCardProps) => {
 					/>
 				</VStack>
 				<div className={cls.imageWrapper}>
-					<AppImage src={data?.img} className={cls.image} />
-					{/* <Avatar size={200} src={data?.img} className={cls.avatar} /> */}
+					<AppImage
+						src={
+							!data?.img
+								? 'https://placehold.co/800x420'
+								: data.img
+						}
+						className={cls.image}
+					/>
 				</div>
 				<VStack max>
 					<Text text={t('Путь к изображению')} />

@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { StickyContentLayout } from './StickyContentLayout';
 
 const meta: Meta<typeof StickyContentLayout> = {
-	title: 'shared/StickyContentLayout',
+	title: 'shared/layouts/StickyContentLayout',
 	component: StickyContentLayout,
 	tags: ['autodocs'],
 };
@@ -11,6 +11,6 @@ const meta: Meta<typeof StickyContentLayout> = {
 export default meta;
 type Story = StoryObj<typeof StickyContentLayout>;
 
-export const Primary: Story = {
-	args: {},
+export const Normal: Story = {
+
 };

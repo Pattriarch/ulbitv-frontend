@@ -11,10 +11,10 @@ import {
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useForceUpdate } from '@/shared/lib/render/forceUpdate';
 import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popups';
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
 import { ListBox } from '@/shared/ui/redesigned/Popups';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 import { HStack } from '@/shared/ui/redesigned/Stack';
-import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
 import { Text } from '@/shared/ui/redesigned/Text';
 
 interface UiDesignSwitcherProps {

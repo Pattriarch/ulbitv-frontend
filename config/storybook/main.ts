@@ -11,7 +11,6 @@ const config: StorybookConfig = {
 			},
 		},
 		'@storybook/addon-interactions',
-		'@storybook/addon-queryparams',
 		'storybook-addon-mock',
 		'storybook-addon-themes',
 	],

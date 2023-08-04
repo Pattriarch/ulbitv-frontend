@@ -16,6 +16,6 @@ type Story = StoryObj<typeof Page>;
 
 export const Normal: Story = {
 	args: {
-		children: <div>test</div>,
+		children: <div>Test</div>,
 	},
 };

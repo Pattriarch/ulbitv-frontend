@@ -1,4 +1,4 @@
-import { ARTICLE_PAGE_FIXTURE } from '../../tests/articlePageFixture';
+import { ARTICLES_PAGE_FIXTURE } from '../../tests/articlesPageFixture';
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 
 import { initArticlesPage } from './initArticlesPage';
@@ -10,7 +10,7 @@ jest.mock('../fetchArticlesList/fetchArticlesList');
 describe('initArticlesPage', () => {
 	test('fetchArticlesList should be called', async () => {
 		const thunk = new TestAsyncThunk(initArticlesPage, {
-			articlesPage: ARTICLE_PAGE_FIXTURE
+			articlesPage: ARTICLES_PAGE_FIXTURE,
 		});
 
 		const searchParams = new URLSearchParams(window.location.search);
@@ -23,7 +23,7 @@ describe('initArticlesPage', () => {
 
 	test('fetchArticlesList should not be called', async () => {
 		const thunk = new TestAsyncThunk(initArticlesPage, {
-			articlesPage: ARTICLE_PAGE_FIXTURE
+			articlesPage: ARTICLES_PAGE_FIXTURE,
 		});
 
 		const searchParams = new URLSearchParams(window.location.search);

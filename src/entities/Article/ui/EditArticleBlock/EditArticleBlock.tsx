@@ -1,12 +1,7 @@
 import { type HTMLAttributes, memo, useCallback, useState } from 'react';
 
 import { ArticleBlockType } from '../../consts/articleConsts';
-import {
-	ArticleBlock,
-	ArticleCodeBlock,
-	ArticleImageBlock,
-	ArticleTextBlock,
-} from '../../model/types/article';
+import { ArticleBlock, ArticleCodeBlock, ArticleImageBlock, ArticleTextBlock } from '../../model/types/article';
 import cls from '../EditArticleBlock/EditArticleBlock.module.scss';
 import { EditArticleCodeBlock } from '../EditArticleCodeBlock/EditArticleCodeBlock';
 import { EditArticleImageBlock } from '../EditArticleImageBlock/EditArticleImageBlock';
@@ -19,7 +14,6 @@ import MoveIcon from '@/shared/assets/icons/move-512-512.svg';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Card } from '@/shared/ui/redesigned/Card';
-import PlusIcon from '@/shared/assets/icons/plus-512-512.svg';
 import { Icon } from '@/shared/ui/redesigned/Icon';
 
 interface EditArticleBlockProps extends HTMLAttributes<HTMLDivElement> {

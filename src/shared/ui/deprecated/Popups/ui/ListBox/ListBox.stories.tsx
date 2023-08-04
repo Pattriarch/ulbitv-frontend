@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ListBox } from './ListBox';
 
 const meta: Meta<typeof ListBox> = {
-	title: 'shared/ListBoxDeprecated',
+	title: 'shared/deprecated/ListBoxDeprecated',
 	component: ListBox,
 	tags: ['autodocs'],
 	decorators: [

@@ -1,6 +1,6 @@
 import { ArticleSortField, ArticleType, ArticleView } from '@/entities/Article';
 
-export const ARTICLE_PAGE_FIXTURE = {
+export const ARTICLES_PAGE_FIXTURE = {
 	page: 2,
 	ids: [],
 	entities: {},

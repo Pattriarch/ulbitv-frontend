@@ -10,17 +10,6 @@ const meta: Meta<typeof ArticleDetailsPageHeader> = {
 	title: 'pages/ArticleDetailsPage/ArticleDetailsPageHeader',
 	component: ArticleDetailsPageHeader,
 	tags: ['autodocs'],
-};
-
-export default meta;
-type Story = StoryObj<typeof ArticleDetailsPageHeader>;
-
-export const Normal: Story = {
-	decorators: [StoreDecorator({})],
-	args: {},
-};
-
-export const Editable: Story = {
 	decorators: [
 		StoreDecorator({
 			articleDetails: {
@@ -31,4 +20,10 @@ export const Editable: Story = {
 			},
 		}),
 	],
+};
+
+export default meta;
+type Story = StoryObj<typeof ArticleDetailsPageHeader>;
+
+export const Normal: Story = {
 };

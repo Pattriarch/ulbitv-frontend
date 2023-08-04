@@ -5,7 +5,7 @@ import { Button } from '../../../Button';
 import { Popover } from './Popover';
 
 const meta: Meta<typeof Popover> = {
-	title: 'shared/Popover',
+	title: 'shared/redesigned/Popover',
 	component: Popover,
 	tags: ['autodocs'],
 };

@@ -43,6 +43,7 @@ const preview: Preview = {
 				},
 				{ name: 'dark', class: ['app', Theme.DARK], color: '#090949' },
 				{ name: 'tan', class: ['app', Theme.TAN], color: '#483c32' },
+				{ name: 'lake', class: ['app', Theme.LAKE], color: '#204051' },
 			],
 		},
 	},

@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Tabs } from './Tabs';
 
 const meta: Meta<typeof Tabs> = {
-	title: 'shared/TabsRedesigned',
+	title: 'shared/redesigned/Tabs',
 	component: Tabs,
 	tags: ['autodocs'],
 };
@@ -49,6 +49,27 @@ export const Selected: Story = {
 			},
 		],
 		value: 'tab 2',
+		onTabClick: action('onTabClick'),
+	},
+};
+
+export const ColumnDirection: Story = {
+	args: {
+		tabs: [
+			{
+				value: 'tab 1',
+				content: 'tab 1',
+			},
+			{
+				value: 'tab 2',
+				content: 'tab 2',
+			},
+			{
+				value: 'tab 3',
+				content: 'tab 3',
+			},
+		],
+		direction: 'column',
 		onTabClick: action('onTabClick'),
 	},
 };

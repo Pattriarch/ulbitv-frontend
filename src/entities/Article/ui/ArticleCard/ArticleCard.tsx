@@ -5,12 +5,12 @@ import {
 	ArticleCardDeprecated,
 	ArticleCardDeprecatedError,
 	ArticleCardDeprecatedLoader,
-} from '../ArticleCardDeprecated/ArticleCardDeprecated';
+} from '@/entities/Article/ui/ArticleCard/ArticleCardDeprecated/ArticleCardDeprecated';
 import {
 	ArticleCardRedesigned,
 	ArticleCardRedesignedError,
 	ArticleCardRedesignedLoader,
-} from '../ArticleCardRedesigned/ArticleCardRedesigned';
+} from '@/entities/Article/ui/ArticleCard/ArticleCardRedesigned/ArticleCardRedesigned';
 
 import { ToggleFeatures } from '@/shared/lib/features';
 

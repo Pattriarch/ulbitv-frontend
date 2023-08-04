@@ -44,7 +44,7 @@ export const EditArticleCodeBlock = memo((props: EditArticleCodeBlockProps) => {
 					on={
 						<Textarea
 							className={cls.title}
-							theme={'outlined'}
+							variant={'outlined'}
 							value={editBlock.code}
 							onChange={onChangeCode}
 						/>

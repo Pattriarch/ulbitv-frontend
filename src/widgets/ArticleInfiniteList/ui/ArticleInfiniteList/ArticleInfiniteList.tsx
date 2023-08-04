@@ -14,8 +14,10 @@ import {
 } from '../../../../pages/ArticlesPage/model/slices/articlesPageSlice';
 
 import { ArticleList } from '@/entities/Article';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
+import { Text as TextDeprecated, TextTheme } from '@/shared/ui/deprecated/Text';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 interface ArticleInfiniteListProps {
 	className?: string;
@@ -44,15 +46,27 @@ export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
 
 	if (error) {
 		return (
-			<Text
-				theme={TextTheme.ERROR}
-				title={t('Произошла ошибка при загрузке данных')}
+			<ToggleFeatures
+				name={'isAppRedesigned'}
+				on={
+					<Text
+						variant={'error'}
+						title={t('Произошла ошибка при загрузке данных')}
+					/>
+				}
+				off={
+					<TextDeprecated
+						theme={TextTheme.ERROR}
+						title={t('Произошла ошибка при загрузке данных')}
+					/>
+				}
 			/>
 		);
 	}
 
 	return (
 		<ArticleList
+			className={className}
 			isLoading={isLoading}
 			view={view}
 			articles={articles}

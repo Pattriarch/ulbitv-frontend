@@ -2,7 +2,6 @@ import React, {
 	type InputHTMLAttributes,
 	memo,
 	ReactNode,
-	useEffect,
 	useRef,
 	useState,
 } from 'react';
@@ -20,13 +19,13 @@ type HTMLInputProps = Omit<
 	'value' | 'onChange' | 'readOnly' | 'size'
 >;
 
-type InputTheme = 'normal' | 'outlined';
+type InputVariant = 'normal' | 'outlined';
 
 type InputSize = 's' | 'm' | 'l';
 
 interface InputProps extends HTMLInputProps {
 	className?: string;
-	theme?: InputTheme;
+	variant?: InputVariant;
 	size?: InputSize;
 	value?: string | number;
 	label?: string;
@@ -40,7 +39,7 @@ interface InputProps extends HTMLInputProps {
 export const Input = memo((props: InputProps): JSX.Element => {
 	const {
 		className,
-		theme = 'normal',
+		variant = 'normal',
 		value,
 		label,
 		size = 'm',
@@ -87,7 +86,7 @@ export const Input = memo((props: InputProps): JSX.Element => {
 		<div
 			className={classNames(cls.InputWrapper, mods, [
 				className,
-				cls[theme],
+				cls[variant],
 				cls[size],
 			])}
 		>

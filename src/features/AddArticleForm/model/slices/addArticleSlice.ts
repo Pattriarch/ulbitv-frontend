@@ -43,5 +43,5 @@ export const addArticleSlice = createSlice({
 	},
 });
 
-export const addArticleActions = addArticleSlice.actions;
-export const addArticleReducer = addArticleSlice.reducer;
+export const addArticleFormActions = addArticleSlice.actions;
+export const addArticleFormReducer = addArticleSlice.reducer;

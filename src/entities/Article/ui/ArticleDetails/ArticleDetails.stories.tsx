@@ -5,6 +5,7 @@ import { ArticleDetails } from './ArticleDetails';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 import { ARTICLE_STORYBOOK_FIXTURE } from '@/entities/Article/tests/articleStorybookFixture';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const meta: Meta<typeof ArticleDetails> = {
 	title: 'entities/Article/ArticleDetails',
@@ -23,7 +24,19 @@ export const Normal: Story = {
 			},
 		}),
 	],
-	args: {},
+	
+};
+
+export const NormalRedesigned: Story = {
+	decorators: [
+		NewDesignDecorator,
+		StoreDecorator({
+			articleDetails: {
+				data: ARTICLE_STORYBOOK_FIXTURE,
+			},
+		}),
+	],
+	
 };
 
 export const Loading: Story = {
@@ -34,7 +47,19 @@ export const Loading: Story = {
 			},
 		}),
 	],
-	args: {},
+	
+};
+
+export const LoadingRedesigned: Story = {
+	decorators: [
+		NewDesignDecorator,
+		StoreDecorator({
+			articleDetails: {
+				isLoading: true,
+			},
+		}),
+	],
+	
 };
 
 export const Error: Story = {
@@ -45,5 +70,17 @@ export const Error: Story = {
 			},
 		}),
 	],
-	args: {},
+	
+};
+
+export const ErrorRedesigned: Story = {
+	decorators: [
+		NewDesignDecorator,
+		StoreDecorator({
+			articleDetails: {
+				error: 'Произошла ошибка при загрузке статьи',
+			},
+		}),
+	],
+	
 };

@@ -3,6 +3,7 @@ import '@/app/styles/index.scss';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { PageError } from './PageError';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const meta: Meta<typeof PageError> = {
 	title: 'widgets/PageError',
@@ -13,6 +14,8 @@ const meta: Meta<typeof PageError> = {
 export default meta;
 type Story = StoryObj<typeof PageError>;
 
-export const Normal: Story = {
-	args: {},
+export const Normal: Story = {};
+
+export const NormalRedesigned: Story = {
+	decorators: [NewDesignDecorator]
 };

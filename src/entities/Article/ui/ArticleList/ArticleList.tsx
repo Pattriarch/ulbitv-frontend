@@ -3,7 +3,6 @@ import {
 	type HTMLAttributeAnchorTarget,
 	memo,
 	type ReactNode,
-	useEffect,
 	useRef,
 } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -20,11 +19,12 @@ import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkele
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { Text, TextSize } from '@/shared/ui/deprecated/Text';
+import { useAppEffect } from '@/shared/lib/hooks/useAppEffect/useAppEffect';
+import { Text as TextDeprecated, TextSize } from '@/shared/ui/deprecated/Text';
 import { HStack } from '@/shared/ui/redesigned/Stack';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 import cls from './ArticleList.module.scss';
-import { useAppEffect } from '@/shared/lib/hooks/useAppEffect/useAppEffect';
 
 interface ArticleListProps {
 	Header?: () => ReactNode;
@@ -61,7 +61,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
 		onLoadNextPart,
 		lastScrolledIndex,
 		setLastScrolledIndex,
-		virtualized = true,
+		virtualized = false,
 	} = props;
 
 	const { t } = useTranslation();
@@ -126,7 +126,16 @@ export const ArticleList = memo((props: ArticleListProps) => {
 					cls[view],
 				])}
 			>
-				<Text size={TextSize.L} title={t('Статьи не найдены')} />
+				<ToggleFeatures
+					name={'isAppRedesigned'}
+					on={<Text size={'l'} title={t('Статьи не найдены')} />}
+					off={
+						<TextDeprecated
+							size={TextSize.L}
+							title={t('Статьи не найдены')}
+						/>
+					}
+				/>
 			</div>
 		);
 	}

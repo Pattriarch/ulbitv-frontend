@@ -4,8 +4,6 @@ import { I18nextProvider } from 'react-i18next';
 
 import i18nForTest from '../../i18n/i18nForTest';
 
-import { Loader } from '@/shared/ui/deprecated/Loader';
-import { useAppEffect } from '@/shared/lib/hooks/useAppEffect/useAppEffect';
 
 export const I18nDecorator = (
 	Story: StoryFn,
@@ -13,12 +11,12 @@ export const I18nDecorator = (
 ): JSX.Element => {
 	const { locale } = context.globals;
 
-	useAppEffect(() => {
+	useEffect(() => {
 		void i18nForTest.changeLanguage(locale);
 	}, [locale]);
 
 	return (
-		<Suspense fallback={<Loader />}>
+		<Suspense fallback={<div>Loading translations...</div>}>
 			<I18nextProvider i18n={i18nForTest}>
 				<Story />
 			</I18nextProvider>

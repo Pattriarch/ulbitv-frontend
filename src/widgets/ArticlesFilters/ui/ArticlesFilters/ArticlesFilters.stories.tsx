@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { ArticlesFilters } from './ArticlesFilters';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const meta: Meta<typeof ArticlesFilters> = {
-	title: 'shared/ArticlesFilters',
+	title: 'widgets/ArticlesFilters',
 	component: ArticlesFilters,
 	tags: ['autodocs'],
 };
@@ -11,6 +12,9 @@ const meta: Meta<typeof ArticlesFilters> = {
 export default meta;
 type Story = StoryObj<typeof ArticlesFilters>;
 
-export const Primary: Story = {
-	args: {},
+export const Normal: Story = {
+};
+
+export const NormalRedesigned: Story = {
+	decorators: [NewDesignDecorator]
 };

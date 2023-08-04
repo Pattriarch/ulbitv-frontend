@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { StarRating } from './StarRating';
 
 const meta: Meta<typeof StarRating> = {
-	title: 'shared/StarRating',
+	title: 'shared/redesigned/StarRating',
 	component: StarRating,
 	tags: ['autodocs'],
 };
@@ -12,7 +12,7 @@ export default meta;
 type Story = StoryObj<typeof StarRating>;
 
 export const Normal: Story = {
-	args: {},
+
 };
 
 export const Selected: Story = {

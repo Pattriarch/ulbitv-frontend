@@ -3,66 +3,69 @@ import type { Meta, StoryObj } from '@storybook/react';
 import ArticleRating from './ArticleRating';
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { USER_FIXTURE } from '@/entities/User/testing';
 
 const meta: Meta<typeof ArticleRating> = {
 	title: 'features/ArticleRating',
 	component: ArticleRating,
 	tags: ['autodocs'],
+	decorators: [
+		StoreDecorator({
+			user: {
+				authData: USER_FIXTURE,
+			},
+		}),
+	],
+	args: {
+		articleId: '1',
+	},
 };
 
 export default meta;
 type Story = StoryObj<typeof ArticleRating>;
 
-export const Normal: Story = {
-	decorators: [
-		StoreDecorator({
-			user: {
-				authData: {
-					id: '1',
-				},
-			},
-		}),
-	],
-	args: {
-		articleId: '1',
-	},
-	parameters: {
-		mockData: [
+const successMockData = [
+	{
+		url: `${__API__}/article-ratings?userId=1&articleId=1`,
+		method: 'GET',
+		status: 200,
+		response: [
 			{
-				url: `${__API__}/article-ratings?userId=1&articleId=1`,
-				method: 'GET',
-				status: 200,
-				response: [
-					{
-						rate: 3,
-					},
-				],
+				rate: 3,
 			},
 		],
+	},
+];
+
+const errorMockData = [
+	{
+		url: `${__API__}/article-ratings?userId=1&articleId=1`,
+		method: 'GET',
+		status: 404,
+		response: [],
+	},
+];
+
+export const Normal: Story = {
+	parameters: {
+		mockData: successMockData,
+	},
+};
+
+export const NormalRedesigned: Story = {
+	parameters: {
+		mockData: successMockData,
 	},
 };
 
 export const WithoutRate: Story = {
-	decorators: [
-		StoreDecorator({
-			user: {
-				authData: {
-					id: '1',
-				},
-			},
-		}),
-	],
-	args: {
-		articleId: '1',
-	},
 	parameters: {
-		mockData: [
-			{
-				url: `${__API__}/article-ratings?userId=1&articleId=1`,
-				method: 'GET',
-				status: 200,
-				response: [],
-			},
-		],
+		mockData: errorMockData
+	},
+};
+
+export const WithoutRateRedesigned: Story = {
+	parameters: {
+		mockData: errorMockData
 	},
 };

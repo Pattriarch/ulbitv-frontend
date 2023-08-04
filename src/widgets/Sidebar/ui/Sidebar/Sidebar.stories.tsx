@@ -5,6 +5,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Sidebar } from './Sidebar';
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const meta: Meta<typeof Sidebar> = {
 	title: 'widgets/Sidebar',
@@ -21,7 +22,15 @@ export const Normal: Story = {
 			user: { authData: {} },
 		}),
 	],
-	args: {},
+};
+
+export const NormalRedesigned: Story = {
+	decorators: [
+		NewDesignDecorator,
+		StoreDecorator({
+			user: { authData: {} },
+		}),
+	],
 };
 
 export const NoAuth: Story = {
@@ -30,5 +39,13 @@ export const NoAuth: Story = {
 			user: {},
 		}),
 	],
-	args: {},
+};
+
+export const NoAuthRedesigned: Story = {
+	decorators: [
+		NewDesignDecorator,
+		StoreDecorator({
+			user: {},
+		}),
+	],
 };

@@ -173,7 +173,6 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
 	const isLoading = useSelector(getArticleDetailsIsLoading);
 	const error = useSelector(getArticleDetailsError);
-	const article = useSelector(getArticleDetailsData);
 
 	useAppEffect(() => {
 		void dispatch(fetchArticleById(id));

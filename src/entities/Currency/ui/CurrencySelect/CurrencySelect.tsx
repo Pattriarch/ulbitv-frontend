@@ -32,7 +32,7 @@ export const CurrencySelect = (props: CurrencySelectProps): JSX.Element => {
 		items: options,
 		readonly,
 		onChange,
-		direction: 'topRight' as const,
+		direction: 'bottomLeft' as const,
 	};
 
 	return (

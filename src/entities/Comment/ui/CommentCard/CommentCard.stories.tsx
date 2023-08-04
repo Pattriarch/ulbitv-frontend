@@ -32,3 +32,10 @@ export const Loading: Story = {
 		isLoading: true,
 	},
 };
+export const LoadingRedesigned: Story = {
+	decorators: [NewDesignDecorator],
+	args: {
+		isLoading: true,
+	},
+};
+

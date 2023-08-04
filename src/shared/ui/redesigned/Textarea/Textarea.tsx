@@ -1,9 +1,4 @@
-import React, {
-	memo,
-	type TextareaHTMLAttributes,
-	useEffect,
-	useRef,
-} from 'react';
+import React, { memo, type TextareaHTMLAttributes, useRef } from 'react';
 
 import { classNames, type Mods } from '@/shared/lib/classNames/classNames';
 
@@ -15,11 +10,11 @@ type HTMLTextareaProps = Omit<
 	'value' | 'onChange' | 'readOnly'
 >;
 
-type TextareaTheme = 'normal' | 'outlined';
+type TextareaVariant = 'normal' | 'outlined';
 
 interface TextareaProps extends HTMLTextareaProps {
 	className?: string;
-	theme?: TextareaTheme;
+	variant?: TextareaVariant;
 	value?: string | number;
 	onChange?: (value: string) => void;
 	autofocus?: boolean;
@@ -29,7 +24,7 @@ interface TextareaProps extends HTMLTextareaProps {
 export const Textarea = memo((props: TextareaProps) => {
 	const {
 		className,
-		theme = 'normal',
+		variant = 'normal',
 		value,
 		onChange,
 		placeholder,
@@ -60,7 +55,7 @@ export const Textarea = memo((props: TextareaProps) => {
 		<div
 			className={classNames(cls.TextareaWrapper, mods, [
 				className,
-				cls[theme],
+				cls[variant],
 			])}
 		>
 			<textarea

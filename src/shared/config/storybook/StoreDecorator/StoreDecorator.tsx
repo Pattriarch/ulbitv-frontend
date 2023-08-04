@@ -8,12 +8,18 @@ import { loginReducer } from '@/features/AuthByUsername/testing';
 import { profileReducer } from '@/features/EditableProfileCard/testing';
 import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/testing';
 import { type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { articlesPageReducer } from '@/pages/ArticlesPage/model/slices/articlesPageSlice';
+import { editArticleFormReducer } from '@/features/EditArticleForm';
+import { addArticleFormReducer } from '@/features/AddArticleForm';
 
 const defaultAsyncReducers: ReducersList = {
 	loginForm: loginReducer,
 	profile: profileReducer,
 	articleDetails: articleDetailsReducer,
+	editArticleForm: editArticleFormReducer,
 	addCommentForm: addCommentFormReducer,
+	addArticleForm: addArticleFormReducer,
+	articlesPage: articlesPageReducer,
 	articleDetailsPage: articleDetailsPageReducer,
 };
 

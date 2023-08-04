@@ -77,7 +77,7 @@ export const EditArticleTextBlock = memo((props: EditArticleTextBlockProps) => {
 					on={
 						<Input
 							className={cls.title}
-							theme={'outlined'}
+							variant={'outlined'}
 							value={editBlock.title}
 							onChange={onChangeTitle}
 						/>
@@ -97,7 +97,7 @@ export const EditArticleTextBlock = memo((props: EditArticleTextBlockProps) => {
 							name={'isAppRedesigned'}
 							on={
 								<Textarea
-									theme={'outlined'}
+									variant={'outlined'}
 									value={paragraph}
 									onChange={onChangeParagraph(index)}
 								/>

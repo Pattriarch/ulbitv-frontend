@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ScrollToolbar } from './ScrollToolbar';
 
 const meta: Meta<typeof ScrollToolbar> = {
-	title: 'shared/ScrollToolbar',
+	title: 'widgets/ScrollToolbar',
 	component: ScrollToolbar,
 	tags: ['autodocs'],
 };
@@ -11,6 +11,6 @@ const meta: Meta<typeof ScrollToolbar> = {
 export default meta;
 type Story = StoryObj<typeof ScrollToolbar>;
 
-export const Primary: Story = {
-	args: {},
+export const Normal: Story = {
+
 };

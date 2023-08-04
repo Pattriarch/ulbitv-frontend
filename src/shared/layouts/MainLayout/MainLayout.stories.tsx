@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { MainLayout } from './MainLayout';
 
 const meta: Meta<typeof MainLayout> = {
-	title: 'shared/MainLayout',
+	title: 'shared/layouts/MainLayout',
 	component: MainLayout,
 	tags: ['autodocs'],
 };
@@ -11,6 +11,6 @@ const meta: Meta<typeof MainLayout> = {
 export default meta;
 type Story = StoryObj<typeof MainLayout>;
 
-export const Primary: Story = {
-	args: {},
+export const Normal: Story = {
+
 };

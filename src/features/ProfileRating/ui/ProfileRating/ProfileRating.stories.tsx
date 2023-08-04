@@ -3,68 +3,68 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ProfileRating } from './ProfileRating';
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { USER_FIXTURE } from '@/entities/User/testing';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const meta: Meta<typeof ProfileRating> = {
 	title: 'features/ProfileRating',
 	component: ProfileRating,
 	tags: ['autodocs'],
+	decorators: [StoreDecorator({
+		user: {
+			authData: USER_FIXTURE,
+		},
+	})],
 };
 
 export default meta;
 type Story = StoryObj<typeof ProfileRating>;
 
-const state = {
-	user: {
-		authData: {
-			id: '1',
-			username: 'test',
-		},
+const successMockData = [
+	{
+		url: `${__API__}/profile-ratings?userId=1`,
+		method: 'GET',
+		status: 200,
+		response: [
+			{
+				rate: 3,
+			},
+		],
 	},
-};
+];
+
+const errorMockData = [
+	{
+		url: `${__API__}/profile-ratings?profileId=10&userId=1`,
+		method: 'GET',
+		status: 404,
+		response: [],
+	},
+];
 
 export const Normal: Story = {
-	decorators: [StoreDecorator(state)],
 	parameters: {
-		mockData: [
-			{
-				url: `${__API__}/profile-ratings?userId=1`,
-				method: 'GET',
-				status: 200,
-				response: [
-					{
-						rate: 3,
-					},
-				],
-			},
-		],
-		args: {
-			profileId: '10',
-		},
+		mockData: successMockData,
 	},
 };
 
-export const WithoutRate: Story = {
-	decorators: [
-		StoreDecorator({
-			user: {
-				authData: {
-					id: '1',
-					username: 'test',
-				},
-			},
-		}),
-	],
-	args: {
-		profileId: '10',
-	},
+export const NormalRedesigned: Story = {
+	decorators: [NewDesignDecorator],
 	parameters: {
-		mockData: [
-			{
-				url: `${__API__}/profile-ratings?profileId=10&userId=1`,
-				method: 'GET',
-				status: 200,
-				response: [],
-			},
-		],
+		mockData: successMockData,
+	},
+};
+
+
+export const WithoutRate: Story = {
+	parameters: {
+		mockData: errorMockData
+	},
+};
+
+export const WithoutRateRedesigned: Story = {
+	decorators: [NewDesignDecorator],
+	parameters: {
+		mockData: errorMockData
 	},
 };

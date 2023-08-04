@@ -5,7 +5,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './Button';
 
 const meta: Meta<typeof Button> = {
-	title: 'shared/Button',
+	title: 'shared/redesigned/Button',
 	component: Button,
 	tags: ['autodocs'],
 };
@@ -41,7 +41,7 @@ export const OutlineSizeL: Story = {
 	},
 };
 
-export const OutlineXL: Story = {
+export const OutlineSizeXL: Story = {
 	args: {
 		children: 'Text',
 		variant: 'outline',
@@ -49,10 +49,58 @@ export const OutlineXL: Story = {
 	},
 };
 
-export const FilledVariant: Story = {
+export const Filled: Story = {
 	args: {
 		children: 'Text',
 		variant: 'filled',
+	},
+};
+
+export const FilledSizeL: Story = {
+	args: {
+		children: 'Text',
+		variant: 'filled',
+		size: 'l',
+	},
+};
+
+export const FilledSizeXL: Story = {
+	args: {
+		children: 'Text',
+		variant: 'filled',
+		size: 'xl',
+	},
+};
+
+export const SuccessOutline: Story = {
+	args: {
+		children: 'Text',
+		variant: 'outline',
+		color: 'success',
+	},
+};
+
+export const SuccessFilled: Story = {
+	args: {
+		children: 'Text',
+		variant: 'filled',
+		color: 'success',
+	},
+};
+
+export const ErrorOutline: Story = {
+	args: {
+		children: 'Text',
+		variant: 'outline',
+		color: 'error',
+	},
+};
+
+export const ErrorFilled: Story = {
+	args: {
+		children: 'Text',
+		variant: 'filled',
+		color: 'error',
 	},
 };
 

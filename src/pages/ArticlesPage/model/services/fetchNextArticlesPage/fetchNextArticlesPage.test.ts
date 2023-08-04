@@ -1,4 +1,4 @@
-import { ARTICLE_PAGE_FIXTURE } from '../../tests/articlePageFixture';
+import { ARTICLES_PAGE_FIXTURE } from '../../tests/articlesPageFixture';
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 
 import { fetchNextArticlesPage } from './fetchNextArticlesPage';
@@ -10,7 +10,7 @@ jest.mock('../fetchArticlesList/fetchArticlesList');
 describe('fetchNextArticlesPage', () => {
 	test('fetchArticlesList should be called', async () => {
 		const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
-			articlesPage: ARTICLE_PAGE_FIXTURE
+			articlesPage: ARTICLES_PAGE_FIXTURE,
 		});
 
 		await thunk.callThunk();
@@ -22,7 +22,7 @@ describe('fetchNextArticlesPage', () => {
 
 	test('fetchArticlesList should not be called', async () => {
 		const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
-			articlesPage: ARTICLE_PAGE_FIXTURE
+			articlesPage: ARTICLES_PAGE_FIXTURE,
 		});
 
 		await thunk.callThunk();
@@ -33,7 +33,7 @@ describe('fetchNextArticlesPage', () => {
 
 	test('fetchArticlesList should not be called', async () => {
 		const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
-			articlesPage: ARTICLE_PAGE_FIXTURE
+			articlesPage: ARTICLES_PAGE_FIXTURE,
 		});
 
 		await thunk.callThunk();

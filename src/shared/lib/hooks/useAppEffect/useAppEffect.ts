@@ -8,5 +8,5 @@ export const useAppEffect = (
 		if (__PROJECT__ !== 'storybook' && __PROJECT__ !== 'jest') {
 			callback();
 		}
-	}, dependencies);
+	}, [callback, dependencies]);
 };

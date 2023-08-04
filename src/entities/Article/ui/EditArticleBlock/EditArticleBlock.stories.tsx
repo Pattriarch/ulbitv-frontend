@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ArticleBlockType } from '../..';
+import { ArticleBlockType, ArticleCodeBlock, ArticleImageBlock, ArticleTextBlock } from '../..';
 
 import { EditArticleBlock } from './EditArticleBlock';
 
 import { getStorybookImage } from '@/shared/lib/tests/getStorybookImage/getStorybookImage';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const meta: Meta<typeof EditArticleBlock> = {
 	title: 'entities/Article/EditArticleBlock',
@@ -15,37 +16,64 @@ const meta: Meta<typeof EditArticleBlock> = {
 export default meta;
 type Story = StoryObj<typeof EditArticleBlock>;
 
+const textBlock = {
+	id: '1',
+	order: 1,
+	type: ArticleBlockType.TEXT,
+	title: 'Текст',
+	paragraphs: ['Параграф 1', 'Параграф 2', 'Параграф 3'],
+} as ArticleTextBlock;
+
+const imageBlock = {
+	id: '2',
+	order: 2,
+	type: ArticleBlockType.IMAGE,
+	title: 'Текст',
+	src: getStorybookImage(),
+} as ArticleImageBlock;
+
+const codeBlock = {
+	id: '3',
+	order: 3,
+	type: ArticleBlockType.CODE,
+	code: '<div>Example</div>',
+} as ArticleCodeBlock;
+
 export const TextEditBlock: Story = {
 	args: {
-		block: {
-			id: '1',
-			order: 1,
-			type: ArticleBlockType.TEXT,
-			title: 'Текст',
-			paragraphs: ['Параграф 1', 'Параграф 2', 'Параграф 3'],
-		},
+		block: textBlock,
+	},
+};
+
+export const TextEditBlockRedesigned: Story = {
+	decorators: [NewDesignDecorator],
+	args: {
+		block: textBlock
 	},
 };
 
 export const ImageEditBlock: Story = {
 	args: {
-		block: {
-			id: '2',
-			order: 2,
-			type: ArticleBlockType.IMAGE,
-			title: 'Текст',
-			src: getStorybookImage(),
-		},
+		block: imageBlock
+	},
+};
+
+export const ImageEditBlockRedesigned: Story = {
+	decorators: [NewDesignDecorator],
+	args: {
+		block: imageBlock
 	},
 };
 
 export const CodeEditBlock: Story = {
 	args: {
-		block: {
-			id: '3',
-			order: 3,
-			type: ArticleBlockType.CODE,
-			code: '<div>Example</div>',
-		},
+		block: codeBlock
+	},
+};
+
+export const CodeEditBlockRedesigned: Story = {
+	decorators: [NewDesignDecorator],
+	args: {
+		block: codeBlock
 	},
 };

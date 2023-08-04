@@ -5,6 +5,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Navbar } from '../index';
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const meta: Meta<typeof Navbar> = {
 	title: 'widgets/Navbar',
@@ -17,7 +18,14 @@ type Story = StoryObj<typeof Navbar>;
 
 export const Normal: Story = {
 	decorators: [StoreDecorator({})],
-	args: {},
+
+};
+
+export const NormalRedesigned: Story = {
+	decorators: [
+		NewDesignDecorator,
+		StoreDecorator({})],
+
 };
 
 export const AuthNavbar: Story = {
@@ -31,5 +39,18 @@ export const AuthNavbar: Story = {
 			},
 		}),
 	],
-	args: {},
+};
+
+export const AuthNavbarRedesigned: Story = {
+	decorators: [
+		NewDesignDecorator,
+		StoreDecorator({
+			user: {
+				authData: {
+					id: '1',
+					username: 'Daniil',
+				},
+			},
+		}),
+	],
 };

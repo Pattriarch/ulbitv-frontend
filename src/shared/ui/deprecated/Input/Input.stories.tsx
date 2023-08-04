@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Input } from './Input';
 
 const meta: Meta<typeof Input> = {
-	title: 'shared/InputDeprecated',
+	title: 'shared/deprecated/InputDeprecated',
 	component: Input,
 	tags: ['autodocs'],
 };

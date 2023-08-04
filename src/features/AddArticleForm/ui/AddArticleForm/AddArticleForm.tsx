@@ -10,8 +10,8 @@ import {
 } from '../../model/selectors/addArticleSelectors';
 import { addArticle } from '../../model/services/addArticle/addArticle';
 import {
-	addArticleActions,
-	addArticleReducer,
+	addArticleFormActions,
+	addArticleFormReducer,
 } from '../../model/slices/addArticleSlice';
 
 import { type ArticleBlock, ArticleBlockType } from '@/entities/Article';
@@ -38,7 +38,7 @@ interface AddArticleProps {
 }
 
 const reducers: ReducersList = {
-	addArticleForm: addArticleReducer,
+	addArticleForm: addArticleFormReducer,
 };
 
 export const AddArticleForm = memo((props: AddArticleProps) => {
@@ -59,7 +59,7 @@ export const AddArticleForm = memo((props: AddArticleProps) => {
 	const onChangeImage = useCallback(
 		(value: string) => {
 			void dispatch(
-				addArticleActions.updateArticleForm({ img: value || '' }),
+				addArticleFormActions.updateArticleForm({ img: value || '' }),
 			);
 		},
 		[dispatch],
@@ -68,7 +68,7 @@ export const AddArticleForm = memo((props: AddArticleProps) => {
 	const onChangeTitle = useCallback(
 		(value: string) => {
 			void dispatch(
-				addArticleActions.updateArticleForm({ title: value || '' }),
+				addArticleFormActions.updateArticleForm({ title: value || '' }),
 			);
 		},
 		[dispatch],
@@ -77,7 +77,7 @@ export const AddArticleForm = memo((props: AddArticleProps) => {
 	const onChangeSubtitle = useCallback(
 		(value: string) => {
 			void dispatch(
-				addArticleActions.updateArticleForm({ subtitle: value || '' }),
+				addArticleFormActions.updateArticleForm({ subtitle: value || '' }),
 			);
 		},
 		[dispatch],
@@ -85,7 +85,7 @@ export const AddArticleForm = memo((props: AddArticleProps) => {
 
 	const onChangeBlocks = useCallback(
 		(blocks: ArticleBlock[]) => {
-			void dispatch(addArticleActions.updateArticleForm({ blocks }));
+			void dispatch(addArticleFormActions.updateArticleForm({ blocks }));
 		},
 		[dispatch],
 	);
@@ -122,7 +122,7 @@ export const AddArticleForm = memo((props: AddArticleProps) => {
 	const onAddCodeBlock = useCallback(() => {
 		const block = getEmptyBlock(data?.blocks);
 		void dispatch(
-			addArticleActions.updateArticleForm({
+			addArticleFormActions.updateArticleForm({
 				blocks: [
 					...(data?.blocks ?? []),
 					{
@@ -138,7 +138,7 @@ export const AddArticleForm = memo((props: AddArticleProps) => {
 	const onAddTextBlock = useCallback(() => {
 		const block = getEmptyBlock(data?.blocks);
 		void dispatch(
-			addArticleActions.updateArticleForm({
+			addArticleFormActions.updateArticleForm({
 				blocks: [
 					...(data?.blocks ?? []),
 					{
@@ -155,7 +155,7 @@ export const AddArticleForm = memo((props: AddArticleProps) => {
 	const onAddImageBlock = useCallback(() => {
 		const block = getEmptyBlock(data?.blocks);
 		void dispatch(
-			addArticleActions.updateArticleForm({
+			addArticleFormActions.updateArticleForm({
 				blocks: [
 					...(data?.blocks ?? []),
 					{

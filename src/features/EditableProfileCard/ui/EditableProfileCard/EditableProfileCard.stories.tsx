@@ -4,6 +4,7 @@ import { EditableProfileCard } from './EditableProfileCard';
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { PROFILE_STORYBOOK_FIXTURE } from '@/entities/Profile/tests/profileStorybookFixture';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const meta: Meta<typeof EditableProfileCard> = {
 	title: 'features/EditableProfileCard/EditableProfileCard',
@@ -23,7 +24,18 @@ export const Normal: Story = {
 			},
 		}),
 	],
-	args: {},
+};
+
+export const NormalRedesigned: Story = {
+	decorators: [
+		NewDesignDecorator,
+		StoreDecorator({
+			profile: {
+				data: PROFILE_STORYBOOK_FIXTURE,
+				readonly: true,
+			},
+		}),
+	],
 };
 
 export const NormalEditable: Story = {
@@ -35,7 +47,18 @@ export const NormalEditable: Story = {
 			},
 		}),
 	],
-	args: {},
+};
+
+export const NormalEditableRedesigned: Story = {
+	decorators: [
+		NewDesignDecorator,
+		StoreDecorator({
+			profile: {
+				data: PROFILE_STORYBOOK_FIXTURE,
+				readonly: false,
+			},
+		}),
+	],
 };
 
 export const Loading: Story = {
@@ -46,7 +69,17 @@ export const Loading: Story = {
 			},
 		}),
 	],
-	args: {},
+};
+
+export const LoadingRedesigned: Story = {
+	decorators: [
+		NewDesignDecorator,
+		StoreDecorator({
+			profile: {
+				isLoading: true,
+			},
+		}),
+	],
 };
 
 export const Error: Story = {
@@ -57,5 +90,15 @@ export const Error: Story = {
 			},
 		}),
 	],
-	args: {},
+};
+
+export const ErrorRedesigned: Story = {
+	decorators: [
+		NewDesignDecorator,
+		StoreDecorator({
+			profile: {
+				error: 'error',
+			},
+		}),
+	],
 };

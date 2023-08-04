@@ -5,7 +5,7 @@ import EyeIcon from '../../../assets/icons/eye-20-20.svg';
 import { Icon } from './Icon';
 
 const meta: Meta<typeof Icon> = {
-	title: 'shared/IconDeprecated',
+	title: 'shared/deprecated/IconDeprecated',
 	component: Icon,
 	tags: ['autodocs'],
 };

@@ -31,6 +31,7 @@ export const Sidebar = memo(({ className }: SidebarProps): JSX.Element => {
 		<ToggleFeatures
 			name={'isAppRedesigned'}
 			on={
+			// todo: перепроверить почему не полная высота в сторибуке
 				<aside
 					data-testid={'sidebar'}
 					className={classNames(

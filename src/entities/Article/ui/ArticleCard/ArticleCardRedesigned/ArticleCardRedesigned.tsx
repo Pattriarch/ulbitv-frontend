@@ -1,8 +1,8 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { ArticleCardProps } from '../ArticleCard/ArticleCard';
-import { EditArticleBlock } from '../EditArticleBlock/EditArticleBlock';
+import { ArticleCardProps } from '../ArticleCard';
+import { EditArticleBlock } from '../../EditArticleBlock/EditArticleBlock';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppImage } from '@/shared/ui/redesigned/AppImage';
@@ -12,9 +12,14 @@ import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
 
 import cls from './ArticleCardRedesigned.module.scss';
+import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
 
 export const ArticleCardRedesignedLoader = () => {
-	return <div className={cls.EditArticleForm}>{/* <Loader /> */}</div>;
+	return (
+		<div className={cls.EditArticleForm}>
+			<AppLoaderLayout />
+		</div>
+	);
 };
 
 export const ArticleCardRedesignedError = () => {
@@ -56,7 +61,7 @@ export const ArticleCardRedesigned = memo((props: ArticleCardProps) => {
 				<VStack max>
 					<Text text={t('Заголовок статьи')} />
 					<Input
-						theme={'outlined'}
+						variant={'outlined'}
 						value={data?.title}
 						onChange={onChangeTitle}
 					/>
@@ -64,7 +69,7 @@ export const ArticleCardRedesigned = memo((props: ArticleCardProps) => {
 				<VStack max>
 					<Text text={t('Подзаголовок статьи')} />
 					<Input
-						theme={'outlined'}
+						variant={'outlined'}
 						value={data?.subtitle}
 						onChange={onChangeSubtitle}
 					/>
@@ -82,7 +87,7 @@ export const ArticleCardRedesigned = memo((props: ArticleCardProps) => {
 				<VStack max>
 					<Text text={t('Путь к изображению')} />
 					<Input
-						theme={'outlined'}
+						variant={'outlined'}
 						value={data?.img}
 						onChange={onChangeImage}
 					/>

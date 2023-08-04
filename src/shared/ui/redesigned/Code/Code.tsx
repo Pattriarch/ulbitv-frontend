@@ -30,12 +30,14 @@ export const Code = (props: CodeProps): JSX.Element => {
 				<pre
 					className={classNames(cls.CodeRedesigned, {}, [className])}
 				>
-					<Icon
-						Svg={CopyIcon}
-						clickable
-						onClick={onCopy}
-						className={cls.copyBtn}
-					/>
+					{withCopyIcon && (
+						<Icon
+							Svg={CopyIcon}
+							clickable
+							onClick={onCopy}
+							className={cls.copyBtn}
+						/>
+					)}
 					<code>{text}</code>
 				</pre>
 			}

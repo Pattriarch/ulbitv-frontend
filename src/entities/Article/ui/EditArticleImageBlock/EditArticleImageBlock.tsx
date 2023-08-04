@@ -67,13 +67,13 @@ export const EditArticleImageBlock = memo(
 							<>
 								<Text text={t('Путь к изображению')} />
 								<Input
-									theme={'outlined'}
+									variant={'outlined'}
 									value={editBlock?.src}
 									onChange={onChangeImage}
 								/>
 								<Text text={t('Текст под изображением')} />
 								<Input
-									theme={'outlined'}
+									variant={'outlined'}
 									value={editBlock?.title}
 									onChange={onChangeTitle}
 								/>

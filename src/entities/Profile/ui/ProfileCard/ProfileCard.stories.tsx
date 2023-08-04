@@ -29,24 +29,6 @@ export const NormalReadonly: Story = {
 	},
 };
 
-export const NormalEditable: Story = {
-	args: {
-		readonly: false,
-		data: PROFILE_STORYBOOK_FIXTURE,
-	},
-};
-
-export const Loading: Story = {
-	args: {
-		isLoading: true,
-	},
-};
-export const Error: Story = {
-	args: {
-		error: 'error',
-	},
-};
-
 export const NormalReadonlyRedesigned: Story = {
 	decorators: [
 		NewDesignDecorator,
@@ -62,6 +44,12 @@ export const NormalReadonlyRedesigned: Story = {
 	},
 };
 
+export const NormalEditable: Story = {
+	args: {
+		readonly: false,
+		data: PROFILE_STORYBOOK_FIXTURE,
+	},
+};
 export const NormalEditableRedesigned: Story = {
 	decorators: [NewDesignDecorator],
 	args: {
@@ -70,10 +58,22 @@ export const NormalEditableRedesigned: Story = {
 	},
 };
 
+export const Loading: Story = {
+	args: {
+		isLoading: true,
+	},
+};
+
 export const LoadingRedesigned: Story = {
 	decorators: [NewDesignDecorator],
 	args: {
 		isLoading: true,
+	},
+};
+
+export const Error: Story = {
+	args: {
+		error: 'error',
 	},
 };
 export const ErrorRedesigned: Story = {
