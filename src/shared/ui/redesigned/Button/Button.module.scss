@@ -30,13 +30,13 @@
     padding: 0;
     border: none;
     background: none;
-    outline: none;
+    outline-color: transparent;
 }
 
 .filled {
     background: var(--light-bg-redesigned);
     border: none;
-    outline: none;
+    outline-color: transparent;
     border-radius: 34px;
 
     &.normal {

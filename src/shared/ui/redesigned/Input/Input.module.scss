@@ -43,7 +43,7 @@
 
 .input {
     border: none;
-    outline: none;
+    outline-color: transparent;
     width: 100%;
     color: var(--text-redesigned);
     background: none;
@@ -53,7 +53,7 @@
     }
 
     &:focus {
-        outline: none;
+        outline-color: transparent;
     }
 }
 

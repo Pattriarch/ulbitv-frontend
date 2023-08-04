@@ -8,7 +8,7 @@
 .textarea {
     background: transparent;
     border: none;
-    outline: none;
+    outline-color: transparent;
     width: 100%;
     color: var(--text-redesigned);
     font: var(--font-m);
@@ -20,7 +20,7 @@
     }
 
     &:focus {
-        outline: none;
+        outline-color: transparent;
     }
 }
 

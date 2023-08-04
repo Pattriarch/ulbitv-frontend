@@ -1,7 +1,7 @@
 .textarea {
     background: transparent;
     border: none;
-    outline: none;
+    outline-color: transparent;
     width: 100%;
     color: var(--primary-color);
     font: var(--font-m);
@@ -9,7 +9,7 @@
     height: 88px;
 
     &:focus {
-        outline: none;
+        outline-color: transparent;
     }
 }
 
