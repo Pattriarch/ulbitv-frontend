@@ -11,9 +11,9 @@ import {
 	AppLink as ApplinkDeprecated,
 	AppLinkTheme,
 } from '@/shared/ui/deprecated/AppLink';
+import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon';
 import { AppLink } from '@/shared/ui/redesigned/AppLink';
 import { Icon } from '@/shared/ui/redesigned/Icon';
-import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon';
 
 import cls from './SidebarItem.module.scss';
 
@@ -56,7 +56,7 @@ export const SidebarItem = memo(
 						to={item.path}
 					>
 						<IconDeprecated Svg={item.Icon} className={cls.icon} />
-						{/*<item.Icon className={cls.icon} />*/}
+						{/* <item.Icon className={cls.icon} /> */}
 						<span className={cls.link}>{t(item.text)}</span>
 					</ApplinkDeprecated>
 				}

@@ -142,9 +142,9 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
 	// можно вынести за пределы компонента
 	const ItemContainerComp: FC<{
-		height: number;
-		width: number;
-		index: number;
+		height: number,
+		width: number,
+		index: number,
 	}> = ({ height, width, index }) => (
 		<div className={cls.ItemContainer}>
 			<ArticleListItemSkeleton
@@ -220,14 +220,14 @@ export const ArticleList = memo((props: ArticleListProps) => {
 					itemContent={renderArticle}
 					endReached={onLoadNextPart}
 					initialTopMostItemIndex={lastScrolledIndex}
-					// @ts-expect-error
+					// @ts-expect-error virtuoso error
 					components={virtuosoComponents}
 				/>
 			) : (
 				<VirtuosoGrid
 					ref={virtuosoGridRef}
 					totalCount={articles.length}
-					// @ts-expect-error
+					// @ts-expect-error virtuoso error
 					components={virtuosoGridComponents}
 					data={articles}
 					endReached={onLoadNextPart}

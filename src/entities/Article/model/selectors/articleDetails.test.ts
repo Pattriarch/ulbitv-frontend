@@ -5,14 +5,14 @@ import {
 	getArticleDetailsError,
 	getArticleDetailsIsLoading,
 } from '../../model/selectors/articleDetails';
+import { ARTICLE_FIXTURE } from '../../tests/articleFixture';
 
 import { type StateSchema } from '@/app/providers/StoreProvider';
-import { ARTICLE_FIXTURE } from '@/entities/Article/tests/articleFixture';
 
 describe('entities/Article/selectors/articleDetails', () => {
 	test('should return article data', () => {
 		const state: DeepPartial<StateSchema> = {
-			articleDetails: ARTICLE_FIXTURE,
+			articleDetails: { data: ARTICLE_FIXTURE },
 		};
 		expect(getArticleDetailsData(state as StateSchema)).toEqual(
 			ARTICLE_FIXTURE,

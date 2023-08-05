@@ -3,14 +3,14 @@ import { type StoryFn } from '@storybook/react';
 
 import { type StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
 import { articleDetailsReducer } from '@/entities/Article/testing';
+import { addArticleFormReducer } from '@/features/AddArticleForm';
 import { addCommentFormReducer } from '@/features/AddCommentForm/testing';
 import { loginReducer } from '@/features/AuthByUsername/testing';
+import { editArticleFormReducer } from '@/features/EditArticleForm';
 import { profileReducer } from '@/features/EditableProfileCard/testing';
 import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/testing';
+import { articlesPageReducer } from '@/pages/ArticlesPage';
 import { type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { articlesPageReducer } from '@/pages/ArticlesPage/model/slices/articlesPageSlice';
-import { editArticleFormReducer } from '@/features/EditArticleForm';
-import { addArticleFormReducer } from '@/features/AddArticleForm';
 
 const defaultAsyncReducers: ReducersList = {
 	loginForm: loginReducer,

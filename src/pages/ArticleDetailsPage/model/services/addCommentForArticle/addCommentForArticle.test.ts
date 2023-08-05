@@ -12,11 +12,13 @@ describe('addCommentForArticle', () => {
 			user: {
 				authData: USER_FIXTURE,
 			},
-			articleDetails: ARTICLE_FIXTURE,
+			articleDetails: {
+				data: ARTICLE_FIXTURE
+			},
 		});
 
 		thunk.api.post.mockReturnValue(Promise.resolve({ data: COMMENT_FIXTURE }));
-		const result = await thunk.callThunk('1');
+		const result = await thunk.callThunk(ARTICLE_FIXTURE_ID);
 
 		expect(thunk.api.post).toHaveBeenCalled();
 		expect(result.meta.requestStatus).toBe('fulfilled');
@@ -28,7 +30,9 @@ describe('addCommentForArticle', () => {
 			user: {
 				authData: USER_FIXTURE,
 			},
-			articleDetails: ARTICLE_FIXTURE,
+			articleDetails: {
+				data: ARTICLE_FIXTURE
+			},
 		});
 		thunk.api.post.mockReturnValue(Promise.resolve(REJECTED_FIXTURE));
 		const result = await thunk.callThunk(ARTICLE_FIXTURE_ID);

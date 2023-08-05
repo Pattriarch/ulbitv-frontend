@@ -1,3 +1,13 @@
+.addonLeft,
+.addonRight {
+    display: flex;
+}
+
+.addonLeft svg,
+.addonRight svg {
+    color: var(--hint-redesigned);
+}
+
 .Button {
     cursor: pointer;
     color: var(--text-redesigned);
@@ -8,22 +18,15 @@
     &:not(:disabled):hover {
         color: var(--accent-redesigned);
 
-        .addonLeft svg, .addonRight svg {
-            color: var(--accent-redesigned)
+        .addonLeft svg,
+        .addonRight svg {
+            color: var(--accent-redesigned);
         }
     }
 }
 
 .withAddon {
     padding: 0 16px;
-}
-
-.addonLeft, .addonRight {
-    display: flex;
-}
-
-.addonLeft svg, .addonRight svg {
-    color: var(--hint-redesigned)
 }
 
 .clear {

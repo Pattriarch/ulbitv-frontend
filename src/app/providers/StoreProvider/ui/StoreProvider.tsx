@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 
 import { type StateSchema } from '../config/StateSchema';
 import { createReduxStore } from '../config/store';
+
 import { SetupApiStoreType } from '@/shared/lib/tests/setupApiStore/setupApiStore';
 
 interface StoreProviderProps {

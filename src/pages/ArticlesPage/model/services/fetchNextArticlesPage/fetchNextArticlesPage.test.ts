@@ -22,7 +22,9 @@ describe('fetchNextArticlesPage', () => {
 
 	test('fetchArticlesList should not be called', async () => {
 		const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
-			articlesPage: ARTICLES_PAGE_FIXTURE,
+			articlesPage: {
+				...ARTICLES_PAGE_FIXTURE, hasMore: false,
+			},
 		});
 
 		await thunk.callThunk();
@@ -33,7 +35,9 @@ describe('fetchNextArticlesPage', () => {
 
 	test('fetchArticlesList should not be called', async () => {
 		const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
-			articlesPage: ARTICLES_PAGE_FIXTURE,
+			articlesPage: {
+				...ARTICLES_PAGE_FIXTURE, isLoading: true,
+			},
 		});
 
 		await thunk.callThunk();

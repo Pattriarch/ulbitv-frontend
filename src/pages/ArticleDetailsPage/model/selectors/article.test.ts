@@ -1,6 +1,8 @@
 import { DeepPartial } from '@reduxjs/toolkit';
+
+import { getCanEditArticle } from './article';
+
 import { StateSchema } from '@/app/providers/StoreProvider';
-import { getCanEditArticle } from '@/pages/ArticleDetailsPage/model/selectors/article';
 
 describe('article', () => {
 	test('should return true', () => {

@@ -1,8 +1,7 @@
 import { useTranslation } from 'react-i18next';
 
-
 import { useCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
-import { useCounterActions } from '../model/slice/counterSlice';
+import { useCounterActions } from '../model/slices/counterSlice';
 
 import { Button } from '@/shared/ui/deprecated/Button';
 

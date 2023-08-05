@@ -1,4 +1,4 @@
-import { screen } from '@testing-library/react';
+import { screen, waitFor } from '@testing-library/react';
 
 import AppRouter from './AppRouter';
 
@@ -65,6 +65,7 @@ describe('app/router/AppRouter', () => {
 			},
 		});
 
+		await waitFor(() => expect(screen.queryByTestId('PageLoader')).not.toBeInTheDocument());
 		const page = await screen.findByTestId('ProfilePage');
 		expect(page).toBeInTheDocument();
 	});

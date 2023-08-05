@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { ARTICLE_STORYBOOK_FIXTURE } from '../../tests/articleStorybookFixture';
+
 import { ArticleCard } from './ArticleCard';
 
 
-import { ARTICLE_STORYBOOK_FIXTURE } from '@/entities/Article/tests/articleStorybookFixture';
 import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const meta: Meta<typeof ArticleCard> = {

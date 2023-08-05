@@ -1,19 +1,20 @@
-import { type StateSchema } from '@/app/providers/StoreProvider';
 import {
 	getEditArticleData,
 	getEditArticleError,
 	getEditArticleForm,
 	getEditArticleIsLoading,
-} from '@/features/EditArticleForm';
+} from '../..';
+
+import { type StateSchema } from '@/app/providers/StoreProvider';
 import { ARTICLE_FIXTURE } from '@/entities/Article/testing';
 
 describe('addArticleSelectors', () => {
 	describe('getEditArticleForm', () => {
 		test('should return form data', () => {
 			const state: DeepPartial<StateSchema> = {
-				editArticleForm: ARTICLE_FIXTURE
+				editArticleForm: {form: ARTICLE_FIXTURE}
 			};
-			expect(getEditArticleForm(state as StateSchema)).toEqual(ARTICLE_FIXTURE.data);
+			expect(getEditArticleForm(state as StateSchema)).toEqual(ARTICLE_FIXTURE);
 		});
 
 		test('should work with empty state', () => {
@@ -24,9 +25,9 @@ describe('addArticleSelectors', () => {
 	describe('getEditArticleData', () => {
 		test('should return data', () => {
 			const state: DeepPartial<StateSchema> = {
-				editArticleForm: ARTICLE_FIXTURE
+				editArticleForm: {data: ARTICLE_FIXTURE}
 			};
-			expect(getEditArticleData(state as StateSchema)).toEqual(ARTICLE_FIXTURE.data);
+			expect(getEditArticleData(state as StateSchema)).toEqual(ARTICLE_FIXTURE);
 		});
 
 		test('should work with empty state', () => {

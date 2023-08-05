@@ -1,9 +1,9 @@
 import React, { memo, type TextareaHTMLAttributes, useRef } from 'react';
 
 import { classNames, type Mods } from '@/shared/lib/classNames/classNames';
+import { useAppEffect } from '@/shared/lib/hooks/useAppEffect/useAppEffect';
 
 import cls from './Textarea.module.scss';
-import { useAppEffect } from '@/shared/lib/hooks/useAppEffect/useAppEffect';
 
 type HTMLTextareaProps = Omit<
 	TextareaHTMLAttributes<HTMLTextAreaElement>,

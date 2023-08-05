@@ -1,9 +1,10 @@
 import { type DeepPartial } from '@reduxjs/toolkit';
 
+import { USER_FIXTURE } from '../../../tests/userFixture';
+
 import { getUserAuthData } from './getUserAuthData';
 
 import { type StateSchema } from '@/app/providers/StoreProvider';
-import { USER_FIXTURE } from '@/entities/User/tests/userFixture';
 
 describe('getUserAuthData', () => {
 	test('should return auth data', () => {

@@ -221,7 +221,7 @@ Clear.args = {
 - [avatarDropdown](/src/features/AvatarDropdown)
 - [editableProfileCard](/src/features/EditableProfileCard)
 - [LangSwitcher](/src/features/LangSwitcher)
-- [notificationButton](/src/features/NotificationButton)
+- [notificationButton](/src/features/OpenNotificationListButton)
 - [profileRating](/src/features/ProfileRating)
 - [ThemeSwitcher](/src/features/ThemeSwitcher)
 - [UI](/src/features/UI)

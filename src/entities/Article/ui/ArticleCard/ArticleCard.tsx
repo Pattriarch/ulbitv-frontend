@@ -1,16 +1,17 @@
 import { type DragEvent, memo } from 'react';
 
 import { Article, ArticleBlock } from '../../model/types/article';
+
 import {
 	ArticleCardDeprecated,
 	ArticleCardDeprecatedError,
 	ArticleCardDeprecatedLoader,
-} from '@/entities/Article/ui/ArticleCard/ArticleCardDeprecated/ArticleCardDeprecated';
+} from './ArticleCardDeprecated/ArticleCardDeprecated';
 import {
 	ArticleCardRedesigned,
 	ArticleCardRedesignedError,
 	ArticleCardRedesignedLoader,
-} from '@/entities/Article/ui/ArticleCard/ArticleCardRedesigned/ArticleCardRedesigned';
+} from './ArticleCardRedesigned/ArticleCardRedesigned';
 
 import { ToggleFeatures } from '@/shared/lib/features';
 

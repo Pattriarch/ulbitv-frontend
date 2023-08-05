@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import { User } from '../../../index';
 import { getUserDataByIdQuery } from '../../../api/userApi';
+import { User } from '../../../index';
 
 import { type ThunkConfig } from '@/app/providers/StoreProvider';
 import {

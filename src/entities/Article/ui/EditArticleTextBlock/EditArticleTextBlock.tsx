@@ -16,7 +16,9 @@ import { Textarea } from '@/shared/ui/redesigned/Textarea/Textarea';
 
 import cls from './EditArticleTextBlock.module.scss';
 
-interface EditArticleTextBlockProps extends HTMLAttributes<HTMLDivElement> {
+type TextBlockHTMLAttributes = Omit<HTMLAttributes<HTMLElement>, 'onChange'>;
+
+interface EditArticleTextBlockProps extends TextBlockHTMLAttributes {
 	className?: string;
 	isEdit: boolean;
 	block: ArticleTextBlock;
@@ -71,7 +73,7 @@ export const EditArticleTextBlock = memo((props: EditArticleTextBlockProps) => {
 
 	if (isEdit) {
 		return (
-			<>
+			<div className={className} {...otherProps}>
 				<ToggleFeatures
 					name={'isAppRedesigned'}
 					on={
@@ -130,12 +132,12 @@ export const EditArticleTextBlock = memo((props: EditArticleTextBlockProps) => {
 						Svg={PlusIcon}
 					/>
 				</div>
-			</>
+			</div>
 		);
 	}
 
 	return (
-		<>
+		<div className={className} {...otherProps}>
 			{editBlock.title && (
 				<ToggleFeatures
 					name={'isAppRedesigned'}
@@ -168,6 +170,6 @@ export const EditArticleTextBlock = memo((props: EditArticleTextBlockProps) => {
 					}
 				/>
 			))}
-		</>
+		</div>
 	);
 });

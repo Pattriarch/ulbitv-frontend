@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { matchPath, useLocation } from 'react-router-dom';
 
+import { useAppEffect } from '../hooks/useAppEffect/useAppEffect';
+
 import { AppRouteByPathPattern, AppRoutes } from '@/shared/const/router';
-import { useAppEffect } from '@/shared/lib/hooks/useAppEffect/useAppEffect';
 
 export function useRouteChange() {
 	const location = useLocation();

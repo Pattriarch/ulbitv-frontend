@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { PROFILE_STORYBOOK_FIXTURE } from '../../tests/profileStorybookFixture';
+
 import { ProfileCard } from './ProfileCard';
 
 import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { PROFILE_STORYBOOK_FIXTURE } from '@/entities/Profile/tests/profileStorybookFixture';
 
 const meta: Meta<typeof ProfileCard> = {
 	title: 'entities/Profile/ProfileCard',

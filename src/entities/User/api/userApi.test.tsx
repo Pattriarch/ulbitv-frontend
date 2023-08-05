@@ -1,6 +1,7 @@
-import { userApi } from '@/entities/User/api/userApi';
-import { setupApiStore } from '@/shared/lib/tests/setupApiStore/setupApiStore';
+import { userApi } from './userApi';
+
 import { Theme } from '@/shared/const/theme';
+import { setupApiStore } from '@/shared/lib/tests/setupApiStore/setupApiStore';
 
 describe('useApi', () => {
 	beforeEach(() => {
@@ -18,12 +19,11 @@ describe('useApi', () => {
 			)
 			.then(() => {
 				expect(fetchMock).toBeCalledTimes(1);
-				const { method, headers, url } = fetchMock.mock.calls[0][0] as Request;
+				const { method, url } = fetchMock.mock.calls[0][0] as Request;
 
 				expect(method).toBe('GET');
 				expect(url).toBe(`${__API__}/users/1`);
 			});
-		// renderHook(() => getUserDataByIdQuery('1'));
 	});
 
 	it('successful response', () => {

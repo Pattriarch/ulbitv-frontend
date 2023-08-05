@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { ArticleAdditionalInfo } from './ArticleAdditionalInfo';
+
 import { USER_FIXTURE } from '@/entities/User/testing';
 
 const meta: Meta<typeof ArticleAdditionalInfo> = {

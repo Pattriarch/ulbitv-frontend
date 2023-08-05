@@ -9,9 +9,9 @@ import {
 
 import { RatingCard } from '@/entities/Rating';
 import { getUserAuthData } from '@/entities/User';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
-import { ToggleFeatures } from '@/shared/lib/features';
 
 interface ProfileRatingProps {
 	className?: string;

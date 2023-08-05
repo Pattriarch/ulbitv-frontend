@@ -8,8 +8,6 @@ import { Button } from '@/shared/ui/redesigned/Button';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
 
-import cls from './ArticleAdditionalInfo.module.scss';
-
 interface ArticleAdditionalInfoProps {
 	className?: string;
 	author: User;

@@ -1,8 +1,9 @@
+import { initAuthData } from '../../..';
+import { USER_FIXTURE, USER_FIXTURE_ID } from '../../../tests/userFixture';
+
+import { LOCAL_STORAGE_LAST_DESIGN_KEY } from '@/shared/const/localStorage';
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { REJECTED_FIXTURE } from '@/shared/tests/rejectedFixture';
-import { initAuthData } from '@/entities/User';
-import { USER_FIXTURE, USER_FIXTURE_ID } from '@/entities/User/tests/userFixture';
-import { LOCAL_STORAGE_LAST_DESIGN_KEY } from '@/shared/const/localStorage';
 
 describe('fetchArticleById', () => {
 	Storage.prototype.setItem = jest.fn((key, value) =>

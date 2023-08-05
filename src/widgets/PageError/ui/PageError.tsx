@@ -2,14 +2,13 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { Button as ButtonDeprecated } from '@/shared/ui/deprecated/Button';
-
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
+import { Button } from '@/shared/ui/redesigned/Button';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 import cls from './PageError.module.scss';
-import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
-import { ToggleFeatures } from '@/shared/lib/features';
-import { Text } from '@/shared/ui/redesigned/Text';
-import { Button } from '@/shared/ui/redesigned/Button';
 
 interface PageErrorProps {
 	className?: string;

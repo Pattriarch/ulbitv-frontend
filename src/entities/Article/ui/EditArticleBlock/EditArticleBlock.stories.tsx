@@ -4,8 +4,8 @@ import { ArticleBlockType, ArticleCodeBlock, ArticleImageBlock, ArticleTextBlock
 
 import { EditArticleBlock } from './EditArticleBlock';
 
-import { getStorybookImage } from '@/shared/lib/tests/getStorybookImage/getStorybookImage';
 import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
+import { getStorybookImage } from '@/shared/lib/tests/getStorybookImage/getStorybookImage';
 
 const meta: Meta<typeof EditArticleBlock> = {
 	title: 'entities/Article/EditArticleBlock',

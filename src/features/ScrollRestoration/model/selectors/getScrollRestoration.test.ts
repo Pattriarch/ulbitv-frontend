@@ -1,7 +1,7 @@
+import { getScrollRestoration, getScrollRestorationByPath } from '../..';
+
 import { type StateSchema } from '@/app/providers/StoreProvider';
-import { getEditArticleForm } from '@/features/EditArticleForm';
 import { AppRoutes } from '@/shared/const/router';
-import { getScrollRestoration, getScrollRestorationByPath } from '@/features/ScrollRestoration';
 
 describe('getScrollRestoration', () => {
 	describe('getScrollRestoration', () => {

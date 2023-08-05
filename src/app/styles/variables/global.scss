@@ -1,7 +1,7 @@
 :root {
     --font-family-main: consolas, "Times New Roman", serif;
-    --font-family-title-redesigned: 'Roboto', sans-serif;
-    --font-family-text-redesigned: 'Nunito Sans', sans-serif;
+    --font-family-title-redesigned: "Roboto", sans-serif;
+    --font-family-text-redesigned: "Nunito Sans", sans-serif;
 
     // s
     --font-size-s: 12px;
@@ -56,5 +56,4 @@
 
     // xl
     --font-xl-redesigned: var(--font-size-xl) / var(--font-line-xl) var(--font-family-title-redesigned);
-
 }

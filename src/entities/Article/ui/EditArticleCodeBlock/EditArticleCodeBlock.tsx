@@ -9,7 +9,9 @@ import { Textarea } from '@/shared/ui/redesigned/Textarea';
 
 import cls from './EditArticleCodeBlock.module.scss';
 
-interface EditArticleCodeBlockProps extends HTMLAttributes<HTMLDivElement> {
+type CodeBlockHTMLAttributes = Omit<HTMLAttributes<HTMLElement>, 'onChange'>;
+
+interface EditArticleCodeBlockProps extends CodeBlockHTMLAttributes {
 	className?: string;
 	isEdit: boolean;
 	block: ArticleCodeBlock;
@@ -47,6 +49,7 @@ export const EditArticleCodeBlock = memo((props: EditArticleCodeBlockProps) => {
 							variant={'outlined'}
 							value={editBlock.code}
 							onChange={onChangeCode}
+							{...otherProps}
 						/>
 					}
 					off={
@@ -55,6 +58,7 @@ export const EditArticleCodeBlock = memo((props: EditArticleCodeBlockProps) => {
 							theme={'outlined'}
 							value={editBlock.code}
 							onChange={onChangeCode}
+							{...otherProps}
 						/>
 					}
 				/>
@@ -64,7 +68,9 @@ export const EditArticleCodeBlock = memo((props: EditArticleCodeBlockProps) => {
 
 	return (
 		<>
-			<Code withCopyIcon={false} text={editBlock.code} />
+			<Code
+				{...otherProps}
+				withCopyIcon={false} text={editBlock.code} />
 		</>
 	);
 });

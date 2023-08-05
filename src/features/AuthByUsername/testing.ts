@@ -1,1 +1,1 @@
-export { loginReducer } from './model/slice/loginSlice';
+export { loginReducer } from '@/features/AuthByUsername/model/slices/loginSlice';

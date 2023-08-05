@@ -3,19 +3,21 @@ import { useTranslation } from 'react-i18next';
 
 import { type ArticleImageBlock } from '../../model/types/article';
 
+import { ToggleFeatures } from '@/shared/lib/features';
 import { Input as InputDeprecated } from '@/shared/ui/deprecated/Input/Input';
-import { Input } from '@/shared/ui/redesigned/Input/Input';
-import { Text } from '@/shared/ui/redesigned/Text/Text';
 import {
 	Text as TextDeprecated,
 	TextAlign,
 } from '@/shared/ui/deprecated/Text/Text';
+import { Input } from '@/shared/ui/redesigned/Input/Input';
+import { VStack } from '@/shared/ui/redesigned/Stack';
+import { Text } from '@/shared/ui/redesigned/Text/Text';
 
 import cls from './EditArticleImageBlock.module.scss';
-import { VStack } from '@/shared/ui/redesigned/Stack';
-import { ToggleFeatures } from '@/shared/lib/features';
 
-interface EditArticleImageBlockProps extends HTMLAttributes<HTMLDivElement> {
+type ImageBlockHTMLAttributes = Omit<HTMLAttributes<HTMLElement>, 'onChange'>;
+
+interface EditArticleImageBlockProps extends ImageBlockHTMLAttributes {
 	className?: string;
 	isEdit: boolean;
 	block: ArticleImageBlock;
@@ -53,7 +55,7 @@ export const EditArticleImageBlock = memo(
 
 		if (isEdit) {
 			return (
-				<>
+				<div className={className} {...otherProps}>
 					<div className={cls.preview}>
 						<img
 							src={editBlock.src}
@@ -100,12 +102,12 @@ export const EditArticleImageBlock = memo(
 							</>
 						}
 					/>
-				</>
+				</div>
 			);
 		}
 
 		return (
-			<VStack gap={'16'} align={'center'}>
+			<VStack gap={'16'} align={'center'} {...otherProps}>
 				<img
 					src={editBlock.src}
 					className={cls.img}

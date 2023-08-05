@@ -1,14 +1,12 @@
 import React, { memo, useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { ArticlesPageFilters } from 'src/widgets/ArticlesPageFilters';
 
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { articlesPageReducer } from '../../model/slices/articlesPageSlice';
-import { FiltersContainer } from '../FiltersContainer/FiltersContainer';
-import { ViewSelectorContainer } from '../ViewSelectorContainer/ViewSelectorContainer';
 
 import { ArticlePageGreeting } from '@/features/ArticlePageGreeting';
-import { ArticlesPageFilters } from '@/features/ArticlesPageFilters';
 import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
@@ -20,7 +18,9 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { ArticleInfiniteList } from '@/widgets/ArticleInfiniteList';
+import { FiltersContainer } from '@/widgets/FiltersContainer';
 import { Page } from '@/widgets/Page';
+import { ViewSelectorContainer } from '@/widgets/ViewSelectorContainer';
 
 export interface ArticlesPageProps {
 	className?: string;

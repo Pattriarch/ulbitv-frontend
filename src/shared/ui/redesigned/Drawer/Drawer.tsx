@@ -1,4 +1,4 @@
-import { memo, type ReactNode, useCallback, useEffect } from 'react';
+import { memo, type ReactNode, useCallback } from 'react';
 
 import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal';
@@ -9,16 +9,15 @@ import {
 	useAnimationLibs,
 } from '@/shared/lib/components/AnimationProvider';
 import { toggleFeatures } from '@/shared/lib/features';
+import { useAppEffect } from '@/shared/lib/hooks/useAppEffect/useAppEffect';
 
 import cls from './Drawer.module.scss';
-import { useAppEffect } from '@/shared/lib/hooks/useAppEffect/useAppEffect';
 
 interface DrawerProps {
 	className?: string;
 	children?: ReactNode;
 	isOpen?: boolean;
 	onClose?: () => void;
-	lazy?: boolean;
 }
 
 const height = window.innerHeight - 100;
@@ -26,7 +25,7 @@ const height = window.innerHeight - 100;
 export const DrawerContent = memo((props: DrawerProps) => {
 	const { Spring, Gesture } = useAnimationLibs();
 	const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
-	const { className, children, isOpen, onClose, lazy } = props;
+	const { className, children, isOpen, onClose } = props;
 
 	const openDrawer = useCallback(() => {
 		api.start({ y: 0, immediate: false });

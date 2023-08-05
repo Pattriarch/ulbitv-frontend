@@ -17,6 +17,6 @@ export {
 	ArticleType,
 	ArticleBlockType,
 } from './consts/articleConsts';
-export { articleDetailsReducer } from './model/slice/articleDetailsSlice';
+export { articleDetailsReducer } from '@/entities/Article/model/slices/articleDetailsSlice';
 export { fetchArticleById } from './model/services/fetchArticleById/fetchArticleById';
 export { ArticleCard } from './ui/ArticleCard/ArticleCard';

@@ -19,7 +19,7 @@ body {
     color: var(--text-redesigned);
     background: var(--bg-redesigned);
     min-height: 100vh;
-    font: var(--font-m-redesigned)
+    font: var(--font-m-redesigned);
 }
 
 .content-page {
@@ -39,7 +39,6 @@ body {
     background-color: var(--icon-redesigned);
     border-radius: 20px;
 }
-
 
 .app *::-webkit-scrollbar {
     width: 12px;

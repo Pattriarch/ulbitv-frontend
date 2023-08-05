@@ -1,10 +1,9 @@
+import { addArticle } from './addArticle';
+
+import { ARTICLE_FIXTURE } from '@/entities/Article/testing';
+import { USER_FIXTURE } from '@/entities/User/testing';
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { REJECTED_FIXTURE } from '@/shared/tests/rejectedFixture';
-import { initAuthData } from '@/entities/User';
-import { USER_FIXTURE, USER_FIXTURE_ID } from '@/entities/User/tests/userFixture';
-import { ARTICLE_FIXTURE } from '@/entities/Article/testing';
-import { addArticle } from '@/features/AddArticleForm/model/services/addArticle/addArticle';
-import { formatDate } from '@/shared/lib/date/formatDate';
 
 describe('fetchArticleById', () => {
 	test('success', async () => {

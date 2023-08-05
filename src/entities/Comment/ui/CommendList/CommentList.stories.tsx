@@ -1,7 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { COMMENTS_FIXTURE } from '../../tests/commentFixture';
+
 import { CommentList } from './CommentList';
-import { COMMENTS_FIXTURE } from '@/entities/Comment/tests/commentFixture';
+
 import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const meta: Meta<typeof CommentList> = {

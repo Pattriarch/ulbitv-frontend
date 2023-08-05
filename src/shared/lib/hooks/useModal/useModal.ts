@@ -1,5 +1,6 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
-import { useAppEffect } from '@/shared/lib/hooks/useAppEffect/useAppEffect';
+import { useCallback, useRef, useState } from 'react';
+
+import { useAppEffect } from '../useAppEffect/useAppEffect';
 
 interface UseModalProps {
 	isOpen?: boolean;

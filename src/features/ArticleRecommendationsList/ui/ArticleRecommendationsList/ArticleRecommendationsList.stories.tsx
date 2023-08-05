@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { ArticleRecommendationsList } from './ArticleRecommendationsList';
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { ARTICLE_STORYBOOK_FIXTURE } from '@/entities/Article/tests/articleStorybookFixture';
-import { USER_FIXTURE } from '@/entities/User/tests/userFixture';
+
+import { ARTICLE_STORYBOOK_FIXTURE } from '@/entities/Article';
+import { USER_FIXTURE } from '@/entities/User';
 import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 const meta: Meta<typeof ArticleRecommendationsList> = {
 	title: 'features/ArticleRecommendationsList',

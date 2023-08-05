@@ -1,5 +1,6 @@
-import { type MutableRefObject, useEffect } from 'react';
-import { useAppEffect } from '@/shared/lib/hooks/useAppEffect/useAppEffect';
+import { type MutableRefObject } from 'react';
+
+import { useAppEffect } from '../useAppEffect/useAppEffect';
 
 export interface UseInfiniteScrollOptions {
 	callback?: () => void;

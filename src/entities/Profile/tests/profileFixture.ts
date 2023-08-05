@@ -1,4 +1,5 @@
-import { Profile } from '@/entities/Profile';
+import { Profile } from '..';
+
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 

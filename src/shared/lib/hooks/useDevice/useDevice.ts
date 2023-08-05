@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
-import { useAppEffect } from '@/shared/lib/hooks/useAppEffect/useAppEffect';
+import { useState } from 'react';
+
+import { useAppEffect } from '../useAppEffect/useAppEffect';
 
 export function useDevice() {
 	const [isMobile, setIsMobile] = useState(false);

@@ -1,18 +1,19 @@
-import { type StateSchema } from '@/app/providers/StoreProvider';
 import {
 	getAddArticleData,
 	getAddArticleError,
 	getAddArticleIsLoading,
-} from '@/features/AddArticleForm/model/selectors/addArticleSelectors';
-import { ARTICLE_FIXTURE } from '@/entities/Article/tests/articleFixture';
+} from './addArticleSelectors';
+
+import { type StateSchema } from '@/app/providers/StoreProvider';
+import { ARTICLE_FIXTURE } from '@/entities/Article';
 
 describe('addArticleSelectors', () => {
 	describe('getAddArticleData', () => {
 		test('should return error', () => {
 			const state: DeepPartial<StateSchema> = {
-				addArticleForm: ARTICLE_FIXTURE
+				addArticleForm: { data: ARTICLE_FIXTURE },
 			};
-			expect(getAddArticleData(state as StateSchema)).toEqual(ARTICLE_FIXTURE.data);
+			expect(getAddArticleData(state as StateSchema)).toEqual(ARTICLE_FIXTURE);
 		});
 
 		test('should work with empty state', () => {

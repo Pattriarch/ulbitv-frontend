@@ -10,9 +10,9 @@ import { HStack } from '../Stack';
 import { Text } from '../Text';
 
 import { classNames, type Mods } from '@/shared/lib/classNames/classNames';
+import { useAppEffect } from '@/shared/lib/hooks/useAppEffect/useAppEffect';
 
 import cls from './Input.module.scss';
-import { useAppEffect } from '@/shared/lib/hooks/useAppEffect/useAppEffect';
 
 type HTMLInputProps = Omit<
 	InputHTMLAttributes<HTMLInputElement>,

@@ -1,6 +1,7 @@
 import { fetchArticleRecommendations } from './fetchArticleRecommendations';
+
+import { ARTICLES_FIXTURE } from '@/entities/Article/testing';
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { ARTICLES_FIXTURE } from '@/entities/Article/tests/articleFixture';
 
 describe('fetchArticleRecommendations', () => {
 	test('success', async () => {

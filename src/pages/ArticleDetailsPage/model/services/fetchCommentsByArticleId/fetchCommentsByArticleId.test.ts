@@ -1,6 +1,7 @@
 import { fetchCommentsByArticleId } from './fetchCommentsByArticleId';
+
+import { COMMENTS_FIXTURE } from '@/entities/Comment/testing';
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { COMMENTS_FIXTURE } from '@/entities/Comment/tests/commentFixture';
 import { REJECTED_FIXTURE } from '@/shared/tests/rejectedFixture';
 
 describe('fetchCommentsByArticleId', () => {

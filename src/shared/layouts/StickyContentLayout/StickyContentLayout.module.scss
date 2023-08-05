@@ -1,30 +1,29 @@
 .StickyContentLayout {
-	display: grid;
-	gap: 16px;
-	grid-template-areas:
-			'left content right';
-	grid-template-columns: min-content minmax(0px, 1fr) max-content;
+    display: grid;
+    gap: 16px;
+    grid-template-areas: "left content right";
+    grid-template-columns: min-content minmax(0, 1fr) max-content;
 }
 
 .left {
-	grid-area: left;
+    grid-area: left;
 }
 
 .content {
-	grid-area: content;
-	max-width: 1176px;
-	justify-self: center;
-	gap: 16px;
-	width: 100%;
+    grid-area: content;
+    max-width: 1176px;
+    justify-self: center;
+    gap: 16px;
+    width: 100%;
 }
 
 .right {
-	grid-area: right;
+    grid-area: right;
 }
 
 .left,
 .right {
-	position: sticky;
-	top: 32px;
-	height: fit-content;
+    position: sticky;
+    top: 32px;
+    height: fit-content;
 }

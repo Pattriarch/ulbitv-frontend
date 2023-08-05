@@ -3,9 +3,10 @@ import '@/app/styles/index.scss';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import ProfilePage from './ProfilePage';
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+
+import { PROFILE_STORYBOOK_FIXTURE } from '@/entities/Profile';
 import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
-import { PROFILE_STORYBOOK_FIXTURE } from '@/entities/Profile/tests/profileStorybookFixture';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 const meta: Meta<typeof ProfilePage> = {
 	title: 'pages/ProfilePage',

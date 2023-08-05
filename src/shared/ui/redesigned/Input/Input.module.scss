@@ -28,7 +28,8 @@
     height: 44px;
 }
 
-.addonLeft, .addonRight {
+.addonLeft,
+.addonRight {
     display: flex;
 }
 
@@ -36,8 +37,9 @@
     border: 2px solid var(--accent-redesigned);
 
     // иконка подсвечивается при фокусе инпута
-    .addonLeft svg, .addonRight svg {
-        color: var(--accent-redesigned)
+    .addonLeft svg,
+    .addonRight svg {
+        color: var(--accent-redesigned);
     }
 }
 
@@ -49,7 +51,7 @@
     background: none;
 
     &::placeholder {
-        color: var(--hint-redesigned)
+        color: var(--hint-redesigned);
     }
 
     &:focus {

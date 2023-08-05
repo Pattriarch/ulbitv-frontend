@@ -1,8 +1,8 @@
 import { Fragment, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { ArticleCardProps } from '../ArticleCard';
 import { EditArticleBlock } from '../../EditArticleBlock/EditArticleBlock';
+import { ArticleCardProps } from '../ArticleCard';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';

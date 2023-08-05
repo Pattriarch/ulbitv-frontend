@@ -1,15 +1,15 @@
 import { type DeepPartial } from '@reduxjs/toolkit';
 
-import { getJsonSettings, useJsonSettings } from './getUserJsonSettings';
-
-import { type StateSchema } from '@/app/providers/StoreProvider';
-import { Theme } from '@/shared/const/theme';
-import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
+import { USER_DEFAULT_THEME } from '../../../consts/userConsts';
 import {
 	USER_FIXTURE,
 	USER_FIXTURE_THEME,
-} from '@/entities/User/tests/userFixture';
-import { USER_DEFAULT_THEME } from '@/entities/User/consts/userConsts';
+} from '../../../tests/userFixture';
+
+import { getJsonSettings, useJsonSettings } from './getUserJsonSettings';
+
+import { type StateSchema } from '@/app/providers/StoreProvider';
+import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
 
 describe('entities/User/selectors/getUserJsonSettings', () => {
 	let result: any;

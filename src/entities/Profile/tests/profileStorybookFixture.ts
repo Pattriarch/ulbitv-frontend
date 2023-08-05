@@ -1,7 +1,8 @@
-import { Profile } from '@/entities/Profile';
-import { getStorybookImage } from '@/shared/lib/tests/getStorybookImage/getStorybookImage';
+import { Profile } from '..';
+
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
+import { getStorybookImage } from '@/shared/lib/tests/getStorybookImage/getStorybookImage';
 
 export const PROFILE_STORYBOOK_FIXTURE: Profile = {
 	id: '1',

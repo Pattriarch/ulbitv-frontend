@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { NOTIFICATIONS_FIXTURE } from '../../tests/notificationFixtures';
+
 import { NotificationList } from './NotificationList';
 
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { NOTIFICATIONS_FIXTURE } from '@/entities/Notification/tests/notificationFixtures';
 import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 const meta: Meta<typeof NotificationList> = {
 	title: 'entities/Notification/NotificationList',

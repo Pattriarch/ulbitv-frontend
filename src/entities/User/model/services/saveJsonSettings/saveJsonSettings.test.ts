@@ -1,8 +1,9 @@
-import { saveJsonSettings } from '@/entities/User';
-import { setJsonSettingsMutation } from '@/entities/User/api/userApi';
-import { USER_FIXTURE } from '@/entities/User/tests/userFixture';
-import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import { saveJsonSettings } from '../../..';
+import { setJsonSettingsMutation } from '../../../api/userApi';
+import { USER_FIXTURE } from '../../../tests/userFixture';
+
 import { Theme } from '@/shared/const/theme';
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 
 jest.mock('@/entities/User/api/userApi');
 

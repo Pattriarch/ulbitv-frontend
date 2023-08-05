@@ -33,6 +33,7 @@ module.exports = {
 		'.eslintrc.js',
 		'json-server/index.js',
 		'cypress.config.ts',
+		'scripts'
 	],
 	overrides: [
 		{

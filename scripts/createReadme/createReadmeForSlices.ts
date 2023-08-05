@@ -8,7 +8,7 @@ project.addSourceFilesAtPaths('src/**/*.md');
 project.addSourceFilesAtPaths('src/**/*.ts');
 project.addSourceFilesAtPaths('src/**/*.tsx');
 
-// slice : entities, features, pages, widgets
+// slices : entities, features, pages, widgets
 const sliceMap: Record<string, string> = {
 	pages: 'Page',
 	entities: 'Entity',

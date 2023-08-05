@@ -16,7 +16,7 @@
     height: 156px;
 
     &::placeholder {
-        color: var(--hint-redesigned)
+        color: var(--hint-redesigned);
     }
 
     &:focus {
@@ -45,7 +45,3 @@
 .max {
     width: 100%;
 }
-
-//.outlined {
-//    border: 1px solid black;
-//}

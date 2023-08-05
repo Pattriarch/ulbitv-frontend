@@ -13,8 +13,10 @@ export function buildSlice<
 	const useActions = (): typeof slice.actions => {
 		const dispatch = useDispatch();
 
+		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 		// @ts-expect-error
 		return useMemo(
+			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 			// @ts-expect-error
 			() => bindActionCreators(slice.actions, dispatch),
 			[dispatch],

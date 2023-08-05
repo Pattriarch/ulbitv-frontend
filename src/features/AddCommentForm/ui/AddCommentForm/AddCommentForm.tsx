@@ -6,7 +6,7 @@ import { getAddCommentFormText } from '../../model/selectors/addCommentFormSelec
 import {
 	addCommentFormActions,
 	addCommentFormReducer,
-} from '../../model/slice/addCommentFormSlice';
+} from '../../model/slices/addCommentFormSlice';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {

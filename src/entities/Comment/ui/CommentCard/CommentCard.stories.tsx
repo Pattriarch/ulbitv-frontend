@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { COMMENT_FIXTURE } from '../../tests/commentFixture';
+
 import { CommentCard } from './CommentCard';
 
 import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
-import { COMMENT_FIXTURE } from '@/entities/Comment/tests/commentFixture';
 
 const meta: Meta<typeof CommentCard> = {
 	title: 'entities/Comment/CommentCard',

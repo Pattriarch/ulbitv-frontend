@@ -42,7 +42,7 @@ export const Dropdown = memo((props: DropdownProps) => {
 				className={classNames(cls.menu, {}, menuAdditionalClasses)}
 			>
 				{items.map((item, index) => {
-					const content = ({ active }: { active: boolean }) => {
+					const content = ({ active }: { active: boolean, }) => {
 						return item.href ? (
 							<AppLink
 								to={item.href}

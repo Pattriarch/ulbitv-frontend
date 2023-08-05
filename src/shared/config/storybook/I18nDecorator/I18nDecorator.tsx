@@ -16,7 +16,7 @@ export const I18nDecorator = (
 	}, [locale]);
 
 	return (
-		<Suspense fallback={<div>Loading translations...</div>}>
+		<Suspense fallback={''}>
 			<I18nextProvider i18n={i18nForTest}>
 				<Story />
 			</I18nextProvider>

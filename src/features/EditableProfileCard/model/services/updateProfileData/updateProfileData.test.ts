@@ -1,9 +1,10 @@
 import { ValidateProfileError } from '../../consts/consts';
 
 import { updateProfileData } from './updateProfileData';
+
+import { PROFILE_FIXTURE } from '@/entities/Profile/testing';
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { REJECTED_FIXTURE } from '@/shared/tests/rejectedFixture';
-import { PROFILE_FIXTURE } from '@/entities/Profile/tests/profileFixture';
 
 describe('updateProfileData', () => {
 	test('success', async () => {
@@ -13,7 +14,7 @@ describe('updateProfileData', () => {
 			},
 		});
 
-		thunk.api.put.mockReturnValue(Promise.resolve({ PROFILE_FIXTURE }));
+		thunk.api.put.mockReturnValue(Promise.resolve({ data: PROFILE_FIXTURE }));
 		const result = await thunk.callThunk();
 
 		expect(thunk.api.put).toHaveBeenCalled();

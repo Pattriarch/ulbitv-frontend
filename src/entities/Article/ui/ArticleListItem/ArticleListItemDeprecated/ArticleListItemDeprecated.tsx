@@ -10,7 +10,6 @@ import cls from '../ArticleListItem.module.scss';
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 import { getRouteArticleDetails } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { useHover } from '@/shared/lib/hooks/useHover/useHover';
 import { AppLink } from '@/shared/ui/deprecated/AppLink';
 import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
@@ -25,7 +24,6 @@ export const ArticleListItemDeprecated = memo((props: ArticleListItemProps) => {
 		props;
 
 	const { t } = useTranslation();
-	const [_, bindHover] = useHover();
 
 	const handleButtonClick = useCallback(() => {
 		if (setLastScrolledIndex && index) {
@@ -113,7 +111,6 @@ export const ArticleListItemDeprecated = memo((props: ArticleListItemProps) => {
 				className,
 				cls[view],
 			])}
-			{...bindHover}
 		>
 			<Card className={cls.card}>
 				<div className={cls.imageWrapper}>

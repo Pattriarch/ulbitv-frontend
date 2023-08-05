@@ -59,7 +59,7 @@ export const AddArticleForm = memo((props: AddArticleProps) => {
 	const onChangeImage = useCallback(
 		(value: string) => {
 			void dispatch(
-				addArticleFormActions.updateArticleForm({ img: value || '' }),
+				addArticleFormActions.updateAddArticleData({ img: value || '' }),
 			);
 		},
 		[dispatch],
@@ -68,7 +68,7 @@ export const AddArticleForm = memo((props: AddArticleProps) => {
 	const onChangeTitle = useCallback(
 		(value: string) => {
 			void dispatch(
-				addArticleFormActions.updateArticleForm({ title: value || '' }),
+				addArticleFormActions.updateAddArticleData({ title: value || '' }),
 			);
 		},
 		[dispatch],
@@ -77,7 +77,7 @@ export const AddArticleForm = memo((props: AddArticleProps) => {
 	const onChangeSubtitle = useCallback(
 		(value: string) => {
 			void dispatch(
-				addArticleFormActions.updateArticleForm({ subtitle: value || '' }),
+				addArticleFormActions.updateAddArticleData({ subtitle: value || '' }),
 			);
 		},
 		[dispatch],
@@ -85,7 +85,7 @@ export const AddArticleForm = memo((props: AddArticleProps) => {
 
 	const onChangeBlocks = useCallback(
 		(blocks: ArticleBlock[]) => {
-			void dispatch(addArticleFormActions.updateArticleForm({ blocks }));
+			void dispatch(addArticleFormActions.updateAddArticleData({ blocks }));
 		},
 		[dispatch],
 	);
@@ -122,7 +122,7 @@ export const AddArticleForm = memo((props: AddArticleProps) => {
 	const onAddCodeBlock = useCallback(() => {
 		const block = getEmptyBlock(data?.blocks);
 		void dispatch(
-			addArticleFormActions.updateArticleForm({
+			addArticleFormActions.updateAddArticleData({
 				blocks: [
 					...(data?.blocks ?? []),
 					{
@@ -138,7 +138,7 @@ export const AddArticleForm = memo((props: AddArticleProps) => {
 	const onAddTextBlock = useCallback(() => {
 		const block = getEmptyBlock(data?.blocks);
 		void dispatch(
-			addArticleFormActions.updateArticleForm({
+			addArticleFormActions.updateAddArticleData({
 				blocks: [
 					...(data?.blocks ?? []),
 					{
@@ -155,7 +155,7 @@ export const AddArticleForm = memo((props: AddArticleProps) => {
 	const onAddImageBlock = useCallback(() => {
 		const block = getEmptyBlock(data?.blocks);
 		void dispatch(
-			addArticleFormActions.updateArticleForm({
+			addArticleFormActions.updateAddArticleData({
 				blocks: [
 					...(data?.blocks ?? []),
 					{

@@ -23,7 +23,10 @@ describe('initArticlesPage', () => {
 
 	test('fetchArticlesList should not be called', async () => {
 		const thunk = new TestAsyncThunk(initArticlesPage, {
-			articlesPage: ARTICLES_PAGE_FIXTURE,
+			articlesPage: {
+				...ARTICLES_PAGE_FIXTURE,
+				_inited: true
+			},
 		});
 
 		const searchParams = new URLSearchParams(window.location.search);

@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import ArticleRating from './ArticleRating';
 
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { USER_FIXTURE } from '@/entities/User/testing';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 const meta: Meta<typeof ArticleRating> = {
 	title: 'features/ArticleRating',

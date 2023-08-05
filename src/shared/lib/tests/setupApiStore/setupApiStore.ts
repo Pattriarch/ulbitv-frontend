@@ -7,10 +7,10 @@ export interface SetupApiStoreType {
 
 export function setupApiStore<
 	A extends {
-		reducer: Reducer<any, any>;
-		reducerPath: string;
-		middleware: Middleware;
-		util: { resetApiState(): any };
+		reducer: Reducer<any, any>,
+		reducerPath: string,
+		middleware: Middleware,
+		util: { resetApiState(): any, },
 	},
 	R extends Record<string, Reducer<any, any>> = Record<never, never>
 >(api: A, extraReducers?: R): SetupApiStoreType {
@@ -31,7 +31,7 @@ export function setupApiStore<
 		});
 	type StoreType = EnhancedStore<
 		{
-			api: ReturnType<A['reducer']>;
+			api: ReturnType<A['reducer']>,
 		} & {
 		[K in keyof R]: ReturnType<R[K]>;
 	},

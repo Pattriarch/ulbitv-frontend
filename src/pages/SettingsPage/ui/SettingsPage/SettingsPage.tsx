@@ -1,12 +1,12 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { UiDesignSwitcher } from 'src/features/UiDesignSwitcher';
 
-import { UiDesignSwitcher } from '@/features/uiDesignSwitcher';
-import { VStack } from '@/shared/ui/redesigned/Stack';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { Text as TextDeprecated, TextSize } from '@/shared/ui/deprecated/Text';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
 import { Page } from '@/widgets/Page';
-import { ToggleFeatures } from '@/shared/lib/features';
 
 export interface SettingsPageProps {
 	className?: string;
@@ -17,7 +17,7 @@ const SettingsPage = memo((props: SettingsPageProps) => {
 	const { t } = useTranslation();
 
 	return (
-		<Page>
+		<Page className={className}>
 			<VStack gap={'16'}>
 				<ToggleFeatures
 					name={'isAppRedesigned'}

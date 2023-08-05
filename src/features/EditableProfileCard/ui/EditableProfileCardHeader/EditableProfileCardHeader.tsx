@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { getCanCurrentUserEditProfile } from '../../model/selectors/getCanCurrentUserEditProfile/getCanCurrentUserEditProfile';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
-import { profileActions } from '../../model/slice/profileSlice';
+import { profileActions } from '../../model/slices/profileSlice';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';

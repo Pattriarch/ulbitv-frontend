@@ -11,9 +11,9 @@ void i18n
 		lng: 'ru',
 		fallbackLng: 'en',
 		debug: false,
-
-		interpolation: {
-			escapeValue: false, // not needed for react!!
+		resources: {
+			en: {},
+			ru: {}
 		},
 	});
 

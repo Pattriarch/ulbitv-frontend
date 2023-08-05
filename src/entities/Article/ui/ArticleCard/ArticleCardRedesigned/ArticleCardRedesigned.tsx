@@ -1,9 +1,10 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { ArticleCardProps } from '../ArticleCard';
 import { EditArticleBlock } from '../../EditArticleBlock/EditArticleBlock';
+import { ArticleCardProps } from '../ArticleCard';
 
+import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppImage } from '@/shared/ui/redesigned/AppImage';
 import { Button } from '@/shared/ui/redesigned/Button';
@@ -12,7 +13,6 @@ import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
 
 import cls from './ArticleCardRedesigned.module.scss';
-import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
 
 export const ArticleCardRedesignedLoader = () => {
 	return (

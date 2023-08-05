@@ -1,7 +1,8 @@
 import { ValidateProfileError } from '../../consts/consts';
 
 import { validateProfileData } from './validateProfileData';
-import { PROFILE_FIXTURE } from '@/entities/Profile/tests/profileFixture';
+
+import { PROFILE_FIXTURE } from '@/entities/Profile/testing';
 
 describe('validateProfileData', () => {
 	test('success', async () => {
