@@ -62,10 +62,12 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
 						[className],
 					)}
 					border={'partial'}
+					data-testid={'ArticleViewSelector'}
 				>
 					<HStack gap={'8'}>
 						{viewTypes.map((viewType, index) => (
 							<Icon
+								data-testid={`ArticleViewSelector.Button.${viewType.view}`}
 								key={index}
 								className={classNames(cls.icon, {
 									[cls.selected]: viewType.view === view,
@@ -83,12 +85,14 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
 					className={classNames(cls.ArticleViewSelector, {}, [
 						className,
 					])}
+					data-testid={'ArticleViewSelector'}
 				>
 					{viewTypes.map((viewType, index) => (
 						<ButtonDeprecated
 							key={index}
 							theme={ButtonTheme.CLEAR}
 							onClick={onClick(viewType.view)}
+							data-testid={`ArticleViewSelector.Button.${viewType.view}`}
 						>
 							<IconDeprecated
 								className={classNames(cls.icon, {

@@ -5,10 +5,10 @@ import { ArticleSortSelector } from '../../../../features/ArticleSortSelector/ui
 import { ArticleTypeTabs } from '../../../../features/ArticleTypeTabs/ui/ArticleTypeTabs/ArticleTypeTabs';
 import { useArticleFilters } from '../../../../pages/ArticlesPage/lib/hooks/useArticleFilters';
 
-import { ViewSelectorContainer } from '@/pages/ArticlesPage';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Card } from '@/shared/ui/deprecated/Card';
 import { Input } from '@/shared/ui/deprecated/Input';
+import { ViewSelectorContainer } from '@/widgets/ViewSelectorContainer';
 
 import cls from './ArticlesPageFilters.module.scss';
 
