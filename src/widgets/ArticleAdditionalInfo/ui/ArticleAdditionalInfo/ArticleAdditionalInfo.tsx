@@ -10,30 +10,31 @@ import { Text } from '@/shared/ui/redesigned/Text';
 
 interface ArticleAdditionalInfoProps {
 	className?: string;
-	author: User;
-	createdAt: string;
-	views: number;
+	isEditable: boolean;
+	author?: User;
+	createdAt?: string;
+	views?: number;
 	onEdit: () => void;
 }
 
 export const ArticleAdditionalInfo = memo(
 	(props: ArticleAdditionalInfoProps) => {
 		const { t } = useTranslation();
-		const { className, author, views, createdAt, onEdit } = props;
+		const { className, author, isEditable, views, createdAt, onEdit } = props;
 
 		return (
 			<VStack
 				gap={'32'}
-				className={classNames(cls.ArticalAdditionalInfo, {}, [
+				className={classNames('', {}, [
 					className,
 				])}
 			>
 				<HStack gap={'8'}>
-					<Avatar src={author.avatar} size={32} />
-					<Text text={author.username} />
+					<Avatar src={author?.avatar} size={32} />
+					<Text text={author?.username} />
 					<Text text={createdAt} />
 				</HStack>
-				<Button onClick={onEdit}>{t('Редактировать')}</Button>
+				{isEditable && <Button onClick={onEdit}>{t('Редактировать')}</Button>}
 				<Text text={t('{{count}} просмотров', { count: views })} />
 			</VStack>
 		);

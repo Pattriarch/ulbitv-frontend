@@ -1,7 +1,9 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
+import { getCanCurrentUserEditArticle } from '@/entities/Article';
 import { AddArticleForm } from '@/features/AddArticleForm';
 import { EditArticleForm } from '@/features/EditArticleForm';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -11,6 +13,7 @@ import { Text } from '@/shared/ui/redesigned/Text';
 import { Page } from '@/widgets/Page';
 
 import cls from './ArticleEditPage.module.scss';
+import { ForbiddenPage } from '@/pages/ForbiddenPage';
 
 export interface ArticleEditPageProps {
 	className?: string;
@@ -19,11 +22,15 @@ export interface ArticleEditPageProps {
 const ArticleEditPage = memo(({ className }: ArticleEditPageProps) => {
 	const { t } = useTranslation();
 	const { id } = useParams<{ id: string, }>();
-	const isEdit = Boolean(id);
+	const isEditable = useSelector(getCanCurrentUserEditArticle);
+
+	if (id && !isEditable) {
+		return <ForbiddenPage />;
+	}
 
 	return (
 		<Page className={classNames(cls.ArticleEditPage, {}, [className])}>
-			{isEdit && id ? (
+			{isEditable && id ? (
 				<ToggleFeatures
 					name={'isAppRedesigned'}
 					on={
@@ -52,8 +59,8 @@ const ArticleEditPage = memo(({ className }: ArticleEditPageProps) => {
 					}
 				/>
 			)}
-			{isEdit && id && <EditArticleForm id={id} />}
-			{!isEdit && <AddArticleForm />}
+			{isEditable && id && <EditArticleForm id={id} />}
+			{!isEditable && <AddArticleForm />}
 		</Page>
 	);
 });

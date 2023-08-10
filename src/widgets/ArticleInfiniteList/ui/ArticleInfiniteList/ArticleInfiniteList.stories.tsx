@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ARTICLE_LIST_FIXTURE } from '../../tests/articlesListFixture';
+import { ARTICLE_LIST_FIXTURE } from '../../../../entities/Article/tests/articlesListFixture';
 
 import { ArticleInfiniteList } from './ArticleInfiniteList';
 

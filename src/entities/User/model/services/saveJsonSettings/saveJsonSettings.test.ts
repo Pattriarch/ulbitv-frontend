@@ -48,8 +48,6 @@ describe('saveJsonSettings', () => {
 
 		const result = await thunk.callThunk({});
 
-		console.log(result);
-
 		expect(thunk.dispatch).toHaveBeenCalledTimes(2);
 		expect(result.meta.requestStatus).toBe('rejected');
 		expect(result.payload).toBe('userData is empty');

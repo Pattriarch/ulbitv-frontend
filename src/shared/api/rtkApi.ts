@@ -1,7 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localStorage';
-import 'isomorphic-fetch'; // для тестирования
+// todo проверить можно ли удалить
+// import 'isomorphic-fetch'; // для тестирования
 
 export const rtkApi = createApi({
 	reducerPath: 'api',

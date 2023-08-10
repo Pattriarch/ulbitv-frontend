@@ -1,4 +1,4 @@
-import { ArticleSortField, ArticleType, ArticleView } from '@/entities/Article';
+import { ArticleSortField, ArticleType, ArticleView } from "../consts/articleConsts";
 
 export const ARTICLE_LIST_FIXTURE = {
 	page: 2,

@@ -1,7 +1,7 @@
 import { getProfileForm } from './getProfileForm';
 
 import { type StateSchema } from '@/app/providers/StoreProvider';
-import { PROFILE_FIXTURE } from '@/entities/Profile';
+import { PROFILE_FIXTURE } from '@/entities/Profile/testing';
 
 describe('getProfileForm', () => {
 	test('should return profile form', () => {

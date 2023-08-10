@@ -1,1 +1,1 @@
-export { ArticlesFilters } from './ui/ArticlesFilters/ArticlesFilters';
+export { FiltersContainer } from '@/pages/ArticlesPage/ui/FiltersContainer/FiltersContainer';

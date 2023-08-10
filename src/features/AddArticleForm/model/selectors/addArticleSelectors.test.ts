@@ -5,7 +5,7 @@ import {
 } from './addArticleSelectors';
 
 import { type StateSchema } from '@/app/providers/StoreProvider';
-import { ARTICLE_FIXTURE } from '@/entities/Article';
+import { ARTICLE_FIXTURE } from '@/entities/Article/testing';
 
 describe('addArticleSelectors', () => {
 	describe('getAddArticleData', () => {

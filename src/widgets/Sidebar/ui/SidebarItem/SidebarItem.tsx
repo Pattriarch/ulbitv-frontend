@@ -8,7 +8,7 @@ import { getUserAuthData } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
 import {
-	AppLink as ApplinkDeprecated,
+	AppLink as AppLinkDeprecated,
 	AppLinkTheme,
 } from '@/shared/ui/deprecated/AppLink';
 import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon';
@@ -44,11 +44,12 @@ export const SidebarItem = memo(
 						activeClassName={cls.active}
 					>
 						<Icon Svg={item.Icon} />
+						{/* i18next-extract-disable-next-line */}
 						<span className={cls.link}>{t(item.text)}</span>
 					</AppLink>
 				}
 				off={
-					<ApplinkDeprecated
+					<AppLinkDeprecated
 						className={classNames(cls.item, {
 							[cls.collapsed]: collapsed,
 						})}
@@ -56,9 +57,9 @@ export const SidebarItem = memo(
 						to={item.path}
 					>
 						<IconDeprecated Svg={item.Icon} className={cls.icon} />
-						{/* <item.Icon className={cls.icon} /> */}
+						{/* i18next-extract-disable-next-line */}
 						<span className={cls.link}>{t(item.text)}</span>
-					</ApplinkDeprecated>
+					</AppLinkDeprecated>
 				}
 			/>
 		);

@@ -3,10 +3,10 @@ import type { Meta, StoryObj } from '@storybook/react';
 import ArticlePage from './ArticlesPage';
 
 import { ArticleView } from '@/entities/Article';
-import { USER_FIXTURE } from '@/entities/User';
+import { ARTICLE_LIST_FIXTURE } from '@/entities/Article/testing';
+import { USER_FIXTURE } from '@/entities/User/testing';
 import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { ARTICLE_LIST_FIXTURE } from '@/widgets/ArticleInfiniteList';
 
 const meta: Meta<typeof ArticlePage> = {
 	title: 'pages/ArticlesPage/ArticlesPage',

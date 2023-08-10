@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { UiDesignSwitcher } from 'src/features/UiDesignSwitcher';
 
+import { UiDesignSwitcher } from '@/features/UiDesignSwitcher';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Text as TextDeprecated, TextSize } from '@/shared/ui/deprecated/Text';
 import { VStack } from '@/shared/ui/redesigned/Stack';

@@ -1,12 +1,13 @@
 import React, { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { OpenNotificationListButton } from 'src/features/OpenNotificationListButton';
+
 
 import { getUserAuthData } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
 import { CreateNewArticleButton } from '@/features/CreateNewArticleButton';
+import { OpenNotificationListButton } from '@/features/OpenNotificationListButton';
 import { getRouteArticleCreate, getRouteMain } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { toggleFeatures, ToggleFeatures } from '@/shared/lib/features';

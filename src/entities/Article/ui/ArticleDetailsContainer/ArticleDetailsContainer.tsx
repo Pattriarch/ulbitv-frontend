@@ -1,7 +1,8 @@
 import { memo } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { ArticleDetails } from '@/entities/Article';
+import { ArticleDetails } from '../ArticleDetails/ArticleDetails';
+
 import { Card } from '@/shared/ui/redesigned/Card';
 
 interface ArticleDetailsContainerProps {

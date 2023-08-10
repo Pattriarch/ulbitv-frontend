@@ -6,7 +6,7 @@ import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsComments } from '../../ui/ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 
-import { ArticleDetails } from '@/entities/Article';
+import { ArticleDetails, ArticleDetailsContainer } from '@/entities/Article';
 import { ArticleRating } from '@/features/ArticleRating';
 import { ArticleRecommendationsList } from '@/features/ArticleRecommendationsList';
 import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
@@ -18,8 +18,7 @@ import {
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Card } from '@/shared/ui/deprecated/Card';
 import { VStack } from '@/shared/ui/redesigned/Stack';
-import { AdditionalInfoContainer } from '@/widgets/AdditionalInfoContainer';
-import { ArticleDetailsContainer } from '@/widgets/ArticleDetailsContainer';
+import { ArticleAdditionalInfoContainer } from '@/widgets/ArticleAdditionalInfo';
 import { Page } from '@/widgets/Page';
 
 import cls from './ArticleDetailsPage.module.scss';
@@ -63,7 +62,7 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
 								</VStack>
 							</Page>
 						}
-						right={<AdditionalInfoContainer />}
+						right={<ArticleAdditionalInfoContainer />}
 					/>
 				}
 				off={

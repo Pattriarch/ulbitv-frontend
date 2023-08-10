@@ -4,3 +4,9 @@ export {
 	ARTICLE_FIXTURE_ID,
 	ARTICLES_FIXTURE
 } from './tests/articleFixture';
+export {
+	ARTICLE_STORYBOOK_FIXTURE
+} from './tests/articleStorybookFixture';
+export {
+	ARTICLE_LIST_FIXTURE
+} from './tests/articlesListFixture';

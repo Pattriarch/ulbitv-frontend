@@ -3,12 +3,15 @@ import { type StoryFn } from '@storybook/react';
 
 import { type StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
 import { articleDetailsReducer } from '@/entities/Article/testing';
+// eslint-disable-next-line ulbitv-fsd/layer-imports-validator
 import { addArticleFormReducer } from '@/features/AddArticleForm';
 import { addCommentFormReducer } from '@/features/AddCommentForm/testing';
 import { loginReducer } from '@/features/AuthByUsername/testing';
+// eslint-disable-next-line ulbitv-fsd/layer-imports-validator
 import { editArticleFormReducer } from '@/features/EditArticleForm';
 import { profileReducer } from '@/features/EditableProfileCard/testing';
 import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/testing';
+// eslint-disable-next-line ulbitv-fsd/layer-imports-validator
 import { articlesPageReducer } from '@/pages/ArticlesPage';
 import { type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 

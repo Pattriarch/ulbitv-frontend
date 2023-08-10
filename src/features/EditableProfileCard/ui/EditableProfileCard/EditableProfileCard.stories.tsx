@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { EditableProfileCard } from './EditableProfileCard';
 
-import { PROFILE_STORYBOOK_FIXTURE } from '@/entities/Profile';
+import { PROFILE_STORYBOOK_FIXTURE } from '@/entities/Profile/testing';
 import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 

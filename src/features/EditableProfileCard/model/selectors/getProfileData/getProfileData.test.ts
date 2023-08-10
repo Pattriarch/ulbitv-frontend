@@ -1,7 +1,7 @@
 import { getProfileData } from './getProfileData';
 
 import { type StateSchema } from '@/app/providers/StoreProvider';
-import { PROFILE_FIXTURE } from '@/entities/Profile';
+import { PROFILE_FIXTURE } from '@/entities/Profile/testing';
 
 describe('getProfileData', () => {
 	test('should return profile data', () => {

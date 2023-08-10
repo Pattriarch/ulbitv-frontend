@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import ArticleEditPage from './ArticleEditPage';
 
 
-import { ARTICLE_STORYBOOK_FIXTURE } from '@/entities/Article';
+import { ARTICLE_STORYBOOK_FIXTURE } from '@/entities/Article/testing';
 import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
