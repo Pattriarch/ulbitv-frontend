@@ -6,7 +6,7 @@ import { Counter } from './Counter';
 import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
 
 describe('Counter', () => {
-	test('Test render', function() {
+	test('Test render', function () {
 		componentRender(<Counter />, {
 			initialState: { counter: { value: 10 } },
 		});

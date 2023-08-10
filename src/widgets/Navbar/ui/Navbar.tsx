@@ -2,7 +2,6 @@ import React, { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-
 import { getUserAuthData } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
@@ -53,7 +52,9 @@ export const Navbar = memo(({ className }: NavbarProps): JSX.Element => {
 							<CreateNewArticleButton
 								className={cls.actionsBtn}
 							/>
-							<OpenNotificationListButton className={cls.actionsBtn} />
+							<OpenNotificationListButton
+								className={cls.actionsBtn}
+							/>
 							<AvatarDropdown />
 						</HStack>
 					</header>

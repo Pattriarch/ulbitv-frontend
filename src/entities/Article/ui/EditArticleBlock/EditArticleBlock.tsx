@@ -1,7 +1,12 @@
 import { type HTMLAttributes, memo, useCallback, useState } from 'react';
 
 import { ArticleBlockType } from '../../consts/articleConsts';
-import { ArticleBlock, ArticleCodeBlock, ArticleImageBlock, ArticleTextBlock } from '../../model/types/article';
+import {
+	ArticleBlock,
+	ArticleCodeBlock,
+	ArticleImageBlock,
+	ArticleTextBlock,
+} from '../../model/types/article';
 import cls from '../EditArticleBlock/EditArticleBlock.module.scss';
 import { EditArticleCodeBlock } from '../EditArticleCodeBlock/EditArticleCodeBlock';
 import { EditArticleImageBlock } from '../EditArticleImageBlock/EditArticleImageBlock';

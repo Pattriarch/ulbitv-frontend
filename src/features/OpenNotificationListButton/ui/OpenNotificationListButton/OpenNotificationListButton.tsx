@@ -24,94 +24,107 @@ interface NotificationButtonProps {
 	className?: string;
 }
 
-export const OpenNotificationListButton = memo((props: NotificationButtonProps) => {
-	const { className } = props;
-	const isMobile = useDevice();
-	const userData = useSelector(getUserAuthData);
+export const OpenNotificationListButton = memo(
+	(props: NotificationButtonProps) => {
+		const { className } = props;
+		const isMobile = useDevice();
+		const userData = useSelector(getUserAuthData);
 
-	const [isOpen, setIsOpen] = useState(false);
+		const [isOpen, setIsOpen] = useState(false);
 
-	const onCloseDrawer = useCallback(() => {
-		setIsOpen(false);
-	}, []);
+		const onCloseDrawer = useCallback(() => {
+			setIsOpen(false);
+		}, []);
 
-	const onOpenDrawer = useCallback(() => {
-		setIsOpen(true);
-	}, []);
+		const onOpenDrawer = useCallback(() => {
+			setIsOpen(true);
+		}, []);
 
-	const trigger = (
-		<ToggleFeatures
-			name={'isAppRedesigned'}
-			on={
-				<Icon Svg={NotificationIcon} clickable onClick={onOpenDrawer} />
-			}
-			off={
-				<ButtonDeprecated
-					onClick={onOpenDrawer}
-					theme={ButtonTheme.CLEAR}
-				>
-					<IconDeprecated Svg={NotificationIconDeprecated} inverted />
-				</ButtonDeprecated>
-			}
-		/>
-	);
+		const trigger = (
+			<ToggleFeatures
+				name={'isAppRedesigned'}
+				on={
+					<Icon
+						Svg={NotificationIcon}
+						clickable
+						onClick={onOpenDrawer}
+					/>
+				}
+				off={
+					<ButtonDeprecated
+						onClick={onOpenDrawer}
+						theme={ButtonTheme.CLEAR}
+					>
+						<IconDeprecated
+							Svg={NotificationIconDeprecated}
+							inverted
+						/>
+					</ButtonDeprecated>
+				}
+			/>
+		);
 
-	if (!userData) {
-		return null;
-	}
+		if (!userData) {
+			return null;
+		}
 
-	return (
-		<div>
-			{isMobile ? (
-				<>
-					{trigger}
+		return (
+			<div>
+				{isMobile ? (
+					<>
+						{trigger}
+						<ToggleFeatures
+							name={'isAppRedesigned'}
+							on={
+								<Drawer isOpen={isOpen} onClose={onCloseDrawer}>
+									<NotificationList userId={+userData.id} />
+								</Drawer>
+							}
+							off={
+								<Drawer isOpen={isOpen} onClose={onCloseDrawer}>
+									<NotificationList userId={+userData.id} />
+								</Drawer>
+							}
+						/>
+					</>
+				) : (
 					<ToggleFeatures
 						name={'isAppRedesigned'}
 						on={
-							<Drawer isOpen={isOpen} onClose={onCloseDrawer}>
-								<NotificationList userId={+userData.id} />
-							</Drawer>
+							<Popover
+								direction={'bottomLeft'}
+								trigger={trigger}
+								className={classNames(
+									cls.NotificationButton,
+									{},
+									[className],
+								)}
+							>
+								<NotificationList
+									userId={+userData.id}
+									className={cls.notifications}
+								/>
+							</Popover>
 						}
 						off={
-							<Drawer isOpen={isOpen} onClose={onCloseDrawer}>
-								<NotificationList userId={+userData.id} />
-							</Drawer>
+							<PopoverDeprecated
+								direction={'bottomLeft'}
+								trigger={trigger}
+								className={classNames(
+									cls.NotificationButton,
+									{},
+									[className],
+								)}
+							>
+								<NotificationList
+									userId={+userData.id}
+									className={cls.notifications}
+								/>
+							</PopoverDeprecated>
 						}
 					/>
-				</>
-			) : (
-				<ToggleFeatures
-					name={'isAppRedesigned'}
-					on={
-						<Popover
-							direction={'bottomLeft'}
-							trigger={trigger}
-							className={classNames(cls.NotificationButton, {}, [
-								className,
-							])}
-						>
-							<NotificationList
-								userId={+userData.id}
-								className={cls.notifications}
-							/>
-						</Popover>
-					}
-					off={
-						<PopoverDeprecated
-							direction={'bottomLeft'}
-							trigger={trigger}
-							className={classNames(cls.NotificationButton, {}, [
-								className,
-							])}
-						>
-							<NotificationList
-								userId={+userData.id}
-								className={cls.notifications}
-							/>
-						</PopoverDeprecated>
-					}
-				/>
-			)}
-		</div>
-	);
-});
+				)}
+			</div>
+		);
+	},
+);

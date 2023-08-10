@@ -6,19 +6,17 @@ import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 const meta: Meta<typeof UiDesignSwitcher> = {
-    title: 'features/UiDesignSwitcher',
-    component: UiDesignSwitcher,
-    tags: ['autodocs'],
-    decorators: [StoreDecorator({})]
+	title: 'features/UiDesignSwitcher',
+	component: UiDesignSwitcher,
+	tags: ['autodocs'],
+	decorators: [StoreDecorator({})],
 };
 
 export default meta;
 type Story = StoryObj<typeof UiDesignSwitcher>;
 
-export const Normal: Story = {
-
-};
+export const Normal: Story = {};
 
 export const NormalRedesigned: Story = {
-    decorators: [NewDesignDecorator]
+	decorators: [NewDesignDecorator],
 };

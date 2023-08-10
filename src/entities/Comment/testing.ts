@@ -1,4 +1,1 @@
-export {
-	COMMENTS_FIXTURE,
-	COMMENT_FIXTURE,
-} from './tests/commentFixture';
+export { COMMENTS_FIXTURE, COMMENT_FIXTURE } from './tests/commentFixture';

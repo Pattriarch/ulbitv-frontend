@@ -20,9 +20,7 @@ const meta: Meta<typeof MainPage> = {
 export default meta;
 type Story = StoryObj<typeof MainPage>;
 
-export const Normal: Story = {
-
-};
+export const Normal: Story = {};
 
 export const NormalRedesigned: Story = {
 	decorators: [NewDesignDecorator],

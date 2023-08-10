@@ -22,13 +22,19 @@ describe('validateProfileData', () => {
 	});
 
 	test('incorrect age', async () => {
-		const result = validateProfileData({ ...PROFILE_FIXTURE, age: undefined });
+		const result = validateProfileData({
+			...PROFILE_FIXTURE,
+			age: undefined,
+		});
 
 		expect(result).toEqual([ValidateProfileError.INCORRECT_AGE]);
 	});
 
 	test('incorrect country', async () => {
-		const result = validateProfileData({ ...PROFILE_FIXTURE, country: undefined });
+		const result = validateProfileData({
+			...PROFILE_FIXTURE,
+			country: undefined,
+		});
 
 		expect(result).toEqual([ValidateProfileError.INCORRECT_COUNTRY]);
 	});

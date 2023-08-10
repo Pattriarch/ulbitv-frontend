@@ -14,6 +14,4 @@ const meta: Meta<typeof ArticlesPageFilters> = {
 export default meta;
 type Story = StoryObj<typeof ArticlesPageFilters>;
 
-export const Normal: Story = {
-
-};
+export const Normal: Story = {};

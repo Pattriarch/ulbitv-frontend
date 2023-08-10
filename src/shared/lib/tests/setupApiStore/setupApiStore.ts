@@ -1,9 +1,16 @@
-import { AnyAction, combineReducers, configureStore, EnhancedStore, Middleware, Reducer } from '@reduxjs/toolkit';
+import {
+	AnyAction,
+	combineReducers,
+	configureStore,
+	EnhancedStore,
+	Middleware,
+	Reducer,
+} from '@reduxjs/toolkit';
 
 export interface SetupApiStoreType {
 	api: any;
 	store: EnhancedStore;
-};
+}
 
 export function setupApiStore<
 	A extends {
@@ -12,7 +19,7 @@ export function setupApiStore<
 		middleware: Middleware,
 		util: { resetApiState(): any, },
 	},
-	R extends Record<string, Reducer<any, any>> = Record<never, never>
+	R extends Record<string, Reducer<any, any>> = Record<never, never>,
 >(api: A, extraReducers?: R): SetupApiStoreType {
 	/*
 	 * Modified version of RTK Query's helper function:
@@ -33,8 +40,8 @@ export function setupApiStore<
 		{
 			api: ReturnType<A['reducer']>,
 		} & {
-		[K in keyof R]: ReturnType<R[K]>;
-	},
+			[K in keyof R]: ReturnType<R[K]>;
+		},
 		AnyAction,
 		ReturnType<typeof getStore> extends EnhancedStore<any, any, infer M>
 			? M

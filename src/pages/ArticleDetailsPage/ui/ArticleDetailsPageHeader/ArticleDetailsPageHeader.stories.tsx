@@ -5,7 +5,6 @@ import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader';
 import { ARTICLE_STORYBOOK_FIXTURE } from '@/entities/Article/testing';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
-
 const meta: Meta<typeof ArticleDetailsPageHeader> = {
 	title: 'pages/ArticleDetailsPage/ArticleDetailsPageHeader',
 	component: ArticleDetailsPageHeader,
@@ -25,5 +24,4 @@ const meta: Meta<typeof ArticleDetailsPageHeader> = {
 export default meta;
 type Story = StoryObj<typeof ArticleDetailsPageHeader>;
 
-export const Normal: Story = {
-};
+export const Normal: Story = {};

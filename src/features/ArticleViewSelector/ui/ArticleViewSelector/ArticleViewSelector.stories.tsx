@@ -14,12 +14,10 @@ const meta: Meta<typeof ArticleViewSelector> = {
 export default meta;
 type Story = StoryObj<typeof ArticleViewSelector>;
 
-export const Normal: Story = {
-
-};
+export const Normal: Story = {};
 
 export const NormalRedesigned: Story = {
-	decorators: [NewDesignDecorator]
+	decorators: [NewDesignDecorator],
 };
 
 export const SmallSelected: Story = {
@@ -47,4 +45,3 @@ export const BigSelectedRedesigned: Story = {
 		view: ArticleView.BIG,
 	},
 };
-

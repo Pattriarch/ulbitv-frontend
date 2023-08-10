@@ -7,7 +7,6 @@ import {
 import { type EnhancedStore } from '@reduxjs/toolkit/src/configureStore';
 import { type AxiosInstance } from 'axios';
 
-
 import { type ArticleDetailsSchema } from '@/entities/Article';
 import { type CounterSchema } from '@/entities/Counter';
 import { type UserSchema } from '@/entities/User';

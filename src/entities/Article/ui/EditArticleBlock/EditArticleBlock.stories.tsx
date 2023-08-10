@@ -1,6 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ArticleBlockType, ArticleCodeBlock, ArticleImageBlock, ArticleTextBlock } from '../..';
+import {
+	ArticleBlockType,
+	ArticleCodeBlock,
+	ArticleImageBlock,
+	ArticleTextBlock,
+} from '../..';
 
 import { EditArticleBlock } from './EditArticleBlock';
 
@@ -48,32 +53,32 @@ export const TextEditBlock: Story = {
 export const TextEditBlockRedesigned: Story = {
 	decorators: [NewDesignDecorator],
 	args: {
-		block: textBlock
+		block: textBlock,
 	},
 };
 
 export const ImageEditBlock: Story = {
 	args: {
-		block: imageBlock
+		block: imageBlock,
 	},
 };
 
 export const ImageEditBlockRedesigned: Story = {
 	decorators: [NewDesignDecorator],
 	args: {
-		block: imageBlock
+		block: imageBlock,
 	},
 };
 
 export const CodeEditBlock: Story = {
 	args: {
-		block: codeBlock
+		block: codeBlock,
 	},
 };
 
 export const CodeEditBlockRedesigned: Story = {
 	decorators: [NewDesignDecorator],
 	args: {
-		block: codeBlock
+		block: codeBlock,
 	},
 };

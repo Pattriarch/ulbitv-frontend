@@ -30,7 +30,7 @@ export const Icon = memo((props: IconProps) => {
 		Svg,
 		width = 32,
 		height = 32,
-		"data-testid": testId = 'Icon',
+		'data-testid': testId = 'Icon',
 		...otherProps
 	} = props;
 

@@ -23,7 +23,11 @@ export const StoreProvider = (props: StoreProviderProps): JSX.Element => {
 	);
 
 	if (providedStore) {
-		return <Provider store={providedStore as unknown as Store}>{children}</Provider>;
+		return (
+			<Provider store={providedStore as unknown as Store}>
+				{children}
+			</Provider>
+		);
 	}
 
 	return <Provider store={store}>{children}</Provider>;

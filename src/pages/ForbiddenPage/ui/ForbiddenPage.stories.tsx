@@ -17,9 +17,7 @@ const meta: Meta<typeof ForbiddenPage> = {
 export default meta;
 type Story = StoryObj<typeof ForbiddenPage>;
 
-export const Normal: Story = {
-
-};
+export const Normal: Story = {};
 
 export const NormalRedesigned: Story = {
 	decorators: [NewDesignDecorator],

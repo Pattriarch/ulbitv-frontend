@@ -19,7 +19,9 @@ describe('getScrollRestoration', () => {
 
 		test('should work with empty state', () => {
 			const state: DeepPartial<StateSchema> = {};
-			expect(getScrollRestoration(state as StateSchema)).toEqual(undefined);
+			expect(getScrollRestoration(state as StateSchema)).toEqual(
+				undefined,
+			);
 		});
 	});
 	describe('getScrollRestorationByPath', () => {
@@ -32,7 +34,12 @@ describe('getScrollRestoration', () => {
 					scroll,
 				},
 			};
-			expect(getScrollRestorationByPath(state as StateSchema, AppRoutes.MAIN)).toEqual(100);
+			expect(
+				getScrollRestorationByPath(
+					state as StateSchema,
+					AppRoutes.MAIN,
+				),
+			).toEqual(100);
 		});
 
 		test('should return default scroll value for non-found in scroll list key', () => {
@@ -44,13 +51,22 @@ describe('getScrollRestoration', () => {
 					scroll,
 				},
 			};
-			expect(getScrollRestorationByPath(state as StateSchema, AppRoutes.PROFILE)).toEqual(0);
+			expect(
+				getScrollRestorationByPath(
+					state as StateSchema,
+					AppRoutes.PROFILE,
+				),
+			).toEqual(0);
 		});
 
 		test('should work with empty state', () => {
 			const state: DeepPartial<StateSchema> = {};
-			expect(getScrollRestorationByPath(state as StateSchema, 'NOT_EXISTING_PATH')).toEqual(0);
+			expect(
+				getScrollRestorationByPath(
+					state as StateSchema,
+					'NOT_EXISTING_PATH',
+				),
+			).toEqual(0);
 		});
 	});
 });
-

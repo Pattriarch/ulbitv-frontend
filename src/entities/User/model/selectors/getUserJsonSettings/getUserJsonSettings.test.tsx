@@ -1,10 +1,7 @@
 import { type DeepPartial } from '@reduxjs/toolkit';
 
 import { USER_DEFAULT_THEME } from '../../../consts/userConsts';
-import {
-	USER_FIXTURE,
-	USER_FIXTURE_THEME,
-} from '../../../tests/userFixture';
+import { USER_FIXTURE, USER_FIXTURE_THEME } from '../../../tests/userFixture';
 
 import { getJsonSettings, useJsonSettings } from './getUserJsonSettings';
 

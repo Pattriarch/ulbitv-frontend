@@ -11,6 +11,4 @@ const meta: Meta<typeof ScrollToolbar> = {
 export default meta;
 type Story = StoryObj<typeof ScrollToolbar>;
 
-export const Normal: Story = {
-
-};
+export const Normal: Story = {};

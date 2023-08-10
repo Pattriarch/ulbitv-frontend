@@ -12,7 +12,6 @@ import { Input } from '@/shared/ui/deprecated/Input';
 
 import cls from './ArticlesPageFilters.module.scss';
 
-
 interface ArticlesPageFiltersProps {
 	className?: string;
 }

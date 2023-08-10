@@ -13,6 +13,4 @@ const meta: Meta<typeof PageLoader> = {
 export default meta;
 type Story = StoryObj<typeof PageLoader>;
 
-export const Normal: Story = {
-	
-};
+export const Normal: Story = {};

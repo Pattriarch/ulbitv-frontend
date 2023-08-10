@@ -20,21 +20,19 @@ interface ArticleAdditionalInfoProps {
 export const ArticleAdditionalInfo = memo(
 	(props: ArticleAdditionalInfoProps) => {
 		const { t } = useTranslation();
-		const { className, author, isEditable, views, createdAt, onEdit } = props;
+		const { className, author, isEditable, views, createdAt, onEdit } =
+			props;
 
 		return (
-			<VStack
-				gap={'32'}
-				className={classNames('', {}, [
-					className,
-				])}
-			>
+			<VStack gap={'32'} className={classNames('', {}, [className])}>
 				<HStack gap={'8'}>
 					<Avatar src={author?.avatar} size={32} />
 					<Text text={author?.username} />
 					<Text text={createdAt} />
 				</HStack>
-				{isEditable && <Button onClick={onEdit}>{t('Редактировать')}</Button>}
+				{isEditable && (
+					<Button onClick={onEdit}>{t('Редактировать')}</Button>
+				)}
 				<Text text={t('{{count}} просмотров', { count: views })} />
 			</VStack>
 		);

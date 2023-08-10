@@ -1,11 +1,6 @@
 import { type DeepPartial } from '@reduxjs/toolkit';
 
-import {
-	getUserRoles,
-	isUserAdmin,
-	isUserManager,
-	UserRole,
-} from '../../..';
+import { getUserRoles, isUserAdmin, isUserManager, UserRole } from '../../..';
 import { USER_FIXTURE } from '../../../tests/userFixture';
 
 import { type StateSchema } from '@/app/providers/StoreProvider';

@@ -18,14 +18,10 @@ type Story = StoryObj<typeof Navbar>;
 
 export const Normal: Story = {
 	decorators: [StoreDecorator({})],
-
 };
 
 export const NormalRedesigned: Story = {
-	decorators: [
-		NewDesignDecorator,
-		StoreDecorator({})],
-
+	decorators: [NewDesignDecorator, StoreDecorator({})],
 };
 
 export const AuthNavbar: Story = {

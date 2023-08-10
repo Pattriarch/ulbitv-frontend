@@ -20,13 +20,13 @@ export const Normal: Story = {
 	args: {
 		to: '/',
 		children: 'Text',
-		variant: 'primary'
+		variant: 'primary',
 	},
 };
 
 export const Red: Story = {
 	args: {
 		children: 'Text',
-		variant: 'red'
+		variant: 'red',
 	},
 };

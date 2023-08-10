@@ -15,7 +15,9 @@ describe('fetchArticleById', () => {
 				authData: USER_FIXTURE,
 			},
 		});
-		thunk.api.post.mockReturnValue(Promise.resolve({ data: ARTICLE_FIXTURE }));
+		thunk.api.post.mockReturnValue(
+			Promise.resolve({ data: ARTICLE_FIXTURE }),
+		);
 
 		const result = await thunk.callThunk();
 

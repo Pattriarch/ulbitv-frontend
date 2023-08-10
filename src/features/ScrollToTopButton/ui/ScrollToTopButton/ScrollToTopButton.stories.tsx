@@ -11,6 +11,4 @@ const meta: Meta<typeof ScrollToTopButton> = {
 export default meta;
 type Story = StoryObj<typeof ScrollToTopButton>;
 
-export const Normal: Story = {
-
-};
+export const Normal: Story = {};

@@ -8,7 +8,10 @@ export type {
 	ArticleTextBlock,
 } from './model/types/article';
 export type { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
-export { getArticleDetailsData, getCanCurrentUserEditArticle } from './model/selectors/articleDetails';
+export {
+	getArticleDetailsData,
+	getCanCurrentUserEditArticle,
+} from './model/selectors/articleDetails';
 
 export { ArticleList } from './ui/ArticleList/ArticleList';
 export {

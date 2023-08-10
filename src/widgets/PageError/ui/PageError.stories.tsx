@@ -18,5 +18,5 @@ type Story = StoryObj<typeof PageError>;
 export const Normal: Story = {};
 
 export const NormalRedesigned: Story = {
-	decorators: [NewDesignDecorator]
+	decorators: [NewDesignDecorator],
 };

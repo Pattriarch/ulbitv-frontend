@@ -8,7 +8,9 @@ describe('fetchCommentsByArticleId', () => {
 	test('success', async () => {
 		const thunk = new TestAsyncThunk(fetchCommentsByArticleId, {});
 
-		thunk.api.get.mockReturnValue(Promise.resolve({ data: COMMENTS_FIXTURE }));
+		thunk.api.get.mockReturnValue(
+			Promise.resolve({ data: COMMENTS_FIXTURE }),
+		);
 		const result = await thunk.callThunk('1');
 
 		expect(thunk.api.get).toHaveBeenCalled();

@@ -11,6 +11,4 @@ const meta: Meta<typeof Loader> = {
 export default meta;
 type Story = StoryObj<typeof Loader>;
 
-export const Normal: Story = {
-
-};
+export const Normal: Story = {};

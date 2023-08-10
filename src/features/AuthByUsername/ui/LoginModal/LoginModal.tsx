@@ -1,6 +1,5 @@
 import { Suspense } from 'react';
 
-
 import { LoginFormAsync } from '../LoginForm/LoginForm.async';
 
 import { classNames } from '@/shared/lib/classNames/classNames';

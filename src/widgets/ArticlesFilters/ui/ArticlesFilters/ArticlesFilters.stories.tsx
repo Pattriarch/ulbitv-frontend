@@ -13,9 +13,8 @@ const meta: Meta<typeof ArticlesFilters> = {
 export default meta;
 type Story = StoryObj<typeof ArticlesFilters>;
 
-export const Normal: Story = {
-};
+export const Normal: Story = {};
 
 export const NormalRedesigned: Story = {
-	decorators: [NewDesignDecorator]
+	decorators: [NewDesignDecorator],
 };

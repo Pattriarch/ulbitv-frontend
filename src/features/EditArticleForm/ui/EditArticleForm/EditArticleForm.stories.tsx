@@ -10,11 +10,13 @@ const meta: Meta<typeof EditArticleForm> = {
 	title: 'features/EditArticleForm',
 	component: EditArticleForm,
 	tags: ['autodocs'],
-	decorators: [StoreDecorator({
-		editArticleForm: {
-			form: ARTICLE_STORYBOOK_FIXTURE
-		}
-	})],
+	decorators: [
+		StoreDecorator({
+			editArticleForm: {
+				form: ARTICLE_STORYBOOK_FIXTURE,
+			},
+		}),
+	],
 };
 
 export default meta;

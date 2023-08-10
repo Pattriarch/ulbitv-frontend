@@ -12,9 +12,11 @@ describe('addArticleSelectors', () => {
 	describe('getEditArticleForm', () => {
 		test('should return form data', () => {
 			const state: DeepPartial<StateSchema> = {
-				editArticleForm: {form: ARTICLE_FIXTURE}
+				editArticleForm: { form: ARTICLE_FIXTURE },
 			};
-			expect(getEditArticleForm(state as StateSchema)).toEqual(ARTICLE_FIXTURE);
+			expect(getEditArticleForm(state as StateSchema)).toEqual(
+				ARTICLE_FIXTURE,
+			);
 		});
 
 		test('should work with empty state', () => {
@@ -25,9 +27,11 @@ describe('addArticleSelectors', () => {
 	describe('getEditArticleData', () => {
 		test('should return data', () => {
 			const state: DeepPartial<StateSchema> = {
-				editArticleForm: {data: ARTICLE_FIXTURE}
+				editArticleForm: { data: ARTICLE_FIXTURE },
 			};
-			expect(getEditArticleData(state as StateSchema)).toEqual(ARTICLE_FIXTURE);
+			expect(getEditArticleData(state as StateSchema)).toEqual(
+				ARTICLE_FIXTURE,
+			);
 		});
 
 		test('should work with empty state', () => {
@@ -62,8 +66,9 @@ describe('addArticleSelectors', () => {
 
 		test('should work with empty state', () => {
 			const state: DeepPartial<StateSchema> = {};
-			expect(getEditArticleIsLoading(state as StateSchema)).toEqual(false);
+			expect(getEditArticleIsLoading(state as StateSchema)).toEqual(
+				false,
+			);
 		});
 	});
 });
-

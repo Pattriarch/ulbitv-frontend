@@ -23,13 +23,27 @@ export const PageError = memo(({ className }: PageErrorProps): JSX.Element => {
 
 	return (
 		<div className={classNames(cls.PageError, {}, [className])}>
-			<ToggleFeatures name={'isAppRedesigned'} on={<>
-				<Text text={t('Произошла непредвиденная ошибка')} />
-				<Button onClick={reloadPage}>{t('Обновить страницу')}</Button>
-			</>} off={<>
-				<TextDeprecated text={t('Произошла непредвиденная ошибка')} />
-				<ButtonDeprecated onClick={reloadPage}>{t('Обновить страницу')}</ButtonDeprecated>
-			</>} />
+			<ToggleFeatures
+				name={'isAppRedesigned'}
+				on={
+					<>
+						<Text text={t('Произошла непредвиденная ошибка')} />
+						<Button onClick={reloadPage}>
+							{t('Обновить страницу')}
+						</Button>
+					</>
+				}
+				off={
+					<>
+						<TextDeprecated
+							text={t('Произошла непредвиденная ошибка')}
+						/>
+						<ButtonDeprecated onClick={reloadPage}>
+							{t('Обновить страницу')}
+						</ButtonDeprecated>
+					</>
+				}
+			/>
 		</div>
 	);
 });

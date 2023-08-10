@@ -29,9 +29,7 @@ describe('article', () => {
 			},
 		};
 
-		expect(
-			getCanEditArticle(state as StateSchema),
-		).toEqual(true);
+		expect(getCanEditArticle(state as StateSchema)).toEqual(true);
 	});
 
 	test('should return false with different user id and author user id', () => {
@@ -58,9 +56,7 @@ describe('article', () => {
 			},
 		};
 
-		expect(
-			getCanEditArticle(state as StateSchema),
-		).toEqual(false);
+		expect(getCanEditArticle(state as StateSchema)).toEqual(false);
 	});
 
 	test('should return false without user auth data', () => {
@@ -79,12 +75,10 @@ describe('article', () => {
 			articleDetails: {
 				data: article,
 			},
-			user: {}
+			user: {},
 		};
 
-		expect(
-			getCanEditArticle(state as StateSchema),
-		).toEqual(false);
+		expect(getCanEditArticle(state as StateSchema)).toEqual(false);
 	});
 
 	test('should return false without article state', () => {
@@ -97,8 +91,6 @@ describe('article', () => {
 			},
 		};
 
-		expect(
-			getCanEditArticle(state as StateSchema),
-		).toEqual(false);
+		expect(getCanEditArticle(state as StateSchema)).toEqual(false);
 	});
 });

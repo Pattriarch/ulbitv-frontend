@@ -1,7 +1,6 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-
 import { profileReducer } from '../../model/slices/profileSlice';
 
 import { EditableProfileCard } from './EditableProfileCard';

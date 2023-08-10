@@ -4,7 +4,6 @@ import { ARTICLE_STORYBOOK_FIXTURE } from '../../tests/articleStorybookFixture';
 
 import { ArticleCard } from './ArticleCard';
 
-
 import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const meta: Meta<typeof ArticleCard> = {

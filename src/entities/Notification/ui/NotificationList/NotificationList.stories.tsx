@@ -27,8 +27,7 @@ const meta: Meta<typeof NotificationList> = {
 export default meta;
 type Story = StoryObj<typeof NotificationList>;
 
-export const Normal: Story = {
-};
+export const Normal: Story = {};
 
 export const NormalRedesigned: Story = {
 	decorators: [NewDesignDecorator],

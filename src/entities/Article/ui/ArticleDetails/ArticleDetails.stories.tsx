@@ -4,7 +4,6 @@ import { ARTICLE_STORYBOOK_FIXTURE } from '../../tests/articleStorybookFixture';
 
 import { ArticleDetails } from './ArticleDetails';
 
-
 import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
@@ -25,7 +24,6 @@ export const Normal: Story = {
 			},
 		}),
 	],
-	
 };
 
 export const NormalRedesigned: Story = {
@@ -37,7 +35,6 @@ export const NormalRedesigned: Story = {
 			},
 		}),
 	],
-	
 };
 
 export const Loading: Story = {
@@ -48,7 +45,6 @@ export const Loading: Story = {
 			},
 		}),
 	],
-	
 };
 
 export const LoadingRedesigned: Story = {
@@ -60,7 +56,6 @@ export const LoadingRedesigned: Story = {
 			},
 		}),
 	],
-	
 };
 
 export const Error: Story = {
@@ -71,7 +66,6 @@ export const Error: Story = {
 			},
 		}),
 	],
-	
 };
 
 export const ErrorRedesigned: Story = {
@@ -83,5 +77,4 @@ export const ErrorRedesigned: Story = {
 			},
 		}),
 	],
-	
 };

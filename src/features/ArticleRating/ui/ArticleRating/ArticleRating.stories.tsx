@@ -60,12 +60,12 @@ export const NormalRedesigned: Story = {
 
 export const WithoutRate: Story = {
 	parameters: {
-		mockData: errorMockData
+		mockData: errorMockData,
 	},
 };
 
 export const WithoutRateRedesigned: Story = {
 	parameters: {
-		mockData: errorMockData
+		mockData: errorMockData,
 	},
 };

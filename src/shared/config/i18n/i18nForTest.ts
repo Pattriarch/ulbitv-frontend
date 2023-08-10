@@ -13,7 +13,7 @@ void i18n
 		debug: false,
 		resources: {
 			en: {},
-			ru: {}
+			ru: {},
 		},
 	});
 

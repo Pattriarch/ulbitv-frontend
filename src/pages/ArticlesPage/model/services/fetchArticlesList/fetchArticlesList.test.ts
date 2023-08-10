@@ -8,7 +8,9 @@ describe('fetchArticlesList', () => {
 	test('success', async () => {
 		const thunk = new TestAsyncThunk(fetchArticlesList, {});
 
-		thunk.api.get.mockReturnValue(Promise.resolve( {data: ARTICLE_FIXTURE} ));
+		thunk.api.get.mockReturnValue(
+			Promise.resolve({ data: ARTICLE_FIXTURE }),
+		);
 		const result = await thunk.callThunk({});
 
 		expect(thunk.api.get).toHaveBeenCalled();

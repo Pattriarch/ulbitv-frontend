@@ -1,11 +1,12 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import { getCanCurrentUserEditArticle } from '@/entities/Article';
 import { AddArticleForm } from '@/features/AddArticleForm';
 import { EditArticleForm } from '@/features/EditArticleForm';
+import { getRouteForbidden } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Text as TextDeprecated, TextSize } from '@/shared/ui/deprecated/Text';
@@ -13,7 +14,6 @@ import { Text } from '@/shared/ui/redesigned/Text';
 import { Page } from '@/widgets/Page';
 
 import cls from './ArticleEditPage.module.scss';
-import { ForbiddenPage } from '@/pages/ForbiddenPage';
 
 export interface ArticleEditPageProps {
 	className?: string;
@@ -23,9 +23,10 @@ const ArticleEditPage = memo(({ className }: ArticleEditPageProps) => {
 	const { t } = useTranslation();
 	const { id } = useParams<{ id: string, }>();
 	const isEditable = useSelector(getCanCurrentUserEditArticle);
+	const navigate = useNavigate();
 
 	if (id && !isEditable) {
-		return <ForbiddenPage />;
+		navigate(getRouteForbidden());
 	}
 
 	return (

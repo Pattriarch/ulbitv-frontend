@@ -15,8 +15,7 @@ const meta: Meta<typeof AddArticleForm> = {
 export default meta;
 type Story = StoryObj<typeof AddArticleForm>;
 
-export const Normal: Story = {
-};
+export const Normal: Story = {};
 
 export const NormalRedesigned: Story = {
 	decorators: [NewDesignDecorator],

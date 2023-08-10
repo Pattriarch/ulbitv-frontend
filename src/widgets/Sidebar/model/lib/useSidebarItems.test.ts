@@ -26,4 +26,3 @@ describe('useSidebarItems', () => {
 		expect(result.current).toHaveLength(2);
 	});
 });
-

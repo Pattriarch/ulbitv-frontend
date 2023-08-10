@@ -25,7 +25,7 @@ describe('initArticlesPage', () => {
 		const thunk = new TestAsyncThunk(initArticlesPage, {
 			articlesPage: {
 				...ARTICLES_PAGE_FIXTURE,
-				_inited: true
+				_inited: true,
 			},
 		});
 

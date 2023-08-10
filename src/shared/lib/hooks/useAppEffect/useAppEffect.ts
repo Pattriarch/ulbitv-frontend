@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-export function useAppEffect (
+export function useAppEffect(
 	callback: (...args: any[]) => void,
 	dependencies: any[],
 ) {

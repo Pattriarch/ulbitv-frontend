@@ -5,7 +5,6 @@ import { ARTICLE_STORYBOOK_FIXTURE } from '../../tests/articleStorybookFixture';
 
 import { ArticleList } from './ArticleList';
 
-
 import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 

@@ -68,9 +68,7 @@ export const EditArticleCodeBlock = memo((props: EditArticleCodeBlockProps) => {
 
 	return (
 		<>
-			<Code
-				{...otherProps}
-				withCopyIcon={false} text={editBlock.code} />
+			<Code {...otherProps} withCopyIcon={false} text={editBlock.code} />
 		</>
 	);
 });

@@ -1,8 +1,4 @@
-import React, {
-	memo,
-	type TextareaHTMLAttributes,
-	useRef,
-} from 'react';
+import React, { memo, type TextareaHTMLAttributes, useRef } from 'react';
 
 import { classNames, type Mods } from '@/shared/lib/classNames/classNames';
 import { useAppEffect } from '@/shared/lib/hooks/useAppEffect/useAppEffect';

@@ -18,4 +18,3 @@ export const Normal: Story = {};
 export const NormalRedesigned: Story = {
 	decorators: [NewDesignDecorator],
 };
-

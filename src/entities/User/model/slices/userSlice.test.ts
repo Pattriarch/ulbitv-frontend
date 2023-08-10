@@ -3,7 +3,6 @@ import { type UserSchema } from '../types/user';
 
 import { userActions, userReducer } from './userSlice';
 
-
 describe('userSlice', () => {
 	test('test set auth data', () => {
 		const state: DeepPartial<UserSchema> = {

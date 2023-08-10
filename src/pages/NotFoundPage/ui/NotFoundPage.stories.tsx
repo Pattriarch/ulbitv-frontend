@@ -17,9 +17,7 @@ const meta: Meta<typeof NotFoundPage> = {
 export default meta;
 type Story = StoryObj<typeof NotFoundPage>;
 
-export const Normal: Story = {
-
-};
+export const Normal: Story = {};
 export const NormalRedesigned: Story = {
 	decorators: [NewDesignDecorator],
 };

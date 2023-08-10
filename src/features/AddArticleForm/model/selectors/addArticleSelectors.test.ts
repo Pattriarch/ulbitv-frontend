@@ -13,7 +13,9 @@ describe('addArticleSelectors', () => {
 			const state: DeepPartial<StateSchema> = {
 				addArticleForm: { data: ARTICLE_FIXTURE },
 			};
-			expect(getAddArticleData(state as StateSchema)).toEqual(ARTICLE_FIXTURE);
+			expect(getAddArticleData(state as StateSchema)).toEqual(
+				ARTICLE_FIXTURE,
+			);
 		});
 
 		test('should work with empty state', () => {
@@ -52,4 +54,3 @@ describe('addArticleSelectors', () => {
 		});
 	});
 });
-

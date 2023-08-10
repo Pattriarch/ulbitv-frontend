@@ -1,9 +1,4 @@
-import React, {
-	type InputHTMLAttributes,
-	memo,
-	useRef,
-	useState,
-} from 'react';
+import React, { type InputHTMLAttributes, memo, useRef, useState } from 'react';
 
 import { classNames, type Mods } from '@/shared/lib/classNames/classNames';
 import { useAppEffect } from '@/shared/lib/hooks/useAppEffect/useAppEffect';

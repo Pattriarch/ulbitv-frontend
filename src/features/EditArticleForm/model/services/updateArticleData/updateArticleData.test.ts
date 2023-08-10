@@ -4,7 +4,6 @@ import { ARTICLE_FIXTURE } from '@/entities/Article/testing';
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { REJECTED_FIXTURE } from '@/shared/tests/rejectedFixture';
 
-
 describe('updateArticleData', () => {
 	test('success', async () => {
 		const thunk = new TestAsyncThunk(updateArticleData, {
@@ -13,7 +12,9 @@ describe('updateArticleData', () => {
 			},
 		});
 
-		thunk.api.put.mockReturnValue(Promise.resolve({ data: ARTICLE_FIXTURE }));
+		thunk.api.put.mockReturnValue(
+			Promise.resolve({ data: ARTICLE_FIXTURE }),
+		);
 		const result = await thunk.callThunk();
 
 		expect(thunk.api.put).toHaveBeenCalled();

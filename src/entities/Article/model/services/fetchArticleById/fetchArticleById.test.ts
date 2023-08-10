@@ -11,7 +11,9 @@ import { REJECTED_FIXTURE } from '@/shared/tests/rejectedFixture';
 describe('fetchArticleById', () => {
 	test('success', async () => {
 		const thunk = new TestAsyncThunk(fetchArticleById);
-		thunk.api.get.mockReturnValue(Promise.resolve({ data: ARTICLE_FIXTURE }));
+		thunk.api.get.mockReturnValue(
+			Promise.resolve({ data: ARTICLE_FIXTURE }),
+		);
 		const result = await thunk.callThunk(ARTICLE_FIXTURE_ID);
 
 		expect(thunk.api.get).toHaveBeenCalled();

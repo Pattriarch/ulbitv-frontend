@@ -11,6 +11,4 @@ const meta: Meta<typeof AppLogo> = {
 export default meta;
 type Story = StoryObj<typeof AppLogo>;
 
-export const Normal: Story = {
-
-};
+export const Normal: Story = {};

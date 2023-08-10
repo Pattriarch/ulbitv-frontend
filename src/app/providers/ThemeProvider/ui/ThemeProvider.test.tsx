@@ -4,7 +4,10 @@ import React from 'react';
 import { ThemeContext } from '../../../../shared/context/ThemeContext';
 
 import { Theme } from '@/shared/const/theme';
-import { componentRender, ComponentRenderOptions } from '@/shared/lib/tests/componentRender/componentRender';
+import {
+	componentRender,
+	ComponentRenderOptions,
+} from '@/shared/lib/tests/componentRender/componentRender';
 
 // Компонент, который использует контекст темы
 function ComponentUsingTheme() {

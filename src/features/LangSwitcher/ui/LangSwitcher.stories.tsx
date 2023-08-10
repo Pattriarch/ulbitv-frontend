@@ -15,9 +15,7 @@ const meta: Meta<typeof LangSwitcher> = {
 export default meta;
 type Story = StoryObj<typeof LangSwitcher>;
 
-export const Normal: Story = {
-
-};
+export const Normal: Story = {};
 
 export const NormalRedesigned: Story = {
 	decorators: [NewDesignDecorator],

@@ -1,1 +1,1 @@
-export {ViewSelectorContainer} from './ViewSelectorContainer';
+export { ViewSelectorContainer } from './ViewSelectorContainer';

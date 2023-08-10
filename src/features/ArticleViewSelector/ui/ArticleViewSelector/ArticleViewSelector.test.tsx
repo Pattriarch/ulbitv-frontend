@@ -22,7 +22,10 @@ describe('ArticleViewSelector', () => {
 	it('should handle view change to SMALL', () => {
 		const mockOnViewClick = jest.fn();
 		const { getByTestId } = componentRender(
-			<ArticleViewSelector view={ArticleView.BIG} onViewClick={mockOnViewClick} />
+			<ArticleViewSelector
+				view={ArticleView.BIG}
+				onViewClick={mockOnViewClick}
+			/>,
 		);
 
 		// Находим кнопку для переключения вида и кликаем на неё
@@ -36,7 +39,10 @@ describe('ArticleViewSelector', () => {
 	it('should handle view change to BIG', () => {
 		const mockOnViewClick = jest.fn();
 		const { getByTestId } = componentRender(
-			<ArticleViewSelector view={ArticleView.SMALL} onViewClick={mockOnViewClick} />
+			<ArticleViewSelector
+				view={ArticleView.SMALL}
+				onViewClick={mockOnViewClick}
+			/>,
 		);
 
 		// Находим кнопку для переключения вида и кликаем на неё

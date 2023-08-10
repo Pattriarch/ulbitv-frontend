@@ -4,7 +4,6 @@ import { I18nextProvider } from 'react-i18next';
 
 import i18nForTest from '../../i18n/i18nForTest';
 
-
 export const I18nDecorator = (
 	Story: StoryFn,
 	context: StoryContext,

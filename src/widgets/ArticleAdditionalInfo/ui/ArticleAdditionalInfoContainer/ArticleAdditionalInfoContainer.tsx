@@ -4,7 +4,10 @@ import { useNavigate } from 'react-router-dom';
 
 import { ArticleAdditionalInfo } from '../ArticleAdditionalInfo/ArticleAdditionalInfo';
 
-import { getArticleDetailsData, getCanCurrentUserEditArticle } from '@/entities/Article';
+import {
+	getArticleDetailsData,
+	getCanCurrentUserEditArticle,
+} from '@/entities/Article';
 import { getRouteArticleEdit } from '@/shared/const/router';
 import { Card } from '@/shared/ui/redesigned/Card';
 

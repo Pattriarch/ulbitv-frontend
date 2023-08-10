@@ -4,7 +4,6 @@ import { ArticleRatingProps } from './ArticleRating';
 
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 
-
 export const ArticleRatingLazy = lazy(
 	async () => await import('./ArticleRating'),
 );

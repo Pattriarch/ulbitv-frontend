@@ -14,7 +14,9 @@ describe('updateProfileData', () => {
 			},
 		});
 
-		thunk.api.put.mockReturnValue(Promise.resolve({ data: PROFILE_FIXTURE }));
+		thunk.api.put.mockReturnValue(
+			Promise.resolve({ data: PROFILE_FIXTURE }),
+		);
 		const result = await thunk.callThunk();
 
 		expect(thunk.api.put).toHaveBeenCalled();

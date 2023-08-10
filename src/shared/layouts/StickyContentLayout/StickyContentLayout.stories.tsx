@@ -11,6 +11,4 @@ const meta: Meta<typeof StickyContentLayout> = {
 export default meta;
 type Story = StoryObj<typeof StickyContentLayout>;
 
-export const Normal: Story = {
-
-};
+export const Normal: Story = {};

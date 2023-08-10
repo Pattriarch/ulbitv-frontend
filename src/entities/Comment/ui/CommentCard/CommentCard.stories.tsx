@@ -39,4 +39,3 @@ export const LoadingRedesigned: Story = {
 		isLoading: true,
 	},
 };
-

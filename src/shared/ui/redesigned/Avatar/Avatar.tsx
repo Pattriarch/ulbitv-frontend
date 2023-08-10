@@ -29,9 +29,7 @@ export const Avatar = (props: AvatarProps) => {
 	const mods: Mods = {};
 
 	const fallback = <Skeleton width={size} height={size} border={'50%'} />;
-	const errorFallback = (
-		<Icon width={size} Svg={UserIcon} />
-	);
+	const errorFallback = <Icon width={size} Svg={UserIcon} />;
 
 	return (
 		<AppImage

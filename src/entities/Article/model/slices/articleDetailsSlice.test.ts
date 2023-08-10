@@ -7,7 +7,6 @@ import { type ArticleDetailsSchema } from '../types/articleDetailsSchema';
 
 import { articleDetailsReducer } from './articleDetailsSlice';
 
-
 describe('articleDetailsSlice', () => {
 	test('test fetch article by id service pending', () => {
 		const state: DeepPartial<ArticleDetailsSchema> = {

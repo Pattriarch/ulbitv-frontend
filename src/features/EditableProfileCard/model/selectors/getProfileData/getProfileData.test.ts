@@ -7,8 +7,8 @@ describe('getProfileData', () => {
 	test('should return profile data', () => {
 		const state: DeepPartial<StateSchema> = {
 			profile: {
-				data: PROFILE_FIXTURE
-			}
+				data: PROFILE_FIXTURE,
+			},
 		};
 		expect(getProfileData(state as StateSchema)).toEqual(PROFILE_FIXTURE);
 	});

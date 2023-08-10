@@ -11,6 +11,4 @@ const meta: Meta<typeof CreateNewArticleButton> = {
 export default meta;
 type Story = StoryObj<typeof CreateNewArticleButton>;
 
-export const Normal: Story = {
-
-};
+export const Normal: Story = {};

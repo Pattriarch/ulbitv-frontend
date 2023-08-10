@@ -10,11 +10,13 @@ const meta: Meta<typeof ProfileRating> = {
 	title: 'features/ProfileRating',
 	component: ProfileRating,
 	tags: ['autodocs'],
-	decorators: [StoreDecorator({
-		user: {
-			authData: USER_FIXTURE,
-		},
-	})],
+	decorators: [
+		StoreDecorator({
+			user: {
+				authData: USER_FIXTURE,
+			},
+		}),
+	],
 };
 
 export default meta;
@@ -55,16 +57,15 @@ export const NormalRedesigned: Story = {
 	},
 };
 
-
 export const WithoutRate: Story = {
 	parameters: {
-		mockData: errorMockData
+		mockData: errorMockData,
 	},
 };
 
 export const WithoutRateRedesigned: Story = {
 	decorators: [NewDesignDecorator],
 	parameters: {
-		mockData: errorMockData
+		mockData: errorMockData,
 	},
 };

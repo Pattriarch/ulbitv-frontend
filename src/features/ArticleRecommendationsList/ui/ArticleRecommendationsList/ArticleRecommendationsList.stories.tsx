@@ -11,11 +11,13 @@ const meta: Meta<typeof ArticleRecommendationsList> = {
 	title: 'features/ArticleRecommendationsList',
 	component: ArticleRecommendationsList,
 	tags: ['autodocs'],
-	decorators: [StoreDecorator({
-		user: {
-			authData: USER_FIXTURE,
-		},
-	})],
+	decorators: [
+		StoreDecorator({
+			user: {
+				authData: USER_FIXTURE,
+			},
+		}),
+	],
 	parameters: {
 		mockData: [
 			{
@@ -35,9 +37,8 @@ const meta: Meta<typeof ArticleRecommendationsList> = {
 export default meta;
 type Story = StoryObj<typeof ArticleRecommendationsList>;
 
-export const Normal: Story = {
-};
+export const Normal: Story = {};
 
 export const NormalRedesigned: Story = {
-	decorators: [NewDesignDecorator]
+	decorators: [NewDesignDecorator],
 };

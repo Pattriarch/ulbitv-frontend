@@ -15,7 +15,7 @@ const meta: Meta<typeof ProfilePage> = {
 	decorators: [
 		StoreDecorator({
 			profile: {
-				data: PROFILE_STORYBOOK_FIXTURE
+				data: PROFILE_STORYBOOK_FIXTURE,
 			},
 		}),
 	],

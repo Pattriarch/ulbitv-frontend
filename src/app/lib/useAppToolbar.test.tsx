@@ -27,7 +27,9 @@ describe('app/lib/useAppToolbar', () => {
 	});
 
 	it('should return ScrollToolbar for ARTICLE_DETAILS route', () => {
-		(useRouteChange as jest.Mock).mockReturnValue(AppRoutes.ARTICLE_DETAILS);
+		(useRouteChange as jest.Mock).mockReturnValue(
+			AppRoutes.ARTICLE_DETAILS,
+		);
 		render(<TestComponent />);
 
 		expect(result.type).toBe(ScrollToolbar);

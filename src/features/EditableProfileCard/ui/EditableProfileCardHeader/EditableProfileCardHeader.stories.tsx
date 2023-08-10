@@ -10,25 +10,26 @@ const meta: Meta<typeof EditableProfileCardHeader> = {
 	title: 'features/EditableProfileCard/EditableProfileCardHeader',
 	component: EditableProfileCardHeader,
 	tags: ['autodocs'],
-	decorators: [StoreDecorator({
-		user: {
-			authData: USER_FIXTURE
-		},
-		profile: {
-			data: {
-				id: '1',
+	decorators: [
+		StoreDecorator({
+			user: {
+				authData: USER_FIXTURE,
 			},
-			readonly: false,
-		},
-	})]
+			profile: {
+				data: {
+					id: '1',
+				},
+				readonly: false,
+			},
+		}),
+	],
 };
 
 export default meta;
 type Story = StoryObj<typeof EditableProfileCardHeader>;
 
-export const Normal: Story = {
-};
+export const Normal: Story = {};
 
 export const NormalRedesigned: Story = {
-	decorators: [NewDesignDecorator]
+	decorators: [NewDesignDecorator],
 };

@@ -10,11 +10,13 @@ const meta: Meta<typeof SettingsPage> = {
 	title: 'pages/SettingsPage',
 	component: SettingsPage,
 	tags: ['autodocs'],
-	decorators: [StoreDecorator({
-		user: {
-			authData: USER_FIXTURE,
-		},
-	})],
+	decorators: [
+		StoreDecorator({
+			user: {
+				authData: USER_FIXTURE,
+			},
+		}),
+	],
 };
 
 export default meta;

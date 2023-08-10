@@ -11,18 +11,20 @@ const meta: Meta<typeof OpenNotificationListButton> = {
 	title: 'features/OpenNotificationListButton',
 	component: OpenNotificationListButton,
 	tags: ['autodocs'],
-	decorators: [StoreDecorator({
-		user: {
-			authData: USER_FIXTURE
-		}
-	})],
+	decorators: [
+		StoreDecorator({
+			user: {
+				authData: USER_FIXTURE,
+			},
+		}),
+	],
 	parameters: {
 		mockData: [
 			{
 				url: `${__API__}/notifications?userId=1`,
 				method: 'GET',
 				status: 200,
-				response: NOTIFICATIONS_FIXTURE
+				response: NOTIFICATIONS_FIXTURE,
 			},
 		],
 	},
@@ -31,9 +33,8 @@ const meta: Meta<typeof OpenNotificationListButton> = {
 export default meta;
 type Story = StoryObj<typeof OpenNotificationListButton>;
 
-export const Normal: Story = {
-};
+export const Normal: Story = {};
 
 export const NormalRedesigned: Story = {
-	decorators: [NewDesignDecorator]
+	decorators: [NewDesignDecorator],
 };

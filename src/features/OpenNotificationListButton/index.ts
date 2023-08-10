@@ -1,2 +1,2 @@
-export { OpenNotificationListButton } from
-		'@/features/OpenNotificationListButton/ui/OpenNotificationListButton/OpenNotificationListButton';
+export { OpenNotificationListButton }
+	from '@/features/OpenNotificationListButton/ui/OpenNotificationListButton/OpenNotificationListButton';

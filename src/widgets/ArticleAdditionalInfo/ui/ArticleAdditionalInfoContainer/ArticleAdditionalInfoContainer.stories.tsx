@@ -9,11 +9,13 @@ const meta: Meta<typeof ArticleAdditionalInfoContainer> = {
 	title: 'widgets/ArticleAdditionalInfoContainer',
 	component: ArticleAdditionalInfoContainer,
 	tags: ['autodocs'],
-	decorators: [StoreDecorator({
-		articleDetails: {
-			data: ARTICLE_STORYBOOK_FIXTURE
-		}
-	})],
+	decorators: [
+		StoreDecorator({
+			articleDetails: {
+				data: ARTICLE_STORYBOOK_FIXTURE,
+			},
+		}),
+	],
 };
 
 export default meta;

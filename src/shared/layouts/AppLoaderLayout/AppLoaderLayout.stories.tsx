@@ -11,6 +11,4 @@ const meta: Meta<typeof AppLoaderLayout> = {
 export default meta;
 type Story = StoryObj<typeof AppLoaderLayout>;
 
-export const Normal: Story = {
-
-};
+export const Normal: Story = {};

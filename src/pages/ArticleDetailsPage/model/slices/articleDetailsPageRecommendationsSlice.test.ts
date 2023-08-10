@@ -1,13 +1,9 @@
 import { type DeepPartial } from '@reduxjs/toolkit';
 
 import { ArticleDetailsRecommendationsSchema } from '../..';
-import {
-	fetchArticleRecommendations,
-} from '../services/fetchArticleRecommendations/fetchArticleRecommendations';
+import { fetchArticleRecommendations } from '../services/fetchArticleRecommendations/fetchArticleRecommendations';
 
-import {
-	articleDetailsPageRecommendationsReducer,
-} from './articleDetailsPageRecommendationsSlice';
+import { articleDetailsPageRecommendationsReducer } from './articleDetailsPageRecommendationsSlice';
 
 describe('articleDetailsPageRecommendationsSlice', () => {
 	test('test pending state', () => {

@@ -59,7 +59,9 @@ export const AddArticleForm = memo((props: AddArticleProps) => {
 	const onChangeImage = useCallback(
 		(value: string) => {
 			void dispatch(
-				addArticleFormActions.updateAddArticleData({ img: value || '' }),
+				addArticleFormActions.updateAddArticleData({
+					img: value || '',
+				}),
 			);
 		},
 		[dispatch],
@@ -68,7 +70,9 @@ export const AddArticleForm = memo((props: AddArticleProps) => {
 	const onChangeTitle = useCallback(
 		(value: string) => {
 			void dispatch(
-				addArticleFormActions.updateAddArticleData({ title: value || '' }),
+				addArticleFormActions.updateAddArticleData({
+					title: value || '',
+				}),
 			);
 		},
 		[dispatch],
@@ -77,7 +81,9 @@ export const AddArticleForm = memo((props: AddArticleProps) => {
 	const onChangeSubtitle = useCallback(
 		(value: string) => {
 			void dispatch(
-				addArticleFormActions.updateAddArticleData({ subtitle: value || '' }),
+				addArticleFormActions.updateAddArticleData({
+					subtitle: value || '',
+				}),
 			);
 		},
 		[dispatch],
@@ -85,7 +91,9 @@ export const AddArticleForm = memo((props: AddArticleProps) => {
 
 	const onChangeBlocks = useCallback(
 		(blocks: ArticleBlock[]) => {
-			void dispatch(addArticleFormActions.updateAddArticleData({ blocks }));
+			void dispatch(
+				addArticleFormActions.updateAddArticleData({ blocks }),
+			);
 		},
 		[dispatch],
 	);

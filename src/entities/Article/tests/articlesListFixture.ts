@@ -1,4 +1,8 @@
-import { ArticleSortField, ArticleType, ArticleView } from "../consts/articleConsts";
+import {
+	ArticleSortField,
+	ArticleType,
+	ArticleView,
+} from '../consts/articleConsts';
 
 export const ARTICLE_LIST_FIXTURE = {
 	page: 2,

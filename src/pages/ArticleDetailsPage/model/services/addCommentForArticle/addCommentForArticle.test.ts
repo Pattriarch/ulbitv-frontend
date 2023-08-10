@@ -1,6 +1,9 @@
 import { addCommentForArticle } from './addCommentForArticle';
 
-import { ARTICLE_FIXTURE, ARTICLE_FIXTURE_ID } from '@/entities/Article/testing';
+import {
+	ARTICLE_FIXTURE,
+	ARTICLE_FIXTURE_ID,
+} from '@/entities/Article/testing';
 import { COMMENT_FIXTURE } from '@/entities/Comment/testing';
 import { USER_FIXTURE } from '@/entities/User/testing';
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
@@ -13,11 +16,13 @@ describe('addCommentForArticle', () => {
 				authData: USER_FIXTURE,
 			},
 			articleDetails: {
-				data: ARTICLE_FIXTURE
+				data: ARTICLE_FIXTURE,
 			},
 		});
 
-		thunk.api.post.mockReturnValue(Promise.resolve({ data: COMMENT_FIXTURE }));
+		thunk.api.post.mockReturnValue(
+			Promise.resolve({ data: COMMENT_FIXTURE }),
+		);
 		const result = await thunk.callThunk(ARTICLE_FIXTURE_ID);
 
 		expect(thunk.api.post).toHaveBeenCalled();
@@ -31,7 +36,7 @@ describe('addCommentForArticle', () => {
 				authData: USER_FIXTURE,
 			},
 			articleDetails: {
-				data: ARTICLE_FIXTURE
+				data: ARTICLE_FIXTURE,
 			},
 		});
 		thunk.api.post.mockReturnValue(Promise.resolve(REJECTED_FIXTURE));
