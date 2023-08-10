@@ -42,9 +42,24 @@ export default ({
 			return rule;
 		});
 
+		// config.module.rules.push({
+		// 	test: /\.(jpg|jpeg)$/,
+		// 	loader: 'file-loader',
+		// 	options: {
+		// 		name: '[name].[ext]',
+		// 	},
+		// });
+
 		config.module.rules.push({
 			test: /\.svg$/,
 			use: ['@svgr/webpack'],
+		});
+		config.module.rules.push({
+			test: /\.jpg$/,
+			loader: 'file-loader',
+			options: {
+				name: '[name].[ext]',
+			},
 		});
 		config.module.rules.push(buildCssLoader(true));
 	}

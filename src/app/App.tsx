@@ -1,7 +1,7 @@
 import React, { memo, Suspense } from 'react';
 import { useSelector } from 'react-redux';
 
-import { useAppToolbar } from './lib/useAppToolbar';
+import { useAppToolbar } from './lib/useAppToolbar/useAppToolbar';
 import { withTheme } from './providers/ThemeProvider/ui/withTheme';
 import { AppRouter } from './router/AppRouter';
 

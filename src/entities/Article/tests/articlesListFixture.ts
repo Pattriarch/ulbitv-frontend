@@ -4,6 +4,8 @@ import {
 	ArticleView,
 } from '../consts/articleConsts';
 
+import { getStorybookImage } from '@/shared/lib/tests/getStorybookImage/getStorybookImage';
+
 export const ARTICLE_LIST_FIXTURE = {
 	page: 2,
 	entities: {
@@ -14,7 +16,7 @@ export const ARTICLE_LIST_FIXTURE = {
 			subtitle: 'Подзаголовок статьи',
 			createdAt: '',
 			views: 123,
-			img: '',
+			img: getStorybookImage(),
 			user: { id: '1', username: 'test user' },
 			blocks: [],
 		},
@@ -25,7 +27,7 @@ export const ARTICLE_LIST_FIXTURE = {
 			subtitle: 'Подзаголовок статьи',
 			createdAt: '',
 			views: 123,
-			img: '',
+			img: getStorybookImage(),
 			user: { id: '1', username: 'test user' },
 			blocks: [],
 		},
@@ -36,7 +38,7 @@ export const ARTICLE_LIST_FIXTURE = {
 			subtitle: 'Подзаголовок статьи',
 			createdAt: '',
 			views: 123,
-			img: '',
+			img: getStorybookImage(),
 			user: { id: '1', username: 'test user' },
 			blocks: [],
 		},

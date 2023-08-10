@@ -25,7 +25,7 @@ module.exports = {
 				orphan: true,
 				pathNot: [
 					'/types/.*\\.ts$', // types
-					'/tests/.*Fixture\\.ts$', // test fixutres
+					'/static/.*Fixture\\.ts$', // test fixutres
 					'(^|/)\\.[^/]+\\.(js|cjs|mjs|ts|json)$', // dot files
 					'\\.d\\.ts$',                            // TypeScript declaration files
 					'(^|/)tsconfig\\.json$',                 // TypeScript config
@@ -199,7 +199,7 @@ module.exports = {
 		doNotFollow: {
 			path: [
 				'node_modules',
-				'src/shared/lib/tests/componentRender/componentRender\\.tsx',
+				'src/shared/lib/static/componentRender/componentRender\\.tsx',
 				'src/.*\\.stories\\.tsx'
 			],
 		},

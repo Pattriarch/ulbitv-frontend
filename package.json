@@ -3,6 +3,9 @@
 	"version": "1.0.0",
 	"description": "Учебный проект по курсу от Ulbi TV",
 	"main": "index.js",
+	"keywords": ["ulbitv"],
+	"author": "Pereverzev Daniil",
+	"license": "ISC",
 	"scripts": {
 		"start": "webpack serve --env port=3000",
 		"start:vite": "vite",
@@ -17,9 +20,10 @@
 		"lint:scss": "npx stylelint \"**/*.scss\"",
 		"lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
 		"test:unit": "jest --config ./config/jest/jest.config.ts",
-		"test:ui": "npx loki test",
+		"test:ui": "loki test --chromeDockerImage=chinello/alpine-chrome:latest --chromeFlags=\"--headless --no-sandbox --disable-gpu --disable-features=VizDisplayCompositor\" --verboseRenderer --requireReference --reactUri file:./storybook-static",
+		"test:ui:ci": "loki test --chromeDockerImage=chinello/alpine-chrome:latest --chromeFlags=\"--headless --no-sandbox --disable-gpu --disable-features=VizDisplayCompositor\" --verboseRenderer --requireReference --reactUri file:./storybook-static",
+		"test:ui:update": "loki update --chromeDockerImage=chinello/alpine-chrome:latest --chromeFlags=\"--headless --no-sandbox --disable-gpu --disable-features=VizDisplayCompositor\" --verboseRenderer --requireReference --reactUri file:./storybook-static",
 		"test:ui:ok": "npx loki approve",
-		"test:ui:ci": "npx loki --requireReference --reactUri file:./storybook-static",
 		"test:ui:json": "node ./scripts/generate-visual-json-report.js",
 		"test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
 		"test:ui:report": "npm run test:ui:json && npm run test:ui:html",
@@ -36,11 +40,6 @@
 		"scripts:create-readme": "ts-node ./scripts/createReadme/createReadmeForSlices.ts",
 		"scripts:remove-feature": "ts-node ./scripts/refactoring/remove-feature.ts"
 	},
-	"keywords": [
-		"ulbitv"
-	],
-	"author": "Pereverzev Daniil",
-	"license": "ISC",
 	"dependencies": {
 		"@headlessui/react": "^1.7.15",
 		"@react-spring/web": "^9.7.3",
@@ -64,13 +63,14 @@
 		"@babel/preset-env": "^7.16.11",
 		"@babel/preset-react": "^7.16.7",
 		"@babel/preset-typescript": "^7.16.7",
+		"@loki/is-loki-running": "^0.32.0",
 		"@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
-		"@storybook/addon-essentials": "^7.1.0",
-		"@storybook/addon-interactions": "^7.1.0",
-		"@storybook/addon-links": "^7.1.0",
-		"@storybook/blocks": "^7.1.0",
-		"@storybook/react": "^7.1.0",
-		"@storybook/react-webpack5": "^7.1.0",
+		"@storybook/addon-essentials": "^7.2.3",
+		"@storybook/addon-interactions": "^7.2.3",
+		"@storybook/addon-links": "^7.2.3",
+		"@storybook/blocks": "^7.2.3",
+		"@storybook/react": "^7.2.3",
+		"@storybook/react-webpack5": "^7.2.3",
 		"@storybook/testing-library": "^0.2.0",
 		"@svgr/webpack": "^6.2.1",
 		"@testing-library/jest-dom": "^5.16.2",
@@ -133,8 +133,8 @@
 		"saas": "^1.0.0",
 		"sass": "^1.64.2",
 		"sass-loader": "^13.3.2",
-		"storybook": "^7.1.0",
-		"storybook-addon-mock": "^4.1.0",
+		"storybook": "^7.2.3",
+		"storybook-addon-mock": "^4.2.0",
 		"storybook-addon-themes": "^6.1.0",
 		"style-loader": "^3.3.3",
 		"stylelint": "^14.15.0",
@@ -174,6 +174,7 @@
 				"target": "chrome.docker",
 				"preset": "iPhone 7"
 			}
-		}
+		},
+		"chromeDockerUseCopy": true
 	}
 }

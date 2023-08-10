@@ -1,8 +1,11 @@
-import { memo } from 'react';
-
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { memo, useContext } from 'react';
 
 import './Loader.scss';
+
+import {
+	DisableAnimationsContext,
+} from '@/shared/config/storybook/DisableAnimationsDecorator/ui/DisableAnimationsDecorator';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 interface LoaderProps {
 	className?: string;
@@ -13,6 +16,12 @@ interface LoaderProps {
  * @deprecated
  */
 export const Loader = memo(({ className }: LoaderProps): JSX.Element => {
+	const disableAnimations = useContext(DisableAnimationsContext);
+
+	if (disableAnimations) {
+		return <>...</>;
+	}
+
 	return (
 		<div className={classNames('lds-roller', {}, [className])}>
 			<div></div>

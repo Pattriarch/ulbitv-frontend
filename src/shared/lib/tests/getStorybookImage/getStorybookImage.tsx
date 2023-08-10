@@ -1,4 +1,4 @@
-import CheckerboardImage from './checkerboard.jpeg';
+const CheckerboardImage = './images/checkerboard.jpeg';
 
 export const getStorybookImage = () => {
 	return CheckerboardImage;

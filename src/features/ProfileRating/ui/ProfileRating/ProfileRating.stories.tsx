@@ -17,6 +17,9 @@ const meta: Meta<typeof ProfileRating> = {
 			},
 		}),
 	],
+	args: {
+		profileId: '2',
+	},
 };
 
 export default meta;
@@ -24,7 +27,7 @@ type Story = StoryObj<typeof ProfileRating>;
 
 const successMockData = [
 	{
-		url: `${__API__}/profile-ratings?userId=1`,
+		url: `${__API__}/profile-ratings?userId=1&profileId=2`,
 		method: 'GET',
 		status: 200,
 		response: [
@@ -37,7 +40,7 @@ const successMockData = [
 
 const errorMockData = [
 	{
-		url: `${__API__}/profile-ratings?profileId=10&userId=1`,
+		url: `${__API__}/profile-ratings?userId=1&profileId=2`,
 		method: 'GET',
 		status: 404,
 		response: [],

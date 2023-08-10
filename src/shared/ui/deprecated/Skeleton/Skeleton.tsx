@@ -1,5 +1,8 @@
-import { type CSSProperties, memo } from 'react';
+import { type CSSProperties, memo, useContext } from 'react';
 
+import {
+	DisableAnimationsContext,
+} from '@/shared/config/storybook/DisableAnimationsDecorator/ui/DisableAnimationsDecorator';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 import cls from './Skeleton.module.scss';
@@ -17,6 +20,7 @@ interface SkeletonProps {
  */
 export const Skeleton = memo((props: SkeletonProps) => {
 	const { className, height, width, border } = props;
+	const disableAnimations = useContext(DisableAnimationsContext);
 
 	// перерисовки в скелетоне - это норма
 	const styles: CSSProperties = {
@@ -24,6 +28,10 @@ export const Skeleton = memo((props: SkeletonProps) => {
 		height,
 		borderRadius: border,
 	};
+
+	if (disableAnimations) {
+		return <>...</>;
+	}
 
 	return (
 		<div
