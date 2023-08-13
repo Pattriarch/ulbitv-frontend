@@ -2,7 +2,7 @@ import { type CSSProperties, memo, useContext } from 'react';
 
 import {
 	DisableAnimationsContext,
-} from '@/shared/config/storybook/DisableAnimationsDecorator/ui/DisableAnimationsDecorator';
+} from '@/shared/config/storybook/DisableAnimationsDecorator/DisableAnimationsDecorator';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 import cls from './Skeleton.module.scss';

@@ -9,18 +9,51 @@ import { typedMemo } from '@/shared/types';
 import cls from './Tabs.module.scss';
 
 export interface TabItem<T extends string> {
+	/**
+	 * Значение вкладки.
+	 */
 	value: T;
+
+	/**
+	 * Содержимое вкладки.
+	 */
 	content: ReactNode;
 }
 
 interface TabsProps<T extends string> {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
+
+	/**
+	 * Вкладки.
+	 */
 	tabs: TabItem<T>[];
+
+	/**
+	 * Текущее выбранное значение вкладки.
+	 */
 	value: T;
+
+	/**
+	 * Callback-функция, вызываемая при клике на вкладку.
+	 */
 	onTabClick: (tab: TabItem<T>) => void;
+
+	/**
+	 * Направление отображения вкладок (горизонтальное или вертикальное).
+	 */
 	direction?: FlexDirection;
 }
 
+/**
+ * Компонент Tabs представляет набор вкладок с содержимым.
+ *
+ * @component
+ * @param {TabsProps<T>} props - Свойства компонента.
+ * @returns {JSX.Element} Компонент Tabs.
+ */
 export const Tabs = typedMemo(<T extends string>(props: TabsProps<T>) => {
 	const { className, tabs, value, onTabClick, direction = 'row' } = props;
 

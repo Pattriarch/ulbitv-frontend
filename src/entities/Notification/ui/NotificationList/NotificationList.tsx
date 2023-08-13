@@ -10,10 +10,24 @@ import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton'
 import { VStack } from '@/shared/ui/redesigned/Stack';
 
 interface NotificationListProps {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
+
+	/**
+	 * Идентификатор пользователя, для которого отображается список уведомлений.
+	 */
 	userId: number;
 }
 
+/**
+ * Компонент списка уведомлений.
+ *
+ * @component
+ * @param {NotificationListProps} props - Пропсы компонента `NotificationList`.
+ * @returns {JSX.Element} Список уведомлений.
+ */
 export const NotificationList = memo((props: NotificationListProps) => {
 	const { className, userId } = props;
 

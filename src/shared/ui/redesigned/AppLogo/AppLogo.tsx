@@ -9,11 +9,25 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 
 import cls from './AppLogo.module.scss';
 
+/**
+ * Свойства компонента AppLogo.
+ *
+ * @interface
+ * @property {string} [className] - Дополнительные стили компонента.
+ * @property {number} [size=50] - Размер логотипа.
+ */
 interface AppLogoProps {
 	className?: string;
 	size?: number;
 }
 
+/**
+ * Компонент для отображения логотипа приложения.
+ *
+ * @component
+ * @param {AppLogoProps} props - Свойства компонента.
+ * @returns {JSX.Element} Компонент AppLogo.
+ */
 export const AppLogo = memo((props: AppLogoProps) => {
 	const { className, size = 50 } = props;
 

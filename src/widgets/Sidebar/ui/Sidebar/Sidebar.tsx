@@ -16,9 +16,19 @@ import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
 }
 
+/**
+ * Компонент Sidebar отображает боковую панель приложения с элементами меню и управляющими кнопками.
+ *
+ * @component
+ * @param {SidebarProps} props - Свойства компонента.
+ * @returns {JSX.Element} Компонент Sidebar.
+ */
 export const Sidebar = memo(({ className }: SidebarProps): JSX.Element => {
 	const [collapsed, setCollapsed] = useState(false);
 	const sidebarItemsList = useSidebarItems();

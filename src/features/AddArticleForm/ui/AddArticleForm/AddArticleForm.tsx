@@ -34,6 +34,7 @@ import { Button } from '@/shared/ui/redesigned/Button/Button';
 import cls from './AddArticleForm.module.scss';
 
 interface AddArticleProps {
+	/** Дополнительные стили компонента. */
 	className?: string;
 }
 
@@ -41,6 +42,14 @@ const reducers: ReducersList = {
 	addArticleForm: addArticleFormReducer,
 };
 
+/**
+ * Компонент для добавления статей.
+ *
+ * @component
+ * @param {Object} props - Свойства компонента.
+ * @param {string} [props.className] - Класс для стилизации компонента.
+ * @returns {JSX.Element} Компонент для добавления и редактирования статей.
+ */
 export const AddArticleForm = memo((props: AddArticleProps) => {
 	const { className } = props;
 

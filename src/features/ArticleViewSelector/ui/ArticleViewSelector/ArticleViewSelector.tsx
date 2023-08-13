@@ -20,11 +20,29 @@ import { HStack } from '@/shared/ui/redesigned/Stack';
 import cls from './ArticleViewSelector.module.scss';
 
 interface ArticleViewSelectorProps {
+	/** Дополнительные стили компонента. */
 	className?: string;
+
+	/** Текущий выбранный вид отображения статей. */
 	view?: ArticleView; // для подсветки выбранного
+
+	/**
+	 * Callback-функция, вызываемая при смене выбранного вида отображения.
+	 *
+	 * @callback onViewClick
+	 * @param {ArticleView} view - Выбранный вид отображения.
+	 * @returns {void}
+	 */
 	onViewClick?: (view: ArticleView) => void; // для переключения отображения
 }
 
+/**
+ * Компонент для выбора вида отображения статей.
+ *
+ * @component
+ * @param {ArticleViewSelectorProps} props - Свойства компонента ArticleViewSelector.
+ * @returns {JSX.Element} Компонент для выбора вида отображения статей.
+ */
 export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
 	const { className, view, onViewClick } = props;
 

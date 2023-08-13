@@ -6,7 +6,7 @@ import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorat
 import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
 import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
 
-import { DisabledAnimationsProvider } from '@/shared/config/storybook/DisableAnimationsDecorator/ui/DisableAnimationsDecorator';
+import { DisabledAnimationsDecorator } from '@/shared/config/storybook/DisableAnimationsDecorator/DisableAnimationsDecorator';
 import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator';
 import { Theme } from '@/shared/const/theme';
 
@@ -49,7 +49,7 @@ const preview: Preview = {
 		},
 	},
 	decorators: [
-		DisabledAnimationsProvider,
+		DisabledAnimationsDecorator,
 		StyleDecorator,
 		RouterDecorator,
 		SuspenseDecorator,

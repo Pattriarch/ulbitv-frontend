@@ -28,7 +28,15 @@ import { HStack } from '@/shared/ui/redesigned/Stack';
 import cls from './AddCommentForm.module.scss';
 
 export interface AddCommentFormProps {
+	/**
+	 * Дополнительный класс для стилизации компонента.
+	 */
 	className?: string;
+
+	/**
+	 * Функция, вызываемая при отправке комментария.
+	 * @param {string} text - Текст комментария.
+	 */
 	onSendComment: (text: string) => void;
 }
 
@@ -36,6 +44,13 @@ const reducers: ReducersList = {
 	addCommentForm: addCommentFormReducer,
 };
 
+/**
+ * Компонент для добавления комментариев.
+ *
+ * @component
+ * @param {AddCommentFormProps} props - Свойства компонента AddCommentForm.
+ * @returns {JSX.Element} Компонент для добавления комментариев.
+ */
 const AddCommentForm = memo((props: AddCommentFormProps) => {
 	const { className, onSendComment } = props;
 	const { t } = useTranslation();

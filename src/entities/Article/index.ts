@@ -1,4 +1,7 @@
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
+export { ArticleList } from './ui/ArticleList/ArticleList';
+export { ArticleCard } from './ui/ArticleCard/ArticleCard';
+export { ArticleDetailsContainer } from './ui/ArticleDetailsContainer/ArticleDetailsContainer';
 
 export type {
 	Article,
@@ -8,12 +11,12 @@ export type {
 	ArticleTextBlock,
 } from './model/types/article';
 export type { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
+
+export { fetchArticleById } from './model/services/fetchArticleById/fetchArticleById';
 export {
 	getArticleDetailsData,
 	getCanCurrentUserEditArticle,
 } from './model/selectors/articleDetails';
-
-export { ArticleList } from './ui/ArticleList/ArticleList';
 export {
 	ArticleView,
 	ArticleSortField,
@@ -21,6 +24,3 @@ export {
 	ArticleBlockType,
 } from './consts/articleConsts';
 export { articleDetailsReducer } from '@/entities/Article/model/slices/articleDetailsSlice';
-export { fetchArticleById } from './model/services/fetchArticleById/fetchArticleById';
-export { ArticleCard } from './ui/ArticleCard/ArticleCard';
-export { ArticleDetailsContainer } from './ui/ArticleDetailsContainer/ArticleDetailsContainer';

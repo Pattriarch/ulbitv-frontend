@@ -17,6 +17,11 @@ import { Navbar } from '@/widgets/Navbar';
 import { PageLoader } from '@/widgets/PageLoader';
 import { Sidebar } from '@/widgets/Sidebar';
 
+/**
+ * Основной компонент приложения.
+ * Управляет инициализацией пользователя, маршрутизацией и темой приложения.
+ * @component
+ */
 const App = memo((): JSX.Element => {
 	const { theme } = useTheme();
 	const dispatch = useAppDispatch();

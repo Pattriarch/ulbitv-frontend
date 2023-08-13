@@ -22,9 +22,19 @@ import { HStack } from '@/shared/ui/redesigned/Stack';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
 }
 
+/**
+ * Компонент Navbar представляет верхнюю навигационную панель приложения.
+ *
+ * @component
+ * @param {NavbarProps} props - Свойства компонента.
+ * @returns {JSX.Element} Компонент Navbar.
+ */
 export const Navbar = memo(({ className }: NavbarProps): JSX.Element => {
 	const { t } = useTranslation();
 	const [isAuthModal, setIsAuthModal] = useState(false);

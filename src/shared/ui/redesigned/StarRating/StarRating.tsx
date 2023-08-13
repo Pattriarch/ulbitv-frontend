@@ -10,14 +10,36 @@ import { toggleFeatures, ToggleFeatures } from '@/shared/lib/features';
 import cls from './StarRating.module.scss';
 
 interface StarRatingProps {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
+
+	/**
+	 * Callback-функция, вызываемая при выборе количества звезд.
+	 */
 	onSelect?: (starsCount: number) => void;
+
+	/**
+	 * Размер звезд и компонента в целом.
+	 */
 	size?: number;
+
+	/**
+	 * Количество выбранных звезд.
+	 */
 	selectedStars?: number;
 }
 
 const stars = [1, 2, 3, 4, 5];
 
+/**
+ * Компонент StarRating представляет интерактивную рейтинговую систему на основе звезд.
+ *
+ * @component
+ * @param {StarRatingProps} props - Свойства компонента.
+ * @returns {JSX.Element} Компонент StarRating.
+ */
 export const StarRating = memo((props: StarRatingProps) => {
 	const { className, size = 30, selectedStars = 0, onSelect } = props;
 

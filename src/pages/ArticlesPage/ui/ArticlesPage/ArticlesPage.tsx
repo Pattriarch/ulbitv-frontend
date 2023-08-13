@@ -23,6 +23,9 @@ import { FiltersContainer } from '@/widgets/ArticlesFilters';
 import { Page } from '@/widgets/Page';
 
 export interface ArticlesPageProps {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
 }
 
@@ -30,6 +33,14 @@ const reducers: ReducersList = {
 	articlesPage: articlesPageReducer,
 };
 
+/**
+ * Представляет страницу со списком статей.
+ *
+ * @component
+ * @param {Object} props - Свойства компонента.
+ * @param {string} props.className - Дополнительный CSS-класс для стилизации.
+ * @returns {JSX.Element} Компонент ArticlesPage.
+ */
 const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
 	const dispatch = useAppDispatch();
 	const [searchParams] = useSearchParams();

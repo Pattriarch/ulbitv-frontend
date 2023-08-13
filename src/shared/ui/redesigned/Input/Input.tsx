@@ -24,18 +24,64 @@ type InputVariant = 'normal' | 'outlined';
 type InputSize = 's' | 'm' | 'l';
 
 interface InputProps extends HTMLInputProps {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
+
+	/**
+	 * Вариант стиля ввода.
+	 */
 	variant?: InputVariant;
+
+	/**
+	 * Размер ввода согласно дизайн-системе.
+	 */
 	size?: InputSize;
+
+	/**
+	 * Текущее значение ввода.
+	 */
 	value?: string | number;
+
+	/**
+	 * Текст метки для ввода.
+	 */
 	label?: string;
+
+	/**
+	 * Callback-функция, вызываемая при изменении значения ввода.
+	 */
 	onChange?: (value: string) => void;
+
+	/**
+	 * Флаг, указывающий, что ввод получает фокус при отображении.
+	 */
 	autofocus?: boolean;
+
+	/**
+	 * Флаг, указывающий, что ввод только для чтения.
+	 */
 	readonly?: boolean;
+
+	/**
+	 * Дополнительный контент слева от поля ввода.
+	 */
 	addonLeft?: ReactNode;
+
+	/**
+	 * Дополнительный контент справа от поля ввода.
+	 */
 	addonRight?: ReactNode;
 }
 
+/**
+ * Компонент Input представляет поле ввода текста или числа с различными настройками стиля и функциональности.
+ *
+ * @component
+ * @param {InputProps} props - Свойства компонента.
+ * @returns {JSX.Element} Компонент Input.
+ */
 export const Input = memo((props: InputProps): JSX.Element => {
 	const {
 		className,

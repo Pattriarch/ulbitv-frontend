@@ -18,9 +18,20 @@ import { HStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
 
 interface UiDesignSwitcherProps {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
 }
 
+/**
+ * Компонент для переключения между новым и старым дизайном интерфейса.
+ *
+ * @component
+ * @param {object} props - Пропсы компонента.
+ * @param {string} props.className - Дополнительные CSS-классы для стилизации компонента.
+ * @returns {JSX.Element} Элемент, позволяющий переключить дизайн интерфейса.
+ */
 export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
 	const { className } = props;
 	const { t } = useTranslation();

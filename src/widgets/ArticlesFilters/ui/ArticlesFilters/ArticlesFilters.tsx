@@ -16,17 +16,59 @@ import { VStack } from '@/shared/ui/redesigned/Stack';
 import cls from './ArticlesFilters.module.scss';
 
 interface ArticlesFiltersProps {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
+
+	/**
+	 * Поле, по которому происходит сортировка статей.
+	 */
 	sort: ArticleSortField;
+
+	/**
+	 * Тип статей, которые отображаются.
+	 */
 	type: ArticleType;
+
+	/**
+	 * Порядок сортировки (возрастающий или убывающий).
+	 */
 	order: SortOrder;
+
+	/**
+	 * Текст для поиска статей.
+	 */
 	search: string;
+
+	/**
+	 * Callback-функция, вызываемая при изменении поля для сортировки.
+	 */
 	onChangeSort: (newOrder: ArticleSortField) => void;
+
+	/**
+	 * Callback-функция, вызываемая при изменении типа статей.
+	 */
 	onChangeTab: (tab: TabItem<ArticleType>) => void;
+
+	/**
+	 * Callback-функция, вызываемая при изменении порядка сортировки.
+	 */
 	onChangeOrder: (newOrder: SortOrder) => void;
+
+	/**
+	 * Callback-функция, вызываемая при изменении текста поиска.
+	 */
 	onChangeSearch: (value: string) => void;
 }
 
+/**
+ * Компонент ArticlesFilters представляет фильтры для страницы со списком статей.
+ *
+ * @component
+ * @param {ArticlesFiltersProps} props - Свойства компонента.
+ * @returns {JSX.Element} Компонент ArticlesFilters.
+ */
 export const ArticlesFilters = memo((props: ArticlesFiltersProps) => {
 	const {
 		className,

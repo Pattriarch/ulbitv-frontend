@@ -6,12 +6,27 @@ import {
 	useState,
 } from 'react';
 
+/**
+ * Свойства компонента AppImage.
+ *
+ * @interface
+ * @property {string} [className] - Дополнительные стили компонента.
+ * @property {ReactElement} [fallback] - Элемент, который будет отображен, если изображение не загрузилось.
+ * @property {ReactElement} [errorFallback] - Элемент, который будет отображен, если произошла ошибка при загрузке изображения.
+ */
 interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {
 	className?: string;
 	fallback?: ReactElement;
 	errorFallback?: ReactElement;
 }
 
+/**
+ * Компонент для отображения изображения с возможностью предоставления альтернативного контента и обработки ошибок загрузки.
+ *
+ * @component
+ * @param {AppImageProps} props - Свойства компонента.
+ * @returns {JSX.Element} Компонент AppImage.
+ */
 export const AppImage = memo((props: AppImageProps) => {
 	const {
 		className,

@@ -11,9 +11,19 @@ import { Text } from '@/shared/ui/redesigned/Text';
 import cls from './PageError.module.scss';
 
 interface PageErrorProps {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
 }
 
+/**
+ * Компонент PageError отображает страницу с информацией об ошибке и кнопкой для обновления страницы.
+ *
+ * @component
+ * @param {PageErrorProps} props - Свойства компонента.
+ * @returns {JSX.Element} Компонент PageError.
+ */
 export const PageError = memo(({ className }: PageErrorProps): JSX.Element => {
 	const { t } = useTranslation();
 

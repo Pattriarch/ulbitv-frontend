@@ -9,6 +9,22 @@ import { type ReducerManager, type StateSchemaKey } from './StateSchema';
 
 import { type StateSchema } from '@/app/providers/StoreProvider';
 
+/**
+ * Создает и управляет динамическим списком редьюсеров для Redux.
+ *
+ * `Reducer manager` позволяет динамически добавлять и удалять редьюсеры на лету. Это может быть полезно
+ * при реализации функций, таких как разделение кода (code-splitting) или загрузка функциональности приложения
+ * по мере необходимости (lazy-loading features).
+ *
+ * @function
+ * @param {ReducersMapObject<StateSchema>} initialReducers - Исходные редьюсеры для инициализации.
+ * @returns {ReducerManager} Объект, предоставляющий методы для управления редьюсерами.
+ *
+ * @example
+ * const manager = createReducerManager(initialReducers);
+ * manager.add('newFeature', newFeatureReducer);
+ * manager.remove('oldFeature');
+ */
 export function createReducerManager(
 	initialReducers: ReducersMapObject<StateSchema>,
 ): ReducerManager {
@@ -18,11 +34,8 @@ export function createReducerManager(
 
 	let keysToRemove: StateSchemaKey[] = [];
 
-	// const mountedReducers: MountedReducers = {};
 	return {
 		getReducerMap: () => reducers,
-		// getMountedReducers: () => mountedReducers,
-
 		reduce: (state: StateSchema, action: AnyAction) => {
 			if (keysToRemove.length > 0) {
 				state = { ...state };
@@ -40,7 +53,6 @@ export function createReducerManager(
 				return;
 			}
 			reducers[key] = reducer;
-			// mountedReducers[key] = true;
 
 			combinedReducer = combineReducers(reducers);
 		},
@@ -51,21 +63,8 @@ export function createReducerManager(
 			}
 			delete reducers[key];
 			keysToRemove.push(key);
-			// mountedReducers[key] = false;
 
 			combinedReducer = combineReducers(reducers);
 		},
 	};
 }
-
-//
-// const staticReducers = {
-//     users: usersReducer,
-//     posts: postsReducer
-// };
-//
-// export function configureStore(initialState) {
-//     const reducerManager = createReducerManager(staticReducers);
-//     const store = createStore(reducerManager.reduce, initialState);
-//     store.reducerManager = reducerManager;
-// }

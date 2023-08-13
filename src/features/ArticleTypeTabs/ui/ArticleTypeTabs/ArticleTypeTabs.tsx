@@ -11,11 +11,29 @@ import {
 import { Tabs } from '@/shared/ui/redesigned/Tabs';
 
 interface ArticleTypeTabsProps {
+	/** Дополнительные стили компонента. */
 	className?: string;
+
+	/** Текущий выбранный тип статей. */
 	value: ArticleType;
+
+	/**
+	 * Callback-функция, вызываемая при смене выбранной вкладки.
+	 *
+	 * @callback onChangeTab
+	 * @param {TabItem<ArticleType>} tab - Выбранная вкладка.
+	 * @returns {void}
+	 */
 	onChangeTab: (tab: TabItem<ArticleType>) => void;
 }
 
+/**
+ * Компонент для отображения вкладок выбора типа статей.
+ *
+ * @component
+ * @param {ArticleTypeTabsProps} props - Свойства компонента ArticleTypeTabs.
+ * @returns {JSX.Element} Компонент для отображения вкладок выбора типа статей.
+ */
 export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {
 	const { className, value, onChangeTab } = props;
 	const { t } = useTranslation();

@@ -1,6 +1,6 @@
 interface LokiWindow extends Window {
 	loki?: {
-		isRunning?: boolean;
+		isRunning?: boolean,
 	};
 }
 

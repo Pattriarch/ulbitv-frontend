@@ -24,13 +24,31 @@ import { TestProps } from '@/shared/types/tests';
 import cls from './Page.module.scss';
 
 interface PageProps extends TestProps {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
+
+	/**
+	 * Дочерние элементы, которые будут отображаться на странице.
+	 */
 	children: ReactNode;
+
+	/**
+	 * Callback-функция, вызываемая при достижении конца прокрутки страницы.
+	 */
 	onScrollEnd?: () => void;
 }
 
 export const PAGE_ID = 'PAGE_ID';
 
+/**
+ * Компонент Page представляет страницу приложения с функциями восстановления прокрутки и бесконечной прокрутки.
+ *
+ * @component
+ * @param {PageProps} props - Свойства компонента.
+ * @returns {JSX.Element} Компонент Page.
+ */
 export const Page = memo((props: PageProps) => {
 	const { className, children, onScrollEnd } = props;
 	const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;

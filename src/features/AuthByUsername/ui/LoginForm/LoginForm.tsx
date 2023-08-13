@@ -32,7 +32,15 @@ import { Text } from '@/shared/ui/redesigned/Text';
 import cls from './LoginForm.module.scss';
 
 export interface LoginFormProps {
+	/** Дополнительные стили компонента. */
 	className?: string;
+
+	/**
+	 * Callback-функция, вызываемая при успешной авторизации.
+	 *
+	 * @callback onSuccess
+	 * @returns {void}
+	 */
 	onSuccess: () => void;
 }
 
@@ -40,6 +48,16 @@ const initialReducers: ReducersList = {
 	loginForm: loginReducer,
 };
 
+/**
+ * Компонент LoginForm для авторизации.
+ *
+ * @component
+ *
+ * @param {Object} props - Пропсы компонента.
+ * @param {string} [props.className] - Дополнительные стили компонента.
+ * @param {Function} props.onSuccess - Callback-функция, вызываемая при успешной авторизации.
+ * @returns {JSX.Element} - Возвращает JSX элемент формы авторизации.
+ */
 const LoginForm = memo(
 	({ className, onSuccess }: LoginFormProps): JSX.Element => {
 		const dispatch = useAppDispatch();

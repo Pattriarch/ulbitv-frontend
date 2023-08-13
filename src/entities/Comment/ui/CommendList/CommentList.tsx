@@ -10,11 +10,22 @@ import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
 
 interface CommentListProps {
+	/** Опциональный класс для стилизации компонента. */
 	className?: string;
+
+	/** Массив комментариев для отображения. */
 	comments?: Comment[];
+
+	/** Флаг, указывающий, выполняется ли загрузка данных. */
 	isLoading?: boolean;
 }
 
+/**
+ * Компонент для отображения списка комментариев.
+ *
+ * @param {CommentListProps} props Свойства компонента.
+ * @returns {JSX.Element} Список комментариев.
+ */
 export const CommentList = (props: CommentListProps): JSX.Element => {
 	const { className, comments, isLoading } = props;
 	const { t } = useTranslation();

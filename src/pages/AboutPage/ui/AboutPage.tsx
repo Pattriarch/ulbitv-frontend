@@ -6,6 +6,12 @@ import { Text as TextDeprecated, TextSize } from '@/shared/ui/deprecated/Text';
 import { Text } from '@/shared/ui/redesigned/Text';
 import { Page } from '@/widgets/Page';
 
+/**
+ * Страница "О сайте".
+ *
+ * @component
+ * @returns {JSX.Element} Страница "О сайте".
+ */
 const AboutPage = memo((): JSX.Element => {
 	const { t } = useTranslation('about');
 

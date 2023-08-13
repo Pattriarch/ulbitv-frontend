@@ -18,9 +18,17 @@ import { Text } from '@/shared/ui/redesigned/Text';
 import cls from './ArticleRecommendationsList.module.scss';
 
 interface ArticleRecommendationsListProps {
+	/** Дополнительные стили компонента. */
 	className?: string;
 }
 
+/**
+ * Компонент для отображения списка рекомендованных статей.
+ *
+ * @component
+ * @param {ArticleRecommendationsListProps} props - Свойства компонента ArticleRecommendationsList.
+ * @returns {JSX.Element} Компонент для отображения списка рекомендованных статей.
+ */
 export const ArticleRecommendationsList = memo(
 	(props: ArticleRecommendationsListProps) => {
 		const { className } = props;

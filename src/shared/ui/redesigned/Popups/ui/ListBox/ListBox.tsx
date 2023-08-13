@@ -12,12 +12,33 @@ import { type DropdownDirection, typedMemo } from '@/shared/types';
 
 import cls from './ListBox.module.scss';
 
+/**
+ * Элемент списка ListBox.
+ *
+ * @interface
+ * @property {T} value - Значение элемента списка.
+ * @property {ReactNode} content - Содержимое элемента списка.
+ * @property {boolean} [disabled] - Флаг, указывающий, отключен ли элемент списка.
+ */
 export interface ListBoxItem<T extends string> {
 	value: T;
 	content: ReactNode;
 	disabled?: boolean;
 }
 
+/**
+ * Свойства компонента ListBox.
+ *
+ * @interface
+ * @property {string} [className] - Дополнительные стили компонента.
+ * @property {ListBoxItem<T>[]} [items] - Элементы списка.
+ * @property {T} [value] - Текущее значение выбранного элемента списка.
+ * @property {string} [defaultValue] - Значение по умолчанию для списка.
+ * @property {(value: T) => void} [onChange] - Callback-функция, вызываемая при изменении выбранного значения.
+ * @property {boolean} [readonly] - Флаг, указывающий, что список только для чтения.
+ * @property {DropdownDirection} [direction] - Направление отображения списка.
+ * @property {string} [label] - Текст метки для списка.
+ */
 interface ListBoxProps<T extends string> {
 	className?: string;
 	items?: ListBoxItem<T>[];
@@ -29,6 +50,14 @@ interface ListBoxProps<T extends string> {
 	label?: string;
 }
 
+/**
+ * Компонент для создания списка с элементами и возможностью выбора.
+ *
+ * @component
+ * @template T
+ * @param {ListBoxProps<T>} props - Свойства компонента.
+ * @returns {JSX.Element} Компонент ListBox.
+ */
 export const ListBox = typedMemo(<T extends string>(props: ListBoxProps<T>) => {
 	const {
 		className,

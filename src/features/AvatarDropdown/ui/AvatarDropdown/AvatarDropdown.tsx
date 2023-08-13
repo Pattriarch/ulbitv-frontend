@@ -24,9 +24,21 @@ import { Dropdown } from '@/shared/ui/redesigned/Popups/ui/Dropdown/Dropdown';
 import cls from './AvatarDropdown.module.scss';
 
 interface AvatarDropdownProps {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
 }
 
+/**
+ * Компонент AvatarDropdown - выпадающее меню с настройками пользователя.
+ *
+ * @component
+ *
+ * @param {Object} props - Пропсы компонента.
+ * @param {string} props.className - Дополнительные стили компонента.
+ * @returns {JSX.Element|null} - Возвращает JSX элемент выпадающего меню с настройками пользователя или null, если нет данных авторизации.
+ */
 export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
 	const { className } = props;
 	const { t } = useTranslation();

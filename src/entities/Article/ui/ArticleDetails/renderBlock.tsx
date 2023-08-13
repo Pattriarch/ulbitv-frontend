@@ -6,6 +6,12 @@ import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleT
 
 import cls from './ArticleDetails.module.scss';
 
+/**
+ * Рендерит блок статьи на основе его типа.
+ *
+ * @param {ArticleBlock} block Блок статьи.
+ * @returns {JSX.Element|null} Компонент блока или null, если тип блока неизвестен.
+ */
 export const renderArticleBlock = (block: ArticleBlock) => {
 	switch (block.type) {
 		case ArticleBlockType.CODE:

@@ -1,6 +1,5 @@
 export const ARTICLE_FIXTURE_ID = '1';
 
-// todo вызывает ошибки, нужно обернуть все в data : { ARTICLE_FIXTURE }
 export const ARTICLE_FIXTURE = {
 	id: ARTICLE_FIXTURE_ID,
 	title: 'title',

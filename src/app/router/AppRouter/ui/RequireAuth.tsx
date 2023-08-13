@@ -6,10 +6,36 @@ import { getUserAuthData, getUserRoles, type UserRole } from '@/entities/User';
 import { getRouteForbidden, getRouteMain } from '@/shared/const/router';
 
 interface RequireAuthProps {
+	/**
+	 * Дочерний элемент, который будет отображаться,
+	 * если условия аутентификации выполнены.
+	 */
 	children: JSX.Element;
+
+	/**
+	 * Массив ролей пользователя, которым разрешен доступ к дочернему элементу.
+	 * Если роли не указаны, ограничений на доступ нет.
+	 */
 	roles?: UserRole[];
 }
 
+/**
+ * Компонент `RequireAuth` предназначен для проверки аутентификации и ролей пользователя.
+ * Если пользователь не аутентифицирован, он будет перенаправлен на главную страницу.
+ * Если у пользователя нет необходимой роли для доступа к содержимому, он будет перенаправлен на страницу с запретом на доступ.
+ *
+ * Можно также указать определенные роли, которые требуются для доступа к содержимому, используя свойство `roles`.
+ *
+ * @component
+ * @example
+ * <RequireAuth roles={['admin', 'user']}>
+ *     <ProtectedComponent />
+ * </RequireAuth>
+ *
+ * @param {JSX.Element} children - Компонент или элементы, которые нужно обернуть.
+ * @param {UserRole[]} [roles] - Опциональный список ролей, которые требуются для доступа к содержимому.
+ * @returns {JSX.Element} Возвращает дочерние элементы, если у пользователя есть доступ, иначе перенаправляет на соответствующую страницу.
+ */
 export function RequireAuth({ children, roles }: RequireAuthProps) {
 	const auth = useSelector(getUserAuthData);
 	const location = useLocation();
@@ -21,8 +47,7 @@ export function RequireAuth({ children, roles }: RequireAuthProps) {
 		}
 
 		return roles.some((requiredRole) => {
-			const hasRole = userRoles?.includes(requiredRole);
-			return hasRole;
+			return userRoles?.includes(requiredRole);
 		});
 	}, [roles, userRoles]);
 

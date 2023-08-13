@@ -38,7 +38,14 @@ import { Text } from '@/shared/ui/redesigned/Text';
 import cls from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {
+	/**
+	 * Опциональный класс для стилизации.
+	 */
 	className?: string;
+
+	/**
+	 * Идентификатор статьи.
+	 */
 	id?: string;
 }
 
@@ -165,6 +172,12 @@ const ArticleDetailsSkeleton = () => {
 	);
 };
 
+/**
+ * Компонент для отображения деталей статьи.
+ *
+ * @param {ArticleDetailsProps} props Свойства компонента.
+ * @returns {JSX.Element} Компонент деталей статьи.
+ */
 export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 	const { t } = useTranslation();
 

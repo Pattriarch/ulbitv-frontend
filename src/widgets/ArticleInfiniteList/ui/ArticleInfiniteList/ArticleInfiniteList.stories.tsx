@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ARTICLE_LIST_FIXTURE } from '../../../../entities/Article/tests/articlesListFixture';
+import { ARTICLE_LIST_STORYBOOK_FIXTURE } from '../../../../entities/Article/tests/articlesListStorybookFixture';
 
 import { ArticleInfiniteList } from './ArticleInfiniteList';
 
@@ -26,7 +26,7 @@ export const NormalBig: Story = {
 				authData: USER_FIXTURE,
 			},
 			articlesPage: {
-				...ARTICLE_LIST_FIXTURE,
+				...ARTICLE_LIST_STORYBOOK_FIXTURE,
 				view: ArticleView.BIG,
 			},
 		}),
@@ -41,7 +41,7 @@ export const NormalBigRedesigned: Story = {
 				authData: USER_FIXTURE,
 			},
 			articlesPage: {
-				...ARTICLE_LIST_FIXTURE,
+				...ARTICLE_LIST_STORYBOOK_FIXTURE,
 				view: ArticleView.BIG,
 			},
 		}),
@@ -55,7 +55,7 @@ export const NormalSmall: Story = {
 				authData: USER_FIXTURE,
 			},
 			articlesPage: {
-				...ARTICLE_LIST_FIXTURE,
+				...ARTICLE_LIST_STORYBOOK_FIXTURE,
 				view: ArticleView.SMALL,
 			},
 		}),
@@ -70,7 +70,7 @@ export const NormalSmallRedesigned: Story = {
 				authData: USER_FIXTURE,
 			},
 			articlesPage: {
-				...ARTICLE_LIST_FIXTURE,
+				...ARTICLE_LIST_STORYBOOK_FIXTURE,
 				view: ArticleView.SMALL,
 			},
 		}),

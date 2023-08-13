@@ -20,6 +20,7 @@ import { type ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
 import { type ArticlesPageSchema } from '@/pages/ArticlesPage';
 import { rtkApi } from '@/shared/api/rtkApi';
 
+// Главная схема состояния для Redux Store, где необязательные редьюсеры могут подключаться асинхронно
 export interface StateSchema {
 	counter: CounterSchema;
 	user: UserSchema;
@@ -37,10 +38,10 @@ export interface StateSchema {
 	addArticleForm?: AddArticleSchema;
 }
 
+// Получение типа ключа основной схемы
 export type StateSchemaKey = keyof StateSchema;
 
-// export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>;
-
+// Интерфейс для управления редьюсерами в Redux Store
 export interface ReducerManager {
 	getReducerMap: () => ReducersMapObject<StateSchema>;
 	reduce: (
@@ -49,18 +50,19 @@ export interface ReducerManager {
 	) => CombinedState<StateSchema>;
 	add: (key: StateSchemaKey, reducer: Reducer) => void;
 	remove: (key: StateSchemaKey) => void;
-	// true - вмонтирован, false - демонтирован
-	// getMountedReducers: () => MountedReducers;
 }
 
+// Расширенный тип Redux Store, включающий в себя Manager для управления редьюсерами
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
 	reducerManager: ReducerManager;
 }
 
+// Дополнительный параметр для Redux Thunk, в данном случае для выполнения HTTP-запросов
 export interface ThunkExtraArg {
 	api: AxiosInstance;
 }
 
+// Конфигурация для Redux Thunk, T - тип значения, что будет возвращен в случае ошибки
 export interface ThunkConfig<T> {
 	rejectValue: T;
 	extra: ThunkExtraArg;

@@ -22,11 +22,29 @@ import { Card } from '@/shared/ui/redesigned/Card';
 import { Icon } from '@/shared/ui/redesigned/Icon';
 
 interface EditArticleBlockProps extends HTMLAttributes<HTMLDivElement> {
+	/** Дополнительные стили компонента. */
 	className?: string;
+
+	/** Текущий блок статьи. */
 	block: ArticleBlock;
+
+	/** Обработчик изменения состояния блока. */
 	onChangeBlockState: (editedBlock: ArticleBlock) => void;
 }
 
+/**
+ * Компонент для редактирования блока статьи.
+ *
+ * Этот компонент предоставляет пользовательский интерфейс для редактирования
+ * различных видов блоков статьи, таких как блок кода, блок изображения и блок текста.
+ * На основе типа блока компонент решает, какой подкомпонент редактирования
+ * следует отображать для соответствующего блока статьи.
+ *
+ * Компонент также включает в себя интерфейсные элементы для управления
+ * режимом редактирования блока и сохранения или отмены изменений.
+ *
+ * @param {EditArticleBlockProps} props - Свойства компонента.
+ */
 export const EditArticleBlock = memo((props: EditArticleBlockProps) => {
 	const { className, block, onChangeBlockState, ...otherProps } = props;
 

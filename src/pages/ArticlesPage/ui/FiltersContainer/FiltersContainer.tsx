@@ -4,9 +4,19 @@ import { ArticlesFilters } from '../../../../widgets/ArticlesFilters/ui/Articles
 import { useArticleFilters } from '../../lib/hooks/useArticleFilters';
 
 interface FiltersContainerProps {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
 }
 
+/**
+ * Контейнер-обёртка для компонента фильтров страницы со списком статей.
+ *
+ * @component
+ * @param {FiltersContainerProps} props - Свойства контейнера.
+ * @returns {JSX.Element} Компонент FiltersContainer.
+ */
 export const FiltersContainer = memo((props: FiltersContainerProps) => {
 	const { className } = props;
 

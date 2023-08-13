@@ -22,15 +22,54 @@ import { StarRating } from '@/shared/ui/redesigned/StarRating';
 import { Text } from '@/shared/ui/redesigned/Text';
 
 interface RatingCardProps {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
+
+	/**
+	 * Заголовок карточки рейтинга.
+	 */
 	title?: string;
+
+	/**
+	 * Заголовок поля обратной связи.
+	 */
 	feedbackTitle?: string;
+
+	/**
+	 * Указывает, есть ли возможность оставить обратную связь.
+	 */
 	hasFeedback?: boolean;
+
+	/**
+	 * Callback-функция, вызываемая при отмене оценки.
+	 * @param {number} starsCount - Количество звезд в оценке.
+	 * @returns {void}
+	 */
 	onCancel?: (starsCount: number) => void;
+
+	/**
+	 * Callback-функция, вызываемая при подтверждении оценки.
+	 * @param {number} starsCount - Количество звезд в оценке.
+	 * @param {string | undefined} feedback - Обратная связь (по желанию).
+	 * @returns {void}
+	 */
 	onAccept?: (starsCount: number, feedback?: string) => void;
+
+	/**
+	 * Оценка, представленная в виде количества звезд.
+	 */
 	rate?: number;
 }
 
+/**
+ * Компонент карточки оценки.
+ *
+ * @component
+ * @param {RatingCardProps} props - Пропсы компонента `RatingCard`.
+ * @returns {JSX.Element} Карточка оценки.
+ */
 export const RatingCard = memo((props: RatingCardProps) => {
 	const {
 		className,

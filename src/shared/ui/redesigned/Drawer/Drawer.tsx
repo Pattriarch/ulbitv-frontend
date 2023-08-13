@@ -13,6 +13,15 @@ import { useAppEffect } from '@/shared/lib/hooks/useAppEffect/useAppEffect';
 
 import cls from './Drawer.module.scss';
 
+/**
+ * Свойства компонента Drawer.
+ *
+ * @interface
+ * @property {string} [className] - Дополнительные стили компонента.
+ * @property {ReactNode} children - Содержимое, которое будет отображаться внутри компонента.
+ * @property {boolean} [isOpen] - Флаг, указывающий, открыт ли компонент (Drawer).
+ * @property {() => void} [onClose] - Callback-функция, вызываемая при закрытии компонента.
+ */
 interface DrawerProps {
 	className?: string;
 	children?: ReactNode;
@@ -22,6 +31,13 @@ interface DrawerProps {
 
 const height = window.innerHeight - 100;
 
+/**
+ * Компонент контента для Drawer с анимацией и возможностью закрытия.
+ *
+ * @component
+ * @param {DrawerProps} props - Свойства компонента.
+ * @returns {JSX.Element | null} Компонент DrawerContent или null, если не открыт.
+ */
 export const DrawerContent = memo((props: DrawerProps) => {
 	const { Spring, Gesture } = useAnimationLibs();
 	const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
@@ -109,12 +125,24 @@ export const DrawerContent = memo((props: DrawerProps) => {
 	);
 });
 
+/**
+ * Компонент Drawer с асинхронной загрузкой и анимацией.
+ *
+ * @param {DrawerProps} props - Свойства компонента.
+ * @returns {JSX.Element | null} Компонент DrawerAsync или null, если не загружен.
+ */
 const DrawerAsync = (props: DrawerProps) => {
 	const { isLoaded } = useAnimationLibs();
 
 	return isLoaded ? <DrawerContent {...props} /> : null;
 };
 
+/**
+ * Компонент Drawer с анимацией и возможностью закрытия.
+ *
+ * @param {DrawerProps} props - Свойства компонента.
+ * @returns {JSX.Element} Компонент Drawer.
+ */
 export const Drawer = (props: DrawerProps) => {
 	return (
 		<AnimationProvider>

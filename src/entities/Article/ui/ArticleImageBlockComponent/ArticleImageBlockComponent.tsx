@@ -10,10 +10,23 @@ import { Text } from '@/shared/ui/redesigned/Text';
 import cls from './ArticleImageBlockComponent.module.scss';
 
 interface ArticleImageBlockComponentProps {
+	/**
+	 * Опциональный класс для стилизации.
+	 */
 	className?: string;
+
+	/**
+	 * Данные блока изображения.
+	 */
 	block: ArticleImageBlock;
 }
 
+/**
+ * Компонент блока изображения статьи.
+ *
+ * @param {ArticleImageBlockComponentProps} props Свойства компонента.
+ * @returns {JSX.Element} Блок изображения статьи.
+ */
 export const ArticleImageBlockComponent = memo(
 	(props: ArticleImageBlockComponentProps) => {
 		const { className, block } = props;

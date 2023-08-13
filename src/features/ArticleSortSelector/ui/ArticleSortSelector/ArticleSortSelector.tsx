@@ -13,13 +13,35 @@ import { Text } from '@/shared/ui/redesigned/Text';
 import cls from './ArticleSortSelector.module.scss';
 
 interface ArticleSortSelectorProps {
+	/** Дополнительное имя класса для стилизации. */
 	className?: string;
+
+	/** Текущее выбранное поле сортировки. */
 	sort: ArticleSortField;
+
+	/** Текущий выбранный порядок сортировки. */
 	order: SortOrder;
+
+	/**
+	 * Функция обратного вызова, вызываемая при изменении порядка сортировки.
+	 * @param newOrder - Новый порядок сортировки.
+	 */
 	onChangeOrder: (newOrder: SortOrder) => void;
-	onChangeSort: (newOrder: ArticleSortField) => void;
+
+	/**
+	 * Функция обратного вызова, вызываемая при изменении поля сортировки.
+	 * @param newSort - Новое поле сортировки.
+	 */
+	onChangeSort: (newSort: ArticleSortField) => void;
 }
 
+/**
+ * Компонент для выбора и изменения параметров сортировки статей.
+ *
+ * @component
+ * @param {ArticleSortSelectorProps} props - Свойства компонента ArticleSortSelector.
+ * @returns {JSX.Element} Компонент для выбора и изменения параметров сортировки статей.
+ */
 export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
 	const { className, sort, order, onChangeOrder, onChangeSort } = props;
 	const { t } = useTranslation();

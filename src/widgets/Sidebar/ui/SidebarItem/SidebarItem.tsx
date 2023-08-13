@@ -18,10 +18,24 @@ import { Icon } from '@/shared/ui/redesigned/Icon';
 import cls from './SidebarItem.module.scss';
 
 interface SidebarItemProps {
+	/**
+	 * Элемент боковой панели.
+	 */
 	item: SidebarItemType;
+
+	/**
+	 * Флаг, указывающий, свернут ли элемент боковой панели.
+	 */
 	collapsed: boolean;
 }
 
+/**
+ * Компонент SidebarItem представляет элемент боковой панели.
+ *
+ * @component
+ * @param {SidebarItemProps} props - Свойства компонента.
+ * @returns {JSX.Element | null} Компонент SidebarItem или null, если элемент не должен отображаться.
+ */
 export const SidebarItem = memo(
 	({ item, collapsed }: SidebarItemProps): JSX.Element | null => {
 		const { t } = useTranslation();

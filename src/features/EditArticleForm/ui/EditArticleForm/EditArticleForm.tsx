@@ -43,7 +43,14 @@ import { HStack } from '@/shared/ui/redesigned/Stack';
 import cls from './EditArticleForm.module.scss';
 
 interface EditArticleFormProps {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
+
+	/**
+	 * Идентификатор редактируемой статьи.
+	 */
 	id: string;
 }
 
@@ -51,6 +58,16 @@ const reducers: ReducersList = {
 	editArticleForm: editArticleFormReducer,
 };
 
+/**
+ * Компонент EditArticleForm - форма редактирования статьи.
+ *
+ * @component
+ *
+ * @param {Object} props - Пропсы компонента.
+ * @param {string} props.className - Дополнительные стили компонента.
+ * @param {string} props.id - Идентификатор редактируемой статьи.
+ * @returns {JSX.Element} - Возвращает JSX элемент формы редактирования статьи.
+ */
 export const EditArticleForm = memo((props: EditArticleFormProps) => {
 	const { className, id } = props;
 

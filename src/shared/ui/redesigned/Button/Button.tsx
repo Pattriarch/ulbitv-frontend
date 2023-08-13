@@ -14,37 +14,42 @@ export type ButtonVariant = 'clear' | 'outline' | 'filled';
 export type ButtonColor = 'normal' | 'success' | 'error';
 export type ButtonSize = 'm' | 'l' | 'xl';
 
+/**
+ * Свойства компонента Button.
+ *
+ * @interface
+ * @property {string} [className] - Дополнительные стили компонента.
+ * @property {ButtonVariant} [variant] - Тема кнопки. Определяет визуальный стиль кнопки.
+ * @property {boolean} [square] - Флаг, указывающий на использование квадратной формы кнопки.
+ * @property {ButtonSize} [size] - Размер кнопки согласно дизайн-системе.
+ * @property {boolean} [disabled] - Флаг, указывающий на активное или неактивное состояние кнопки.
+ * @property {boolean} [fullWidth] - Флаг, указывающий на то, должна ли кнопка занимать всю доступную ширину.
+ * @property {ButtonColor} [color] - Цвет кнопки согласно дизайн-системе.
+ * @property {ReactNode} [children] - Содержимое кнопки.
+ * @property {ReactNode} [addonLeft] - Дополнительный контент слева от текста кнопки.
+ * @property {ReactNode} [addonRight] - Дополнительный контент справа от текста кнопки.
+ */
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	className?: string;
-	/**
-	 * Тема кнопки. Отвечает за визуал (в рамке, без стилей, инвертированной теме приложения)
-	 */
 	variant?: ButtonVariant;
-	/**
-	 * Флаг, делающий кнопку квадратной
-	 */
 	square?: boolean;
-	/**
-	 * Размер кнопки по дизайн системе
-	 */
 	size?: ButtonSize;
-	/**
-	 * Флаг, отвечающий за работу кнопку
-	 */
 	disabled?: boolean;
-	/**
-	 * Флаг, отвечающий за установление кнопки на всю свободную ширину
-	 */
 	fullWidth?: boolean;
-	/**
-	 * Содержимое кнопки
-	 */
 	color?: ButtonColor;
 	children?: ReactNode;
 	addonLeft?: ReactNode;
 	addonRight?: ReactNode;
 }
 
+/**
+ * Компонент кнопки с поддержкой различных стилей и свойств.
+ *
+ * @component
+ * @param {ButtonProps} props - Свойства компонента.
+ * @param {React.Ref<HTMLButtonElement>} ref - Ref для кнопки.
+ * @returns {JSX.Element} Компонент Button.
+ */
 export const Button = memo(
 	forwardRef<HTMLButtonElement, ButtonProps>(
 		(props: ButtonProps, ref: ForwardedRef<HTMLButtonElement>) => {

@@ -9,9 +9,19 @@ import { Text } from '@/shared/ui/redesigned/Text';
 import { Page } from '@/widgets/Page';
 
 export interface SettingsPageProps {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
 }
 
+/**
+ * Компонент, представляющий страницу настроек пользователя.
+ *
+ * @component
+ * @param {SettingsPageProps} props - Свойства компонента.
+ * @returns {JSX.Element} Компонент SettingsPage.
+ */
 const SettingsPage = memo((props: SettingsPageProps) => {
 	const { className } = props;
 	const { t } = useTranslation();

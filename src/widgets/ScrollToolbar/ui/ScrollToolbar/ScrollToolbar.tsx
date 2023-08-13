@@ -7,9 +7,19 @@ import { VStack } from '@/shared/ui/redesigned/Stack';
 import cls from './ScrollToolbar.module.scss';
 
 interface ScrollToolbarProps {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
 }
 
+/**
+ * Компонент ScrollToolbar отображает панель инструментов для прокрутки страницы.
+ *
+ * @component
+ * @param {ScrollToolbarProps} props - Свойства компонента.
+ * @returns {JSX.Element} Компонент ScrollToolbar.
+ */
 export const ScrollToolbar = memo((props: ScrollToolbarProps) => {
 	const { className } = props;
 

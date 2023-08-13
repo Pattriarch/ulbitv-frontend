@@ -7,9 +7,19 @@ import { Page } from '@/widgets/Page';
 import cls from './NotFoundPage.module.scss';
 
 interface NotFoundPageProps {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
 }
 
+/**
+ * Компонент, представляющий страницу с сообщением о том, что страница не найдена.
+ *
+ * @component
+ * @param {NotFoundPageProps} props - Свойства компонента.
+ * @returns {JSX.Element} Компонент NotFoundPage.
+ */
 export const NotFoundPage = memo(
 	({ className }: NotFoundPageProps): JSX.Element => {
 		const { t } = useTranslation();

@@ -11,6 +11,12 @@ import { Drawer } from '@/shared/ui/redesigned/Drawer';
 import { Modal } from '@/shared/ui/redesigned/Modal';
 import { Text } from '@/shared/ui/redesigned/Text';
 
+/**
+ * Компонент приветствия на странице статей.
+ *
+ * @component
+ * @returns {JSX.Element} Компонент приветствия.
+ */
 export const ArticlePageGreeting = memo(() => {
 	const { t } = useTranslation();
 	const [isOpen, setIsOpen] = useState(false);
@@ -18,6 +24,9 @@ export const ArticlePageGreeting = memo(() => {
 	const dispatch = useAppDispatch();
 	const isMobile = useDevice();
 
+	/**
+	 * Эффект, который открывает приветственное окно, если страница статей ранее не была открыта.
+	 */
 	useAppEffect(() => {
 		if (!isArticlesPageWasOpened) {
 			setIsOpen(true);
@@ -25,6 +34,9 @@ export const ArticlePageGreeting = memo(() => {
 		}
 	}, [isArticlesPageWasOpened, dispatch]);
 
+	/**
+	 * Закрытие приветственного окна.
+	 */
 	const onClose = () => setIsOpen(false);
 
 	const text = (

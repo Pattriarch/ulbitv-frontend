@@ -6,6 +6,12 @@ import { Text as TextDeprecated, TextSize } from '@/shared/ui/deprecated/Text';
 import { Text } from '@/shared/ui/redesigned/Text';
 import { Page } from '@/widgets/Page';
 
+/**
+ * Компонент, представляющий главную страницу.
+ *
+ * @component
+ * @returns {JSX.Element} Компонент MainPage.
+ */
 const MainPage = memo((): JSX.Element => {
 	const { t } = useTranslation('main');
 

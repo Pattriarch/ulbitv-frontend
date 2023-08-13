@@ -15,9 +15,20 @@ import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon';
 import { Icon } from '@/shared/ui/redesigned/Icon';
 
 interface ThemeSwitcherProps {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
 }
 
+/**
+ * Компонент для переключения темы приложения.
+ *
+ * @component
+ * @param {object} props - Пропсы компонента.
+ * @param {string} props.className - Дополнительные CSS-классы для стилизации компонента.
+ * @returns {JSX.Element} Элемент, позволяющий переключить тему приложения.
+ */
 export const ThemeSwitcher = memo(
 	({ className }: ThemeSwitcherProps): JSX.Element => {
 		const { toggleTheme } = useTheme();

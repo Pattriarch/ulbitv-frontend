@@ -29,7 +29,14 @@ import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 
 interface EditableProfileCardProps {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
+
+	/**
+	 * Уникальный идентификатор профиля.
+	 */
 	id?: string;
 }
 
@@ -37,6 +44,16 @@ const reducers: ReducersList = {
 	profile: profileReducer,
 };
 
+/**
+ * Компонент EditableProfileCard - редактируемая карточка профиля.
+ *
+ * @component
+ *
+ * @param {Object} props - Пропсы компонента.
+ * @param {string} props.className - Дополнительные стили компонента.
+ * @param {string} props.id - Идентификатор пользователя.
+ * @returns {JSX.Element} - Возвращает JSX элемент редактируемой карточки профиля.
+ */
 export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 	const { className, id } = props;
 	const { t } = useTranslation('profile');

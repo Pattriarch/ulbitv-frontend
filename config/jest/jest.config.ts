@@ -1,8 +1,3 @@
-/*
- * For a detailed explanation regarding each configuration property and types check, visit:
- * https://jestjs.io/docs/configuration
- */
-
 import path from 'path';
 
 export default {

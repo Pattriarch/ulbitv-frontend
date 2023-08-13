@@ -14,6 +14,23 @@ import { scrollRestorationReducer } from '@/features/ScrollRestoration';
 import { $api } from '@/shared/api/api';
 import { rtkApi } from '@/shared/api/rtkApi';
 
+/**
+ * Создает и конфигурирует Redux store, включая динамические редьюсеры.
+ *
+ * Этот store основан на базовых редьюсерах, таких, как counterReducer, userReducer и других.
+ * Также он позволяет динамически добавлять дополнительные редьюсеры через параметр asyncReducers.
+ *
+ * @function
+ * @param {StateSchema} [initialState] - Исходное состояние для store.
+ * @param {ReducersMapObject<StateSchema>} [asyncReducers] - Динамические редьюсеры, которые могут быть добавлены на лету.
+ * @returns {Store} Настроенный Redux store.
+ *
+ * @example
+ * 	const store = createReduxStore(
+ * 		initialState,
+ * 		asyncReducers
+ * 	);
+ */
 export function createReduxStore(
 	initialState?: StateSchema,
 	asyncReducers?: ReducersMapObject<StateSchema>,

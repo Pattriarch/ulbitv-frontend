@@ -50,6 +50,21 @@ type DivProps = DetailedHTMLProps<
 	HTMLDivElement
 >;
 
+/**
+ * Свойства компонента Flex.
+ *
+ * @interface
+ * @property {RefObject<HTMLDivElement>} [ref] - Ссылка на DOM-элемент, используемая для доступа к нему через RefObject.
+ * @property {string} [className] - Дополнительные стили компонента.
+ * @property {ReactNode} children - Дочерние элементы, которые будут отображаться внутри компонента.
+ * @property {FlexJustify} [justify] - Выравнивание элементов по горизонтали (для контейнера Flex).
+ * @property {FlexAlign} [align] - Выравнивание элементов по вертикали (для контейнера Flex).
+ * @property {FlexDirection} [direction] - Направление элементов (расположение по горизонтали и вертикали) (для контейнера Flex).
+ * @property {FlexGap} [gap] - Расстояние между элементами (для контейнера Flex).
+ * @property {FlexWrap} [wrap] - Разрешение на перенос элементов на следующую строку (для контейнера Flex).
+ * @property {boolean} [max] - Флаг, указывающий на максимальный размер Flex-контейнера.
+ * @property {FlexTag} [tag] - HTML-тег, который будет использоваться для Flex-контейнера.
+ */
 export interface FlexProps extends DivProps {
 	ref?: RefObject<HTMLDivElement>;
 	className?: string;
@@ -63,6 +78,13 @@ export interface FlexProps extends DivProps {
 	tag?: FlexTag;
 }
 
+/**
+ * Компонент Flex предоставляет удобные способы управления расположением и выравниванием элементов.
+ *
+ * @component
+ * @param {FlexProps} props - Свойства компонента.
+ * @returns {JSX.Element} Компонент Flex.
+ */
 export const Flex = memo((props: FlexProps) => {
 	const {
 		className,

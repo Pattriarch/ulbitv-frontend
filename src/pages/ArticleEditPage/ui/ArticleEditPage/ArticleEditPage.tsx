@@ -16,9 +16,20 @@ import { Page } from '@/widgets/Page';
 import cls from './ArticleEditPage.module.scss';
 
 export interface ArticleEditPageProps {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
 }
 
+/**
+ * Представляет страницу для редактирования или создания статей.
+ *
+ * @component
+ * @param {Object} props - Свойства компонента.
+ * @param {string} props.className - Дополнительный CSS-класс для стилизации.
+ * @returns {JSX.Element} Компонент ArticleEditPage.
+ */
 const ArticleEditPage = memo(({ className }: ArticleEditPageProps) => {
 	const { t } = useTranslation();
 	const { id } = useParams<{ id: string, }>();

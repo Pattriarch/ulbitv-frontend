@@ -10,6 +10,15 @@ import { type DropdownDirection } from '@/shared/types';
 
 import cls from './Dropdown.module.scss';
 
+/**
+ * Свойства элемента выпадающего списка.
+ *
+ * @interface
+ * @property {boolean} [disabled] - Флаг, указывающий, отключен ли элемент выпадающего списка.
+ * @property {ReactNode} [content] - Содержимое элемента выпадающего списка.
+ * @property {() => void} [onClick] - Callback-функция, вызываемая при клике на элемент выпадающего списка.
+ * @property {string} [href] - Ссылка для элемента выпадающего списка.
+ */
 export interface DropdownItem {
 	disabled?: boolean;
 	content?: ReactNode;
@@ -17,6 +26,15 @@ export interface DropdownItem {
 	href?: string;
 }
 
+/**
+ * Свойства компонента Dropdown.
+ *
+ * @interface
+ * @property {string} [className] - Дополнительные стили компонента.
+ * @property {DropdownItem[]} items - Элементы выпадающего списка.
+ * @property {ReactNode} trigger - Элемент, который будет использоваться в качестве триггера для открытия выпадающего списка.
+ * @property {DropdownDirection} [direction] - Направление отображения выпадающего списка.
+ */
 interface DropdownProps {
 	className?: string;
 	items: DropdownItem[];
@@ -24,6 +42,13 @@ interface DropdownProps {
 	direction?: DropdownDirection;
 }
 
+/**
+ * Компонент для создания выпадающего списка с элементами.
+ *
+ * @component
+ * @param {DropdownProps} props - Свойства компонента.
+ * @returns {JSX.Element} Компонент Dropdown.
+ */
 export const Dropdown = memo((props: DropdownProps) => {
 	const { className, items, trigger, direction = 'bottomRight' } = props;
 

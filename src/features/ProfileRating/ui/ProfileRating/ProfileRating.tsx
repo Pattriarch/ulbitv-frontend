@@ -14,10 +14,27 @@ import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton'
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 
 interface ProfileRatingProps {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
+
+	/**
+	 * Идентификатор профиля, для которого отображается рейтинг.
+	 */
 	profileId: string;
 }
 
+/**
+ * Компонент ProfileRating - отображение и возможность оценки профиля.
+ *
+ * @component
+ *
+ * @param {Object} props - Пропсы компонента.
+ * @param {string} props.className - Дополнительные стили компонента.
+ * @param {string} props.profileId - Идентификатор профиля, для которого отображается рейтинг.
+ * @returns {JSX.Element | null} - Возвращает JSX элемент с возможностью оценки профиля.
+ */
 export const ProfileRating = memo((props: ProfileRatingProps) => {
 	const { className, profileId } = props;
 	const { t } = useTranslation();

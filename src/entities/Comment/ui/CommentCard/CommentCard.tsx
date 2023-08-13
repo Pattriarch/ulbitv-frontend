@@ -17,11 +17,22 @@ import { Text } from '@/shared/ui/redesigned/Text';
 import cls from './CommentCard.module.scss';
 
 interface CommentCardProps {
+	/** Опциональный класс для стилизации компонента. */
 	className?: string;
+
+	/** Флаг, указывающий, выполняется ли загрузка данных. */
 	isLoading?: boolean;
+
+	/** Объект комментария для отображения. */
 	comment?: Comment;
 }
 
+/**
+ * Компонент для отображения карточки комментария.
+ *
+ * @param {CommentCardProps} props Свойства компонента.
+ * @returns {JSX.Element | null} Карточка комментария.
+ */
 export const CommentCard = (props: CommentCardProps): JSX.Element | null => {
 	const { className, comment, isLoading } = props;
 

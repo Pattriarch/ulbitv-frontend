@@ -5,9 +5,21 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Icon } from '@/shared/ui/redesigned/Icon';
 
 interface ScrollToTopButtonProps {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
 }
 
+/**
+ * Компонент ScrollToTopButton - кнопка для прокрутки страницы вверх.
+ *
+ * @component
+ *
+ * @param {Object} props - Пропсы компонента.
+ * @param {string} props.className - Дополнительные стили компонента.
+ * @returns {JSX.Element} - Возвращает JSX элемент кнопки для прокрутки страницы вверх.
+ */
 export const ScrollToTopButton = memo((props: ScrollToTopButtonProps) => {
 	const { className } = props;
 

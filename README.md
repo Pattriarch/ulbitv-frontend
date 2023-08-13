@@ -1,4 +1,4 @@
-<img alt="Icon" src="https://yt3.googleusercontent.com/ytc/AOPolaSOZbx1TYtVgBZ47qLteCe4FCsTZUIunaKLB_lS8A=s900-c-k-c0x00ffffff-no-rj" style='width:220px;height:220px;' align="left" hspace="1" vspace="1">
+<img alt="Icon" src="https://yt3.googleusercontent.com/ytc/AOPolaSOZbx1TYtVgBZ47qLteCe4FCsTZUIunaKLB_lS8A=s900-c-k-c0x00ffffff-no-rj" style='width:250px;height:250px;' align="left" hspace="1" vspace="1">
 
 # Pattriarch - Новостной Портал (Продвинутый React)
 
@@ -291,6 +291,26 @@ Clear.args = {
 2. Состояние (on/off)
 
 ---
+
+## Деплой
+
+- [Деплой и Конфигурация nginx](/docs/deploy.md)
+
+## CI/CD
+
+- [Пайплайны](/docs/github-actions.md)
+
+## Прекоммит хуки
+
+- [Прекоммит хуки](/docs/precommit.md)
+
+## Самописные babel-плагины
+
+- [Удаление атрибутов](/docs/babel/babel-remove-attrs.md)
+
+## Storybook 
+
+- [Декораторы, плагины и использование](/docs/storybook.md)
 
 ## Сущности (entities)
 

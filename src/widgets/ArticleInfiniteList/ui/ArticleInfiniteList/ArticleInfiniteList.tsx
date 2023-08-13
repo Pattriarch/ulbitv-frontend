@@ -20,10 +20,24 @@ import { Text as TextDeprecated, TextTheme } from '@/shared/ui/deprecated/Text';
 import { Text } from '@/shared/ui/redesigned/Text';
 
 interface ArticleInfiniteListProps {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
+
+	/**
+	 * Флаг, указывающий, используется ли виртуализация для списка статей.
+	 */
 	virtualized?: boolean;
 }
 
+/**
+ * Компонент ArticleInfiniteList представляет список статей с поддержкой бесконечной прокрутки.
+ *
+ * @component
+ * @param {ArticleInfiniteListProps} props - Свойства компонента.
+ * @returns {JSX.Element} Компонент ArticleInfiniteList.
+ */
 export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
 	const { className, virtualized } = props;
 	const { t } = useTranslation();

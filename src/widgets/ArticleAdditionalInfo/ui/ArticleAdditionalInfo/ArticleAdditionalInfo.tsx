@@ -9,14 +9,45 @@ import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
 
 interface ArticleAdditionalInfoProps {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
+
+	/**
+	 * Флаг, указывающий, может ли информация быть редактируемой.
+	 */
 	isEditable: boolean;
+
+	/**
+	 * Автор статьи.
+	 */
 	author?: User;
+
+	/**
+	 * Дата создания статьи.
+	 */
 	createdAt?: string;
+
+	/**
+	 * Количество просмотров статьи.
+	 */
 	views?: number;
+
+	/**
+	 * Callback-функция, вызываемая при редактировании информации.
+	 */
 	onEdit: () => void;
 }
 
+/**
+ * Компонент ArticleAdditionalInfo отображает дополнительную информацию о статье,
+ * такую как автор, дата создания, количество просмотров, а также кнопку редактирования.
+ *
+ * @component
+ * @param {ArticleAdditionalInfoProps} props - Свойства компонента.
+ * @returns {JSX.Element} Компонент ArticleAdditionalInfo.
+ */
 export const ArticleAdditionalInfo = memo(
 	(props: ArticleAdditionalInfoProps) => {
 		const { t } = useTranslation();

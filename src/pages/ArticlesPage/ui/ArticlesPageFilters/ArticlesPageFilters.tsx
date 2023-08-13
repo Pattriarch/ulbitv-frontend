@@ -13,9 +13,20 @@ import { Input } from '@/shared/ui/deprecated/Input';
 import cls from './ArticlesPageFilters.module.scss';
 
 interface ArticlesPageFiltersProps {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
 }
 
+/**
+ * Компонент, представляющий фильтры страницы со списком статей.
+ *
+ * @component
+ * @param {Object} props - Свойства компонента.
+ * @param {string} props.className - Дополнительный CSS-класс для стилизации.
+ * @returns {JSX.Element} Компонент ArticlesPageFilters.
+ */
 export const ArticlesPageFilters = memo(
 	({ className }: ArticlesPageFiltersProps) => {
 		const { t } = useTranslation();

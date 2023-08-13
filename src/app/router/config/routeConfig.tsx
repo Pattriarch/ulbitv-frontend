@@ -25,6 +25,18 @@ import {
 	getRouteSettings,
 } from '@/shared/const/router';
 
+/**
+ * Конфигурация маршрутов приложения.
+ *
+ * Описывает все доступные маршруты в приложении и их свойства.
+ * Каждый маршрут может иметь следующие свойства:
+ * - `path`: Путь для маршрута.
+ * - `element`: React компонент, который будет отображен при активации маршрута.
+ * - `authOnly`: Флаг, указывающий, что маршрут доступен только для аутентифицированных пользователей.
+ * - `roles`: Список ролей, которые имеют право на доступ к маршруту.
+ *
+ * @type {Record<AppRoutes, AppRoutesProps>}
+ */
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
 	[AppRoutes.MAIN]: {
 		path: getRouteMain(),

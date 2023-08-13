@@ -5,6 +5,12 @@ import { useCounterActions } from '../model/slices/counterSlice';
 
 import { Button } from '@/shared/ui/deprecated/Button';
 
+/**
+ * Компонент счетчика, позволяющий увеличивать и уменьшать значение счетчика.
+ *
+ * @component
+ * @returns {JSX.Element} Элемент счетчика.
+ */
 export const Counter = (): JSX.Element => {
 	const counterValue = useCounterValue();
 	const { decrement, increment } = useCounterActions();

@@ -10,10 +10,28 @@ import {
 import { Button } from '@/shared/ui/redesigned/Button';
 
 interface NavbarProps {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
+
+	/**
+	 * Определяет, будет ли отображаться сокращенная версия текста.
+	 * Если true, то текст будет сокращен, например, "Russian" станет "Ru".
+	 */
 	short?: boolean;
 }
 
+/**
+ * Компонент LangSwitcher - переключатель языка.
+ *
+ * @component
+ *
+ * @param {Object} props - Пропсы компонента.
+ * @param {string} props.className - Дополнительные стили компонента.
+ * @param {boolean} props.short - Флаг, указывающий на короткий режим переключателя.
+ * @returns {JSX.Element} - Возвращает JSX элемент переключателя языка.
+ */
 export const LangSwitcher = memo(
 	({ className, short }: NavbarProps): JSX.Element => {
 		const { t, i18n } = useTranslation();

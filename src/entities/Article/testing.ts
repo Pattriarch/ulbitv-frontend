@@ -5,4 +5,4 @@ export {
 	ARTICLES_FIXTURE,
 } from './tests/articleFixture';
 export { ARTICLE_STORYBOOK_FIXTURE } from './tests/articleStorybookFixture';
-export { ARTICLE_LIST_FIXTURE } from './tests/articlesListFixture';
+export { ARTICLE_LIST_STORYBOOK_FIXTURE } from './tests/articlesListStorybookFixture';

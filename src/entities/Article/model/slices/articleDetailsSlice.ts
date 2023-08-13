@@ -10,6 +10,9 @@ const initialState: ArticleDetailsSchema = {
 	data: undefined,
 };
 
+/**
+ * Slice редьюсер для управления состоянием деталей статьи.
+ */
 export const articleDetailsSlice = createSlice({
 	name: 'articleDetails',
 	initialState,

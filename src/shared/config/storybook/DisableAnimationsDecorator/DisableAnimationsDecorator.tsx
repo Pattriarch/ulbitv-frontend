@@ -1,11 +1,11 @@
 import { StoryFn } from '@storybook/react';
 import React from 'react';
 
-import { isLokiRunning } from '../lib/isLokiRunning/isLokiRunning';
+import { isLokiRunning } from './isLokiRunning';
 
 export const DisableAnimationsContext = React.createContext(false);
 
-export const DisabledAnimationsProvider = (StoryComponent: StoryFn) => (
+export const DisabledAnimationsDecorator = (StoryComponent: StoryFn) => (
 	<DisableAnimationsContext.Provider value={isLokiRunning()}>
 		<StoryComponent />
 	</DisableAnimationsContext.Provider>

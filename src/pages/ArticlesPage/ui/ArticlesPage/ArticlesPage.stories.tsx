@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import ArticlePage from './ArticlesPage';
 
 import { ArticleView } from '@/entities/Article';
-import { ARTICLE_LIST_FIXTURE } from '@/entities/Article/testing';
+import { ARTICLE_LIST_STORYBOOK_FIXTURE } from '@/entities/Article/testing';
 import { USER_FIXTURE } from '@/entities/User/testing';
 import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
@@ -18,7 +18,7 @@ const meta: Meta<typeof ArticlePage> = {
 				authData: USER_FIXTURE,
 			},
 			articlesPage: {
-				...ARTICLE_LIST_FIXTURE,
+				...ARTICLE_LIST_STORYBOOK_FIXTURE,
 				view: ArticleView.BIG,
 			},
 		}),

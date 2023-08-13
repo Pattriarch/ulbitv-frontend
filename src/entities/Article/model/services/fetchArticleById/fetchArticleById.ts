@@ -4,6 +4,14 @@ import { type Article } from '../../types/article';
 
 import { type ThunkConfig } from '@/app/providers/StoreProvider';
 
+/**
+ * Асинхронный запрос для получения статьи по ID.
+ *
+ * @function
+ * @param {string | undefined} articleId - ID статьи для загрузки.
+ * @returns {Promise<Article>} - Промис, возвращающий данные статьи.
+ * @throws Ошибка, если ID статьи не предоставлен или ответ сервера пустой.
+ */
 export const fetchArticleById = createAsyncThunk<
 	Article,
 	string | undefined,

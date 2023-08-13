@@ -18,14 +18,35 @@ import cls from './EditArticleImageBlock.module.scss';
 type ImageBlockHTMLAttributes = Omit<HTMLAttributes<HTMLElement>, 'onChange'>;
 
 interface EditArticleImageBlockProps extends ImageBlockHTMLAttributes {
+	/** Дополнительные стили компонента. */
 	className?: string;
+
+	/** Определяет, находится ли блок в режиме редактирования. */
 	isEdit: boolean;
+
+	/** Текущий блок изображения статьи. */
 	block: ArticleImageBlock;
+
+	/** Обработчик изменения состояния блока. */
 	onChangeBlockState: (editedBlock: ArticleImageBlock) => void;
+
+	/** Устанавливает редактируемый блок изображения. */
 	setEditBlock: (block: ArticleImageBlock) => void;
+
+	/** Текущий редактируемый блок изображения статьи. */
 	editBlock: ArticleImageBlock;
 }
 
+/**
+ * Компонент для редактирования блока изображения статьи.
+ *
+ * Предоставляет пользовательский интерфейс для редактирования блока изображения статьи,
+ * включая добавление и изменение изображения и его подписи.
+ * Компонент также учитывает, находится ли приложение в режиме "редизайна",
+ * и отображает соответствующие элементы интерфейса на основе этого состояния.
+ *
+ * @param {EditArticleImageBlockProps} props - Свойства компонента.
+ */
 export const EditArticleImageBlock = memo(
 	(props: EditArticleImageBlockProps) => {
 		const { t } = useTranslation();

@@ -14,10 +14,24 @@ import { Text } from '@/shared/ui/redesigned/Text';
 import cls from './NotificationItem.module.scss';
 
 interface NotificationItemProps {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
+
+	/**
+	 * Объект уведомления, который будет отображен.
+	 */
 	item: Notification;
 }
 
+/**
+ * Компонент элемента уведомления.
+ *
+ * @component
+ * @param {NotificationItemProps} props - Пропсы компонента `NotificationItem`.
+ * @returns {JSX.Element} Элемент уведомления.
+ */
 export const NotificationItem = memo((props: NotificationItemProps) => {
 	const { className, item } = props;
 

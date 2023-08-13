@@ -21,9 +21,21 @@ import { Popover } from '@/shared/ui/redesigned/Popups';
 import cls from './OpenNotificationListButton.module.scss';
 
 interface NotificationButtonProps {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
 }
 
+/**
+ * Компонент OpenNotificationListButton - кнопка для открытия списка уведомлений.
+ *
+ * @component
+ *
+ * @param {Object} props - Пропсы компонента.
+ * @param {string} props.className - Дополнительные стили компонента.
+ * @returns {JSX.Element | null} - Возвращает JSX элемент кнопки для открытия списка уведомлений.
+ */
 export const OpenNotificationListButton = memo(
 	(props: NotificationButtonProps) => {
 		const { className } = props;

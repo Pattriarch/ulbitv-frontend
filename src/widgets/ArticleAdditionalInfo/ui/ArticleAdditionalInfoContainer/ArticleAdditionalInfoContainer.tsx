@@ -14,9 +14,19 @@ import { Card } from '@/shared/ui/redesigned/Card';
 import cls from './ArticleAdditionalInfoContainer.module.scss';
 
 interface AdditionalInfoContainerProps {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
 }
 
+/**
+ * Компонент ArticleAdditionalInfoContainer представляет контейнер для отображения дополнительной информации о статье.
+ *
+ * @component
+ * @param {AdditionalInfoContainerProps} props - Свойства компонента.
+ * @returns {JSX.Element | null} Компонент ArticleAdditionalInfoContainer или null, если статья не доступна.
+ */
 export const ArticleAdditionalInfoContainer = memo(
 	(props: AdditionalInfoContainerProps) => {
 		const { className } = props;

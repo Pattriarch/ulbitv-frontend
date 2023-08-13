@@ -10,12 +10,27 @@ import { ToggleFeatures } from '@/shared/lib/features';
 
 import cls from './Code.module.scss';
 
+/**
+ * Свойства компонента Code.
+ *
+ * @interface
+ * @property {string} [className] - Дополнительные стили компонента.
+ * @property {string} text - Текст, который будет отображен внутри компонента.
+ * @property {boolean} [withCopyIcon] - Флаг, указывающий, нужно ли отображать значок для копирования.
+ */
 interface CodeProps {
 	className?: string;
 	text: string;
 	withCopyIcon?: boolean;
 }
 
+/**
+ * Компонент для отображения блока с кодом с поддержкой копирования.
+ *
+ * @component
+ * @param {CodeProps} props - Свойства компонента.
+ * @returns {JSX.Element} Компонент Code.
+ */
 export const Code = (props: CodeProps): JSX.Element => {
 	const { className, text, withCopyIcon = true } = props;
 

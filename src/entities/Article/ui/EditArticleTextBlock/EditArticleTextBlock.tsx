@@ -19,14 +19,35 @@ import cls from './EditArticleTextBlock.module.scss';
 type TextBlockHTMLAttributes = Omit<HTMLAttributes<HTMLElement>, 'onChange'>;
 
 interface EditArticleTextBlockProps extends TextBlockHTMLAttributes {
+	/** Дополнительные стили компонента. */
 	className?: string;
+
+	/** Определяет, находится ли блок в режиме редактирования. */
 	isEdit: boolean;
+
+	/** Текущий блок текста статьи. */
 	block: ArticleTextBlock;
+
+	/** Обработчик изменения состояния блока. */
 	onChangeBlockState: (editedBlock: ArticleTextBlock) => void;
+
+	/** Устанавливает редактируемый блок. */
 	setEditBlock: (block: ArticleTextBlock) => void;
+
+	/** Текущий редактируемый блок текста статьи. */
 	editBlock: ArticleTextBlock;
 }
 
+/**
+ * Компонент для редактирования текстового блока статьи.
+ *
+ * Предоставляет пользовательский интерфейс для редактирования текстового блока статьи,
+ * включая добавление и удаление параграфов, а также редактирование заголовка блока.
+ * Компонент также учитывает, находится ли приложение в режиме "редизайна",
+ * и отображает соответствующие элементы интерфейса на основе этого состояния.
+ *
+ * @param {EditArticleTextBlockProps} props - Свойства компонента.
+ */
 export const EditArticleTextBlock = memo((props: EditArticleTextBlockProps) => {
 	const {
 		className,

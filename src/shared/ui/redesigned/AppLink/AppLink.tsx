@@ -7,6 +7,15 @@ import cls from './AppLink.module.scss';
 
 export type AppLinkVariant = 'primary' | 'red';
 
+/**
+ * Свойства компонента AppLink.
+ *
+ * @interface
+ * @property {string} [className] - Дополнительные стили компонента.
+ * @property {AppLinkVariant} [variant] - Вариант стиля ссылки.
+ * @property {ReactNode} [children] - Содержимое ссылки.
+ * @property {string} [activeClassName] - CSS-класс, применяемый к компоненту, когда ссылка активна.
+ */
 interface AppLinkProps extends LinkProps {
 	className?: string;
 	variant?: AppLinkVariant;
@@ -14,6 +23,14 @@ interface AppLinkProps extends LinkProps {
 	activeClassName?: string;
 }
 
+/**
+ * Компонент для создания ссылок в приложении с поддержкой активного состояния.
+ *
+ * @component
+ * @param {AppLinkProps} props - Свойства компонента.
+ * @param {React.Ref<HTMLAnchorElement>} ref - Ref для ссылки.
+ * @returns {JSX.Element} Компонент AppLink.
+ */
 export const AppLink = memo(
 	forwardRef<HTMLAnchorElement, AppLinkProps>((props: AppLinkProps, ref) => {
 		const {

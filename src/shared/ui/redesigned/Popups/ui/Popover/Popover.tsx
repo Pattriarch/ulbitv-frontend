@@ -8,6 +8,15 @@ import { type DropdownDirection } from '@/shared/types';
 
 import cls from './Popover.module.scss';
 
+/**
+ * Свойства компонента Popover.
+ *
+ * @interface
+ * @property {string} [className] - Дополнительные стили компонента.
+ * @property {ReactNode} trigger - Элемент, который будет использоваться в качестве триггера для открытия Popover.
+ * @property {DropdownDirection} [direction] - Направление отображения Popover.
+ * @property {ReactNode} children - Дочерние элементы, которые будут отображаться внутри Popover.
+ */
 interface PopoverProps {
 	className?: string;
 	trigger: ReactNode;
@@ -15,6 +24,13 @@ interface PopoverProps {
 	children: ReactNode;
 }
 
+/**
+ * Компонент для создания Popover с содержимым, открывающимся по клику на триггер.
+ *
+ * @component
+ * @param {PopoverProps} props - Свойства компонента.
+ * @returns {JSX.Element} Компонент Popover.
+ */
 export const Popover = memo((props: PopoverProps) => {
 	const { className, trigger, direction = 'bottomRight', children } = props;
 

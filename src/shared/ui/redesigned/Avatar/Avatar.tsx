@@ -9,6 +9,15 @@ import { classNames, type Mods } from '@/shared/lib/classNames/classNames';
 
 import cls from './Avatar.module.scss';
 
+/**
+ * Свойства компонента Avatar.
+ *
+ * @interface
+ * @property {string} [className] - Дополнительные стили компонента.
+ * @property {string} [src] - Путь к изображению аватара.
+ * @property {number} [size] - Размер аватара.
+ * @property {string} [alt] - Альтернативный текст для изображения аватара.
+ */
 interface AvatarProps {
 	className?: string;
 	src?: string;
@@ -16,6 +25,13 @@ interface AvatarProps {
 	alt?: string;
 }
 
+/**
+ * Компонент для отображения аватара пользователя с поддержкой загрузки и обработки ошибок.
+ *
+ * @component
+ * @param {AvatarProps} props - Свойства компонента.
+ * @returns {JSX.Element} Компонент Avatar.
+ */
 export const Avatar = (props: AvatarProps) => {
 	const { className, src, size = 100, alt } = props;
 

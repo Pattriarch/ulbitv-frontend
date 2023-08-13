@@ -27,17 +27,57 @@ import { Text } from '@/shared/ui/redesigned/Text';
 import cls from './ArticleList.module.scss';
 
 interface ArticleListProps {
+	/**
+	 * Функциональный компонент для заголовка списка.
+	 */
 	Header?: () => ReactNode;
+
+	/**
+	 * Опциональный класс для стилизации.
+	 */
 	className?: string;
+
+	/**
+	 * Массив статей для отображения.
+	 */
 	articles: Article[];
-	isLoading?: boolean;
+
+	/**
+	 * Определяет вид отображения статей.
+	 */
 	view?: ArticleView;
+
+	/**
+	 * Определяет, выполняется ли загрузка данных.
+	 */
+	isLoading?: boolean;
+
+	/**
+	 * Значение для атрибута `target` тега `<a>`.
+	 */
 	target?: HTMLAttributeAnchorTarget;
+
+	/**
+	 * Обработчик события достижения конца списка для подгрузки следующей порции данных.
+	 */
 	onLoadNextPart?: () => void;
+
+	/**
+	 * Индекс последнего прокрученного элемента.
+	 */
 	lastScrolledIndex?: number;
+
+	/**
+	 * Функция для установки значения последнего прокрученного элемента.
+	 */
 	setLastScrolledIndex?: (index: number) => void;
+
+	/**
+	 * Опция для включения виртуализации (используется `react-virtuoso`).
+	 */
 	virtualized?: boolean;
 }
+
 
 const getSkeletons = (view: ArticleView) =>
 	new Array(view === ArticleView.BIG ? 8 : 25)
@@ -50,6 +90,12 @@ const getSkeletons = (view: ArticleView) =>
 			/>
 		));
 
+/**
+ * Компонент для отображения списка статей.
+ *
+ * @param {ArticleListProps} props Свойства компонента.
+ * @returns {JSX.Element} Список статей.
+ */
 export const ArticleList = memo((props: ArticleListProps) => {
 	const {
 		Header,

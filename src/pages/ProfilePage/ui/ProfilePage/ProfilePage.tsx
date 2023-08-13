@@ -8,9 +8,19 @@ import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Page } from '@/widgets/Page';
 
 export interface ProfilePageProps {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
 }
 
+/**
+ * Компонент, представляющий страницу профиля пользователя.
+ *
+ * @component
+ * @param {ProfilePageProps} props - Свойства компонента.
+ * @returns {JSX.Element} Компонент ProfilePage.
+ */
 const ProfilePage = memo((props: ProfilePageProps): JSX.Element => {
 	const { className } = props;
 	const { id } = useParams<{ id: string, }>();

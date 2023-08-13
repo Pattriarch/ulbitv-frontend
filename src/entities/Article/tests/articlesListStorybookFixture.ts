@@ -6,7 +6,7 @@ import {
 
 import { getStorybookImage } from '@/shared/lib/tests/getStorybookImage/getStorybookImage';
 
-export const ARTICLE_LIST_FIXTURE = {
+export const ARTICLE_LIST_STORYBOOK_FIXTURE = {
 	page: 2,
 	entities: {
 		'1': {

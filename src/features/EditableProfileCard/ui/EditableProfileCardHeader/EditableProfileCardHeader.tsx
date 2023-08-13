@@ -23,10 +23,27 @@ import { Text } from '@/shared/ui/redesigned/Text';
 import cls from './EditableProfileCardHeader.module.scss';
 
 interface EditableProfileCardHeaderProps {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
+
+	/**
+	 * Состояние загрузки данных. Если true, загрузка активна.
+	 */
 	isLoading?: boolean;
 }
 
+/**
+ * Компонент EditableProfileCardHeader - заголовок редактируемой карточки профиля.
+ *
+ * @component
+ *
+ * @param {Object} props - Пропсы компонента.
+ * @param {string} props.className - Дополнительные стили компонента.
+ * @param {boolean} props.isLoading - Флаг загрузки данных.
+ * @returns {JSX.Element|null} - Возвращает JSX элемент заголовка редактируемой карточки профиля или null, если идет загрузка данных.
+ */
 export const EditableProfileCardHeader = memo(
 	(props: EditableProfileCardHeaderProps) => {
 		const { className, isLoading } = props;

@@ -11,18 +11,59 @@ export type TextSize = 's' | 'm' | 'l';
 export type TextTag = 'p' | 'h1' | 'h2' | 'h3';
 
 interface TextProps {
+	/**
+	 * Дополнительные стили компонента.
+	 */
 	className?: string;
+
+	/**
+	 * Заголовок (title) компонента, который может использоваться для дополнительных описаний.
+	 */
 	title?: string;
+
+	/**
+	 * Текст, который будет отображен.
+	 */
 	text?: string;
+
+	/**
+	 * Вариант стиля текста.
+	 */
 	variant?: TextVariant;
+
+	/**
+	 * Выравнивание текста.
+	 */
 	align?: TextAlign;
+
+	/**
+	 * Размер текста согласно дизайн-системе.
+	 */
 	size?: TextSize;
+
+	/**
+	 * HTML-тег, который будет использоваться для отображения текста.
+	 */
 	tag?: TextTag;
+
+	/**
+	 * Толщина текста.
+	 */
 	weight?: TextWeight;
 
+	/**
+	 * Значение атрибута 'data-testid' для тестирования.
+	 */
 	'data-testid'?: string;
 }
 
+/**
+ * Компонент Text представляет текст с определенными стилями и параметрами.
+ *
+ * @component
+ * @param {TextProps} props - Свойства компонента.
+ * @returns {JSX.Element} Компонент Text.
+ */
 export const Text = memo((props: TextProps): JSX.Element => {
 	const {
 		className,

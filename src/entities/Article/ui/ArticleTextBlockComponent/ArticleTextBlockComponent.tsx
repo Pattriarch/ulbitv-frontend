@@ -8,11 +8,24 @@ import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
 
+
 interface ArticleTextBlockComponentProps {
+	/** Дополнительные стили компонента. */
 	className?: string;
+
+	/** Текущий текстовый блок статьи. */
 	block: ArticleTextBlock;
 }
 
+/**
+ * Компонент для отображения текстового блока статьи.
+ *
+ * Отображает заголовок и параграфы текстового блока.
+ * Компонент учитывает, находится ли приложение в режиме "редизайна",
+ * и отображает соответствующие элементы интерфейса на основе этого состояния.
+ *
+ * @param {ArticleTextBlockComponentProps} props - Свойства компонента.
+ */
 export const ArticleTextBlockComponent = memo(
 	(props: ArticleTextBlockComponentProps) => {
 		const { className, block } = props;

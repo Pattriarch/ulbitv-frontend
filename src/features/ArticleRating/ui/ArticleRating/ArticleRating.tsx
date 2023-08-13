@@ -14,23 +14,44 @@ import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton'
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 
 export interface ArticleRatingProps {
+	/**
+	 * Дополнительный класс для стилизации компонента.
+	 */
 	className?: string;
+
+	/**
+	 * Идентификатор статьи, которую нужно оценить.
+	 */
 	articleId: string;
 }
 
+/**
+ * Компонент для оценки статьи.
+ *
+ * @component
+ * @param {ArticleRatingProps} props - Свойства компонента ArticleRating.
+ * @returns {JSX.Element} Компонент для оценки статьи.
+ */
 const ArticleRating = memo((props: ArticleRatingProps) => {
 	const { className, articleId } = props;
 	const { t } = useTranslation();
 	const userData = useSelector(getUserAuthData);
 
+	// Получение данных об оценке статьи
 	const { data, isLoading } = useGetArticleRating({
 		articleId,
-		// безопасно, тк не дойдет, если пользователь авторизован
 		userId: userData?.id ?? '',
 	});
 
+	// Инициализация мутации для оценки статьи
 	const [rateArticleMutation] = useRateArticle();
 
+	/**
+	 * Обработчик оценки статьи.
+	 *
+	 * @param {number} starsCount - Количество звезд для оценки.
+	 * @param {string} [feedback] - Обратная связь.
+	 */
 	const handleRateArticle = useCallback(
 		(starsCount: number, feedback?: string) => {
 			try {
@@ -47,6 +68,11 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
 		[articleId, rateArticleMutation, userData?.id],
 	);
 
+	/**
+	 * Обработчик отмены оценки.
+	 *
+	 * @param {number} starsCount - Количество звезд для оценки.
+	 */
 	const onCancel = useCallback(
 		(starsCount: number) => {
 			handleRateArticle(starsCount);
@@ -54,6 +80,12 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
 		[handleRateArticle],
 	);
 
+	/**
+	 * Обработчик подтверждения оценки.
+	 *
+	 * @param {number} starsCount - Количество звезд для оценки.
+	 * @param {string} [feedback] - Обратная связь.
+	 */
 	const onAccept = useCallback(
 		(starsCount: number, feedback?: string) => {
 			handleRateArticle(starsCount, feedback);
@@ -61,6 +93,7 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
 		[handleRateArticle],
 	);
 
+	// Если данные загружаются, отображается индикатор загрузки
 	if (isLoading) {
 		return (
 			<ToggleFeatures
