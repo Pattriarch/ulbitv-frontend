@@ -4,6 +4,9 @@
 
 Пет-проект представляет собой новостной портал, разработанный на основе архитектуры [Feature Sliced Design](https://feature-sliced.design/). Приложение позволяет пользователям авторизовываться, просматривать статьи других авторов, управлять своими публикациями и при необходимости редактировать их. Благодаря применению архитектуры Feature Sliced Design, проект легко масштабируется и развивается, обеспечивая чистоту и порядок в структуре кода.
 
+- ![](https://img.shields.io/github/checks-status/pattriarch/ulbitv-frontend/main)
+- [![GithubPages][GithubPages]][GithubPages-url]
+
 ## Основные технологии:
 
 ### Архитектура проекта:
@@ -345,6 +348,10 @@ Clear.args = {
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[GithubPages]: https://img.shields.io/badge/githubpages-20232A?style=for-the-badge&logo=githubpages&logoColor=61DAFB
+
+[GithubPages-url]: https://pattriarch.github.io/ulbitv-frontend/
 
 [React]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 
