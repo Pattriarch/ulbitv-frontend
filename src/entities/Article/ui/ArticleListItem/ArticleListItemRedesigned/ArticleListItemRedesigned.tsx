@@ -6,6 +6,7 @@ import { ArticleTextBlock } from '../../../model/types/article';
 import { ArticleListItemProps } from '../ArticleListItem';
 
 import EyeIcon from '@/shared/assets/icons/eye-32-32.svg';
+import NoImage from '@/shared/assets/images/no-image.png';
 import { getRouteArticleDetails } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppImage } from '@/shared/ui/redesigned/AppImage';
@@ -19,6 +20,7 @@ import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
 
 import cls from './ArticleListItemRedesigned.module.scss';
+
 
 export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
 	const { className, article, target, view, index, setLastScrolledIndex } =
@@ -81,6 +83,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
 					<Text title={article.title} weight={'extrabold'} />
 					<Text title={article.subtitle} size={'s'} />
 					<AppImage
+						errorFallback={<img src={NoImage} alt={'no-image'} className={cls.img} />}
 						fallback={<Skeleton width={'100%'} height={250} />}
 						src={article.img}
 						className={cls.img}
@@ -126,6 +129,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
 			<Card className={cls.card} border={'partial'} padding={'0'}>
 				<AppImage
 					fallback={<Skeleton width={'100%'} height={140} />}
+					errorFallback={<img src={NoImage} alt={'no-image'} className={cls.img} />}
 					src={article.img}
 					className={cls.img}
 					alt={article.title}

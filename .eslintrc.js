@@ -127,6 +127,7 @@ module.exports = {
 			{
 				markupOnly: true,
 				ignoreAttribute: [
+					'alt',
 					'wrap',
 					'size',
 					'weight',

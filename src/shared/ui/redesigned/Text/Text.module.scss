@@ -1,9 +1,10 @@
-.title {
-    color: var(--text-redesigned);
-}
-
+.title,
 .text {
     color: var(--text-redesigned);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 .error {

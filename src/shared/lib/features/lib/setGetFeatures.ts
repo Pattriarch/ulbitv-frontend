@@ -1,9 +1,11 @@
 import { LOCAL_STORAGE_LAST_DESIGN_KEY } from '@/shared/const/localStorage';
 import { FeatureFlags } from '@/shared/types/featureFlags';
 
+const designValue = localStorage.getItem(LOCAL_STORAGE_LAST_DESIGN_KEY);
+
 const defaultFeatures: FeatureFlags = {
-	isAppRedesigned:
-		localStorage.getItem(LOCAL_STORAGE_LAST_DESIGN_KEY) === 'new',
+	// по дефолту хотим получать новый дизайн
+	isAppRedesigned: designValue === null || designValue === 'new',
 };
 
 // фичи не меняются в ходе сессии, их делать реактивными необязательно

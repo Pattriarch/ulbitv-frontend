@@ -127,7 +127,7 @@ const LoginForm = memo(
 								value={username}
 							/>
 							<Input
-								type="text"
+								type="password"
 								placeholder={t('Введите пароль')}
 								className={cls.input}
 								onChange={onChangePassword}
@@ -167,7 +167,7 @@ const LoginForm = memo(
 								value={username}
 							/>
 							<InputDeprecated
-								type="text"
+								type="password"
 								placeholder={t('Введите пароль')}
 								className={cls.input}
 								onChange={onChangePassword}

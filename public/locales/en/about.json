@@ -1,4 +1,25 @@
 {
   "О сайте": "About",
-  "У вас нет доступа к этой странице": "You cannot access this page"
+  "У вас нет доступа к этой странице": "You cannot access this page",
+  "Что у нас под капотом?": "What do we have under the hood?",
+  "• Архитектура:": "• Architecture:",
+  "Feature Sliced Design — современный подход к структурированию кода. Как пазл, который всегда соответствует картинке на коробке.": "Feature Sliced Design — A modern approach to structuring code. Like a puzzle that always matches the picture on the box.",
+  "• Сборка и разработка:": "• Assembly and Development:",
+  "Webpack и Vite — эти инструменты помогают нам быстро и эффективно собирать проект.": "Webpack and Vite — these tools help us assemble a project quickly and efficiently.",
+  "• Языки и стили:": "• Languages and styles:",
+  "TypeScript и SCSS — эти инструменты помогают нам писать чистый и типизированный код.": "TypeScript and SCSS — these tools help us write clean and typed code.",
+  "• Локализация:": "• Localization:",
+  "i18next — благодаря этой библиотеки вы можете изменять язык в одно мгновение.": "i18next — thanks to this library you can change the language in an instant.",
+  "• Тестирование и документация:": "• Testing and documentation:",
+  "Jest, Cypress и React Testing Library — незаменимые помощники, которые помогают нам убедиться, что все работает как часы. Storybook и Loki позволяют нам визуализировать и проверять наши компоненты, создавая истории для каждого из них.": "Jest, Cypress и React Testing Library — indispensable helpers that help us make sure everything works like clockwork. Storybook and Loki allow us to visualize and test our components by creating stories for each of them.",
+  "• Code Style и качество кода:": "• Code Style and Code Quality:",
+  "ESLint, Prettier и Stylelint — наши стражи чистоты кода. Они не пропускают ошибки и следят за тем, чтобы наш код был читаем и последователен.": "ESLint, Prettier and Stylelint — our guardians of code purity. They don't miss errors and make sure our code is readable and consistent.",
+  "TS-Morph, Dependency-Cruiser и Circular-Dependency-Plugin — помогают нам анализировать и улучшать структуру кода.": "TS-Morph, Dependency-Cruiser and Circular-Dependency-Plugin — help us analyze and improve code structure.",
+  "• Дополнительные инструменты:": "• Additional tools:",
+  "JSON Server позволяет нам создавать быстрые моки для RESTful API.": "JSON Server allows us to create quick mocs for RESTful APIs.",
+  "Husky и lint-staged гарантируют, что каждый коммит соответствует нашим стандартам.": "Husky and lint-staged ensure that every commit meets our standards.",
+  "Concurrently оптимизирует наши рабочие процессы, позволяя запускать несколько задач одновременно.": "Concurrently optimizes our workflows by allowing us to run multiple tasks simultaneously.",
+  "browserslist помогает нам оставаться совместимыми со многими версиями браузеров.": "browserslist helps us stay compatible with many browser versions.",
+  "• CI/CD и инфраструктура:": "• CI/CD and infrastructure:",
+  "Наши автоматизированные процессы обеспечивают быструю и безболезненную интеграцию и доставку. А настройка nginx гарантирует стабильность и безопасность нашего сервера.": "Our automated processes ensure fast and painless integration and delivery. And nginx configuration guarantees stability and security of our server."
 }

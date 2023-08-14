@@ -45,7 +45,7 @@
 
 .input {
     border: none;
-    outline-color: transparent;
+    outline: none;
     width: 100%;
     color: var(--text-redesigned);
     background: none;
@@ -55,7 +55,7 @@
     }
 
     &:focus {
-        outline-color: transparent;
+        outline: none;
     }
 }
 
