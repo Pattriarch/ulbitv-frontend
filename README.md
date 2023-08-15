@@ -1,4 +1,4 @@
-<img alt="Icon" src="https://yt3.googleusercontent.com/ytc/AOPolaSOZbx1TYtVgBZ47qLteCe4FCsTZUIunaKLB_lS8A=s900-c-k-c0x00ffffff-no-rj" style='width:250px;height:250px;' align="left" hspace="1" vspace="1">
+<img alt="Icon" src="https://yt3.googleusercontent.com/ytc/AOPolaSOZbx1TYtVgBZ47qLteCe4FCsTZUIunaKLB_lS8A=s900-c-k-c0x00ffffff-no-rj" style='width:300px;height:300px;' align="left" hspace="1" vspace="1">
 
 # Pattriarch - Новостной Портал (Продвинутый React)
 
@@ -6,6 +6,58 @@
 
 - ![](https://img.shields.io/github/checks-status/pattriarch/ulbitv-frontend/main)
 - [![GithubPages][GithubPages]][GithubPages-url]
+
+## Запуск проекта
+
+```
+npm install - устанавливаем зависимости
+npm run start:dev или npm run start:dev:vite - запуск сервера + frontend проекта в dev режиме
+```
+
+---
+
+## Скрипты
+
+- `npm run start` - Запуск frontend проекта на webpack dev server
+- `npm run start:vite` - Запуск frontend проекта на vite
+- `npm run start:dev` - Запуск frontend проекта на webpack dev server + backend
+- `npm run start:dev:vite` - Запуск frontend проекта на vite + backend
+- `npm run start:dev:server` - Запуск backend сервера
+
+- `npm run build:prod` - Сборка в prod режиме
+- `npm run build:dev` - Сборка в dev режиме (не минимизирован)
+
+- `npm run lint:prettier` - Применение Prettier ко всем файлам проекта (ts, tsx, json)
+- `npm run lint:ts` - Проверка ts файлов линтером
+- `npm run lint:ts:fix` - Исправление ts файлов линтером
+- `npm run lint:scss` - Проверка scss файлов style линтером
+- `npm run lint:scss:fix` - Исправление scss файлов style линтером
+
+- `npm run test:unit` - Запуск unit тестов с jest
+- `npm run test:ui` - Запуск скриншотных тестов с loki
+- `npm run test:ui:update` - Обновление скриншотов с loki
+- `npm run test:ui:ok` - Подтверждение новых скриншотов с loki
+- `npm run test:ui:ci` - Запуск скриншотных тестов в CI
+- `npm run test:ui:json` - Генерация json отчета для скриншотных тестов
+- `npm run test:ui:html` - Генерация HTML отчета для скриншотных тестов
+- `npm run test:ui:report` - Генерация полного отчета для скриншотных тестов
+- `npm run test:e2e` - Запуск end-to-end тестов с помощью Cypress
+
+- `npm run storybook` - Запуск Storybook
+- `npm run storybook:build` - Сборка storybook билда
+
+- `npm run prepare` - Запускает прекоммит хуки
+- `npm run postinstall` - Запускает скрипт очистки кэша из node_modules после установки зависимостей.
+
+- `npm run scripts:generate-dependency-graph` - Скрипт для генерации SVG-файла всех зависимостей проекта
+- `npm run scripts:generate-slice` - Скрипт для генерации FSD слайсов (см. подробнее)
+- `npm run scripts:update-imports` - Скрипт для обновления импортов в проекте (см. подробнее)
+- `npm run scripts:update-src-imports` - Скрипт для обновления импортов в проекте (см. подробнее)
+- `npm run scripts:create-public-api` - Скрипт для создания PUBLIC API в shared-слое (см. подробнее)
+- `npm run scripts:create-readme` - Скрипт для генерации README (см. подробнее)
+- `npm run scripts:remove-feature` - Удаление определенной фичи со всего проекта (см. подробнее)
+
+---
 
 ## Основные технологии:
 
@@ -77,56 +129,6 @@
 - Concurrently - утилита для одновременного выполнения npm-скриптов.
 - Husky и lint-staged - инструменты для автоматического применения линтеров перед коммитом.
 - browserslist - инструмент для определения поддерживаемых версий браузеров.
-
-## Запуск проекта
-
-```
-npm install - устанавливаем зависимости
-npm run start:dev или npm run start:dev:vite - запуск сервера + frontend проекта в dev режиме
-```
-
----
-
-## Скрипты
-
-- `npm run start` - Запуск frontend проекта на webpack dev server
-- `npm run start:vite` - Запуск frontend проекта на vite
-- `npm run start:dev` - Запуск frontend проекта на webpack dev server + backend
-- `npm run start:dev:vite` - Запуск frontend проекта на vite + backend
-- `npm run start:dev:server` - Запуск backend сервера
-
-- `npm run build:prod` - Сборка в prod режиме
-- `npm run build:dev` - Сборка в dev режиме (не минимизирован)
-
-- `npm run lint:prettier` - Применение Prettier ко всем файлам проекта (ts, tsx, json)
-- `npm run lint:ts` - Проверка ts файлов линтером
-- `npm run lint:ts:fix` - Исправление ts файлов линтером
-- `npm run lint:scss` - Проверка scss файлов style линтером
-- `npm run lint:scss:fix` - Исправление scss файлов style линтером
-
-- `npm run test:unit` - Запуск unit тестов с jest
-- `npm run test:ui` - Запуск скриншотных тестов с loki
-- `npm run test:ui:ok` - Подтверждение новых скриншотов
-- `npm run test:ui:ci` - Запуск скриншотных тестов в CI
-- `npm run test:ui:json` - Генерация json отчета для скриншотных тестов
-- `npm run test:ui:html` - Генерация HTML отчета для скриншотных тестов
-- `npm run test:ui:report` - Генерация полного отчета для скриншотных тестов
-- `npm run test:e2e` - Запуск end-to-end тестов с помощью Cypress
-
-- `npm run storybook` - Запуск Storybook
-- `npm run storybook:build` - Сборка storybook билда
-
-- `npm run prepare` - Запускает прекоммит хуки
-- `npm run postinstall` - Запускает скрипт очистки кэша из node_modules после установки зависимостей.
-
-- `npm run scripts:generate-slice` - Скрипт для генерации FSD слайсов (см. подробнее)
-- `npm run scripts:update-imports` - Скрипт для обновления импортов в проекте (см. подробнее)
-- `npm run scripts:update-src-imports` - Скрипт для обновления импортов в проекте (см. подробнее)
-- `npm run scripts:scripts:create-public-api` - Скрипт для создания PUBLIC API в shared-слое (см. подробнее)
-- `npm run scripts:create-readme` - Скрипт для генерации README (см. подробнее)
-- `npm run scripts:remove-feature` - Удаление определенной фичи со всего проекта (см. подробнее)
-
----
 
 ## Удаление всех feature-flag
 
@@ -365,7 +367,7 @@ Clear.args = {
 
 [Webpack-url]: https://webpack.js.org/
 
-[Scss]: https://img.shields.io/badge/SCSS-4A4A55?style=for-the-badge&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDU0Ny44IDQxMC42IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1NDcuOCA0MTAuNiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxwYXRoIGZpbGw9IiNDRDY3OTkiIGQ9Ik00NzEuNCwyMzZjLTE5LjEsMC4xLTM1LjcsNC43LTQ5LjYsMTEuNWMtNS4xLTEwLjEtMTAuMi0xOS4xLTExLjEtMjUuN2MtMS03LjctMi4yLTEyLjQtMS0yMS42ICBjMS4yLTkuMiw2LjYtMjIuMyw2LjUtMjMuM3MtMS4yLTUuNy0xMi4yLTUuOGMtMTEtMC4xLTIwLjUsMi4xLTIxLjYsNWMtMS4xLDIuOS0zLjIsOS41LTQuNiwxNi4zYy0xLjksMTAtMjIsNDUuNy0zMy41LDY0LjQgIGMtMy43LTcuMy02LjktMTMuNy03LjYtMTguOGMtMS03LjctMi4yLTEyLjQtMS0yMS42YzEuMi05LjIsNi42LTIyLjMsNi41LTIzLjNjLTAuMS0xLTEuMi01LjctMTIuMi01LjhjLTExLTAuMS0yMC41LDIuMS0yMS42LDUgIGMtMS4xLDIuOS0yLjMsOS43LTQuNiwxNi4zYy0yLjMsNi42LTI5LDY2LjItMzYsODEuNmMtMy42LDcuOS02LjcsMTQuMi04LjksMTguNWMwLDAsMCwwLDAsMHMtMC4xLDAuMy0wLjQsMC44ICBjLTEuOSwzLjctMyw1LjctMyw1LjdzMCwwLDAsMC4xYy0xLjUsMi43LTMuMSw1LjItMy45LDUuMmMtMC42LDAtMS43LTcuMiwwLjItMTdjNC0yMC43LDEzLjUtNTIuOSwxMy40LTU0YzAtMC42LDEuOC02LjItNi4yLTkuMSAgYy03LjgtMi45LTEwLjYsMS45LTExLjMsMS45Yy0wLjcsMC0xLjIsMS43LTEuMiwxLjdzOC43LTM2LjItMTYuNi0zNi4yYy0xNS44LDAtMzcuNiwxNy4zLTQ4LjQsMzIuOWMtNi44LDMuNy0yMS4zLDExLjYtMzYuOCwyMC4xICBjLTUuOSwzLjMtMTIsNi42LTE3LjcsOS43Yy0wLjQtMC40LTAuOC0wLjktMS4yLTEuM2MtMzAuNi0zMi43LTg3LjItNTUuOC04NC44LTk5LjdjMC45LTE2LDYuNC01OCwxMDguNy0xMDkgIEMyMzMuOSwxOSwzMDAuOSwzMC41LDMxMi41LDU2YzE2LjYsMzYuNC0zNS45LDEwNC0xMjIuOSwxMTMuOGMtMzMuMiwzLjctNTAuNi05LjEtNTUtMTMuOWMtNC42LTUtNS4zLTUuMy03LTQuM2MtMi44LDEuNS0xLDYsMCw4LjYgIGMyLjYsNi44LDEzLjMsMTguOCwzMS40LDI0LjdjMTYsNS4yLDU0LjksOC4xLDEwMi0xMC4xYzUyLjctMjAuNCw5My45LTc3LjEsODEuOC0xMjQuNkMzMzAuNywyLDI1MC43LTEzLjksMTc1LDEzICBDMTMwLDI5LDgxLjIsNTQuMiw0Ni4xLDg3Yy00MS43LDM5LTQ4LjMsNzIuOS00NS42LDg3LjFjOS43LDUwLjQsNzkuMiw4My4yLDEwNywxMDcuNWMtMS40LDAuOC0yLjcsMS41LTMuOCwyLjEgIGMtMTMuOSw2LjktNjYuOSwzNC42LTgwLjEsNjMuOWMtMTUsMzMuMiwyLjQsNTcsMTMuOSw2MC4yYzM1LjcsOS45LDcyLjQtNy45LDkyLjEtMzcuM2MxOS43LTI5LjQsMTcuMy02Ny42LDguMi04NS4xICBjLTAuMS0wLjItMC4yLTAuNC0wLjQtMC42YzMuNi0yLjEsNy4zLTQuMywxMC45LTYuNGM3LjEtNC4yLDE0LjEtOC4xLDIwLjEtMTEuM2MtMy40LDkuMy01LjksMjAuNC03LjEsMzYuNCAgYy0xLjUsMTguOCw2LjIsNDMuMiwxNi4zLDUyLjhjNC41LDQuMiw5LjgsNC4zLDEzLjIsNC4zYzExLjgsMCwxNy4xLTkuOCwyMy0yMS40YzcuMi0xNC4yLDEzLjctMzAuNywxMy43LTMwLjdzLTguMSw0NC42LDEzLjksNDQuNiAgYzgsMCwxNi4xLTEwLjQsMTkuNy0xNS43YzAsMC4xLDAsMC4xLDAsMC4xczAuMi0wLjMsMC42LTFjMC44LTEuMywxLjMtMi4xLDEuMy0yLjFzMC0wLjEsMC0wLjJjMy4yLTUuNiwxMC40LTE4LjMsMjEuMS0zOS40ICBjMTMuOC0yNy4yLDI3LjEtNjEuMiwyNy4xLTYxLjJzMS4yLDguMyw1LjMsMjIuMWMyLjQsOC4xLDcuNCwxNywxMS40LDI1LjZjLTMuMiw0LjUtNS4yLDctNS4yLDdzMCwwLDAuMSwwLjEgIGMtMi42LDMuNC01LjQsNy4xLTguNSwxMC43Yy0xMC45LDEzLTIzLjksMjcuOS0yNS43LDMyLjJjLTIuMSw1LjEtMS42LDguOCwyLjQsMTEuOGMyLjksMi4yLDguMSwyLjUsMTMuNCwyLjIgIGM5LjgtMC43LDE2LjctMy4xLDIwLjEtNC42YzUuMy0xLjksMTEuNS00LjgsMTcuMy05LjFjMTAuNy03LjksMTcuMi0xOS4yLDE2LjYtMzQuMWMtMC4zLTguMi0zLTE2LjQtNi4zLTI0LjEgIGMxLTEuNCwxLjktMi44LDIuOS00LjJjMTYuOS0yNC43LDMwLTUxLjgsMzAtNTEuOHMxLjIsOC4zLDUuMywyMi4xYzIsNyw2LjEsMTQuNiw5LjcsMjJjLTE1LjksMTIuOS0yNS43LDI3LjktMjkuMiwzNy43ICBjLTYuMywxOC4yLTEuNCwyNi40LDcuOSwyOC4zYzQuMiwwLjksMTAuMi0xLjEsMTQuNi0zYzUuNi0xLjgsMTIuMi00LjksMTguNS05LjVjMTAuNy03LjksMjEtMTguOSwyMC40LTMzLjggIGMtMC4zLTYuOC0yLjEtMTMuNS00LjYtMjBjMTMuNS01LjYsMzAuOS04LjcsNTMuMS02LjFjNDcuNiw1LjYsNTcsMzUuMyw1NS4yLDQ3LjhjLTEuOCwxMi41LTExLjgsMTkuMy0xNS4xLDIxLjQgIGMtMy4zLDIuMS00LjQsMi44LTQuMSw0LjNjMC40LDIuMiwyLDIuMSw0LjgsMS43YzMuOS0wLjcsMjUtMTAuMSwyNS45LTMzLjFDNTQ4LjksMjY3LjgsNTIwLjksMjM1LjcsNDcxLjQsMjM2eiBNMTA0LjIsMzU5LjggIEM4OC40LDM3Nyw2Ni40LDM4My41LDU2LjksMzc4Yy0xMC4yLTUuOS02LjItMzEuMywxMy4yLTQ5LjVjMTEuOC0xMS4xLDI3LTIxLjQsMzcuMS0yNy43YzIuMy0xLjQsNS43LTMuNCw5LjgtNS45ICBjMC43LTAuNCwxLjEtMC42LDEuMS0wLjZsMCwwYzAuOC0wLjUsMS42LTEsMi40LTEuNUMxMjcuNiwzMTguOCwxMjAuOCwzNDEuNywxMDQuMiwzNTkuOHogTTIxOS4yLDI4MS42Yy01LjUsMTMuNC0xNyw0Ny43LTI0LDQ1LjggIGMtNi0xLjYtOS43LTI3LjYtMS4yLTUzLjNjNC4zLTEyLjksMTMuNC0yOC4zLDE4LjctMzQuM2M4LjYtOS42LDE4LjEtMTIuOCwyMC40LTguOUMyMzYsMjM2LDIyMi42LDI3My4yLDIxOS4yLDI4MS42eiBNMzE0LjEsMzI3ICBjLTIuMywxLjItNC41LDItNS41LDEuNGMtMC43LTAuNCwxLTIsMS0yczExLjktMTIuOCwxNi42LTE4LjZjMi43LTMuNCw1LjktNy40LDkuMy0xMS45YzAsMC40LDAsMC45LDAsMS4zICBDMzM1LjUsMzEyLjUsMzIwLjcsMzIyLjgsMzE0LjEsMzI3eiBNMzg3LjMsMzEwLjNjLTEuNy0xLjItMS40LTUuMiw0LjMtMTcuN2MyLjItNC45LDcuNC0xMy4xLDE2LjMtMjFjMSwzLjIsMS43LDYuMywxLjYsOS4yICBDNDA5LjQsMzAwLjEsMzk1LjYsMzA3LjMsMzg3LjMsMzEwLjN6Ii8+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=&logoColor=FF3E00
+[Scss]: https://img.shields.io/badge/SCSS-4A4A55?style=for-the-badge&logo=sass&logoColor
 
 [Scss-url]: https://sass-scss.ru/guide/
 
@@ -400,14 +402,6 @@ Clear.args = {
 [i18next]: https://img.shields.io/badge/i18next-26A69A?style=for-the-badge&logo=i18next&logoColor=white
 
 [i18next-url]: https://www.i18next.com/
-
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-
-[Bootstrap-url]: https://getbootstrap.com
-
-[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-
-[JQuery-url]: https://jquery.com
 
 [ReactRouter]: https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white
 
